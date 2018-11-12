@@ -9,14 +9,14 @@ import java.util.ArrayList;
 public class MemberCompetitive extends MemberActive
 {
 
-    private ArrayList <DisciplineType> disciplineType = new ArrayList();
+    private ArrayList <DisciplineType> disciplineTypes;
 
-    public MemberCompetitive(int id, String name, int birthyear, MembershipType membershipType, ActivityType activityType, ArrayList disciplineList)
+    // ArrayList<DisciplineType> disciplineList laves evt. i GUI
+    public MemberCompetitive(int id, String name, int birthyear, MembershipType membershipType, 
+                             ActivityType activityType, ArrayList<DisciplineType> disciplineList)
     {
         super(id, name, birthyear, membershipType, activityType);
-        for (int i = 0; i < disciplineList.size(); i++)
-        {
-            //disciplineType.add(disciplineList.get(i));
-        }
+        // forloop er ikke nødvendigt, vi kan bare sætte listerne lig hinanden
+        disciplineTypes = disciplineList;
     }
 }

@@ -9,7 +9,7 @@ import UI.UI;
 public class Controller
 {
 
-    private UI ui = new UI();
+    private UI ui;
 
     public Controller()
     {
