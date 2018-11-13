@@ -55,6 +55,26 @@ public class Member
         }
         return true;
     }
+
+    public int getId() 
+    {
+        return id;
+    }
+
+    public String getName() 
+    {
+        return name;
+    }
+
+    public int getBirthyear() 
+    {
+        return birthyear;
+    }
+
+    public MembershipType getMembershipType() 
+    {
+        return membershipType;
+    }
     
     
 
