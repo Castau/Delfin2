@@ -7,5 +7,5 @@ package Delfinen.logic;
  */
 public enum ActivityType
 {
-    COMPETETIVE, NORMAL;
+    COMPETITIVE, NORMAL;
 }

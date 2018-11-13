@@ -1,45 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domainlogic;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import Delfinen.logic.ActivityType;
+import Delfinen.logic.MemberActive;
+import Delfinen.logic.MembershipType;
 import org.junit.Test;
+import java.time.Year;
 import static org.junit.Assert.*;
 
 /**
  *
  * @author Shevitar
  */
-public class MemberActiveTest {
+public class MemberActiveTest
+{
+    //Arrange
+    //Act
+    //Assert
     
-    public MemberActiveTest() {
+    @Test
+    public void testCreateMemberActive() //int id, String name, year birthyear, MembershipType membershipType, ActivityType activityType
+    {
+        MemberActive m = new MemberActive(1, "Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.NORMAL); 
+        assertNotNull(m);
+        assertEquals(1, m.getId());
+        assertEquals("Rúni", m.getName());
+        assertEquals(Year.of(1994), m.getBirthyear());
+        assertEquals(MembershipType.ACTIVE, m.getMembershipType());
+        assertEquals(ActivityType.NORMAL, m.getActivityType());
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }

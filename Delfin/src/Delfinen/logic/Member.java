@@ -1,5 +1,6 @@
 package Delfinen.logic;
 
+import java.time.Year;
 import java.util.Objects;
 
 /**
@@ -10,13 +11,13 @@ public class Member
 {
     private int id;
     private String name;
-    private int birthyear;
+    private Year birthyear;
     private MembershipType membershipType;
 //    private ActivityType activityType;
 //    private DisciplineType disciplineType;
 
     //Normal member
-    public Member(int id, String name, int birthyear, MembershipType membershipType)
+    public Member(int id, String name, Year birthyear, MembershipType membershipType)
     {
         this.id = id;
         this.name = name;
@@ -66,7 +67,7 @@ public class Member
         return name;
     }
 
-    public int getBirthyear() 
+    public Year getBirthyear() 
     {
         return birthyear;
     }
@@ -76,7 +77,5 @@ public class Member
         return membershipType;
     }
     
-    
-
     
 }
