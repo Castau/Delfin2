@@ -8,10 +8,7 @@ package domainlogic;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Shevitar
- */
+
 public class MemberCompetitiveTest {
     
     public MemberCompetitiveTest() {
