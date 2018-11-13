@@ -1,20 +1,47 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domainlogic;
 
 import Delfinen.logic.ActivityType;
+import Delfinen.logic.DisciplineType;
+import Delfinen.logic.Member;
+import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
 import Delfinen.logic.MembershipType;
 import java.time.Year;
+import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
+/**
+ *
+ * @author runi, asger og camilla
+ */
 public class MemberCompetitiveTest {
-    
-    
-    
+
+    ArrayList<DisciplineType> disciplineList;
+
+    public MemberCompetitiveTest() {
+        disciplineList = new ArrayList();
+        disciplineList.add(DisciplineType.CRAWL);
+        disciplineList.add(DisciplineType.BREASTSTROKE);
+    }
+
+    @Test
+    public void testCreateMemberCompetitive() {
+        MemberCompetitive member = new MemberCompetitive("Karl", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+
+        assertNotNull(member);
+        assertEquals(1, member.getId());
+        assertEquals("Karl", member.getName());
+        assertEquals(Year.of(1994), member.getBirthyear());
+        assertEquals(MembershipType.ACTIVE, member.getMembershipType());
+        assertEquals(ActivityType.COMPETITIVE, member.getActivityType());
+        assertEquals(disciplineList, member.getDisciplineTypes());
+
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void negativeTestCreateMember() {
+        MemberActive member = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVUS,disciplineList);
+    }
+   
 }

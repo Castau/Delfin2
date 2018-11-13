@@ -18,10 +18,12 @@ public class MemberActive extends Member
         this.activityType = activityType;
     }
 
-    public ActivityType getActivityType()
-    {
+    public ActivityType getActivityType() {
         return activityType;
     }
+
+    
     
     
 }
+
