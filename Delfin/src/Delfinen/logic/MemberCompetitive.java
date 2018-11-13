@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author runin
+ * @author runin, camilla og asger
  */
 public class MemberCompetitive extends MemberActive
 {

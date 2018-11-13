@@ -3,7 +3,7 @@ package Delfinen.logic;
 
 /**
  *
- * @author runin
+ * @author runin, camilla og asger
  */
 public enum ActivityType
 {

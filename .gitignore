@@ -30,3 +30,5 @@ Delfin/dist/
 Delfin/nbdist/
 nbactions.xml
 nb-configuration.xml
+/TestEnumsinArray/nbproject/private/
+/TestEnumsinArray/build/

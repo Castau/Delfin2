@@ -2,7 +2,7 @@ package Delfinen.logic;
 
 /**
  *
- * @author runin
+ * @author runin, asger og camilla
  */
 public enum MembershipType
 {
