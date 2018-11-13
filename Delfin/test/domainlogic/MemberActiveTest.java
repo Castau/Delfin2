@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.time.Year;
 import static org.junit.Assert.*;
 
+
 /**
  *
  * @author Shevitar
@@ -16,11 +17,13 @@ public class MemberActiveTest
     //Arrange
     //Act
     //Assert
+
     
+
     @Test
     public void testCreateMemberActive() //int id, String name, year birthyear, MembershipType membershipType, ActivityType activityType
     {
-        MemberActive m = new MemberActive(1, "Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.NORMAL); 
+        MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.NORMAL); 
         assertNotNull(m);
         assertEquals(1, m.getId());
         assertEquals("Rúni", m.getName());
@@ -28,4 +31,10 @@ public class MemberActiveTest
         assertEquals(MembershipType.ACTIVE, m.getMembershipType());
         assertEquals(ActivityType.NORMAL, m.getActivityType());
     }
+    
+    @Test (expected = RuntimeException.class)
+   public void negativeTestCreateMember()
+   {
+        MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVUS);
+   }
 }

@@ -10,9 +10,11 @@ public class MemberActive extends Member
 {
     private ActivityType activityType;
 
-    public MemberActive(int id, String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
+
+    public MemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
+
     {
-        super(id, name, birthyear, membershipType);
+        super(name, birthyear, membershipType);
         this.activityType = activityType;
     }
 

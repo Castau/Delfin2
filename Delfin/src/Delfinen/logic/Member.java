@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class Member
 {
-    private int id;
+    private static int id = 0;
     private String name;
     private Year birthyear;
     private MembershipType membershipType;
@@ -17,12 +17,15 @@ public class Member
 //    private DisciplineType disciplineType;
 
     //Normal member
-    public Member(int id, String name, Year birthyear, MembershipType membershipType)
+
+    public Member(String name, Year birthyear, MembershipType membershipType)
+
     {
-        this.id = id;
+        ++id;
         this.name = name;
         this.birthyear = birthyear;
         this.membershipType = membershipType;
+        
     }
 
     @Override
