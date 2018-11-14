@@ -684,7 +684,7 @@ public class GUI extends javax.swing.JFrame
         JFrame frame = new JFrame("Failmessage");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         String name = "";
-        Year birthyear = Year.of(0000);
+        Year birthyear = null;
         MembershipType membershipType = MembershipType.PASSIVE;
         ActivityType activityType = ActivityType.BASIC;
         ArrayList <DisciplineType> disciplineList = new ArrayList();
@@ -739,15 +739,15 @@ public class GUI extends javax.swing.JFrame
         //Member
         if (membershipType == MembershipType.PASSIVE)
         {
-//            try 
-//            {
+            try 
+            {
                 c.createMember(name, birthyear, membershipType);
-//            } 
-//            catch (NullPointerException nx) 
-//            {
-//                System.out.println("Could not create member");
-//                JOptionPane.showMessageDialog(frame, "Could not create member");
-//            }
+            } 
+            catch (NullPointerException nx) 
+            {
+                System.out.println("Could not create member");
+                JOptionPane.showMessageDialog(frame, "Could not create member");
+            }
         }
         //MemberActive
         if (membershipType == MembershipType.ACTIVE && activityType == ActivityType.BASIC)

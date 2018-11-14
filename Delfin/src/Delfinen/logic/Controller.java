@@ -11,6 +11,7 @@ import UI.UI;
 import java.time.Year;
 import java.util.ArrayList;
 import static Delfinen.data.ActivityType.BASIC;
+import java.io.IOException;
 
 /**
  *
@@ -34,18 +35,42 @@ public class Controller
         System.out.println("Contact?");
         Member m = new Member(name, birthyear, membershipType);
         System.out.println(m);
+        try
+        {
+            modelController.addMember(m);
+        }
+        catch (IOException i)
+        {
+            System.out.println("Unable to write to file using the given file path");
+        }
     }
     
     public void createMemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
     {
         MemberActive m = new MemberActive(name, birthyear, membershipType, activityType);
         System.out.println(m);
+        try
+        {
+            modelController.addMember(m);
+        }
+        catch (IOException i)
+        {
+            System.out.println("Unable to write to file using the given file path");
+        }
     }
     
     public void createMemberCompetitive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType, ArrayList<DisciplineType> disciplineList)
     {
         MemberCompetitive m = new MemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
         System.out.println(m);
+        try
+        {
+            modelController.addMember(m);
+        }
+        catch (IOException i)
+        {
+            System.out.println("Unable to write to file using the given file path");
+        }
     }
     
     public void editMember()
