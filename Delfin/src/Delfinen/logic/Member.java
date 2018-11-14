@@ -12,7 +12,8 @@ import java.util.Objects;
 public class Member
 {
 
-    private static int id = 0;
+    private static int idCounter = 0;
+    private int idMember;
     private String name;
     private Year birthyear;
     private MembershipType membershipType;
@@ -23,19 +24,20 @@ public class Member
     //Normal member
     public Member(String name, Year birthyear, MembershipType membershipType)
 
-    {
-        ++id;
+    {   yearsPaid = new ArrayList();    
+        ++idCounter;
+        idMember = idCounter;
         this.name = name;
         this.birthyear = birthyear;
         this.membershipType = membershipType;
-        this.yearsPaid.add(Year.now());
+        yearsPaid.add(Year.now());
 
     }
 
     @Override
     public String toString()
     {
-        return "Member with " + "id: " + id + ", name: " + name + ", birthyear: " + birthyear + ", membershipType: " + membershipType + ", yearsPaid: " + yearsPaid;
+        return "Member with " + "id: " + idCounter + ", name: " + name + ", birthyear: " + birthyear + ", membershipType: " + membershipType + ", yearsPaid: " + yearsPaid;
     }
 
     @Override
@@ -75,7 +77,7 @@ public class Member
 
     public int getId()
     {
-        return id;
+        return idCounter;
     }
 
     public String getName()
