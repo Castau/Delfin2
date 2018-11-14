@@ -27,6 +27,11 @@ public class Controller
         modelController = new ModelController(this);
         ui = new UI();
     }
+    
+    public ModelController getModelController(){
+        return modelController;
+    }
+    
     //Manager
     
     public void createMember(String name, Year birthyear, MembershipType membershipType)
