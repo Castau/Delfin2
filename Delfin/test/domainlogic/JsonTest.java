@@ -3,7 +3,7 @@ package domainlogic;
 
 import Delfinen.data.JsonParser;
 import Delfinen.logic.Member;
-import Delfinen.logic.MembershipType;
+import Delfinen.data.MembershipType;
 import java.time.Year;
 import org.junit.Test;
 import static org.junit.Assert.*;

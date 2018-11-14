@@ -1,7 +1,7 @@
 package domainlogic;
 
 import Delfinen.logic.Member;
-import static Delfinen.logic.MembershipType.PASSIVE;
+import static Delfinen.data.MembershipType.PASSIVE;
 import java.time.Year;
 import org.junit.Test;
 import static org.junit.Assert.*;

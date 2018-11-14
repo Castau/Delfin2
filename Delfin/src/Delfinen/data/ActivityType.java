@@ -1,5 +1,5 @@
 
-package Delfinen.logic;
+package Delfinen.data;
 
 /**
  *
@@ -7,5 +7,5 @@ package Delfinen.logic;
  */
 public enum ActivityType
 {
-    COMPETITIVE, NORMAL;
+    COMPETITIVE, BASIC;
 }

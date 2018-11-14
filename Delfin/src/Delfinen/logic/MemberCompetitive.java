@@ -1,5 +1,8 @@
 package Delfinen.logic;
 
+import Delfinen.data.DisciplineType;
+import Delfinen.data.MembershipType;
+import Delfinen.data.ActivityType;
 import java.time.Year;
 import java.util.ArrayList;
 

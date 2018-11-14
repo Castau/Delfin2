@@ -1,5 +1,6 @@
 package Delfinen.logic;
 
+import Delfinen.data.MembershipType;
 import java.time.Year;
 import java.util.Objects;
 

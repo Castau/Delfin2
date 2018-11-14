@@ -5,6 +5,22 @@
  */
 package Delfinen.presentation;
 
+import Delfinen.data.ActivityType;
+import static Delfinen.data.ActivityType.COMPETITIVE;
+//import Delfinen.data.DataAccessorFile;
+import Delfinen.data.MembershipType;
+import static Delfinen.data.MembershipType.ACTIVE;
+import static Delfinen.data.MembershipType.PASSIVE;
+import Delfinen.logic.Controller;
+import java.time.Year;
+import static Delfinen.data.ActivityType.BASIC;
+import Delfinen.data.DisciplineType;
+//import java.io.IOException;
+import java.time.DateTimeException;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author runin
@@ -12,12 +28,29 @@ package Delfinen.presentation;
 public class GUI extends javax.swing.JFrame
 {
 
-    /**
-     * Creates new form GUI
-     */
+    private Controller c = new Controller();
+    //private DataAccessorFile data;
+    private String filePath = "C:\\Users\\Shevitar\\Documents";
+    
     public GUI()
     {
         initComponents();
+        this.buttonGroupPassiveActive.add(RadioButtonNewMemberActive);
+        this.buttonGroupPassiveActive.add(RadioButtonNewMemberPassive);
+        this.buttonGroupActivityType.add(RadioButtonNewMemberBasic);
+        this.buttonGroupActivityType.add(RadioButtonNewMemberCompetitive);
+//        this.buttonGroupDisciplineType.add(RadioButtonNewMemberButterfly);
+//        this.buttonGroupDisciplineType.add(RadioButtonNewMemberBackstroke);
+//        this.buttonGroupDisciplineType.add(RadioButtonNewMemberBreaststroke);
+//        this.buttonGroupDisciplineType.add(RadioButtonNewMemberCrawl);
+        PanelLoggedInAsManager.setVisible(false);
+        PanelCreateNewMember.setVisible(false);
+        this.RadioButtonNewMemberBasic.setEnabled(false);
+        this.RadioButtonNewMemberCompetitive.setEnabled(false);
+        this.RadioButtonNewMemberBackstroke.setEnabled(false);
+        this.RadioButtonNewMemberBreaststroke.setEnabled(false);
+        this.RadioButtonNewMemberButterfly.setEnabled(false);
+        this.RadioButtonNewMemberCrawl.setEnabled(false);
     }
 
     /**
@@ -27,24 +60,759 @@ public class GUI extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
+
+        jSplitPane1 = new javax.swing.JSplitPane();
+        jPanel1 = new javax.swing.JPanel();
+        buttonGroupPassiveActive = new javax.swing.ButtonGroup();
+        buttonGroupActivityType = new javax.swing.ButtonGroup();
+        PanelLoginScreen = new javax.swing.JPanel();
+        PanelLoginScreenHeader = new javax.swing.JPanel();
+        LabelLoginScreenHome = new javax.swing.JLabel();
+        LabelLoginScreenHeader = new java.awt.Label();
+        ButtonLoginAsManager = new javax.swing.JButton();
+        ButtonLoginAsCashier = new javax.swing.JButton();
+        ButtonLoginAsTrainer = new javax.swing.JButton();
+        PanelLoggedInAsManager = new javax.swing.JPanel();
+        PaneManagerScreenHeader = new javax.swing.JPanel();
+        LabeManagerScreenHome = new javax.swing.JLabel();
+        LabeManagerScreenHeader = new java.awt.Label();
+        ButtonCreateNewMember = new javax.swing.JButton();
+        ButtonEditMember = new javax.swing.JButton();
+        ButtonDeleteMember = new javax.swing.JButton();
+        ButtonViewMembers = new javax.swing.JButton();
+        ButtonBackToMainMenu = new javax.swing.JButton();
+        PanelCreateNewMember = new javax.swing.JPanel();
+        PaneCreateNewMemberHeader = new javax.swing.JPanel();
+        LabelCreateNewMemberHome = new javax.swing.JLabel();
+        LabelCreateNewMemberHeader = new java.awt.Label();
+        LabelCreateNewMemberLogAsManager = new java.awt.Label();
+        ButtonCancelCreateNewMember = new javax.swing.JButton();
+        LabelNewMemberName = new javax.swing.JLabel();
+        LabelNewMemberBirthYear = new javax.swing.JLabel();
+        TextFieldNewMemberName = new javax.swing.JTextField();
+        TextFieldNewMemberBirthYear = new javax.swing.JTextField();
+        LabelBirthYearFormat = new javax.swing.JLabel();
+        RadioButtonNewMemberPassive = new javax.swing.JRadioButton();
+        RadioButtonNewMemberActive = new javax.swing.JRadioButton();
+        LabelNewMemberMembershipType = new javax.swing.JLabel();
+        LabelNewMemberActivityType = new javax.swing.JLabel();
+        RadioButtonNewMemberBasic = new javax.swing.JRadioButton();
+        RadioButtonNewMemberCompetitive = new javax.swing.JRadioButton();
+        LabelNewMemberDisciplineType = new javax.swing.JLabel();
+        RadioButtonNewMemberButterfly = new javax.swing.JRadioButton();
+        RadioButtonNewMemberCrawl = new javax.swing.JRadioButton();
+        RadioButtonNewMemberBackstroke = new javax.swing.JRadioButton();
+        RadioButtonNewMemberBreaststroke = new javax.swing.JRadioButton();
+        ButtonNewMemberCreateMember = new javax.swing.JButton();
+        PanelEditMember = new javax.swing.JPanel();
+        PanelLoginScreenHeader1 = new javax.swing.JPanel();
+        LabelLoginScreenHome1 = new javax.swing.JLabel();
+        LabelLoginScreenHeader1 = new java.awt.Label();
+        ButtonLoginAsManager1 = new javax.swing.JButton();
+        ButtonLoginAsCashier1 = new javax.swing.JButton();
+        ButtonLoginAsTrainer1 = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 221, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 181, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        PanelLoginScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelLoginScreenHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelLoginScreenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Edit_50px.png"))); // NOI18N
+
+        LabelLoginScreenHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelLoginScreenHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelLoginScreenHeader.setText("Edit member");
+
+        javax.swing.GroupLayout PanelLoginScreenHeaderLayout = new javax.swing.GroupLayout(PanelLoginScreenHeader);
+        PanelLoginScreenHeader.setLayout(PanelLoginScreenHeaderLayout);
+        PanelLoginScreenHeaderLayout.setHorizontalGroup(
+            PanelLoginScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoginScreenHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelLoginScreenHome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelLoginScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(573, Short.MAX_VALUE))
+        );
+        PanelLoginScreenHeaderLayout.setVerticalGroup(
+            PanelLoginScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoginScreenHeaderLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(PanelLoginScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelLoginScreenHome)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelLoginScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
+        );
+
+        ButtonLoginAsManager.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonLoginAsManager.setText("Manager");
+        ButtonLoginAsManager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonLoginAsManagerActionPerformed(evt);
+            }
+        });
+
+        ButtonLoginAsCashier.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonLoginAsCashier.setText("Cashier");
+
+        ButtonLoginAsTrainer.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonLoginAsTrainer.setText("Trainer");
+
+        javax.swing.GroupLayout PanelLoginScreenLayout = new javax.swing.GroupLayout(PanelLoginScreen);
+        PanelLoginScreen.setLayout(PanelLoginScreenLayout);
+        PanelLoginScreenLayout.setHorizontalGroup(
+            PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ButtonLoginAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonLoginAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonLoginAsManager))
+                .addGap(335, 335, 335))
+        );
+        PanelLoginScreenLayout.setVerticalGroup(
+            PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoginScreenLayout.createSequentialGroup()
+                .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(ButtonLoginAsManager)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonLoginAsCashier)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonLoginAsTrainer)
+                .addGap(0, 154, Short.MAX_VALUE))
+        );
+
+        PanelLoggedInAsManager.setPreferredSize(new java.awt.Dimension(770, 434));
+
+        PaneManagerScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
+
+        LabeManagerScreenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Home_50px.png"))); // NOI18N
+
+        LabeManagerScreenHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabeManagerScreenHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabeManagerScreenHeader.setText("Logged in as Manager");
+
+        javax.swing.GroupLayout PaneManagerScreenHeaderLayout = new javax.swing.GroupLayout(PaneManagerScreenHeader);
+        PaneManagerScreenHeader.setLayout(PaneManagerScreenHeaderLayout);
+        PaneManagerScreenHeaderLayout.setHorizontalGroup(
+            PaneManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PaneManagerScreenHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabeManagerScreenHome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabeManagerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(436, Short.MAX_VALUE))
+        );
+        PaneManagerScreenHeaderLayout.setVerticalGroup(
+            PaneManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PaneManagerScreenHeaderLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(PaneManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneManagerScreenHeaderLayout.createSequentialGroup()
+                        .addComponent(LabeManagerScreenHome)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneManagerScreenHeaderLayout.createSequentialGroup()
+                        .addComponent(LabeManagerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
+        );
+
+        ButtonCreateNewMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonCreateNewMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_User_Group_Man_Man_26px.png"))); // NOI18N
+        ButtonCreateNewMember.setText("New member   ");
+        ButtonCreateNewMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCreateNewMemberActionPerformed(evt);
+            }
+        });
+
+        ButtonEditMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonEditMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Edit_26px.png"))); // NOI18N
+        ButtonEditMember.setText("Edit member    ");
+
+        ButtonDeleteMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonDeleteMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Remove_User_Group_Man_Man_26px.png"))); // NOI18N
+        ButtonDeleteMember.setText("Delete member ");
+
+        ButtonViewMembers.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonViewMembers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_User_Groups_26px.png"))); // NOI18N
+        ButtonViewMembers.setText("View members ");
+
+        ButtonBackToMainMenu.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackToMainMenu.setText("BACK TO MAIN MENU");
+        ButtonBackToMainMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonBackToMainMenuActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelLoggedInAsManagerLayout = new javax.swing.GroupLayout(PanelLoggedInAsManager);
+        PanelLoggedInAsManager.setLayout(PanelLoggedInAsManagerLayout);
+        PanelLoggedInAsManagerLayout.setHorizontalGroup(
+            PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PaneManagerScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
+                .addGroup(PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
+                        .addGap(301, 301, 301)
+                        .addGroup(PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ButtonViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ButtonBackToMainMenu)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelLoggedInAsManagerLayout.setVerticalGroup(
+            PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
+                .addComponent(PaneManagerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(ButtonCreateNewMember)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonEditMember)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonDeleteMember)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonViewMembers)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(ButtonBackToMainMenu)
+                .addContainerGap())
+        );
+
+        PaneCreateNewMemberHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PaneCreateNewMemberHeader.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        LabelCreateNewMemberHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_User_Group_Man_Man_50px.png"))); // NOI18N
+
+        LabelCreateNewMemberHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelCreateNewMemberHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelCreateNewMemberHeader.setText("New member");
+
+        LabelCreateNewMemberLogAsManager.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelCreateNewMemberLogAsManager.setForeground(new java.awt.Color(0, 0, 0));
+        LabelCreateNewMemberLogAsManager.setText("Logged in as Manager");
+
+        javax.swing.GroupLayout PaneCreateNewMemberHeaderLayout = new javax.swing.GroupLayout(PaneCreateNewMemberHeader);
+        PaneCreateNewMemberHeader.setLayout(PaneCreateNewMemberHeaderLayout);
+        PaneCreateNewMemberHeaderLayout.setHorizontalGroup(
+            PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelCreateNewMemberHome)
+                .addGroup(PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelCreateNewMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelCreateNewMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PaneCreateNewMemberHeaderLayout.setVerticalGroup(
+            PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelCreateNewMemberHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelCreateNewMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelCreateNewMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        ButtonCancelCreateNewMember.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonCancelCreateNewMember.setText("CANCEL");
+        ButtonCancelCreateNewMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCancelCreateNewMemberActionPerformed(evt);
+            }
+        });
+
+        LabelNewMemberName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelNewMemberName.setText("Name:");
+
+        LabelNewMemberBirthYear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelNewMemberBirthYear.setText("Birth year:");
+
+        TextFieldNewMemberName.setText("Enter name here");
+
+        TextFieldNewMemberBirthYear.setText("Enter year here");
+
+        LabelBirthYearFormat.setText("(YYYY)");
+
+        RadioButtonNewMemberPassive.setText("Passive");
+        RadioButtonNewMemberPassive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonNewMemberPassiveActionPerformed(evt);
+            }
+        });
+
+        RadioButtonNewMemberActive.setText("Active");
+        RadioButtonNewMemberActive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonNewMemberActiveActionPerformed(evt);
+            }
+        });
+
+        LabelNewMemberMembershipType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelNewMemberMembershipType.setText("Membership type:");
+
+        LabelNewMemberActivityType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelNewMemberActivityType.setText("Activity type:");
+
+        RadioButtonNewMemberBasic.setText("Basic");
+        RadioButtonNewMemberBasic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonNewMemberBasicActionPerformed(evt);
+            }
+        });
+
+        RadioButtonNewMemberCompetitive.setText("Competitive");
+        RadioButtonNewMemberCompetitive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonNewMemberCompetitiveActionPerformed(evt);
+            }
+        });
+
+        LabelNewMemberDisciplineType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelNewMemberDisciplineType.setText("Discipline type:");
+
+        RadioButtonNewMemberButterfly.setText("Butterfly");
+
+        RadioButtonNewMemberCrawl.setText("Crawl");
+
+        RadioButtonNewMemberBackstroke.setText("Backstroke");
+
+        RadioButtonNewMemberBreaststroke.setText("Breaststroke");
+
+        ButtonNewMemberCreateMember.setFont(new java.awt.Font("Iskoola Pota", 0, 14)); // NOI18N
+        ButtonNewMemberCreateMember.setText("Create member");
+        ButtonNewMemberCreateMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonNewMemberCreateMemberActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelCreateNewMemberLayout = new javax.swing.GroupLayout(PanelCreateNewMember);
+        PanelCreateNewMember.setLayout(PanelCreateNewMemberLayout);
+        PanelCreateNewMemberLayout.setHorizontalGroup(
+            PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PaneCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LabelNewMemberBirthYear)
+                    .addComponent(LabelNewMemberName)
+                    .addComponent(LabelNewMemberMembershipType)
+                    .addComponent(LabelNewMemberActivityType))
+                .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCreateNewMemberLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(TextFieldNewMemberName, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCreateNewMemberLayout.createSequentialGroup()
+                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(TextFieldNewMemberBirthYear, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(RadioButtonNewMemberBasic)
+                                            .addComponent(RadioButtonNewMemberCompetitive))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE))
+                                    .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(RadioButtonNewMemberActive)
+                                            .addComponent(RadioButtonNewMemberPassive))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(LabelNewMemberDisciplineType))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelCreateNewMemberLayout.createSequentialGroup()
+                                .addGap(240, 240, 240)
+                                .addComponent(LabelBirthYearFormat)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(75, 75, 75)
+                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RadioButtonNewMemberCrawl)
+                            .addComponent(RadioButtonNewMemberBreaststroke)
+                            .addComponent(RadioButtonNewMemberButterfly)
+                            .addComponent(RadioButtonNewMemberBackstroke))
+                        .addGap(122, 122, 122))))
+            .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ButtonCancelCreateNewMember)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonNewMemberCreateMember)
+                .addGap(18, 18, 18))
+        );
+        PanelCreateNewMemberLayout.setVerticalGroup(
+            PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                .addComponent(PaneCreateNewMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelNewMemberName)
+                    .addComponent(TextFieldNewMemberName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextFieldNewMemberBirthYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBirthYearFormat)
+                    .addComponent(LabelNewMemberBirthYear))
+                .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(LabelNewMemberMembershipType))
+                            .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(LabelNewMemberDisciplineType)))
+                        .addGap(65, 65, 65)
+                        .addComponent(LabelNewMemberActivityType)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ButtonCancelCreateNewMember)
+                            .addComponent(ButtonNewMemberCreateMember))
+                        .addContainerGap())
+                    .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RadioButtonNewMemberButterfly)
+                            .addComponent(RadioButtonNewMemberPassive))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RadioButtonNewMemberActive)
+                            .addComponent(RadioButtonNewMemberBackstroke))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RadioButtonNewMemberBreaststroke)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RadioButtonNewMemberCrawl)
+                            .addComponent(RadioButtonNewMemberBasic))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RadioButtonNewMemberCompetitive)
+                        .addGap(33, 86, Short.MAX_VALUE))))
+        );
+
+        PanelLoginScreenHeader1.setBackground(new java.awt.Color(153, 153, 255));
+        PanelLoginScreenHeader1.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelLoginScreenHome1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Home_50px.png"))); // NOI18N
+
+        LabelLoginScreenHeader1.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelLoginScreenHeader1.setForeground(new java.awt.Color(255, 255, 255));
+        LabelLoginScreenHeader1.setText("Login");
+
+        javax.swing.GroupLayout PanelLoginScreenHeader1Layout = new javax.swing.GroupLayout(PanelLoginScreenHeader1);
+        PanelLoginScreenHeader1.setLayout(PanelLoginScreenHeader1Layout);
+        PanelLoginScreenHeader1Layout.setHorizontalGroup(
+            PanelLoginScreenHeader1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoginScreenHeader1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelLoginScreenHome1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelLoginScreenHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(631, Short.MAX_VALUE))
+        );
+        PanelLoginScreenHeader1Layout.setVerticalGroup(
+            PanelLoginScreenHeader1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoginScreenHeader1Layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(PanelLoginScreenHeader1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenHeader1Layout.createSequentialGroup()
+                        .addComponent(LabelLoginScreenHome1)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenHeader1Layout.createSequentialGroup()
+                        .addComponent(LabelLoginScreenHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
+        );
+
+        ButtonLoginAsManager1.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonLoginAsManager1.setText("Manager");
+        ButtonLoginAsManager1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonLoginAsManager1ActionPerformed(evt);
+            }
+        });
+
+        ButtonLoginAsCashier1.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonLoginAsCashier1.setText("Cashier");
+
+        ButtonLoginAsTrainer1.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonLoginAsTrainer1.setText("Trainer");
+
+        javax.swing.GroupLayout PanelEditMemberLayout = new javax.swing.GroupLayout(PanelEditMember);
+        PanelEditMember.setLayout(PanelEditMemberLayout);
+        PanelEditMemberLayout.setHorizontalGroup(
+            PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelLoginScreenHeader1, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ButtonLoginAsTrainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonLoginAsCashier1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonLoginAsManager1))
+                .addGap(335, 335, 335))
+        );
+        PanelEditMemberLayout.setVerticalGroup(
+            PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                .addComponent(PanelLoginScreenHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(ButtonLoginAsManager1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonLoginAsCashier1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonLoginAsTrainer1)
+                .addGap(0, 154, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(10, 10, 10)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(12, 12, 12)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonCreateNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateNewMemberActionPerformed
+        PanelCreateNewMember.setVisible(true);
+        PanelLoginScreen.setVisible(false);
+        PanelLoggedInAsManager.setVisible(false);
+    }//GEN-LAST:event_ButtonCreateNewMemberActionPerformed
+
+    private void ButtonLoginAsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginAsManagerActionPerformed
+        PanelLoginScreen.setVisible(false);
+        //PanelLoginScreenHeader.setVisible(false);
+        PanelLoggedInAsManager.setVisible(true);
+    }//GEN-LAST:event_ButtonLoginAsManagerActionPerformed
+
+    private void ButtonBackToMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackToMainMenuActionPerformed
+        PanelLoginScreen.setVisible(true);
+        PanelLoggedInAsManager.setVisible(false);
+        PanelCreateNewMember.setVisible(false);
+    }//GEN-LAST:event_ButtonBackToMainMenuActionPerformed
+
+    private void ButtonCancelCreateNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelCreateNewMemberActionPerformed
+        PanelLoginScreen.setVisible(false);
+        PanelLoggedInAsManager.setVisible(true);
+        PanelCreateNewMember.setVisible(false);
+        buttonGroupActivityType.clearSelection();
+        buttonGroupPassiveActive.clearSelection();
+        this.RadioButtonNewMemberBackstroke.setSelected(false);
+        this.RadioButtonNewMemberBreaststroke.setSelected(false);
+        this.RadioButtonNewMemberButterfly.setSelected(false);
+        this.RadioButtonNewMemberCrawl.setSelected(false);
+        this.RadioButtonNewMemberBackstroke.setEnabled(false);
+        this.RadioButtonNewMemberBreaststroke.setEnabled(false);
+        this.RadioButtonNewMemberButterfly.setEnabled(false);
+        this.RadioButtonNewMemberCrawl.setEnabled(false);
+        this.RadioButtonNewMemberBasic.setEnabled(false);
+        this.RadioButtonNewMemberCompetitive.setEnabled(false);
+        this.TextFieldNewMemberName.setText("Enter name here");
+        this.TextFieldNewMemberBirthYear.setText("Enter year here");
+    }//GEN-LAST:event_ButtonCancelCreateNewMemberActionPerformed
+
+    private void ButtonNewMemberCreateMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonNewMemberCreateMemberActionPerformed
+        /*
+        Pre-creating values used in the actual creation of the new member
+        */
+        JFrame frame = new JFrame("Failmessage");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        String name = "";
+        Year birthyear = Year.of(0000);
+        MembershipType membershipType = MembershipType.PASSIVE;
+        ActivityType activityType = ActivityType.BASIC;
+        ArrayList <DisciplineType> disciplineList = new ArrayList();
+        /*
+        Changing values to the actual values chosen by the user
+        */
+        try
+        {
+            birthyear = Year.parse(this.TextFieldNewMemberBirthYear.getText());
+        }
+        catch (DateTimeException dx)
+        {
+            System.out.println("Invalid value for birthyear");
+            this.TextFieldNewMemberBirthYear.setText("! Enter valid year !");
+        }
+        try
+        {
+            name = this.TextFieldNewMemberName.getText();
+        }
+        catch (IllegalArgumentException ex)
+        {
+            System.out.println("Invalid value for name");
+            this.TextFieldNewMemberName.setText("Invalid name");
+        }
+        if (this.RadioButtonNewMemberActive.isEnabled() && this.RadioButtonNewMemberActive.isSelected())
+        {
+            membershipType = MembershipType.ACTIVE;
+        }
+        if (this.RadioButtonNewMemberCompetitive.isEnabled() && this.RadioButtonNewMemberCompetitive.isSelected())
+        {
+            activityType = ActivityType.COMPETITIVE;
+            if (this.RadioButtonNewMemberBackstroke.isSelected())
+            {
+                disciplineList.add(DisciplineType.BACKSTROKE);
+            }
+            if (this.RadioButtonNewMemberBreaststroke.isSelected())
+            {
+                disciplineList.add(DisciplineType.BREASTSTROKE);
+            }
+            if (this.RadioButtonNewMemberButterfly.isSelected())
+            {
+                disciplineList.add(DisciplineType.BUTTERFLY);
+            }
+            if (this.RadioButtonNewMemberCrawl.isSelected())
+            {
+                disciplineList.add(DisciplineType.CRAWL);
+            }
+        }
+        /*
+        Creating new member
+        */
+        //Member
+        if (membershipType == MembershipType.PASSIVE)
+        {
+//            try 
+//            {
+                c.createMember(name, birthyear, membershipType);
+//            } 
+//            catch (NullPointerException nx) 
+//            {
+//                System.out.println("Could not create member");
+//                JOptionPane.showMessageDialog(frame, "Could not create member");
+//            }
+        }
+        //MemberActive
+        if (membershipType == MembershipType.ACTIVE && activityType == ActivityType.BASIC)
+        {
+            try 
+            {
+                c.createMemberActive(name, birthyear, membershipType, activityType);
+            } 
+            catch (NullPointerException nx) 
+            {
+                System.out.println("Could not create member");
+                JOptionPane.showMessageDialog(frame, "Could not create member");
+            }
+        }
+        //MemberCompetitive
+        if (activityType == ActivityType.COMPETITIVE)
+        {
+            try 
+            {
+                c.createMemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
+            } 
+            catch (NullPointerException nx) 
+            {
+                System.out.println("Could not create member");
+                JOptionPane.showMessageDialog(frame, "Could not create member");
+            }
+        }
+    }//GEN-LAST:event_ButtonNewMemberCreateMemberActionPerformed
+
+    private void RadioButtonNewMemberActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNewMemberActiveActionPerformed
+        //Enabling Radio Buttons
+        this.RadioButtonNewMemberBasic.setEnabled(true);
+        this.RadioButtonNewMemberCompetitive.setEnabled(true);
+    }//GEN-LAST:event_RadioButtonNewMemberActiveActionPerformed
+
+    private void RadioButtonNewMemberPassiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNewMemberPassiveActionPerformed
+        RadioButtonNewMemberBasicActionPerformed(evt);
+        this.buttonGroupActivityType.clearSelection();
+        //Disabling Buttons
+        this.RadioButtonNewMemberBasic.setEnabled(false);
+        this.RadioButtonNewMemberCompetitive.setEnabled(false);
+    }//GEN-LAST:event_RadioButtonNewMemberPassiveActionPerformed
+
+    private void RadioButtonNewMemberCompetitiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNewMemberCompetitiveActionPerformed
+        //Enabling Radio Buttons
+        this.RadioButtonNewMemberBackstroke.setEnabled(true);
+        this.RadioButtonNewMemberBreaststroke.setEnabled(true);
+        this.RadioButtonNewMemberButterfly.setEnabled(true);
+        this.RadioButtonNewMemberCrawl.setEnabled(true);
+    }//GEN-LAST:event_RadioButtonNewMemberCompetitiveActionPerformed
+
+    private void RadioButtonNewMemberBasicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNewMemberBasicActionPerformed
+        this.RadioButtonNewMemberBackstroke.setSelected(false);
+        this.RadioButtonNewMemberBreaststroke.setSelected(false);
+        this.RadioButtonNewMemberButterfly.setSelected(false);
+        this.RadioButtonNewMemberCrawl.setSelected(false);
+        //Disabling Radio Buttons
+        this.RadioButtonNewMemberBackstroke.setEnabled(false);
+        this.RadioButtonNewMemberBreaststroke.setEnabled(false);
+        this.RadioButtonNewMemberButterfly.setEnabled(false);
+        this.RadioButtonNewMemberCrawl.setEnabled(false);
+    }//GEN-LAST:event_RadioButtonNewMemberBasicActionPerformed
+
+    private void ButtonLoginAsManager1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginAsManager1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonLoginAsManager1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,5 +860,55 @@ public class GUI extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonBackToMainMenu;
+    private javax.swing.JButton ButtonCancelCreateNewMember;
+    private javax.swing.JButton ButtonCreateNewMember;
+    private javax.swing.JButton ButtonDeleteMember;
+    private javax.swing.JButton ButtonEditMember;
+    private javax.swing.JButton ButtonLoginAsCashier;
+    private javax.swing.JButton ButtonLoginAsCashier1;
+    private javax.swing.JButton ButtonLoginAsManager;
+    private javax.swing.JButton ButtonLoginAsManager1;
+    private javax.swing.JButton ButtonLoginAsTrainer;
+    private javax.swing.JButton ButtonLoginAsTrainer1;
+    private javax.swing.JButton ButtonNewMemberCreateMember;
+    private javax.swing.JButton ButtonViewMembers;
+    private java.awt.Label LabeManagerScreenHeader;
+    private javax.swing.JLabel LabeManagerScreenHome;
+    private javax.swing.JLabel LabelBirthYearFormat;
+    private java.awt.Label LabelCreateNewMemberHeader;
+    private javax.swing.JLabel LabelCreateNewMemberHome;
+    private java.awt.Label LabelCreateNewMemberLogAsManager;
+    private java.awt.Label LabelLoginScreenHeader;
+    private java.awt.Label LabelLoginScreenHeader1;
+    private javax.swing.JLabel LabelLoginScreenHome;
+    private javax.swing.JLabel LabelLoginScreenHome1;
+    private javax.swing.JLabel LabelNewMemberActivityType;
+    private javax.swing.JLabel LabelNewMemberBirthYear;
+    private javax.swing.JLabel LabelNewMemberDisciplineType;
+    private javax.swing.JLabel LabelNewMemberMembershipType;
+    private javax.swing.JLabel LabelNewMemberName;
+    private javax.swing.JPanel PaneCreateNewMemberHeader;
+    private javax.swing.JPanel PaneManagerScreenHeader;
+    private javax.swing.JPanel PanelCreateNewMember;
+    private javax.swing.JPanel PanelEditMember;
+    private javax.swing.JPanel PanelLoggedInAsManager;
+    private javax.swing.JPanel PanelLoginScreen;
+    private javax.swing.JPanel PanelLoginScreenHeader;
+    private javax.swing.JPanel PanelLoginScreenHeader1;
+    private javax.swing.JRadioButton RadioButtonNewMemberActive;
+    private javax.swing.JRadioButton RadioButtonNewMemberBackstroke;
+    private javax.swing.JRadioButton RadioButtonNewMemberBasic;
+    private javax.swing.JRadioButton RadioButtonNewMemberBreaststroke;
+    private javax.swing.JRadioButton RadioButtonNewMemberButterfly;
+    private javax.swing.JRadioButton RadioButtonNewMemberCompetitive;
+    private javax.swing.JRadioButton RadioButtonNewMemberCrawl;
+    private javax.swing.JRadioButton RadioButtonNewMemberPassive;
+    private javax.swing.JTextField TextFieldNewMemberBirthYear;
+    private javax.swing.JTextField TextFieldNewMemberName;
+    private javax.swing.ButtonGroup buttonGroupActivityType;
+    private javax.swing.ButtonGroup buttonGroupPassiveActive;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
 }

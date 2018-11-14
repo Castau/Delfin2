@@ -1,4 +1,4 @@
-package Delfinen.logic;
+package Delfinen.data;
 
 /**
  *

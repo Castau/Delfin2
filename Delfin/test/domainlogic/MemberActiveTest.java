@@ -1,8 +1,8 @@
 package domainlogic;
 
-import Delfinen.logic.ActivityType;
+import Delfinen.data.ActivityType;
 import Delfinen.logic.MemberActive;
-import Delfinen.logic.MembershipType;
+import Delfinen.data.MembershipType;
 import org.junit.Test;
 import java.time.Year;
 import static org.junit.Assert.*;
@@ -23,13 +23,13 @@ public class MemberActiveTest
     @Test
     public void testCreateMemberActive() //int id, String name, year birthyear, MembershipType membershipType, ActivityType activityType
     {
-        MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.NORMAL); 
+        MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.BASIC); 
         assertNotNull(m);
         assertEquals(1, m.getId());
         assertEquals("Rúni", m.getName());
         assertEquals(Year.of(1994), m.getBirthyear());
         assertEquals(MembershipType.ACTIVE, m.getMembershipType());
-        assertEquals(ActivityType.NORMAL, m.getActivityType());
+        assertEquals(ActivityType.BASIC, m.getActivityType());
     }
     
     @Test (expected = RuntimeException.class)
