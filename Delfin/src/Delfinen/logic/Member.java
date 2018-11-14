@@ -12,11 +12,12 @@ import java.util.Objects;
 public class Member
 {
 
-    private static int id = 0;
+    private static int idCounter = 1;
+    private int id = idCounter;
     private String name;
     private Year birthyear;
     private MembershipType membershipType;
-    private ArrayList<Year> yearsPaid;
+    private ArrayList<Year> yearsPaid = new ArrayList();
 //    private ActivityType activityType;
 //    private DisciplineType disciplineType;
 
@@ -24,7 +25,7 @@ public class Member
     public Member(String name, Year birthyear, MembershipType membershipType)
 
     {
-        ++id;
+        ++idCounter;
         this.name = name;
         this.birthyear = birthyear;
         this.membershipType = membershipType;

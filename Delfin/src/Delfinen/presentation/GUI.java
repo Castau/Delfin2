@@ -45,6 +45,7 @@ public class GUI extends javax.swing.JFrame
 //        this.buttonGroupDisciplineType.add(RadioButtonNewMemberCrawl);
         PanelLoggedInAsManager.setVisible(false);
         PanelCreateNewMember.setVisible(false);
+        PanelEditMember.setVisible(false);
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
         this.RadioButtonNewMemberBackstroke.setEnabled(false);
