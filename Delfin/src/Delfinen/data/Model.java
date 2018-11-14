@@ -51,6 +51,33 @@ public class Model {
             }          
         }
     }
+    
+    public Member getMember(int memberID){
+        for (int i = 0; i < members.size(); i++) {
+            if(memberID == (members.get(i).getId())){
+                return members.get(i);            
+            }
+        }
+        return null;
+    }
+    
+    public Member getMemberActive(int memberID){
+        for (int i = 0; i < membersActive.size(); i++) {
+            if(memberID == (membersActive.get(i).getId())){
+                return membersActive.get(i);            
+            }
+        }
+        return null;
+    }
+    
+    public Member getMemberCompetitive(int memberID){
+        for (int i = 0; i < membersCompetitive.size(); i++) {
+            if(memberID == (membersCompetitive.get(i).getId())){
+                return membersCompetitive.get(i);            
+            }
+        }
+        return null;
+    }
 
     @Override
     public boolean equals(Object obj) {

@@ -11,107 +11,92 @@ import UI.UI;
 import java.time.Year;
 import java.util.ArrayList;
 import static Delfinen.data.ActivityType.BASIC;
+import java.io.IOException;
 
 /**
  *
  * @author runin, Asger, Camilla
  */
-public class Controller
-{
+public class Controller {
 
     private UI ui;
     private ModelController modelController;
 
-    public Controller()
-    {
+    public Controller() {
         modelController = new ModelController(this);
         ui = new UI();
     }
-    
-    public ModelController getModelController(){
+
+    public ModelController getModelController() {
         return modelController;
     }
-    
+
     //Manager
-    
-    public void createMember(String name, Year birthyear, MembershipType membershipType)
-    {
+    public void createMember(String name, Year birthyear, MembershipType membershipType) throws IOException {
         System.out.println("Contact?");
         Member m = new Member(name, birthyear, membershipType);
         System.out.println(m);
-    }
-    
-    public void createMemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
-    {
-        MemberActive m = new MemberActive(name, birthyear, membershipType, activityType);
-        System.out.println(m);
-    }
-    
-    public void createMemberCompetitive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType, ArrayList<DisciplineType> disciplineList)
-    {
-        MemberCompetitive m = new MemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
-        System.out.println(m);
-    }
-    
-    public void editMember()
-    {
-        
+        modelController.addMember(m);
     }
 
-    public void getMember(String Username)
-    {
-        
+    public void createMemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType) throws IOException {
+        MemberActive m = new MemberActive(name, birthyear, membershipType, activityType);
+        System.out.println(m);
+        modelController.addMember(m);
     }
-    
-    public void getMember(int id)
-    {
-        
+
+    public void createMemberCompetitive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType, ArrayList<DisciplineType> disciplineList) throws IOException {
+        MemberCompetitive m = new MemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
+        System.out.println(m);
+        modelController.addMember(m);
     }
-    
-    public void deleteMember()
-    {
-        
+
+    public void editMember() {
+//        modelController.editMember(member);
     }
-    
-    public void getAllMembers()
-    {
-        
-        
+
+    public void getMember(String Username) {
+
     }
-    
+
+    public void getMember(int id) {
+//        modelController.getMember(0);
+//        modelController.getMemberActive(0);
+//        modelController.getMemberCompetitive(0);
+    }
+
+    public void deleteMember() {
+
+    }
+
+    public void getAllMembers() {
+//        modelController.getAllMembersInBasicMemberFormat();
+    }
+
     //Cashier
-    
-    public void registerPayment()
-    {
-        
+    public void registerPayment() {
+
     }
-    
-    public void getArrears()
-    {
-        
+
+    public void getArrears() {
+
     }
-        
-    
+
     //Trainer
-    
-    public void getTopFive()
-    {
-        
+    public void getTopFive() {
+
     }
-    
-    public void createCompetition()
-    {
-        
+
+    public void createCompetition() {
+
     }
-    
-    public void editCompetition()
-    {
-        
+
+    public void editCompetition() {
+
     }
-    
-    public void deleteCompetition()
-    {
-        
+
+    public void deleteCompetition() {
+
     }
-    
+
 }

@@ -46,8 +46,21 @@ public class ModelController {
         dataFile.writeToFile(model, filePath);
     }
     
-    public void editMember(Member member){
-        
+    public void editMember(Member member) throws IOException{
+        model.editMember(member);
+        dataFile.writeToFile(model, filePath);
+    }
+    
+    public Member getMember(int memberID){
+        return model.getMember(memberID);
+    }
+    
+    public Member getMemberActive(int memberID){
+        return model.getMemberActive(memberID);
+    }
+    
+    public Member getMemberCompetitive(int memberID){
+        return model.getMemberCompetitive(memberID);
     }
     
     //returnerer liste af alle members uanset type, som almindeligt basis medlem

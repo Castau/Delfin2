@@ -77,7 +77,7 @@ public class Member
 
     public int getId()
     {
-        return idCounter;
+        return idMember;
     }
 
     public String getName()
