@@ -3,6 +3,7 @@ package Delfinen.logic;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ActivityType;
 import java.time.Year;
+import java.util.ArrayList;
 
 /**
  *
@@ -10,8 +11,8 @@ import java.time.Year;
  */
 public class MemberActive extends Member
 {
-    private ActivityType activityType;
 
+    private ActivityType activityType;
 
     public MemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
 
@@ -20,12 +21,30 @@ public class MemberActive extends Member
         this.activityType = activityType;
     }
 
-    public ActivityType getActivityType() {
+    public ActivityType getActivityType()
+    {
         return activityType;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MemberActive other = (MemberActive) obj;
+        if (this.activityType != other.activityType) {
+            return false;
+        }
+        return true;
     }
 
     
     
     
 }
-

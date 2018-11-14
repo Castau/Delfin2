@@ -5,8 +5,8 @@ import Delfinen.logic.MemberActive;
 import Delfinen.data.MembershipType;
 import org.junit.Test;
 import java.time.Year;
+import java.util.ArrayList;
 import static org.junit.Assert.*;
-
 
 /**
  *
@@ -14,11 +14,14 @@ import static org.junit.Assert.*;
  */
 public class MemberActiveTest
 {
-    //Arrange
-    //Act
-    //Assert
 
-    
+    ArrayList<Year> yearsPaid;
+
+    public MemberActiveTest()
+    {
+        yearsPaid = new ArrayList();
+        yearsPaid.add(Year.of(2016));
+    }
 
     @Test
     public void testCreateMemberActive() //int id, String name, year birthyear, MembershipType membershipType, ActivityType activityType
@@ -35,6 +38,6 @@ public class MemberActiveTest
     @Test (expected = RuntimeException.class)
    public void negativeTestCreateMember()
    {
-        MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVUS);
+        //MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVUS);
    }
 }
