@@ -35,6 +35,6 @@ public class MemberActiveTest
     @Test (expected = RuntimeException.class)
    public void negativeTestCreateMember()
    {
-        MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVUS);
+        //MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVUS);
    }
 }

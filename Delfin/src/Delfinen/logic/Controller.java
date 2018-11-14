@@ -1,5 +1,6 @@
 package Delfinen.logic;
 
+import Delfinen.data.ModelController;
 import UI.UI;
 
 /**
@@ -10,9 +11,11 @@ public class Controller
 {
 
     private UI ui;
+    private ModelController modelController;
 
     public Controller()
     {
+        modelController = new ModelController(this);
         ui = new UI();
     }
     //Manager

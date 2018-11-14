@@ -22,6 +22,24 @@ public class MemberActive extends Member
         return activityType;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MemberActive other = (MemberActive) obj;
+        if (this.activityType != other.activityType) {
+            return false;
+        }
+        return true;
+    }
+
     
     
     

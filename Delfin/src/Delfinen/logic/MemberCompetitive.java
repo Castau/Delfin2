@@ -2,6 +2,7 @@ package Delfinen.logic;
 
 import java.time.Year;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -22,6 +23,24 @@ public class MemberCompetitive extends MemberActive
 
     public ArrayList<DisciplineType> getDisciplineTypes() {
         return disciplineTypes;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final MemberCompetitive other = (MemberCompetitive) obj;
+        if (!Objects.equals(this.disciplineTypes, other.disciplineTypes)) {
+            return false;
+        }
+        return true;
     }
     
 }

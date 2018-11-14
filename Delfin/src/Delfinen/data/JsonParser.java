@@ -8,6 +8,7 @@ import com.google.gson.Gson;
  */
 public class JsonParser {
 
+    //BLIVER PT IKKE BRUGT, SKAL FORMENTLIG SLETTES - VENT TIL VI ER VED VEJS ENDE OG VED MED SIKKERHED OM VI SKAL BRUGE DEN
     private Gson gson;
 
     public JsonParser() {
