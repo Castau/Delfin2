@@ -1,6 +1,7 @@
 package Delfinen.logic;
 
 import java.time.Year;
+import java.util.ArrayList;
 
 /**
  *
@@ -8,22 +9,18 @@ import java.time.Year;
  */
 public class MemberActive extends Member
 {
+
     private ActivityType activityType;
 
-
-    public MemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
+    public MemberActive(String name, Year birthyear, MembershipType membershipType, ArrayList yearsPaid, ActivityType activityType)
 
     {
-        super(name, birthyear, membershipType);
+        super(name, birthyear, membershipType, yearsPaid);
         this.activityType = activityType;
     }
 
-    public ActivityType getActivityType() {
+    public ActivityType getActivityType()
+    {
         return activityType;
     }
-
-    
-    
-    
 }
-
