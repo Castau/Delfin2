@@ -1,11 +1,8 @@
 package domainlogic;
 
+
 import Delfinen.data.ActivityType;
 import Delfinen.data.DisciplineType;
-import Delfinen.logic.Member;
-import Delfinen.data.ActivityType;
-import Delfinen.data.DisciplineType;
-import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
 import Delfinen.data.MembershipType;
 import java.time.Year;

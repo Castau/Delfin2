@@ -11,13 +11,15 @@ import java.time.Year;
 public class Subscription
 {
 
+    private Controller controller;
     private ArrayList arrears;
    // private ArrayList<Member> memberArrears;
    // private ArrayList<MemberActive> memberActiveArrears;
    // private ArrayList<MemberCompetitive> MemberCompetitiveArrears;
 
-    public Subscription()
+    public Subscription(Controller controller)
     {
+        this.controller = controller;
         arrears = new ArrayList();
         // memberArrears = new ArrayList();
         //memberActiveArrears = new ArrayList();
@@ -30,6 +32,7 @@ public class Subscription
 //kontingent skal kende (printe?) members navn id og yearspaidliste
     public ArrayList addMembers(ArrayList<Member> Members)
     {
+        
         ArrayList nonPayee = new ArrayList();
         for (int i = 0; i < Members.size(); i++)
         {

@@ -785,6 +785,7 @@ public class GUI extends javax.swing.JFrame
 
     private void RadioButtonNewMemberPassiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNewMemberPassiveActionPerformed
         RadioButtonNewMemberBasicActionPerformed(evt);
+        //Clearing selections
         this.buttonGroupActivityType.clearSelection();
         //Disabling Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
@@ -800,6 +801,7 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_RadioButtonNewMemberCompetitiveActionPerformed
 
     private void RadioButtonNewMemberBasicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNewMemberBasicActionPerformed
+        //Clearing selections
         this.RadioButtonNewMemberBackstroke.setSelected(false);
         this.RadioButtonNewMemberBreaststroke.setSelected(false);
         this.RadioButtonNewMemberButterfly.setSelected(false);

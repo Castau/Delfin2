@@ -1,4 +1,3 @@
-
 package domaindata;
 
 import Delfinen.data.DataAccessorFile;
@@ -9,13 +8,12 @@ import Delfinen.logic.Member;
 import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
 import Delfinen.data.MembershipType;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.time.Year;
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -23,14 +21,15 @@ import static org.junit.Assert.*;
  * @author Camilla
  */
 public class DataAccessorTest {
+
     private Model model;
     private DataAccessorFile data;
     private String filePath = "";
-    
+
     public DataAccessorTest() {
         data = new DataAccessorFile();
     }
-    
+
     @Before
     public void setUp() {
         model = new Model();
@@ -48,21 +47,29 @@ public class DataAccessorTest {
         model.addMember(m3);
         model.addMember(m4);
         model.addMember(m5);
-        model.addMember(m6);   
+        model.addMember(m6);
     }
-    
+
     @Test
-    public void testModelToFile() throws IOException{
+    public void testModelToFile() throws IOException {
+        String out = "";
+        String exp = "{\"members\":[{\"idMember\":1,\"name\":\"Hans\",\"birthyear\":{\"year\":1902},\"membershipType\":\"PASSIVE\",\"yearsPaid\":[{\"year\":2018}]},{\"idMember\":2,\"name\":\"Karl\",\"birthyear\":{\"year\":2001},\"membershipType\":\"PASSIVE\",\"yearsPaid\":[{\"year\":2018}]}],\"membersActive\":[{\"activityType\":\"BASIC\",\"idMember\":3,\"name\":\"Signe\",\"birthyear\":{\"year\":1996},\"membershipType\":\"ACTIVE\",\"yearsPaid\":[{\"year\":2018}]},{\"activityType\":\"BASIC\",\"idMember\":4,\"name\":\"Otto\",\"birthyear\":{\"year\":1997},\"membershipType\":\"ACTIVE\",\"yearsPaid\":[{\"year\":2018}]}],\"membersCompetitive\":[{\"disciplineTypes\":[\"CRAWL\",\"BACKSTROKE\"],\"activityType\":\"COMPETITIVE\",\"idMember\":5,\"name\":\"Arne\",\"birthyear\":{\"year\":1999},\"membershipType\":\"ACTIVE\",\"yearsPaid\":[{\"year\":2018}]},{\"disciplineTypes\":[\"CRAWL\",\"BACKSTROKE\"],\"activityType\":\"COMPETITIVE\",\"idMember\":6,\"name\":\"Lily\",\"birthyear\":{\"year\":2002},\"membershipType\":\"ACTIVE\",\"yearsPaid\":[{\"year\":2018}]}]}";
         data.writeToFile(model, filePath);
-        
+
+        FileReader in = new FileReader("Delfin.json");
+        BufferedReader br = new BufferedReader(in);
+
+        String line;
+        while ((line = br.readLine()) != null) {
+            out = out + line;
+        }
+        in.close();
+        assertEquals(exp, out);
     }
-    
+
     @Test
-    public void testFileToModel() throws Exception{
+    public void testFileToModel() throws Exception {
         assertEquals(model, data.readFile(filePath));
     }
-
-
-
 
 }
