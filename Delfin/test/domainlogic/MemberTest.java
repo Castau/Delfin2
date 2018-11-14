@@ -3,6 +3,7 @@ package domainlogic;
 import Delfinen.logic.Member;
 import static Delfinen.logic.MembershipType.PASSIVE;
 import java.time.Year;
+import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -12,15 +13,19 @@ import static org.junit.Assert.*;
  */
 public class MemberTest
 {
-    //Arrange
-    //Act
-    //Assert
+    ArrayList<Year> yearsPaid;
+    
+    public MemberTest()
+    {
+        yearsPaid = new ArrayList();
+        yearsPaid.add(Year.of(2016));
+    }
     
    @Test
-   public void testCreateMember() //Usually testCreatePassiveSeniorMember
+   public void testCreateMember() 
    {
         //Arrange data + act on constructor
-        Member m = new Member("Rúni", Year.of(1994), PASSIVE); 
+        Member m = new Member("Rúni", Year.of(1994), PASSIVE, yearsPaid); 
         //Assert
         assertNotNull(m);
         assertEquals(1, m.getId()); //First member's ID will be == 1, second == 2 etc.
@@ -33,7 +38,7 @@ public class MemberTest
    public void testSecondCreateMember() //Usually testCreatePassiveSeniorMember
    {
         //Arrange data + act on constructor
-        Member m = new Member("Vaskebjørn", Year.of(2016), PASSIVE);
+        Member m = new Member("Vaskebjørn", Year.of(2016), PASSIVE, yearsPaid);
         //Assert
         assertNotNull(m);
         assertEquals(2, m.getId()); //First member's ID will be == 1, second == 2 etc.
