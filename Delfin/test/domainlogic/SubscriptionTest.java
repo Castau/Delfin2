@@ -7,7 +7,6 @@ import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
 import Delfinen.data.MembershipType;
 import static Delfinen.data.MembershipType.PASSIVE;
-import Delfinen.logic.Subscription;
 import java.time.Year;
 import java.util.ArrayList;
 import org.junit.Test;
@@ -56,8 +55,8 @@ public class SubscriptionTest
         System.out.println("addMembers");
         //a.registerPayment(Year.of(2018));
         
-        Subscription instance = new Subscription();
-        System.out.println(instance.addMembers(Members));
+        //Subscription instance = new Subscription();
+        //System.out.println(instance.addMembers(Members));
     }
 
     @Test
@@ -88,12 +87,12 @@ public class SubscriptionTest
         a.registerPayment(Year.of(2017));
         b.registerPayment(Year.of(2017));
         c.registerPayment(Year.of(2017));
-        Subscription sub = new Subscription();
+        //Subscription sub = new Subscription();
 
         ArrayList expResult = null;
-        ArrayList result = sub.calculateArrears(Members);
+        //ArrayList result = sub.calculateArrears(Members);
 
-        assertEquals(expResult, result);
+        //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -107,12 +106,12 @@ public class SubscriptionTest
         c.registerPayment(Year.of(2017));
         a.registerPayment(Year.of(2018));
         c.registerPayment(Year.of(2018));
-        Subscription sub = new Subscription();
+        //Subscription sub = new Subscription();
 
         ArrayList expResult = null;
-        ArrayList result = sub.calculateArrears(Members);
+        //ArrayList result = sub.calculateArrears(Members);
 
-        assertEquals(expResult, result);
+        //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

@@ -1,16 +1,12 @@
 package Delfinen.logic;
 
 import Delfinen.data.ActivityType;
-import static Delfinen.data.ActivityType.COMPETITIVE;
 import Delfinen.data.DisciplineType;
 import Delfinen.data.MembershipType;
-import static Delfinen.data.MembershipType.ACTIVE;
-import static Delfinen.data.MembershipType.PASSIVE;
 import Delfinen.data.ModelController;
 import UI.UI;
 import java.time.Year;
 import java.util.ArrayList;
-import static Delfinen.data.ActivityType.BASIC;
 import java.io.IOException;
 
 /**
@@ -53,9 +49,14 @@ public class Controller {
 
     public void editMember() {
 //        modelController.editMember(member);
+//        modelController.editMemberActive(member);
+//        modelController.editMemberCompetitive(member);
     }
 
     public void getMember(String Username) {
+//        modelController.getMember(Username);
+//        modelController.getMemberActive(Username);
+//        modelController.getMemberCompetitive(Username);
 
     }
 
@@ -65,7 +66,8 @@ public class Controller {
 //        modelController.getMemberCompetitive(0);
     }
 
-    public void deleteMember() {
+    public void deleteMember(int MemberID) {
+//        modelController.deleteMember(MemberID);
 
     }
 
