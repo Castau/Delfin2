@@ -4,7 +4,6 @@ import Delfinen.data.ActivityType;
 import Delfinen.data.DisciplineType;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ModelController;
-import UI.UI;
 import java.time.Year;
 import java.util.ArrayList;
 import java.io.IOException;
@@ -13,17 +12,20 @@ import java.io.IOException;
  *
  * @author runin, Asger, Camilla
  */
-public class Controller {
+public class Controller
+{
 
-    private UI ui;
     private ModelController modelController;
+    private Subscription subscription;
 
-    public Controller() {
+    public Controller()
+    {
         modelController = new ModelController(this);
-        ui = new UI();
+        subscription = new Subscription(this);
     }
 
-    public ModelController getModelController() {
+    public ModelController getModelController()
+    {
         return modelController;
     }
 
@@ -36,8 +38,7 @@ public class Controller {
         try
         {
             modelController.addMember(m);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -50,8 +51,7 @@ public class Controller {
         try
         {
             modelController.addMember(m);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -64,27 +64,29 @@ public class Controller {
         try
         {
             modelController.addMember(m);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
     }
 
-    public void editMember() {
+    public void editMember()
+    {
 //        modelController.editMember(member);
 //        modelController.editMemberActive(member);
 //        modelController.editMemberCompetitive(member);
     }
 
-    public void getMember(String Username) {
+    public void getMember(String Username)
+    {
 //        modelController.getMember(Username);
 //        modelController.getMemberActive(Username);
 //        modelController.getMemberCompetitive(Username);
 
     }
 
-    public Member getMember(int id) {
+    public Member getMember(int id)
+    {
         if (modelController.getMember(id) != null)
         {
             return modelController.getMember(id);
@@ -96,40 +98,53 @@ public class Controller {
         return modelController.getMemberCompetitive(id);
     }
 
-    public void deleteMember(int MemberID) {
+    public void deleteMember(int MemberID)
+    {
 //        modelController.deleteMember(MemberID);
 
     }
 
-
-    public ArrayList<Member> getAllMembers() {
-       return modelController.getAllMembersInBasicMemberFormat();
+    public ArrayList<Member> getAllMembers()
+    {
+        return modelController.getAllMembersInBasicMemberFormat();
 
     }
 
     //Cashier
-    public void registerPayment() {
-        //Tied to member
+    public void registerPayment(int memberID, Year year)
+    {
+        getMember(memberID).registerPayment(year);
     }
 
-    public void getArrears() {
+    public void revokePayment(int memberID, Year year)
+    {
+        getMember(memberID).revokePayment(year);
 
+    }
+
+    public ArrayList getArrears()
+    {
+        return subscription.calculateArrears(getAllMembers());
     }
 
     //Trainer
-    public void getTopFive() {
+    public void getTopFive()
+    {
 
     }
 
-    public void createCompetition() {
+    public void createCompetition()
+    {
 
     }
 
-    public void editCompetition() {
+    public void editCompetition()
+    {
 
     }
 
-    public void deleteCompetition() {
+    public void deleteCompetition()
+    {
 
     }
 
