@@ -89,7 +89,8 @@ public class ModelController {
     }
     
     public ArrayList<Member> getAllMembersInBasicMemberFormat(){
-        ArrayList<Member> allMembers = model.getAllMembers();
+        ArrayList<Member> allMembers = new ArrayList();
+        allMembers.addAll(model.getAllMembers());
         allMembers.addAll(model.getAllMembersActive());
         allMembers.addAll(model.getAllMembersCompetitive());
         return allMembers;
