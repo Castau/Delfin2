@@ -72,23 +72,26 @@ public class Controller
         }
     }
 
-    public Member createTempMember(String name, Year birthyear, MembershipType membershipType)
+    public Member createTempMember(int id, String name, Year birthyear, MembershipType membershipType)
     {
         Member m = new Member(name, birthyear, membershipType);
+        m.setIdMember(id);
         System.out.println(m);
         return m;
     }
 
-    public MemberActive createTempMemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
+    public MemberActive createTempMemberActive(int id, String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
     {
         MemberActive m = new MemberActive(name, birthyear, membershipType, activityType);
+        m.setIdMember(id);
         System.out.println(m);
         return m;
     }
 
-    public MemberCompetitive createTempMemberCompetitive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType, ArrayList<DisciplineType> disciplineList)
+    public MemberCompetitive createTempMemberCompetitive(int id, String name, Year birthyear, MembershipType membershipType, ActivityType activityType, ArrayList<DisciplineType> disciplineList)
     {
         MemberCompetitive m = new MemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
+        m.setIdMember(id);
         System.out.println(m);
         return m;
     }
