@@ -39,39 +39,33 @@ public class Member
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (obj == null)
-        {
+        if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass())
-        {
+        if (getClass() != obj.getClass()) {
             return false;
         }
         final Member other = (Member) obj;
-        if (!Objects.equals(this.name, other.name))
-        {
+        if (this.idMember != other.idMember) {
             return false;
         }
-        if (!Objects.equals(this.birthyear, other.birthyear))
-        {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (this.membershipType != other.membershipType)
-        {
+        if (!Objects.equals(this.birthyear, other.birthyear)) {
             return false;
         }
-        if (!Objects.equals(this.yearsPaid, other.yearsPaid))
-        {
+        if (this.membershipType != other.membershipType) {
             return false;
         }
         return true;
     }
+
+    
 
     public int getId()
     {

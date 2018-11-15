@@ -18,10 +18,10 @@ public class Model {
     private int IdCounter;
     
     public Model() {
-         members = new ArrayList();
-         membersActive = new ArrayList();
-         membersCompetitive = new ArrayList();
-         IdCounter = 1;
+        members = new ArrayList();
+        membersActive = new ArrayList();
+        membersCompetitive = new ArrayList();
+        IdCounter = 1;
 
     }
 

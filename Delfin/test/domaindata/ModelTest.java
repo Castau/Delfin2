@@ -75,8 +75,13 @@ public class ModelTest {
     
     @Test
     public void testGetAllMembers(){
-        
+        ArrayList<Member> testMembers = new ArrayList();
         model.addMember(m1);
+        model.addMember(m2);
+        
+        testMembers.add(m1);
+        testMembers.add(m2);
+        assertEquals(testMembers,model.getAllMembers());
         
         
     }
