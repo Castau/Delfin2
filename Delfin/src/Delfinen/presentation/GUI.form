@@ -56,7 +56,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsManager" pref="810" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsManager" pref="820" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -89,7 +89,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsManager" pref="436" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsManager" pref="437" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -132,7 +132,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
               </Group>
-              <Component id="PanelLoginScreenHeader" alignment="0" pref="830" max="32767" attributes="0"/>
+              <Component id="PanelLoginScreenHeader" alignment="0" pref="840" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -479,7 +479,7 @@
                   <Component id="ButtonNewMemberCreateMember" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
-              <Component id="PanelCreateNewMemberHeader" alignment="0" pref="810" max="32767" attributes="0"/>
+              <Component id="PanelCreateNewMemberHeader" alignment="0" pref="820" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -775,7 +775,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelEditMemberHeaderChoose" alignment="0" pref="810" max="32767" attributes="0"/>
+              <Component id="PanelEditMemberHeaderChoose" alignment="0" pref="820" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -960,12 +960,10 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                          <Component id="TextFieldEditMemberBirthYear" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                                          <Component id="RadioButtonEditMemberBasic" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="RadioButtonEditMemberCompetitive" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="TextFieldEditMemberName" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="TextFieldEditMemberBirthYear" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                                      <Component id="RadioButtonEditMemberBasic" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="RadioButtonEditMemberCompetitive" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TextFieldEditMemberName" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="RadioButtonEditMemberActive" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -994,7 +992,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="ButtonCancelEditMember" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="ButtonEditMemberEditChosenMember" min="-2" max="-2" attributes="0"/>
+                          <Component id="ButtonEditMemberConfirmEditChosenMember" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -1033,7 +1031,7 @@
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="ButtonCancelEditMember" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ButtonEditMemberEditChosenMember" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ButtonEditMemberConfirmEditChosenMember" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -1273,7 +1271,7 @@
             <Property name="text" type="java.lang.String" value="Breaststroke"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonEditMemberEditChosenMember">
+        <Component class="javax.swing.JButton" name="ButtonEditMemberConfirmEditChosenMember">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Iskoola Pota" size="14" style="0"/>
@@ -1281,7 +1279,7 @@
             <Property name="text" type="java.lang.String" value="Confirm edit"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonEditMemberEditChosenMemberActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonEditMemberConfirmEditChosenMemberActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

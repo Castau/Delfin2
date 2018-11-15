@@ -156,7 +156,7 @@ public class GUI extends javax.swing.JFrame
         RadioButtonEditMemberCrawl = new javax.swing.JRadioButton();
         RadioButtonEditMemberBackstroke = new javax.swing.JRadioButton();
         RadioButtonEditMemberBreaststroke = new javax.swing.JRadioButton();
-        ButtonEditMemberEditChosenMember = new javax.swing.JButton();
+        ButtonEditMemberConfirmEditChosenMember = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -229,7 +229,7 @@ public class GUI extends javax.swing.JFrame
                     .addComponent(ButtonLoginAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonLoginAsManager))
                 .addGap(335, 335, 335))
-            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
         );
         PanelLoginScreenLayout.setVerticalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -521,7 +521,7 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonNewMemberCreateMember)
                 .addGap(18, 18, 18))
-            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
+            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
         );
         PanelCreateNewMemberLayout.setVerticalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -643,7 +643,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setLayout(PanelEditMemberChooseMemberLayout);
         PanelEditMemberChooseMemberLayout.setHorizontalGroup(
             PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
             .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -784,11 +784,11 @@ public class GUI extends javax.swing.JFrame
 
         RadioButtonEditMemberBreaststroke.setText("Breaststroke");
 
-        ButtonEditMemberEditChosenMember.setFont(new java.awt.Font("Iskoola Pota", 0, 14)); // NOI18N
-        ButtonEditMemberEditChosenMember.setText("Confirm edit");
-        ButtonEditMemberEditChosenMember.addActionListener(new java.awt.event.ActionListener() {
+        ButtonEditMemberConfirmEditChosenMember.setFont(new java.awt.Font("Iskoola Pota", 0, 14)); // NOI18N
+        ButtonEditMemberConfirmEditChosenMember.setText("Confirm edit");
+        ButtonEditMemberConfirmEditChosenMember.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonEditMemberEditChosenMemberActionPerformed(evt);
+                ButtonEditMemberConfirmEditChosenMemberActionPerformed(evt);
             }
         });
 
@@ -811,11 +811,10 @@ public class GUI extends javax.swing.JFrame
                             .addGroup(PanelEditMemberLayout.createSequentialGroup()
                                 .addGap(51, 51, 51)
                                 .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TextFieldEditMemberBirthYear, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(RadioButtonEditMemberBasic)
-                                        .addComponent(RadioButtonEditMemberCompetitive)
-                                        .addComponent(TextFieldEditMemberName, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TextFieldEditMemberBirthYear, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(RadioButtonEditMemberBasic)
+                                    .addComponent(RadioButtonEditMemberCompetitive)
+                                    .addComponent(TextFieldEditMemberName, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(PanelEditMemberLayout.createSequentialGroup()
                                         .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(RadioButtonEditMemberActive)
@@ -836,7 +835,7 @@ public class GUI extends javax.swing.JFrame
                     .addGroup(PanelEditMemberLayout.createSequentialGroup()
                         .addComponent(ButtonCancelEditMember)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtonEditMemberEditChosenMember)))
+                        .addComponent(ButtonEditMemberConfirmEditChosenMember)))
                 .addContainerGap())
         );
         PanelEditMemberLayout.setVerticalGroup(
@@ -866,7 +865,7 @@ public class GUI extends javax.swing.JFrame
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ButtonCancelEditMember)
-                            .addComponent(ButtonEditMemberEditChosenMember)))
+                            .addComponent(ButtonEditMemberConfirmEditChosenMember)))
                     .addGroup(PanelEditMemberLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -896,7 +895,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -920,7 +919,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -990,7 +989,7 @@ public class GUI extends javax.swing.JFrame
         /*
         Pre-creating values used in the actual creation of the new member
         */
-        JFrame frame = new JFrame("Failmessage");
+        JFrame frame = new JFrame("Message");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         String name = "";
         Year birthyear = null;
@@ -1018,7 +1017,7 @@ public class GUI extends javax.swing.JFrame
             System.out.println("Invalid value for name");
             this.TextFieldNewMemberName.setText("Invalid name");
         }
-        if (this.RadioButtonNewMemberActive.isEnabled() && this.RadioButtonNewMemberActive.isSelected())
+        if (this.RadioButtonNewMemberActive.isSelected())
         {
             membershipType = MembershipType.ACTIVE;
         }
@@ -1050,7 +1049,12 @@ public class GUI extends javax.swing.JFrame
         {
             try 
             {
+                if (birthyear == null || name == null)
+                {
+                    throw new NullPointerException();
+                }
                 c.createMember(name, birthyear, membershipType);
+                JOptionPane.showMessageDialog(frame, "Member created");
             } 
             catch (NullPointerException nx) 
             {
@@ -1063,7 +1067,12 @@ public class GUI extends javax.swing.JFrame
         {
             try 
             {
+                if (birthyear == null || name == null)
+                {
+                    throw new NullPointerException();
+                }
                 c.createMemberActive(name, birthyear, membershipType, activityType);
+                JOptionPane.showMessageDialog(frame, "Member created");
             } 
             catch (NullPointerException nx) 
             {
@@ -1076,7 +1085,12 @@ public class GUI extends javax.swing.JFrame
         {
             try 
             {
+                if (birthyear == null || name == null)
+                {
+                    throw new NullPointerException();
+                }
                 c.createMemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
+                JOptionPane.showMessageDialog(frame, "Member created");
             } 
             catch (NullPointerException nx) 
             {
@@ -1084,6 +1098,23 @@ public class GUI extends javax.swing.JFrame
                 JOptionPane.showMessageDialog(frame, "Could not create member");
             }
         }
+        //Clearing selection
+        buttonGroupCreateMemberActivityType.clearSelection();
+        buttonGroupCreateMemberPassiveActive.clearSelection();
+        this.RadioButtonNewMemberBackstroke.setSelected(false);
+        this.RadioButtonNewMemberBreaststroke.setSelected(false);
+        this.RadioButtonNewMemberButterfly.setSelected(false);
+        this.RadioButtonNewMemberCrawl.setSelected(false);
+        //Disabling Radio Buttons
+        this.RadioButtonNewMemberBackstroke.setEnabled(false);
+        this.RadioButtonNewMemberBreaststroke.setEnabled(false);
+        this.RadioButtonNewMemberButterfly.setEnabled(false);
+        this.RadioButtonNewMemberCrawl.setEnabled(false);
+        this.RadioButtonNewMemberBasic.setEnabled(false);
+        this.RadioButtonNewMemberCompetitive.setEnabled(false);
+        //Removing values from textfields
+        this.TextFieldNewMemberName.setText("Enter name here");
+        this.TextFieldNewMemberBirthYear.setText("Enter year here");
     }//GEN-LAST:event_ButtonNewMemberCreateMemberActionPerformed
 
     private void RadioButtonNewMemberActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNewMemberActiveActionPerformed
@@ -1135,7 +1166,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setVisible(true);
         PanelEditMemberHeaderChoose.setVisible(true);
         /*
-        THIS SHIT DOESN'T WORK!!!
+        THIS **** DOESN'T WORK!!!
         */
         ComboBoxChooseMember.removeAllItems();
         ArrayList<Member> members = c.getAllMembers();
@@ -1218,9 +1249,9 @@ public class GUI extends javax.swing.JFrame
         this.RadioButtonEditMemberCrawl.setEnabled(true);
     }//GEN-LAST:event_RadioButtonEditMemberCompetitiveActionPerformed
 
-    private void ButtonEditMemberEditChosenMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberEditChosenMemberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonEditMemberEditChosenMemberActionPerformed
+    private void ButtonEditMemberConfirmEditChosenMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberConfirmEditChosenMemberActionPerformed
+        
+    }//GEN-LAST:event_ButtonEditMemberConfirmEditChosenMemberActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1275,7 +1306,7 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonCreateNewMember;
     private javax.swing.JButton ButtonDeleteMember;
     private javax.swing.JButton ButtonEditMember;
-    private javax.swing.JButton ButtonEditMemberEditChosenMember;
+    private javax.swing.JButton ButtonEditMemberConfirmEditChosenMember;
     private javax.swing.JButton ButtonLoginAsCashier;
     private javax.swing.JButton ButtonLoginAsManager;
     private javax.swing.JButton ButtonLoginAsTrainer;
