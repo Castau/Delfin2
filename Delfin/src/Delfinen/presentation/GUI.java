@@ -29,7 +29,7 @@ import javax.swing.JOptionPane;
 public class GUI extends javax.swing.JFrame
 {
 
-    private Controller c = new Controller();
+    private Controller c;
     //private DataAccessorFile data;
     private String filePath = "C:\\Users\\Shevitar\\Documents";
     //The field below is only used as a temporary placeholder for the id of the that is chosen in the EditMember-screen
@@ -38,6 +38,7 @@ public class GUI extends javax.swing.JFrame
     public GUI()
     {
         initComponents();
+        c = new Controller();
         //Putting Radio Buttons into groups
         this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberActive);
         this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberPassive);
@@ -1168,7 +1169,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setVisible(true);
         PanelEditMemberHeaderChoose.setVisible(true);
         /*
-        THIS **** DOESN'T WORK!!!
+        Weird stuff is going on here
         */
         ComboBoxChooseMember.removeAllItems();
         ArrayList<Member> members = c.getAllMembers();
@@ -1183,26 +1184,38 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsManagerScreenHeader.setVisible(true);
         PanelEditMemberChooseMember.setVisible(false);
         PanelEditMemberHeaderChoose.setVisible(false);
-        
+        PanelEditMember.setVisible(false);
+        PanelEditMemberHeader.setVisible(false);
     }//GEN-LAST:event_ButtonCancelEditMemberChooseActionPerformed
 
     private void ButtonOKChooseMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberActionPerformed
-        PanelLoggedInAsManager.setVisible(false);
-        PanelLoggedInAsManagerScreenHeader.setVisible(false);
-        PanelEditMemberChooseMember.setVisible(false);
-        PanelEditMemberHeaderChoose.setVisible(false);
-        PanelEditMember.setVisible(true);
-        PanelEditMemberHeader.setVisible(true);
-        String StrMember = ComboBoxChooseMember.getSelectedItem().toString();
-        String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
-                         StrMember.indexOf(","));
-        idMember = 
-        Integer.parseInt(StrMemberSub.trim());
-        Member m = c.getMember(idMember);
-        this.TextFieldEditMemberName.setText(m.getName());
-        this.TextFieldEditMemberBirthYear.setText(m.getBirthyear().toString());
-        this.RadioButtonEditMemberPassive.setSelected(true);
-        //Needs more code
+        try
+        {
+            PanelLoggedInAsManager.setVisible(false);
+            PanelLoggedInAsManagerScreenHeader.setVisible(false);
+            PanelEditMemberChooseMember.setVisible(false);
+            PanelEditMemberHeaderChoose.setVisible(false);
+            PanelEditMember.setVisible(true);
+            PanelEditMemberHeader.setVisible(true);
+            String StrMember = ComboBoxChooseMember.getSelectedItem().toString();
+            String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
+                             StrMember.indexOf(","));
+            idMember = 
+            Integer.parseInt(StrMemberSub.trim());
+            Member m = c.getMember(idMember);
+            this.TextFieldEditMemberName.setText(m.getName());
+            this.TextFieldEditMemberBirthYear.setText(m.getBirthyear().toString());
+            this.RadioButtonEditMemberPassive.setSelected(true);
+            //Needs more code
+        }
+        catch (NullPointerException nx)
+        {
+            System.out.println("No member chosen");
+            JFrame frame = new JFrame("Message");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JOptionPane.showMessageDialog(frame, "No member chosen");
+            ButtonCancelEditMemberChooseActionPerformed(evt);
+        }
     }//GEN-LAST:event_ButtonOKChooseMemberActionPerformed
 
     

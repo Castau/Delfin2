@@ -34,7 +34,6 @@ public class Controller
     //Manager
     public void createMember(String name, Year birthyear, MembershipType membershipType)
     {
-        System.out.println("Contact?");
         Member m = new Member(name, birthyear, membershipType);
         System.out.println(m);
         try
