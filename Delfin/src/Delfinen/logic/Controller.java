@@ -4,7 +4,6 @@ import Delfinen.data.ActivityType;
 import Delfinen.data.DisciplineType;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ModelController;
-import UI.UI;
 import java.time.Year;
 import java.util.ArrayList;
 import java.io.IOException;
@@ -15,12 +14,10 @@ import java.io.IOException;
  */
 public class Controller {
 
-    private UI ui;
     private ModelController modelController;
 
     public Controller() {
         modelController = new ModelController(this);
-        ui = new UI();
     }
 
     public ModelController getModelController() {
@@ -71,10 +68,58 @@ public class Controller {
         }
     }
 
-    public void editMember() {
-//        modelController.editMember(member);
-//        modelController.editMemberActive(member);
-//        modelController.editMemberCompetitive(member);
+    public Member createTempMember(String name, Year birthyear, MembershipType membershipType)
+    {
+        Member m = new Member(name, birthyear, membershipType);
+        System.out.println(m);
+        return m;
+    }
+
+    public MemberActive createTempMemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
+    {
+        MemberActive m = new MemberActive(name, birthyear, membershipType, activityType);
+        System.out.println(m);
+        return m;
+    }
+
+    public MemberCompetitive createTempMemberCompetitive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType, ArrayList<DisciplineType> disciplineList)
+    {
+        MemberCompetitive m = new MemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
+        System.out.println(m);
+        return m;
+    }
+    
+    public void editMember(Member member) {
+        try
+        {
+            modelController.editMember(member);
+        }
+        catch (IOException i)
+        {
+            System.out.println("Unable to write to file using the given file path");
+        }
+    }
+    
+    public void editMember(MemberActive member) {
+        try
+        {
+        modelController.editMemberActive(member);
+        }
+        catch (IOException i)
+        {
+            System.out.println("Unable to write to file using the given file path");
+        }
+    }
+    
+    public void editMember(MemberCompetitive member) {
+        try
+        {
+            modelController.editMemberCompetitive(member);
+        }
+        catch (IOException i)
+        {
+            System.out.println("Unable to write to file using the given file path");
+        }
     }
 
     public void getMember(String Username) {

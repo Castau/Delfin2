@@ -6,14 +6,14 @@
 package Delfinen.presentation;
 
 import Delfinen.data.ActivityType;
-import static Delfinen.data.ActivityType.COMPETITIVE;
+//import static Delfinen.data.ActivityType.COMPETITIVE;
 //import Delfinen.data.DataAccessorFile;
 import Delfinen.data.MembershipType;
-import static Delfinen.data.MembershipType.ACTIVE;
-import static Delfinen.data.MembershipType.PASSIVE;
+//import static Delfinen.data.MembershipType.ACTIVE;
+//import static Delfinen.data.MembershipType.PASSIVE;
 import Delfinen.logic.Controller;
 import java.time.Year;
-import static Delfinen.data.ActivityType.BASIC;
+//import static Delfinen.data.ActivityType.BASIC;
 import Delfinen.data.DisciplineType;
 import Delfinen.logic.Member;
 //import java.io.IOException;
@@ -1250,7 +1250,135 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_RadioButtonEditMemberCompetitiveActionPerformed
 
     private void ButtonEditMemberConfirmEditChosenMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberConfirmEditChosenMemberActionPerformed
-        
+        /*
+        Pre-creating values used in the actual creation of the new member
+        */
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        String name = "";
+        Year birthyear = null;
+        MembershipType membershipType = MembershipType.PASSIVE;
+        ActivityType activityType = ActivityType.BASIC;
+        ArrayList <DisciplineType> disciplineList = new ArrayList();
+        /*
+        Changing values to the actual values chosen by the user
+        */
+        try
+        {
+            birthyear = Year.parse(this.TextFieldEditMemberBirthYear.getText());
+        }
+        catch (DateTimeException dx)
+        {
+            System.out.println("Invalid value for birthyear");
+            this.TextFieldEditMemberBirthYear.setText("! Enter valid year !");
+        }
+        try
+        {
+            name = this.TextFieldEditMemberName.getText();
+        }
+        catch (IllegalArgumentException ex)
+        {
+            System.out.println("Invalid value for name");
+            this.TextFieldEditMemberName.setText("Invalid name");
+        }
+        if (this.RadioButtonEditMemberActive.isSelected())
+        {
+            membershipType = MembershipType.ACTIVE;
+        }
+        if (this.RadioButtonEditMemberCompetitive.isEnabled() && this.RadioButtonEditMemberCompetitive.isSelected())
+        {
+            activityType = ActivityType.COMPETITIVE;
+            if (this.RadioButtonEditMemberBackstroke.isSelected())
+            {
+                disciplineList.add(DisciplineType.BACKSTROKE);
+            }
+            if (this.RadioButtonEditMemberBreaststroke.isSelected())
+            {
+                disciplineList.add(DisciplineType.BREASTSTROKE);
+            }
+            if (this.RadioButtonEditMemberButterfly.isSelected())
+            {
+                disciplineList.add(DisciplineType.BUTTERFLY);
+            }
+            if (this.RadioButtonEditMemberCrawl.isSelected())
+            {
+                disciplineList.add(DisciplineType.CRAWL);
+            }
+        }
+        /*
+        Editing member
+        */
+        //Member
+        if (membershipType == MembershipType.PASSIVE)
+        {
+            try 
+            {
+                if (birthyear == null || name == null)
+                {
+                    throw new NullPointerException();
+                }
+                c.editMember(c.createTempMember(name, birthyear, membershipType));
+                JOptionPane.showMessageDialog(frame, "Member has been edited");
+            } 
+            catch (NullPointerException nx) 
+            {
+                System.out.println("Could not edit member");
+                JOptionPane.showMessageDialog(frame, "Could not edit member");
+            }
+        }
+        //MemberActive
+        if (membershipType == MembershipType.ACTIVE && activityType == ActivityType.BASIC)
+        {
+            try 
+            {
+                if (birthyear == null || name == null)
+                {
+                    throw new NullPointerException();
+                }
+                c.editMember(c.createTempMemberActive(name, birthyear, membershipType, activityType));
+                JOptionPane.showMessageDialog(frame, "Member has been edited");
+            } 
+            catch (NullPointerException nx) 
+            {
+                System.out.println("Could not edit member");
+                JOptionPane.showMessageDialog(frame, "Could not edit member");
+            }
+        }
+        //MemberCompetitive
+        if (activityType == ActivityType.COMPETITIVE)
+        {
+            try 
+            {
+                if (birthyear == null || name == null)
+                {
+                    throw new NullPointerException();
+                }
+                c.editMember(c.createTempMemberCompetitive(name, birthyear, membershipType, activityType, disciplineList));
+                JOptionPane.showMessageDialog(frame, "Member has been edited");
+            } 
+            catch (NullPointerException nx) 
+            {
+                System.out.println("Could not edit member");
+                JOptionPane.showMessageDialog(frame, "Could not edit member");
+            }
+        }
+        //Clearing selection
+        buttonGroupCreateMemberActivityType.clearSelection();
+        buttonGroupCreateMemberPassiveActive.clearSelection();
+        this.RadioButtonNewMemberBackstroke.setSelected(false);
+        this.RadioButtonNewMemberBreaststroke.setSelected(false);
+        this.RadioButtonNewMemberButterfly.setSelected(false);
+        this.RadioButtonNewMemberCrawl.setSelected(false);
+        //Disabling Radio Buttons
+        this.RadioButtonNewMemberBackstroke.setEnabled(false);
+        this.RadioButtonNewMemberBreaststroke.setEnabled(false);
+        this.RadioButtonNewMemberButterfly.setEnabled(false);
+        this.RadioButtonNewMemberCrawl.setEnabled(false);
+        this.RadioButtonNewMemberBasic.setEnabled(false);
+        this.RadioButtonNewMemberCompetitive.setEnabled(false);
+        //Removing values from textfields
+        this.TextFieldNewMemberName.setText("Enter name here");
+        this.TextFieldNewMemberBirthYear.setText("Enter year here");
     }//GEN-LAST:event_ButtonEditMemberConfirmEditChosenMemberActionPerformed
     
     /**
