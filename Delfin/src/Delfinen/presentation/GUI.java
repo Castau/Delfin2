@@ -31,7 +31,7 @@ public class GUI extends javax.swing.JFrame
 
     private Controller c;
     //private DataAccessorFile data;
-    private String filePath = "C:\\Users\\Shevitar\\Documents";
+    private String filePath = "";
     //The field below is only used as a temporary placeholder for the id of the that is chosen in the EditMember-screen
     int idMember = 0;
     

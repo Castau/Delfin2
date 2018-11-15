@@ -11,23 +11,36 @@ import java.util.Objects;
  */
 public class Model {
 
+    private ArrayList<Member> members;
+    private ArrayList<MemberActive> membersActive;
+    private ArrayList<MemberCompetitive> membersCompetitive;
+    
+    private int IdCounter;
+    
     public Model() {
+         members = new ArrayList();
+         membersActive = new ArrayList();
+         membersCompetitive = new ArrayList();
+         IdCounter = 1;
 
     }
 
-    ArrayList<Member> members = new ArrayList();
-    ArrayList<MemberActive> membersActive = new ArrayList();
-    ArrayList<MemberCompetitive> membersCompetitive = new ArrayList();
 
     public void addMember(Member member) {
+        member.setIdMember(IdCounter);
+        IdCounter++;
         members.add(member);
     }
 
     public void addMember(MemberActive member) {
+        member.setIdMember(IdCounter);
+        IdCounter++;
         membersActive.add(member);
     }
 
     public void addMember(MemberCompetitive member) {
+        member.setIdMember(IdCounter);
+        IdCounter++;
         membersCompetitive.add(member);
     }
 

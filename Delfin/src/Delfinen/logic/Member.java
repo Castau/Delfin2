@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Member
 {
 
-    private static int idCounter = 0;
+    //private static int idCounter = 0;
     private int idMember;
     private String name;
     private Year birthyear;
@@ -25,8 +25,8 @@ public class Member
     public Member(String name, Year birthyear, MembershipType membershipType)
 
     {
-        ++idCounter;
-        idMember = idCounter;
+//        ++idCounter;
+//        idMember = idCounter;
         this.name = name;
         this.birthyear = birthyear;
         this.membershipType = membershipType;
