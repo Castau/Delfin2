@@ -151,8 +151,14 @@ public class Controller
 
     public void deleteMember(int MemberID)
     {
-//        modelController.deleteMember(MemberID);
-
+        try
+        {
+        modelController.deleteMember(MemberID);
+        }
+        catch (IOException ix)
+        {
+            System.out.println("Stuff didn't work");
+        }
     }
 
     public ArrayList<Member> getAllMembers()
