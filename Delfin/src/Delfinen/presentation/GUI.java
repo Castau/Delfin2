@@ -32,6 +32,8 @@ public class GUI extends javax.swing.JFrame
     private Controller c = new Controller();
     //private DataAccessorFile data;
     private String filePath = "C:\\Users\\Shevitar\\Documents";
+    //The field below is only used as a temporary placeholder for the id of the that is chosen in the EditMember-screen
+    int idMember = 0;
     
     public GUI()
     {
@@ -1194,7 +1196,7 @@ public class GUI extends javax.swing.JFrame
         String StrMember = ComboBoxChooseMember.getSelectedItem().toString();
         String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
                          StrMember.indexOf(","));
-        int idMember = 
+        idMember = 
         Integer.parseInt(StrMemberSub.trim());
         Member m = c.getMember(idMember);
         this.TextFieldEditMemberName.setText(m.getName());
@@ -1317,7 +1319,7 @@ public class GUI extends javax.swing.JFrame
                 {
                     throw new NullPointerException();
                 }
-                c.editMember(c.createTempMember(name, birthyear, membershipType));
+                c.editMember(c.createTempMember(idMember, name, birthyear, membershipType));
                 JOptionPane.showMessageDialog(frame, "Member has been edited");
             } 
             catch (NullPointerException nx) 
@@ -1335,7 +1337,7 @@ public class GUI extends javax.swing.JFrame
                 {
                     throw new NullPointerException();
                 }
-                c.editMember(c.createTempMemberActive(name, birthyear, membershipType, activityType));
+                c.editMember(c.createTempMemberActive(idMember, name, birthyear, membershipType, activityType));
                 JOptionPane.showMessageDialog(frame, "Member has been edited");
             } 
             catch (NullPointerException nx) 
@@ -1353,7 +1355,7 @@ public class GUI extends javax.swing.JFrame
                 {
                     throw new NullPointerException();
                 }
-                c.editMember(c.createTempMemberCompetitive(name, birthyear, membershipType, activityType, disciplineList));
+                c.editMember(c.createTempMemberCompetitive(idMember, name, birthyear, membershipType, activityType, disciplineList));
                 JOptionPane.showMessageDialog(frame, "Member has been edited");
             } 
             catch (NullPointerException nx) 
@@ -1363,22 +1365,23 @@ public class GUI extends javax.swing.JFrame
             }
         }
         //Clearing selection
-        buttonGroupCreateMemberActivityType.clearSelection();
-        buttonGroupCreateMemberPassiveActive.clearSelection();
-        this.RadioButtonNewMemberBackstroke.setSelected(false);
-        this.RadioButtonNewMemberBreaststroke.setSelected(false);
-        this.RadioButtonNewMemberButterfly.setSelected(false);
-        this.RadioButtonNewMemberCrawl.setSelected(false);
+        buttonGroupEditMemberActivityType.clearSelection();
+        buttonGroupEditMemberPassiveActive.clearSelection();
+        this.RadioButtonEditMemberBackstroke.setSelected(false);
+        this.RadioButtonEditMemberBreaststroke.setSelected(false);
+        this.RadioButtonEditMemberButterfly.setSelected(false);
+        this.RadioButtonEditMemberCrawl.setSelected(false);
         //Disabling Radio Buttons
-        this.RadioButtonNewMemberBackstroke.setEnabled(false);
-        this.RadioButtonNewMemberBreaststroke.setEnabled(false);
-        this.RadioButtonNewMemberButterfly.setEnabled(false);
-        this.RadioButtonNewMemberCrawl.setEnabled(false);
-        this.RadioButtonNewMemberBasic.setEnabled(false);
-        this.RadioButtonNewMemberCompetitive.setEnabled(false);
+        this.RadioButtonEditMemberBackstroke.setEnabled(false);
+        this.RadioButtonEditMemberBreaststroke.setEnabled(false);
+        this.RadioButtonEditMemberButterfly.setEnabled(false);
+        this.RadioButtonEditMemberCrawl.setEnabled(false);
+        this.RadioButtonEditMemberBasic.setEnabled(false);
+        this.RadioButtonEditMemberCompetitive.setEnabled(false);
         //Removing values from textfields
-        this.TextFieldNewMemberName.setText("Enter name here");
-        this.TextFieldNewMemberBirthYear.setText("Enter year here");
+        this.TextFieldEditMemberName.setText("Enter name here");
+        this.TextFieldEditMemberBirthYear.setText("Enter year here");
+        ButtonCancelEditMemberActionPerformed(evt);
     }//GEN-LAST:event_ButtonEditMemberConfirmEditChosenMemberActionPerformed
     
     /**
