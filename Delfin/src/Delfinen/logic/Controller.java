@@ -71,13 +71,13 @@ public class Controller {
 
     }
 
-    public void getAllMembers() {
-//        modelController.getAllMembersInBasicMemberFormat();
+    public ArrayList<Member> getAllMembers() {
+       return modelController.getAllMembersInBasicMemberFormat();
     }
 
     //Cashier
     public void registerPayment() {
-
+        //Tied to member
     }
 
     public void getArrears() {

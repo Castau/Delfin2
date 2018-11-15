@@ -7,6 +7,8 @@ import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
 import Delfinen.data.MembershipType;
 import static Delfinen.data.MembershipType.PASSIVE;
+import Delfinen.logic.Controller;
+import Delfinen.logic.Subscription;
 import java.time.Year;
 import java.util.ArrayList;
 import org.junit.Test;
@@ -19,21 +21,22 @@ import org.junit.Before;
  */
 public class SubscriptionTest
 {
-
+    private Controller controller;
     ArrayList yearsPaid;
     ArrayList disciplineList;
-    ArrayList<Member> Members = null;
+    ArrayList<Member> Members;
     private Member a; //String name, Year birthyear, MembershipType membershipType, ArrayList yearsPaid
     private MemberActive b; //String name, Year birthyear, MembershipType membershipType, ArrayList yearsPaid, ActivityType activityType
     private MemberCompetitive c; //String name, Year birthyear, MembershipType membershipType, ArrayList yearsPaid, ActivityType activityType, ArrayList<DisciplineType> disciplineList
 
     public SubscriptionTest()
     {
-        disciplineList = new ArrayList();
+        controller = new Controller();
         yearsPaid = new ArrayList();
+        disciplineList = new ArrayList();
+        Members = new ArrayList();
         disciplineList.add(DisciplineType.CRAWL);
         disciplineList.add(DisciplineType.BREASTSTROKE);
-
     }
 
     @Before
@@ -42,23 +45,20 @@ public class SubscriptionTest
         a = new Member("Rúni", Year.of(1994), PASSIVE);
         b = new MemberActive("Camilla", Year.of(1990), MembershipType.ACTIVE, ActivityType.BASIC);
         c = new MemberCompetitive("Asger", Year.of(1997), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
-        Members = new ArrayList<>();
         Members.add(a);
         Members.add(b);
         Members.add(c);
-
     }
 
-    @Test
-    public void testAddMembers()
-    {
-        System.out.println("addMembers");
-        //a.registerPayment(Year.of(2018));
-        
-        //Subscription instance = new Subscription();
-        //System.out.println(instance.addMembers(Members));
-    }
-
+//    @Test
+//    public void testAddMembers()
+//    {
+//        System.out.println("addMembers");
+//        //a.registerPayment(Year.of(2018));
+//        
+//        //Subscription instance = new Subscription();
+//        //System.out.println(instance.addMembers(Members));
+//    }
     @Test
     public void testPaymentMember()
     {
@@ -81,9 +81,29 @@ public class SubscriptionTest
     }
 
     @Test
+    public void testCalculateArrears()
+    {
+        
+        ArrayList expResult = new ArrayList();
+        System.out.println("calculateArrears1");
+        Subscription instance = new Subscription(controller);
+        expResult.add(a);
+        expResult.add(b);
+        expResult.add(c);
+        expResult = instance.calculateArrears();
+        
+        ArrayList result = instance.calculateArrears();
+        assertNotNull(expResult);
+        assertNotNull(result);
+        System.out.println(expResult + "\n" + result);
+        assertEquals(expResult, result);
+       
+    }
+    
+    @Test
     public void testCalculateArrearsNoPayment()
     {
-        System.out.println("calculateArrears");
+        System.out.println("calculateArrears2");
         a.registerPayment(Year.of(2017));
         b.registerPayment(Year.of(2017));
         c.registerPayment(Year.of(2017));
@@ -100,7 +120,7 @@ public class SubscriptionTest
     @Test
     public void testCalculateArrearsOnePayment()
     {
-        System.out.println("calculateArrears");
+        System.out.println("calculateArrears3");
         a.registerPayment(Year.of(2017));
         b.registerPayment(Year.of(2017));
         c.registerPayment(Year.of(2017));
