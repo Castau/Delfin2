@@ -139,19 +139,19 @@ public class Model {
 
     public void deleteMember(int memberID) {
         for (int i = 0; i < members.size(); i++) {
-            if (memberID == (members.get(i).getId())) {
+            if ((members.get(i).getId()) == memberID) {
                 members.remove(members.get(i));
                 return;
             }
         }
         for (int i = 0; i < membersActive.size(); i++) {
-            if (memberID == (membersActive.get(i).getId())) {
+            if ((membersActive.get(i).getId()) == memberID) {
                 membersActive.remove(membersActive.get(i));
                 return;
             }
         }
         for (int i = 0; i < membersCompetitive.size(); i++) {
-            if (memberID == (membersCompetitive.get(i).getId())) {
+            if ((membersCompetitive.get(i).getId()) == memberID) {
                 membersCompetitive.remove(membersCompetitive.get(i));
                 return;
             }
