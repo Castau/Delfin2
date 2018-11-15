@@ -15,6 +15,7 @@ import java.io.IOException;
 public class Controller
 {
 
+
     private ModelController modelController;
     private Subscription subscription;
 
@@ -22,6 +23,7 @@ public class Controller
     {
         modelController = new ModelController(this);
         subscription = new Subscription(this);
+
     }
 
     public ModelController getModelController()
