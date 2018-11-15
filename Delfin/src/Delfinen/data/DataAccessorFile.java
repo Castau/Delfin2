@@ -14,7 +14,6 @@ import java.io.FileWriter;
 import java.io.Writer;
 
 
-
 public class DataAccessorFile {
 
     private String FILENAME = "Delfin.json";

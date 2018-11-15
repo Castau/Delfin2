@@ -31,11 +31,12 @@ public class MemberActive extends Member
         return super.toString() + ", ActivityType: " + activityType;
     }
 
-    
-    
-    
+ 
     @Override
     public boolean equals(Object obj) {
+        if (!super.equals(obj)){
+            return false;
+        }
         if (this == obj) {
             return true;
         }
@@ -51,6 +52,11 @@ public class MemberActive extends Member
         }
         return true;
     }
+
+    
+    
+    
+    
 
     
     
