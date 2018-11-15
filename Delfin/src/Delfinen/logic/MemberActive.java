@@ -40,6 +40,9 @@ public class MemberActive extends Member
         if (this == obj) {
             return true;
         }
+        if (!super.equals(obj)){
+            return false;
+        }
         if (obj == null) {
             return false;
         }
