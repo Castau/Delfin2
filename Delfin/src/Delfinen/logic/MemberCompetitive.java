@@ -37,6 +37,9 @@ public class MemberCompetitive extends MemberActive
         if (obj == null) {
             return false;
         }
+        if (!super.equals(obj)){
+            return false;
+        }
         if (getClass() != obj.getClass()) {
             return false;
         }
