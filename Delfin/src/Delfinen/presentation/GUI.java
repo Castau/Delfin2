@@ -32,7 +32,7 @@ public class GUI extends javax.swing.JFrame
     private Controller c;
     //private DataAccessorFile data;
     private String filePath = "C:\\Users\\Shevitar\\Documents";
-    //The field below is only used as a temporary placeholder for the id of the that is chosen in the EditMember-screen
+    //The field below is only used as a temporary placeholder for the id of the member that is chosen in the EditMember-screen / DeleteMember-screen
     int idMember = 0;
     
     public GUI()
@@ -58,6 +58,8 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberHeaderChoose.setVisible(false);
         PanelEditMember.setVisible(false);
         PanelEditMemberHeader.setVisible(false);
+        PanelDeleteMember.setVisible(false);
+        PanelDeleteMemberHeader.setVisible(false);
         //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -135,8 +137,8 @@ public class GUI extends javax.swing.JFrame
         LabelEditMemberLogAsManagerChoose = new java.awt.Label();
         LabelEditMemberChooseMember = new javax.swing.JLabel();
         ButtonCancelEditMemberChoose = new javax.swing.JButton();
-        ButtonOKChooseMember = new javax.swing.JButton();
-        ComboBoxChooseMember = new javax.swing.JComboBox<>();
+        ButtonOKChooseMemberToEdit = new javax.swing.JButton();
+        ComboBoxChooseMemberToEdit = new javax.swing.JComboBox<>();
         PanelEditMember = new javax.swing.JPanel();
         PanelEditMemberHeader = new javax.swing.JPanel();
         LabelEditMemberHome = new javax.swing.JLabel();
@@ -160,6 +162,15 @@ public class GUI extends javax.swing.JFrame
         RadioButtonEditMemberBackstroke = new javax.swing.JRadioButton();
         RadioButtonEditMemberBreaststroke = new javax.swing.JRadioButton();
         ButtonEditMemberConfirmEditChosenMember = new javax.swing.JButton();
+        PanelDeleteMember = new javax.swing.JPanel();
+        PanelDeleteMemberHeader = new javax.swing.JPanel();
+        LabelDeleteMemberHome = new javax.swing.JLabel();
+        LabelDeleteMemberHeader = new java.awt.Label();
+        LabelDeleteMemberLogAsManager = new java.awt.Label();
+        LabelDeleteMemberChooseMember = new javax.swing.JLabel();
+        ButtonCancelDeleteMember = new javax.swing.JButton();
+        ButtonOKChooseMemberToDelete = new javax.swing.JButton();
+        ComboBoxChooseMemberToDelete = new javax.swing.JComboBox<>();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -302,6 +313,11 @@ public class GUI extends javax.swing.JFrame
         ButtonDeleteMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonDeleteMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Remove_User_Group_Man_Man_26px.png"))); // NOI18N
         ButtonDeleteMember.setText("Delete member ");
+        ButtonDeleteMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonDeleteMemberActionPerformed(evt);
+            }
+        });
 
         ButtonViewMembers.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonViewMembers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_User_Groups_26px.png"))); // NOI18N
@@ -635,10 +651,10 @@ public class GUI extends javax.swing.JFrame
             }
         });
 
-        ButtonOKChooseMember.setText("OK");
-        ButtonOKChooseMember.addActionListener(new java.awt.event.ActionListener() {
+        ButtonOKChooseMemberToEdit.setText("OK");
+        ButtonOKChooseMemberToEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonOKChooseMemberActionPerformed(evt);
+                ButtonOKChooseMemberToEditActionPerformed(evt);
             }
         });
 
@@ -652,9 +668,9 @@ public class GUI extends javax.swing.JFrame
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ButtonCancelEditMemberChoose)
                     .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
-                        .addComponent(ComboBoxChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ComboBoxChooseMemberToEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(63, 63, 63)
-                        .addComponent(ButtonOKChooseMember))
+                        .addComponent(ButtonOKChooseMemberToEdit))
                     .addComponent(LabelEditMemberChooseMember))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -666,8 +682,8 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(LabelEditMemberChooseMember)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonOKChooseMember)
-                    .addComponent(ComboBoxChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ButtonOKChooseMemberToEdit)
+                    .addComponent(ComboBoxChooseMemberToEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
                 .addComponent(ButtonCancelEditMemberChoose)
                 .addContainerGap())
@@ -890,6 +906,104 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        PanelDeleteMemberHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelDeleteMemberHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelDeleteMemberHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Remove_User_Group_Man_Man_50px.png"))); // NOI18N
+
+        LabelDeleteMemberHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelDeleteMemberHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelDeleteMemberHeader.setText("Delete member");
+
+        LabelDeleteMemberLogAsManager.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelDeleteMemberLogAsManager.setForeground(new java.awt.Color(0, 0, 0));
+        LabelDeleteMemberLogAsManager.setText("Logged in as Manager");
+
+        javax.swing.GroupLayout PanelDeleteMemberHeaderLayout = new javax.swing.GroupLayout(PanelDeleteMemberHeader);
+        PanelDeleteMemberHeader.setLayout(PanelDeleteMemberHeaderLayout);
+        PanelDeleteMemberHeaderLayout.setHorizontalGroup(
+            PanelDeleteMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDeleteMemberHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelDeleteMemberHome)
+                .addGroup(PanelDeleteMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelDeleteMemberHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelDeleteMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(577, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeleteMemberHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelDeleteMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelDeleteMemberHeaderLayout.setVerticalGroup(
+            PanelDeleteMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDeleteMemberHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelDeleteMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelDeleteMemberHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelDeleteMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeleteMemberHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelDeleteMemberHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeleteMemberHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelDeleteMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelDeleteMemberHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelDeleteMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelDeleteMemberChooseMember.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelDeleteMemberChooseMember.setText("Choose member");
+
+        ButtonCancelDeleteMember.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonCancelDeleteMember.setText("CANCEL");
+        ButtonCancelDeleteMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCancelDeleteMemberActionPerformed(evt);
+            }
+        });
+
+        ButtonOKChooseMemberToDelete.setText("DELETE");
+        ButtonOKChooseMemberToDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonOKChooseMemberToDeleteActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelDeleteMemberLayout = new javax.swing.GroupLayout(PanelDeleteMember);
+        PanelDeleteMember.setLayout(PanelDeleteMemberLayout);
+        PanelDeleteMemberLayout.setHorizontalGroup(
+            PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addGroup(PanelDeleteMemberLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonCancelDeleteMember)
+                    .addGroup(PanelDeleteMemberLayout.createSequentialGroup()
+                        .addComponent(ComboBoxChooseMemberToDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(ButtonOKChooseMemberToDelete))
+                    .addComponent(LabelDeleteMemberChooseMember))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        PanelDeleteMemberLayout.setVerticalGroup(
+            PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDeleteMemberLayout.createSequentialGroup()
+                .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LabelDeleteMemberChooseMember)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ComboBoxChooseMemberToDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonOKChooseMemberToDelete))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addComponent(ButtonCancelDeleteMember)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -915,6 +1029,11 @@ public class GUI extends javax.swing.JFrame
                     .addContainerGap()
                     .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(20, 20, 20)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -939,6 +1058,11 @@ public class GUI extends javax.swing.JFrame
                     .addContainerGap()
                     .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(13, 13, 13)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(14, 14, 14)))
         );
 
         pack();
@@ -1168,14 +1292,11 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsManagerScreenHeader.setVisible(false);
         PanelEditMemberChooseMember.setVisible(true);
         PanelEditMemberHeaderChoose.setVisible(true);
-        /*
-        Weird stuff is going on here
-        */
-        ComboBoxChooseMember.removeAllItems();
+        ComboBoxChooseMemberToEdit.removeAllItems();
         ArrayList<Member> members = c.getAllMembers();
         for (int i = 0; i < members.size(); ++i)
         {
-            ComboBoxChooseMember.addItem(members.get(i).toString());
+            ComboBoxChooseMemberToEdit.addItem(members.get(i).toString());
         }
     }//GEN-LAST:event_ButtonEditMemberActionPerformed
 
@@ -1188,7 +1309,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberHeader.setVisible(false);
     }//GEN-LAST:event_ButtonCancelEditMemberChooseActionPerformed
 
-    private void ButtonOKChooseMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberActionPerformed
+    private void ButtonOKChooseMemberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberToEditActionPerformed
         try
         {
             PanelLoggedInAsManager.setVisible(false);
@@ -1197,7 +1318,7 @@ public class GUI extends javax.swing.JFrame
             PanelEditMemberHeaderChoose.setVisible(false);
             PanelEditMember.setVisible(true);
             PanelEditMemberHeader.setVisible(true);
-            String StrMember = ComboBoxChooseMember.getSelectedItem().toString();
+            String StrMember = ComboBoxChooseMemberToEdit.getSelectedItem().toString();
             String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
                              StrMember.indexOf(","));
             idMember = 
@@ -1206,7 +1327,7 @@ public class GUI extends javax.swing.JFrame
             this.TextFieldEditMemberName.setText(m.getName());
             this.TextFieldEditMemberBirthYear.setText(m.getBirthyear().toString());
             this.RadioButtonEditMemberPassive.setSelected(true);
-            //Needs more code
+            //Needs more code?
         }
         catch (NullPointerException nx)
         {
@@ -1216,7 +1337,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "No member chosen");
             ButtonCancelEditMemberChooseActionPerformed(evt);
         }
-    }//GEN-LAST:event_ButtonOKChooseMemberActionPerformed
+    }//GEN-LAST:event_ButtonOKChooseMemberToEditActionPerformed
 
     
     private void ButtonCancelEditMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelEditMemberActionPerformed
@@ -1396,6 +1517,52 @@ public class GUI extends javax.swing.JFrame
         this.TextFieldEditMemberBirthYear.setText("Enter year here");
         ButtonCancelEditMemberActionPerformed(evt);
     }//GEN-LAST:event_ButtonEditMemberConfirmEditChosenMemberActionPerformed
+
+    private void ButtonDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDeleteMemberActionPerformed
+        PanelLoggedInAsManager.setVisible(false);
+        PanelLoggedInAsManagerScreenHeader.setVisible(false);
+        PanelDeleteMember.setVisible(true);
+        PanelDeleteMemberHeader.setVisible(true);
+        ComboBoxChooseMemberToDelete.removeAllItems();
+        ArrayList<Member> members = c.getAllMembers();
+        for (int i = 0; i < members.size(); ++i)
+        {
+            ComboBoxChooseMemberToDelete.addItem(members.get(i).toString());
+        }
+    }//GEN-LAST:event_ButtonDeleteMemberActionPerformed
+
+    private void ButtonCancelDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelDeleteMemberActionPerformed
+        PanelLoggedInAsManager.setVisible(true);
+        PanelLoggedInAsManagerScreenHeader.setVisible(true);
+        PanelDeleteMember.setVisible(false);
+        PanelDeleteMemberHeader.setVisible(false);
+    }//GEN-LAST:event_ButtonCancelDeleteMemberActionPerformed
+
+    private void ButtonOKChooseMemberToDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberToDeleteActionPerformed
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        try
+        {
+        String StrMember = ComboBoxChooseMemberToDelete.getSelectedItem().toString();
+        String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
+                             StrMember.indexOf(","));
+        idMember = 
+        Integer.parseInt(StrMemberSub.trim());
+        c.deleteMember(idMember);
+        JOptionPane.showMessageDialog(frame, "Member has been deleted");
+        }
+        catch (NullPointerException nx)
+        {
+            System.out.println("No member chosen");
+            JOptionPane.showMessageDialog(frame, "No member chosen");
+            ButtonCancelEditMemberChooseActionPerformed(evt);
+        }
+        //Going back to manager's menu
+        PanelDeleteMember.setVisible(false);
+        PanelDeleteMemberHeader.setVisible(false);
+        PanelLoggedInAsManager.setVisible(true);
+        PanelLoggedInAsManagerScreenHeader.setVisible(true);
+    }//GEN-LAST:event_ButtonOKChooseMemberToDeleteActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1445,6 +1612,7 @@ public class GUI extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonBackToMainMenu;
     private javax.swing.JButton ButtonCancelCreateNewMember;
+    private javax.swing.JButton ButtonCancelDeleteMember;
     private javax.swing.JButton ButtonCancelEditMember;
     private javax.swing.JButton ButtonCancelEditMemberChoose;
     private javax.swing.JButton ButtonCreateNewMember;
@@ -1455,9 +1623,11 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonLoginAsManager;
     private javax.swing.JButton ButtonLoginAsTrainer;
     private javax.swing.JButton ButtonNewMemberCreateMember;
-    private javax.swing.JButton ButtonOKChooseMember;
+    private javax.swing.JButton ButtonOKChooseMemberToDelete;
+    private javax.swing.JButton ButtonOKChooseMemberToEdit;
     private javax.swing.JButton ButtonViewMembers;
-    private javax.swing.JComboBox<String> ComboBoxChooseMember;
+    private javax.swing.JComboBox<String> ComboBoxChooseMemberToDelete;
+    private javax.swing.JComboBox<String> ComboBoxChooseMemberToEdit;
     private java.awt.Label LabeManagerScreenHeader;
     private javax.swing.JLabel LabeManagerScreenHome;
     private javax.swing.JLabel LabelBirthYearFormat;
@@ -1465,6 +1635,10 @@ public class GUI extends javax.swing.JFrame
     private java.awt.Label LabelCreateNewMemberHeader;
     private javax.swing.JLabel LabelCreateNewMemberHome;
     private java.awt.Label LabelCreateNewMemberLogAsManager;
+    private javax.swing.JLabel LabelDeleteMemberChooseMember;
+    private java.awt.Label LabelDeleteMemberHeader;
+    private javax.swing.JLabel LabelDeleteMemberHome;
+    private java.awt.Label LabelDeleteMemberLogAsManager;
     private javax.swing.JLabel LabelEditMemberActivityType;
     private javax.swing.JLabel LabelEditMemberChooseMember;
     private javax.swing.JLabel LabelEditMemberDisciplineType;
@@ -1486,6 +1660,8 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel LabelNewMemberName1;
     private javax.swing.JPanel PanelCreateNewMember;
     private javax.swing.JPanel PanelCreateNewMemberHeader;
+    private javax.swing.JPanel PanelDeleteMember;
+    private javax.swing.JPanel PanelDeleteMemberHeader;
     private javax.swing.JPanel PanelEditMember;
     private javax.swing.JPanel PanelEditMemberChooseMember;
     private javax.swing.JPanel PanelEditMemberHeader;
