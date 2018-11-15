@@ -2,7 +2,7 @@ package Delfinen.data;
 
 /**
  *
- * @author runin, camilla og asger
+ * @author Camilla
  */
 
 import com.google.gson.Gson;

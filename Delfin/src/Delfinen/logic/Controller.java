@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**
  *
- * @author runin, Asger, Camilla
+ * @author Rúni, Asger, Camilla
  */
 public class Controller
 {
