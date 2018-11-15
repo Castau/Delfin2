@@ -15,6 +15,7 @@ import Delfinen.logic.Controller;
 import java.time.Year;
 import static Delfinen.data.ActivityType.BASIC;
 import Delfinen.data.DisciplineType;
+import Delfinen.logic.Member;
 //import java.io.IOException;
 import java.time.DateTimeException;
 import java.util.ArrayList;
@@ -35,23 +36,39 @@ public class GUI extends javax.swing.JFrame
     public GUI()
     {
         initComponents();
-        this.buttonGroupPassiveActive.add(RadioButtonNewMemberActive);
-        this.buttonGroupPassiveActive.add(RadioButtonNewMemberPassive);
-        this.buttonGroupActivityType.add(RadioButtonNewMemberBasic);
-        this.buttonGroupActivityType.add(RadioButtonNewMemberCompetitive);
-//        this.buttonGroupDisciplineType.add(RadioButtonNewMemberButterfly);
-//        this.buttonGroupDisciplineType.add(RadioButtonNewMemberBackstroke);
-//        this.buttonGroupDisciplineType.add(RadioButtonNewMemberBreaststroke);
-//        this.buttonGroupDisciplineType.add(RadioButtonNewMemberCrawl);
+        //Putting Radio Buttons into groups
+        this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberActive);
+        this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberPassive);
+        this.buttonGroupCreateMemberActivityType.add(RadioButtonNewMemberBasic);
+        this.buttonGroupCreateMemberActivityType.add(RadioButtonNewMemberCompetitive);
+        //
+        this.buttonGroupEditMemberPassiveActive.add(RadioButtonEditMemberActive);
+        this.buttonGroupEditMemberPassiveActive.add(RadioButtonEditMemberPassive);
+        this.buttonGroupEditMemberActivityType.add(RadioButtonEditMemberBasic);
+        this.buttonGroupEditMemberActivityType.add(RadioButtonEditMemberCompetitive);
+        //Making panels invisible
         PanelLoggedInAsManager.setVisible(false);
+        PanelLoggedInAsManagerScreenHeader.setVisible(false);
         PanelCreateNewMember.setVisible(false);
+        PanelCreateNewMemberHeader.setVisible(false);
+        PanelEditMemberChooseMember.setVisible(false);
+        PanelEditMemberHeaderChoose.setVisible(false);
         PanelEditMember.setVisible(false);
+        PanelEditMemberHeader.setVisible(false);
+        //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
         this.RadioButtonNewMemberBackstroke.setEnabled(false);
         this.RadioButtonNewMemberBreaststroke.setEnabled(false);
         this.RadioButtonNewMemberButterfly.setEnabled(false);
         this.RadioButtonNewMemberCrawl.setEnabled(false);
+        //
+        this.RadioButtonEditMemberBasic.setEnabled(false);
+        this.RadioButtonEditMemberCompetitive.setEnabled(false);
+        this.RadioButtonEditMemberBackstroke.setEnabled(false);
+        this.RadioButtonEditMemberBreaststroke.setEnabled(false);
+        this.RadioButtonEditMemberButterfly.setEnabled(false);
+        this.RadioButtonEditMemberCrawl.setEnabled(false);
     }
 
     /**
@@ -65,8 +82,10 @@ public class GUI extends javax.swing.JFrame
 
         jSplitPane1 = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        buttonGroupPassiveActive = new javax.swing.ButtonGroup();
-        buttonGroupActivityType = new javax.swing.ButtonGroup();
+        buttonGroupCreateMemberPassiveActive = new javax.swing.ButtonGroup();
+        buttonGroupCreateMemberActivityType = new javax.swing.ButtonGroup();
+        buttonGroupEditMemberPassiveActive = new javax.swing.ButtonGroup();
+        buttonGroupEditMemberActivityType = new javax.swing.ButtonGroup();
         PanelLoginScreen = new javax.swing.JPanel();
         PanelLoginScreenHeader = new javax.swing.JPanel();
         LabelLoginScreenHome = new javax.swing.JLabel();
@@ -75,7 +94,7 @@ public class GUI extends javax.swing.JFrame
         ButtonLoginAsCashier = new javax.swing.JButton();
         ButtonLoginAsTrainer = new javax.swing.JButton();
         PanelLoggedInAsManager = new javax.swing.JPanel();
-        PaneManagerScreenHeader = new javax.swing.JPanel();
+        PanelLoggedInAsManagerScreenHeader = new javax.swing.JPanel();
         LabeManagerScreenHome = new javax.swing.JLabel();
         LabeManagerScreenHeader = new java.awt.Label();
         ButtonCreateNewMember = new javax.swing.JButton();
@@ -84,7 +103,7 @@ public class GUI extends javax.swing.JFrame
         ButtonViewMembers = new javax.swing.JButton();
         ButtonBackToMainMenu = new javax.swing.JButton();
         PanelCreateNewMember = new javax.swing.JPanel();
-        PaneCreateNewMemberHeader = new javax.swing.JPanel();
+        PanelCreateNewMemberHeader = new javax.swing.JPanel();
         LabelCreateNewMemberHome = new javax.swing.JLabel();
         LabelCreateNewMemberHeader = new java.awt.Label();
         LabelCreateNewMemberLogAsManager = new java.awt.Label();
@@ -106,13 +125,38 @@ public class GUI extends javax.swing.JFrame
         RadioButtonNewMemberBackstroke = new javax.swing.JRadioButton();
         RadioButtonNewMemberBreaststroke = new javax.swing.JRadioButton();
         ButtonNewMemberCreateMember = new javax.swing.JButton();
+        PanelEditMemberChooseMember = new javax.swing.JPanel();
+        PanelEditMemberHeaderChoose = new javax.swing.JPanel();
+        LabelEditMemberHomeChoose = new javax.swing.JLabel();
+        LabelEditMemberHeaderChoose = new java.awt.Label();
+        LabelEditMemberLogAsManagerChoose = new java.awt.Label();
+        LabelEditMemberChooseMember = new javax.swing.JLabel();
+        ButtonCancelEditMemberChoose = new javax.swing.JButton();
+        ButtonOKChooseMember = new javax.swing.JButton();
+        ComboBoxChooseMember = new javax.swing.JComboBox<>();
         PanelEditMember = new javax.swing.JPanel();
-        PanelLoginScreenHeader1 = new javax.swing.JPanel();
-        LabelLoginScreenHome1 = new javax.swing.JLabel();
-        LabelLoginScreenHeader1 = new java.awt.Label();
-        ButtonLoginAsManager1 = new javax.swing.JButton();
-        ButtonLoginAsCashier1 = new javax.swing.JButton();
-        ButtonLoginAsTrainer1 = new javax.swing.JButton();
+        PanelEditMemberHeader = new javax.swing.JPanel();
+        LabelEditMemberHome = new javax.swing.JLabel();
+        LabelEditMemberHeader = new java.awt.Label();
+        LabelEditMemberLogAsManager = new java.awt.Label();
+        LabelNewMemberName1 = new javax.swing.JLabel();
+        LabelNewMemberBirthYear1 = new javax.swing.JLabel();
+        ButtonCancelEditMember = new javax.swing.JButton();
+        TextFieldEditMemberName = new javax.swing.JTextField();
+        TextFieldEditMemberBirthYear = new javax.swing.JTextField();
+        LabelBirthYearFormatEditMember = new javax.swing.JLabel();
+        RadioButtonEditMemberPassive = new javax.swing.JRadioButton();
+        RadioButtonEditMemberActive = new javax.swing.JRadioButton();
+        LabelEditMemberMembershipType = new javax.swing.JLabel();
+        LabelEditMemberActivityType = new javax.swing.JLabel();
+        RadioButtonEditMemberBasic = new javax.swing.JRadioButton();
+        RadioButtonEditMemberCompetitive = new javax.swing.JRadioButton();
+        LabelEditMemberDisciplineType = new javax.swing.JLabel();
+        RadioButtonEditMemberButterfly = new javax.swing.JRadioButton();
+        RadioButtonEditMemberCrawl = new javax.swing.JRadioButton();
+        RadioButtonEditMemberBackstroke = new javax.swing.JRadioButton();
+        RadioButtonEditMemberBreaststroke = new javax.swing.JRadioButton();
+        ButtonEditMemberEditChosenMember = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,11 +174,11 @@ public class GUI extends javax.swing.JFrame
         PanelLoginScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelLoginScreenHeader.setPreferredSize(new java.awt.Dimension(770, 96));
 
-        LabelLoginScreenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Edit_50px.png"))); // NOI18N
+        LabelLoginScreenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Home_50px.png"))); // NOI18N
 
         LabelLoginScreenHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
         LabelLoginScreenHeader.setForeground(new java.awt.Color(255, 255, 255));
-        LabelLoginScreenHeader.setText("Edit member");
+        LabelLoginScreenHeader.setText("Login");
 
         javax.swing.GroupLayout PanelLoginScreenHeaderLayout = new javax.swing.GroupLayout(PanelLoginScreenHeader);
         PanelLoginScreenHeader.setLayout(PanelLoginScreenHeaderLayout);
@@ -145,7 +189,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(LabelLoginScreenHome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelLoginScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(573, Short.MAX_VALUE))
+                .addContainerGap(691, Short.MAX_VALUE))
         );
         PanelLoginScreenHeaderLayout.setVerticalGroup(
             PanelLoginScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,14 +222,14 @@ public class GUI extends javax.swing.JFrame
         PanelLoginScreen.setLayout(PanelLoginScreenLayout);
         PanelLoginScreenLayout.setHorizontalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(400, Short.MAX_VALUE)
                 .addGroup(PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(ButtonLoginAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonLoginAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonLoginAsManager))
                 .addGap(335, 335, 335))
+            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
         );
         PanelLoginScreenLayout.setVerticalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,12 +241,12 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonLoginAsCashier)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonLoginAsTrainer)
-                .addGap(0, 154, Short.MAX_VALUE))
+                .addGap(0, 177, Short.MAX_VALUE))
         );
 
         PanelLoggedInAsManager.setPreferredSize(new java.awt.Dimension(770, 434));
 
-        PaneManagerScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelLoggedInAsManagerScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
 
         LabeManagerScreenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Home_50px.png"))); // NOI18N
 
@@ -210,26 +254,26 @@ public class GUI extends javax.swing.JFrame
         LabeManagerScreenHeader.setForeground(new java.awt.Color(255, 255, 255));
         LabeManagerScreenHeader.setText("Logged in as Manager");
 
-        javax.swing.GroupLayout PaneManagerScreenHeaderLayout = new javax.swing.GroupLayout(PaneManagerScreenHeader);
-        PaneManagerScreenHeader.setLayout(PaneManagerScreenHeaderLayout);
-        PaneManagerScreenHeaderLayout.setHorizontalGroup(
-            PaneManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PaneManagerScreenHeaderLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelLoggedInAsManagerScreenHeaderLayout = new javax.swing.GroupLayout(PanelLoggedInAsManagerScreenHeader);
+        PanelLoggedInAsManagerScreenHeader.setLayout(PanelLoggedInAsManagerScreenHeaderLayout);
+        PanelLoggedInAsManagerScreenHeaderLayout.setHorizontalGroup(
+            PanelLoggedInAsManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsManagerScreenHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LabeManagerScreenHome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabeManagerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(436, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        PaneManagerScreenHeaderLayout.setVerticalGroup(
-            PaneManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PaneManagerScreenHeaderLayout.createSequentialGroup()
+        PanelLoggedInAsManagerScreenHeaderLayout.setVerticalGroup(
+            PanelLoggedInAsManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsManagerScreenHeaderLayout.createSequentialGroup()
                 .addContainerGap(27, Short.MAX_VALUE)
-                .addGroup(PaneManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneManagerScreenHeaderLayout.createSequentialGroup()
+                .addGroup(PanelLoggedInAsManagerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsManagerScreenHeaderLayout.createSequentialGroup()
                         .addComponent(LabeManagerScreenHome)
                         .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneManagerScreenHeaderLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsManagerScreenHeaderLayout.createSequentialGroup()
                         .addComponent(LabeManagerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28))))
         );
@@ -246,6 +290,11 @@ public class GUI extends javax.swing.JFrame
         ButtonEditMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonEditMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Edit_26px.png"))); // NOI18N
         ButtonEditMember.setText("Edit member    ");
+        ButtonEditMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEditMemberActionPerformed(evt);
+            }
+        });
 
         ButtonDeleteMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonDeleteMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Remove_User_Group_Man_Man_26px.png"))); // NOI18N
@@ -267,7 +316,6 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsManager.setLayout(PanelLoggedInAsManagerLayout);
         PanelLoggedInAsManagerLayout.setHorizontalGroup(
             PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PaneManagerScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
                 .addGroup(PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
@@ -280,12 +328,13 @@ public class GUI extends javax.swing.JFrame
                     .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(ButtonBackToMainMenu)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(292, Short.MAX_VALUE))
+            .addComponent(PanelLoggedInAsManagerScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PanelLoggedInAsManagerLayout.setVerticalGroup(
             PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
-                .addComponent(PaneManagerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelLoggedInAsManagerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(74, 74, 74)
                 .addComponent(ButtonCreateNewMember)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -299,8 +348,9 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
-        PaneCreateNewMemberHeader.setBackground(new java.awt.Color(153, 153, 255));
-        PaneCreateNewMemberHeader.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PanelCreateNewMemberHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelCreateNewMemberHeader.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PanelCreateNewMemberHeader.setPreferredSize(new java.awt.Dimension(770, 96));
 
         LabelCreateNewMemberHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_User_Group_Man_Man_50px.png"))); // NOI18N
 
@@ -312,38 +362,38 @@ public class GUI extends javax.swing.JFrame
         LabelCreateNewMemberLogAsManager.setForeground(new java.awt.Color(0, 0, 0));
         LabelCreateNewMemberLogAsManager.setText("Logged in as Manager");
 
-        javax.swing.GroupLayout PaneCreateNewMemberHeaderLayout = new javax.swing.GroupLayout(PaneCreateNewMemberHeader);
-        PaneCreateNewMemberHeader.setLayout(PaneCreateNewMemberHeaderLayout);
-        PaneCreateNewMemberHeaderLayout.setHorizontalGroup(
-            PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+        javax.swing.GroupLayout PanelCreateNewMemberHeaderLayout = new javax.swing.GroupLayout(PanelCreateNewMemberHeader);
+        PanelCreateNewMemberHeader.setLayout(PanelCreateNewMemberHeaderLayout);
+        PanelCreateNewMemberHeaderLayout.setHorizontalGroup(
+            PanelCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCreateNewMemberHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LabelCreateNewMemberHome)
-                .addGroup(PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                .addGroup(PanelCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCreateNewMemberHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelCreateNewMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCreateNewMemberHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LabelCreateNewMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
-        PaneCreateNewMemberHeaderLayout.setVerticalGroup(
-            PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+        PanelCreateNewMemberHeaderLayout.setVerticalGroup(
+            PanelCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelCreateNewMemberHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                .addGroup(PanelCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelCreateNewMemberHeaderLayout.createSequentialGroup()
                         .addGap(0, 17, Short.MAX_VALUE)
-                        .addGroup(PaneCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                        .addGroup(PanelCreateNewMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCreateNewMemberHeaderLayout.createSequentialGroup()
                                 .addComponent(LabelCreateNewMemberHome)
                                 .addGap(19, 19, 19))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCreateNewMemberHeaderLayout.createSequentialGroup()
                                 .addComponent(LabelCreateNewMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28))))
-                    .addGroup(PaneCreateNewMemberHeaderLayout.createSequentialGroup()
+                    .addGroup(PanelCreateNewMemberHeaderLayout.createSequentialGroup()
                         .addComponent(LabelCreateNewMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -425,7 +475,6 @@ public class GUI extends javax.swing.JFrame
         PanelCreateNewMember.setLayout(PanelCreateNewMemberLayout);
         PanelCreateNewMemberLayout.setHorizontalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PaneCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -448,7 +497,7 @@ public class GUI extends javax.swing.JFrame
                                             .addComponent(TextFieldNewMemberBirthYear, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(RadioButtonNewMemberBasic)
                                             .addComponent(RadioButtonNewMemberCompetitive))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE))
                                     .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
                                         .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(RadioButtonNewMemberActive)
@@ -472,11 +521,12 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonNewMemberCreateMember)
                 .addGap(18, 18, 18))
+            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
         );
         PanelCreateNewMemberLayout.setVerticalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
-                .addComponent(PaneCreateNewMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
                 .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNewMemberName)
@@ -522,77 +572,320 @@ public class GUI extends javax.swing.JFrame
                         .addGap(33, 86, Short.MAX_VALUE))))
         );
 
-        PanelLoginScreenHeader1.setBackground(new java.awt.Color(153, 153, 255));
-        PanelLoginScreenHeader1.setPreferredSize(new java.awt.Dimension(770, 96));
+        PanelEditMemberHeaderChoose.setBackground(new java.awt.Color(153, 153, 255));
+        PanelEditMemberHeaderChoose.setPreferredSize(new java.awt.Dimension(770, 96));
 
-        LabelLoginScreenHome1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Home_50px.png"))); // NOI18N
+        LabelEditMemberHomeChoose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Edit_50px.png"))); // NOI18N
 
-        LabelLoginScreenHeader1.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
-        LabelLoginScreenHeader1.setForeground(new java.awt.Color(255, 255, 255));
-        LabelLoginScreenHeader1.setText("Login");
+        LabelEditMemberHeaderChoose.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelEditMemberHeaderChoose.setForeground(new java.awt.Color(255, 255, 255));
+        LabelEditMemberHeaderChoose.setText("Edit member");
 
-        javax.swing.GroupLayout PanelLoginScreenHeader1Layout = new javax.swing.GroupLayout(PanelLoginScreenHeader1);
-        PanelLoginScreenHeader1.setLayout(PanelLoginScreenHeader1Layout);
-        PanelLoginScreenHeader1Layout.setHorizontalGroup(
-            PanelLoginScreenHeader1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLoginScreenHeader1Layout.createSequentialGroup()
+        LabelEditMemberLogAsManagerChoose.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelEditMemberLogAsManagerChoose.setForeground(new java.awt.Color(0, 0, 0));
+        LabelEditMemberLogAsManagerChoose.setText("Logged in as Manager");
+
+        javax.swing.GroupLayout PanelEditMemberHeaderChooseLayout = new javax.swing.GroupLayout(PanelEditMemberHeaderChoose);
+        PanelEditMemberHeaderChoose.setLayout(PanelEditMemberHeaderChooseLayout);
+        PanelEditMemberHeaderChooseLayout.setHorizontalGroup(
+            PanelEditMemberHeaderChooseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEditMemberHeaderChooseLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelLoginScreenHome1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LabelLoginScreenHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(631, Short.MAX_VALUE))
+                .addComponent(LabelEditMemberHomeChoose)
+                .addGroup(PanelEditMemberHeaderChooseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEditMemberHeaderChooseLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelEditMemberHeaderChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(593, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberHeaderChooseLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelEditMemberLogAsManagerChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
-        PanelLoginScreenHeader1Layout.setVerticalGroup(
-            PanelLoginScreenHeader1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelLoginScreenHeader1Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addGroup(PanelLoginScreenHeader1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenHeader1Layout.createSequentialGroup()
-                        .addComponent(LabelLoginScreenHome1)
-                        .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenHeader1Layout.createSequentialGroup()
-                        .addComponent(LabelLoginScreenHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))))
+        PanelEditMemberHeaderChooseLayout.setVerticalGroup(
+            PanelEditMemberHeaderChooseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEditMemberHeaderChooseLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelEditMemberHeaderChooseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEditMemberHeaderChooseLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelEditMemberHeaderChooseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberHeaderChooseLayout.createSequentialGroup()
+                                .addComponent(LabelEditMemberHomeChoose)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberHeaderChooseLayout.createSequentialGroup()
+                                .addComponent(LabelEditMemberHeaderChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelEditMemberHeaderChooseLayout.createSequentialGroup()
+                        .addComponent(LabelEditMemberLogAsManagerChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
-        ButtonLoginAsManager1.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
-        ButtonLoginAsManager1.setText("Manager");
-        ButtonLoginAsManager1.addActionListener(new java.awt.event.ActionListener() {
+        LabelEditMemberChooseMember.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelEditMemberChooseMember.setText("Choose member");
+
+        ButtonCancelEditMemberChoose.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonCancelEditMemberChoose.setText("CANCEL");
+        ButtonCancelEditMemberChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonLoginAsManager1ActionPerformed(evt);
+                ButtonCancelEditMemberChooseActionPerformed(evt);
             }
         });
 
-        ButtonLoginAsCashier1.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
-        ButtonLoginAsCashier1.setText("Cashier");
+        ButtonOKChooseMember.setText("OK");
+        ButtonOKChooseMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonOKChooseMemberActionPerformed(evt);
+            }
+        });
 
-        ButtonLoginAsTrainer1.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
-        ButtonLoginAsTrainer1.setText("Trainer");
+        javax.swing.GroupLayout PanelEditMemberChooseMemberLayout = new javax.swing.GroupLayout(PanelEditMemberChooseMember);
+        PanelEditMemberChooseMember.setLayout(PanelEditMemberChooseMemberLayout);
+        PanelEditMemberChooseMemberLayout.setHorizontalGroup(
+            PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
+            .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonCancelEditMemberChoose)
+                    .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
+                        .addComponent(ComboBoxChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(ButtonOKChooseMember))
+                    .addComponent(LabelEditMemberChooseMember))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelEditMemberChooseMemberLayout.setVerticalGroup(
+            PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
+                .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LabelEditMemberChooseMember)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonOKChooseMember)
+                    .addComponent(ComboBoxChooseMember, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addComponent(ButtonCancelEditMemberChoose)
+                .addContainerGap())
+        );
+
+        PanelEditMemberHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelEditMemberHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelEditMemberHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Edit_50px.png"))); // NOI18N
+
+        LabelEditMemberHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelEditMemberHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelEditMemberHeader.setText("Edit member");
+
+        LabelEditMemberLogAsManager.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelEditMemberLogAsManager.setForeground(new java.awt.Color(0, 0, 0));
+        LabelEditMemberLogAsManager.setText("Logged in as Manager");
+
+        javax.swing.GroupLayout PanelEditMemberHeaderLayout = new javax.swing.GroupLayout(PanelEditMemberHeader);
+        PanelEditMemberHeader.setLayout(PanelEditMemberHeaderLayout);
+        PanelEditMemberHeaderLayout.setHorizontalGroup(
+            PanelEditMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEditMemberHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelEditMemberHome)
+                .addGroup(PanelEditMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEditMemberHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelEditMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(593, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelEditMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelEditMemberHeaderLayout.setVerticalGroup(
+            PanelEditMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelEditMemberHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelEditMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEditMemberHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelEditMemberHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelEditMemberHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelEditMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelEditMemberHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelEditMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelNewMemberName1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelNewMemberName1.setText("Name:");
+
+        LabelNewMemberBirthYear1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelNewMemberBirthYear1.setText("Birth year:");
+
+        ButtonCancelEditMember.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonCancelEditMember.setText("CANCEL");
+        ButtonCancelEditMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonCancelEditMemberActionPerformed(evt);
+            }
+        });
+
+        TextFieldEditMemberName.setText("Enter name here");
+
+        TextFieldEditMemberBirthYear.setText("Enter year here");
+
+        LabelBirthYearFormatEditMember.setText("(YYYY)");
+
+        RadioButtonEditMemberPassive.setText("Passive");
+        RadioButtonEditMemberPassive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonEditMemberPassiveActionPerformed(evt);
+            }
+        });
+
+        RadioButtonEditMemberActive.setText("Active");
+        RadioButtonEditMemberActive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonEditMemberActiveActionPerformed(evt);
+            }
+        });
+
+        LabelEditMemberMembershipType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelEditMemberMembershipType.setText("Membership type:");
+
+        LabelEditMemberActivityType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelEditMemberActivityType.setText("Activity type:");
+
+        RadioButtonEditMemberBasic.setText("Basic");
+        RadioButtonEditMemberBasic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonEditMemberBasicActionPerformed(evt);
+            }
+        });
+
+        RadioButtonEditMemberCompetitive.setText("Competitive");
+        RadioButtonEditMemberCompetitive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RadioButtonEditMemberCompetitiveActionPerformed(evt);
+            }
+        });
+
+        LabelEditMemberDisciplineType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelEditMemberDisciplineType.setText("Discipline type:");
+
+        RadioButtonEditMemberButterfly.setText("Butterfly");
+
+        RadioButtonEditMemberCrawl.setText("Crawl");
+
+        RadioButtonEditMemberBackstroke.setText("Backstroke");
+
+        RadioButtonEditMemberBreaststroke.setText("Breaststroke");
+
+        ButtonEditMemberEditChosenMember.setFont(new java.awt.Font("Iskoola Pota", 0, 14)); // NOI18N
+        ButtonEditMemberEditChosenMember.setText("Confirm edit");
+        ButtonEditMemberEditChosenMember.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEditMemberEditChosenMemberActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelEditMemberLayout = new javax.swing.GroupLayout(PanelEditMember);
         PanelEditMember.setLayout(PanelEditMemberLayout);
         PanelEditMemberLayout.setHorizontalGroup(
             PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreenHeader1, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ButtonLoginAsTrainer1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonLoginAsCashier1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonLoginAsManager1))
-                .addGap(335, 335, 335))
+            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
+            .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LabelNewMemberBirthYear1)
+                            .addComponent(LabelNewMemberName1)
+                            .addComponent(LabelEditMemberMembershipType)
+                            .addComponent(LabelEditMemberActivityType))
+                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(TextFieldEditMemberBirthYear, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(RadioButtonEditMemberBasic)
+                                        .addComponent(RadioButtonEditMemberCompetitive)
+                                        .addComponent(TextFieldEditMemberName, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(RadioButtonEditMemberActive)
+                                            .addComponent(RadioButtonEditMemberPassive))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(LabelEditMemberDisciplineType))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelEditMemberLayout.createSequentialGroup()
+                                .addGap(240, 240, 240)
+                                .addComponent(LabelBirthYearFormatEditMember)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(75, 75, 75)
+                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RadioButtonEditMemberCrawl)
+                            .addComponent(RadioButtonEditMemberBreaststroke)
+                            .addComponent(RadioButtonEditMemberButterfly)
+                            .addComponent(RadioButtonEditMemberBackstroke))
+                        .addGap(104, 104, 104))
+                    .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                        .addComponent(ButtonCancelEditMember)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonEditMemberEditChosenMember)))
+                .addContainerGap())
         );
         PanelEditMemberLayout.setVerticalGroup(
             PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelEditMemberLayout.createSequentialGroup()
-                .addComponent(PanelLoginScreenHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(ButtonLoginAsManager1)
+                .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelNewMemberName1)
+                    .addComponent(TextFieldEditMemberName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonLoginAsCashier1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonLoginAsTrainer1)
-                .addGap(0, 154, Short.MAX_VALUE))
+                .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextFieldEditMemberBirthYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelBirthYearFormatEditMember)
+                    .addComponent(LabelNewMemberBirthYear1))
+                .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(LabelEditMemberMembershipType))
+                            .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(LabelEditMemberDisciplineType)))
+                        .addGap(65, 65, 65)
+                        .addComponent(LabelEditMemberActivityType)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ButtonCancelEditMember)
+                            .addComponent(ButtonEditMemberEditChosenMember)))
+                    .addGroup(PanelEditMemberLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RadioButtonEditMemberButterfly)
+                            .addComponent(RadioButtonEditMemberPassive))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RadioButtonEditMemberActive)
+                            .addComponent(RadioButtonEditMemberBackstroke))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RadioButtonEditMemberBreaststroke)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RadioButtonEditMemberCrawl)
+                            .addComponent(RadioButtonEditMemberBasic))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RadioButtonEditMemberCompetitive)
+                        .addGap(75, 75, 75)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -603,7 +896,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 810, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -613,8 +906,13 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(20, 20, 20)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -622,7 +920,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -632,8 +930,13 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(12, 12, 12)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(13, 13, 13)))
         );
 
         pack();
@@ -641,38 +944,44 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonCreateNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateNewMemberActionPerformed
         PanelCreateNewMember.setVisible(true);
+        PanelCreateNewMemberHeader.setVisible(true);
         PanelLoginScreen.setVisible(false);
+        PanelLoginScreenHeader.setVisible(false);
         PanelLoggedInAsManager.setVisible(false);
+        PanelLoggedInAsManagerScreenHeader.setVisible(false);
     }//GEN-LAST:event_ButtonCreateNewMemberActionPerformed
-
-    private void ButtonLoginAsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginAsManagerActionPerformed
-        PanelLoginScreen.setVisible(false);
-        //PanelLoginScreenHeader.setVisible(false);
-        PanelLoggedInAsManager.setVisible(true);
-    }//GEN-LAST:event_ButtonLoginAsManagerActionPerformed
 
     private void ButtonBackToMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackToMainMenuActionPerformed
         PanelLoginScreen.setVisible(true);
+        PanelLoginScreenHeader.setVisible(true);
         PanelLoggedInAsManager.setVisible(false);
+        PanelLoggedInAsManagerScreenHeader.setVisible(false);
         PanelCreateNewMember.setVisible(false);
+        PanelCreateNewMemberHeader.setVisible(false);
     }//GEN-LAST:event_ButtonBackToMainMenuActionPerformed
 
     private void ButtonCancelCreateNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelCreateNewMemberActionPerformed
         PanelLoginScreen.setVisible(false);
+        PanelLoginScreenHeader.setVisible(false);
         PanelLoggedInAsManager.setVisible(true);
+        PanelLoggedInAsManagerScreenHeader.setVisible(true);
         PanelCreateNewMember.setVisible(false);
-        buttonGroupActivityType.clearSelection();
-        buttonGroupPassiveActive.clearSelection();
+        PanelCreateNewMemberHeader.setVisible(false);
+        //Clearing selection
+        buttonGroupCreateMemberActivityType.clearSelection();
+        buttonGroupCreateMemberPassiveActive.clearSelection();
         this.RadioButtonNewMemberBackstroke.setSelected(false);
         this.RadioButtonNewMemberBreaststroke.setSelected(false);
         this.RadioButtonNewMemberButterfly.setSelected(false);
         this.RadioButtonNewMemberCrawl.setSelected(false);
+        //Disabling Radio Buttons
         this.RadioButtonNewMemberBackstroke.setEnabled(false);
         this.RadioButtonNewMemberBreaststroke.setEnabled(false);
         this.RadioButtonNewMemberButterfly.setEnabled(false);
         this.RadioButtonNewMemberCrawl.setEnabled(false);
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
+        //Removing values from textfields
         this.TextFieldNewMemberName.setText("Enter name here");
         this.TextFieldNewMemberBirthYear.setText("Enter year here");
     }//GEN-LAST:event_ButtonCancelCreateNewMemberActionPerformed
@@ -786,7 +1095,7 @@ public class GUI extends javax.swing.JFrame
     private void RadioButtonNewMemberPassiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNewMemberPassiveActionPerformed
         RadioButtonNewMemberBasicActionPerformed(evt);
         //Clearing selections
-        this.buttonGroupActivityType.clearSelection();
+        this.buttonGroupCreateMemberActivityType.clearSelection();
         //Disabling Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -813,10 +1122,106 @@ public class GUI extends javax.swing.JFrame
         this.RadioButtonNewMemberCrawl.setEnabled(false);
     }//GEN-LAST:event_RadioButtonNewMemberBasicActionPerformed
 
-    private void ButtonLoginAsManager1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginAsManager1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonLoginAsManager1ActionPerformed
+    private void ButtonLoginAsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginAsManagerActionPerformed
+        PanelLoginScreen.setVisible(false);
+        PanelLoginScreenHeader.setVisible(false);
+        PanelLoggedInAsManager.setVisible(true);
+        PanelLoggedInAsManagerScreenHeader.setVisible(true);
+    }//GEN-LAST:event_ButtonLoginAsManagerActionPerformed
 
+    private void ButtonEditMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberActionPerformed
+        PanelLoggedInAsManager.setVisible(false);
+        PanelLoggedInAsManagerScreenHeader.setVisible(false);
+        PanelEditMemberChooseMember.setVisible(true);
+        PanelEditMemberHeaderChoose.setVisible(true);
+        /*
+        THIS SHIT DOESN'T WORK!!!
+        */
+        ComboBoxChooseMember.removeAllItems();
+        ArrayList<Member> members = c.getAllMembers();
+        for (int i = 0; i < members.size(); ++i)
+        {
+            ComboBoxChooseMember.addItem(members.get(i).toString());
+        }
+    }//GEN-LAST:event_ButtonEditMemberActionPerformed
+
+    private void ButtonCancelEditMemberChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelEditMemberChooseActionPerformed
+        PanelLoggedInAsManager.setVisible(true);
+        PanelLoggedInAsManagerScreenHeader.setVisible(true);
+        PanelEditMemberChooseMember.setVisible(false);
+        PanelEditMemberHeaderChoose.setVisible(false);
+        
+    }//GEN-LAST:event_ButtonCancelEditMemberChooseActionPerformed
+
+    private void ButtonOKChooseMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberActionPerformed
+        PanelLoggedInAsManager.setVisible(false);
+        PanelLoggedInAsManagerScreenHeader.setVisible(false);
+        PanelEditMemberChooseMember.setVisible(false);
+        PanelEditMemberHeaderChoose.setVisible(false);
+        PanelEditMember.setVisible(true);
+        PanelEditMemberHeader.setVisible(true);
+        String StrMember = ComboBoxChooseMember.getSelectedItem().toString();
+        String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
+                         StrMember.indexOf(","));
+        int idMember = 
+        Integer.parseInt(StrMemberSub.trim());
+        Member m = c.getMember(idMember);
+        this.TextFieldEditMemberName.setText(m.getName());
+        this.TextFieldEditMemberBirthYear.setText(m.getBirthyear().toString());
+        this.RadioButtonEditMemberPassive.setSelected(true);
+        //Needs more code
+    }//GEN-LAST:event_ButtonOKChooseMemberActionPerformed
+
+    
+    private void ButtonCancelEditMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelEditMemberActionPerformed
+        PanelLoggedInAsManager.setVisible(true);
+        PanelLoggedInAsManagerScreenHeader.setVisible(true);
+        PanelEditMember.setVisible(false);
+        PanelEditMemberHeader.setVisible(false);
+        PanelEditMemberChooseMember.setVisible(false);
+        PanelEditMemberHeaderChoose.setVisible(false);
+    }//GEN-LAST:event_ButtonCancelEditMemberActionPerformed
+
+    private void RadioButtonEditMemberPassiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonEditMemberPassiveActionPerformed
+        RadioButtonEditMemberBasicActionPerformed(evt);
+        //Clearing selections
+        this.buttonGroupEditMemberActivityType.clearSelection();
+        //Disabling Buttons
+        this.RadioButtonEditMemberBasic.setEnabled(false);
+        this.RadioButtonEditMemberCompetitive.setEnabled(false);
+    }//GEN-LAST:event_RadioButtonEditMemberPassiveActionPerformed
+
+    private void RadioButtonEditMemberActiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonEditMemberActiveActionPerformed
+        //Enabling Radio Buttons
+        this.RadioButtonEditMemberBasic.setEnabled(true);
+        this.RadioButtonEditMemberCompetitive.setEnabled(true);
+    }//GEN-LAST:event_RadioButtonEditMemberActiveActionPerformed
+
+    private void RadioButtonEditMemberBasicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonEditMemberBasicActionPerformed
+        //Clearing selections
+        this.RadioButtonEditMemberBackstroke.setSelected(false);
+        this.RadioButtonEditMemberBreaststroke.setSelected(false);
+        this.RadioButtonEditMemberButterfly.setSelected(false);
+        this.RadioButtonEditMemberCrawl.setSelected(false);
+        //Disabling Radio Buttons
+        this.RadioButtonEditMemberBackstroke.setEnabled(false);
+        this.RadioButtonEditMemberBreaststroke.setEnabled(false);
+        this.RadioButtonEditMemberButterfly.setEnabled(false);
+        this.RadioButtonEditMemberCrawl.setEnabled(false);
+    }//GEN-LAST:event_RadioButtonEditMemberBasicActionPerformed
+
+    private void RadioButtonEditMemberCompetitiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonEditMemberCompetitiveActionPerformed
+        //Enabling Radio Buttons
+        this.RadioButtonEditMemberBackstroke.setEnabled(true);
+        this.RadioButtonEditMemberBreaststroke.setEnabled(true);
+        this.RadioButtonEditMemberButterfly.setEnabled(true);
+        this.RadioButtonEditMemberCrawl.setEnabled(true);
+    }//GEN-LAST:event_RadioButtonEditMemberCompetitiveActionPerformed
+
+    private void ButtonEditMemberEditChosenMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberEditChosenMemberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonEditMemberEditChosenMemberActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -865,40 +1270,63 @@ public class GUI extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonBackToMainMenu;
     private javax.swing.JButton ButtonCancelCreateNewMember;
+    private javax.swing.JButton ButtonCancelEditMember;
+    private javax.swing.JButton ButtonCancelEditMemberChoose;
     private javax.swing.JButton ButtonCreateNewMember;
     private javax.swing.JButton ButtonDeleteMember;
     private javax.swing.JButton ButtonEditMember;
+    private javax.swing.JButton ButtonEditMemberEditChosenMember;
     private javax.swing.JButton ButtonLoginAsCashier;
-    private javax.swing.JButton ButtonLoginAsCashier1;
     private javax.swing.JButton ButtonLoginAsManager;
-    private javax.swing.JButton ButtonLoginAsManager1;
     private javax.swing.JButton ButtonLoginAsTrainer;
-    private javax.swing.JButton ButtonLoginAsTrainer1;
     private javax.swing.JButton ButtonNewMemberCreateMember;
+    private javax.swing.JButton ButtonOKChooseMember;
     private javax.swing.JButton ButtonViewMembers;
+    private javax.swing.JComboBox<String> ComboBoxChooseMember;
     private java.awt.Label LabeManagerScreenHeader;
     private javax.swing.JLabel LabeManagerScreenHome;
     private javax.swing.JLabel LabelBirthYearFormat;
+    private javax.swing.JLabel LabelBirthYearFormatEditMember;
     private java.awt.Label LabelCreateNewMemberHeader;
     private javax.swing.JLabel LabelCreateNewMemberHome;
     private java.awt.Label LabelCreateNewMemberLogAsManager;
+    private javax.swing.JLabel LabelEditMemberActivityType;
+    private javax.swing.JLabel LabelEditMemberChooseMember;
+    private javax.swing.JLabel LabelEditMemberDisciplineType;
+    private java.awt.Label LabelEditMemberHeader;
+    private java.awt.Label LabelEditMemberHeaderChoose;
+    private javax.swing.JLabel LabelEditMemberHome;
+    private javax.swing.JLabel LabelEditMemberHomeChoose;
+    private java.awt.Label LabelEditMemberLogAsManager;
+    private java.awt.Label LabelEditMemberLogAsManagerChoose;
+    private javax.swing.JLabel LabelEditMemberMembershipType;
     private java.awt.Label LabelLoginScreenHeader;
-    private java.awt.Label LabelLoginScreenHeader1;
     private javax.swing.JLabel LabelLoginScreenHome;
-    private javax.swing.JLabel LabelLoginScreenHome1;
     private javax.swing.JLabel LabelNewMemberActivityType;
     private javax.swing.JLabel LabelNewMemberBirthYear;
+    private javax.swing.JLabel LabelNewMemberBirthYear1;
     private javax.swing.JLabel LabelNewMemberDisciplineType;
     private javax.swing.JLabel LabelNewMemberMembershipType;
     private javax.swing.JLabel LabelNewMemberName;
-    private javax.swing.JPanel PaneCreateNewMemberHeader;
-    private javax.swing.JPanel PaneManagerScreenHeader;
+    private javax.swing.JLabel LabelNewMemberName1;
     private javax.swing.JPanel PanelCreateNewMember;
+    private javax.swing.JPanel PanelCreateNewMemberHeader;
     private javax.swing.JPanel PanelEditMember;
+    private javax.swing.JPanel PanelEditMemberChooseMember;
+    private javax.swing.JPanel PanelEditMemberHeader;
+    private javax.swing.JPanel PanelEditMemberHeaderChoose;
     private javax.swing.JPanel PanelLoggedInAsManager;
+    private javax.swing.JPanel PanelLoggedInAsManagerScreenHeader;
     private javax.swing.JPanel PanelLoginScreen;
     private javax.swing.JPanel PanelLoginScreenHeader;
-    private javax.swing.JPanel PanelLoginScreenHeader1;
+    private javax.swing.JRadioButton RadioButtonEditMemberActive;
+    private javax.swing.JRadioButton RadioButtonEditMemberBackstroke;
+    private javax.swing.JRadioButton RadioButtonEditMemberBasic;
+    private javax.swing.JRadioButton RadioButtonEditMemberBreaststroke;
+    private javax.swing.JRadioButton RadioButtonEditMemberButterfly;
+    private javax.swing.JRadioButton RadioButtonEditMemberCompetitive;
+    private javax.swing.JRadioButton RadioButtonEditMemberCrawl;
+    private javax.swing.JRadioButton RadioButtonEditMemberPassive;
     private javax.swing.JRadioButton RadioButtonNewMemberActive;
     private javax.swing.JRadioButton RadioButtonNewMemberBackstroke;
     private javax.swing.JRadioButton RadioButtonNewMemberBasic;
@@ -907,10 +1335,14 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JRadioButton RadioButtonNewMemberCompetitive;
     private javax.swing.JRadioButton RadioButtonNewMemberCrawl;
     private javax.swing.JRadioButton RadioButtonNewMemberPassive;
+    private javax.swing.JTextField TextFieldEditMemberBirthYear;
+    private javax.swing.JTextField TextFieldEditMemberName;
     private javax.swing.JTextField TextFieldNewMemberBirthYear;
     private javax.swing.JTextField TextFieldNewMemberName;
-    private javax.swing.ButtonGroup buttonGroupActivityType;
-    private javax.swing.ButtonGroup buttonGroupPassiveActive;
+    private javax.swing.ButtonGroup buttonGroupCreateMemberActivityType;
+    private javax.swing.ButtonGroup buttonGroupCreateMemberPassiveActive;
+    private javax.swing.ButtonGroup buttonGroupEditMemberActivityType;
+    private javax.swing.ButtonGroup buttonGroupEditMemberPassiveActive;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables

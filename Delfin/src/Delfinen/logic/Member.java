@@ -37,7 +37,7 @@ public class Member
     @Override
     public String toString()
     {
-        return "Member with " + "id: " + idCounter + ", name: " + name + ", birthyear: " + birthyear + ", membershipType: " + membershipType + ", yearsPaid: " + yearsPaid;
+        return "Member with " + "id: " + idMember + ", name: " + name + ", birthyear: " + birthyear + ", membershipType: " + membershipType + ", yearsPaid: " + yearsPaid;
     }
 
     @Override

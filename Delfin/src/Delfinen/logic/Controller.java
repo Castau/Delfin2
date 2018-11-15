@@ -84,10 +84,16 @@ public class Controller {
 
     }
 
-    public void getMember(int id) {
-//        modelController.getMember(0);
-//        modelController.getMemberActive(0);
-//        modelController.getMemberCompetitive(0);
+    public Member getMember(int id) {
+        if (modelController.getMember(id) != null)
+        {
+            return modelController.getMember(id);
+        }
+        if (modelController.getMemberActive(id) != null)
+        {
+            return modelController.getMemberActive(id);
+        }
+        return modelController.getMemberCompetitive(id);
     }
 
     public void deleteMember(int MemberID) {
@@ -95,8 +101,8 @@ public class Controller {
 
     }
 
-    public void getAllMembers() {
-//        modelController.getAllMembersInBasicMemberFormat();
+    public ArrayList getAllMembers() {
+        return modelController.getAllMembersInBasicMemberFormat();
     }
 
     //Cashier

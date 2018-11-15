@@ -21,9 +21,13 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroupPassiveActive">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupCreateMemberPassiveActive">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroupActivityType">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupCreateMemberActivityType">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupEditMemberPassiveActive">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupEditMemberActivityType">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -52,7 +56,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsManager" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsManager" pref="810" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -66,8 +70,15 @@
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelEditMember" max="32767" attributes="0"/>
+                  <Component id="PanelEditMemberChooseMember" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+          <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="PanelEditMember" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -78,7 +89,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsManager" pref="435" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsManager" pref="436" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -92,8 +103,15 @@
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelEditMember" max="32767" attributes="0"/>
+                  <Component id="PanelEditMemberChooseMember" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+          <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="PanelEditMember" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -105,9 +123,8 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelLoginScreenHeader" alignment="0" pref="790" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="400" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="ButtonLoginAsTrainer" alignment="1" min="-2" pref="95" max="-2" attributes="0"/>
                       <Component id="ButtonLoginAsCashier" min="-2" pref="95" max="-2" attributes="0"/>
@@ -115,6 +132,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
               </Group>
+              <Component id="PanelLoginScreenHeader" alignment="0" pref="830" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -127,7 +145,7 @@
                   <Component id="ButtonLoginAsCashier" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="ButtonLoginAsTrainer" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="154" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="177" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -151,7 +169,7 @@
                       <Component id="LabelLoginScreenHome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="LabelLoginScreenHeader" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="573" max="32767" attributes="0"/>
+                      <EmptySpace pref="691" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -177,7 +195,7 @@
             <Component class="javax.swing.JLabel" name="LabelLoginScreenHome">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/GUIImages/icons8_Edit_50px.png"/>
+                  <Image iconType="3" name="/GUIImages/icons8_Home_50px.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -189,7 +207,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Edit member"/>
+                <Property name="text" type="java.lang.String" value="Login"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -233,7 +251,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PaneManagerScreenHeader" alignment="0" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -250,14 +267,15 @@
                           <Component id="ButtonBackToMainMenu" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="292" max="32767" attributes="0"/>
               </Group>
+              <Component id="PanelLoggedInAsManagerScreenHeader" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="PaneManagerScreenHeader" min="-2" max="-2" attributes="0"/>
+                  <Component id="PanelLoggedInAsManagerScreenHeader" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                   <Component id="ButtonCreateNewMember" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -274,7 +292,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="PaneManagerScreenHeader">
+        <Container class="javax.swing.JPanel" name="PanelLoggedInAsManagerScreenHeader">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -289,7 +307,7 @@
                       <Component id="LabeManagerScreenHome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="LabeManagerScreenHeader" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="436" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -356,6 +374,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Edit member    "/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonEditMemberActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="ButtonDeleteMember">
           <Properties>
@@ -397,7 +418,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PaneCreateNewMemberHeader" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -423,7 +443,7 @@
                                               <Component id="RadioButtonNewMemberBasic" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="RadioButtonNewMemberCompetitive" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="94" max="32767" attributes="0"/>
+                                          <EmptySpace pref="134" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -459,12 +479,13 @@
                   <Component id="ButtonNewMemberCreateMember" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
+              <Component id="PanelCreateNewMemberHeader" alignment="0" pref="810" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="PaneCreateNewMemberHeader" min="-2" max="-2" attributes="0"/>
+                  <Component id="PanelCreateNewMemberHeader" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="LabelNewMemberName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -525,13 +546,16 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="PaneCreateNewMemberHeader">
+        <Container class="javax.swing.JPanel" name="PanelCreateNewMemberHeader">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[770, 96]"/>
             </Property>
           </Properties>
 
@@ -746,40 +770,47 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="PanelEditMember">
+    <Container class="javax.swing.JPanel" name="PanelEditMemberChooseMember">
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelLoginScreenHeader1" alignment="0" pref="790" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="ButtonLoginAsTrainer1" alignment="1" min="-2" pref="95" max="-2" attributes="0"/>
-                      <Component id="ButtonLoginAsCashier1" alignment="1" min="-2" pref="95" max="-2" attributes="0"/>
-                      <Component id="ButtonLoginAsManager1" alignment="1" min="-2" max="-2" attributes="0"/>
+              <Component id="PanelEditMemberHeaderChoose" alignment="0" pref="810" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="ButtonCancelEditMemberChoose" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="ComboBoxChooseMember" min="-2" pref="637" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                          <Component id="ButtonOKChooseMember" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="LabelEditMemberChooseMember" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="335" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="PanelLoginScreenHeader1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                  <Component id="ButtonLoginAsManager1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="ButtonLoginAsCashier1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="ButtonLoginAsTrainer1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="154" max="32767" attributes="0"/>
+                  <Component id="PanelEditMemberHeaderChoose" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="LabelEditMemberChooseMember" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ButtonOKChooseMember" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ComboBoxChooseMember" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="240" max="32767" attributes="0"/>
+                  <Component id="ButtonCancelEditMemberChoose" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="PanelLoginScreenHeader1">
+        <Container class="javax.swing.JPanel" name="PanelEditMemberHeaderChoose">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="99" type="rgb"/>
@@ -794,25 +825,43 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="LabelLoginScreenHome1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="LabelLoginScreenHeader1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="631" max="32767" attributes="0"/>
+                      <Component id="LabelEditMemberHomeChoose" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="LabelEditMemberHeaderChoose" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="593" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="LabelEditMemberLogAsManagerChoose" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="LabelLoginScreenHome1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="LabelEditMemberHomeChoose" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="LabelEditMemberHeaderChoose" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="LabelLoginScreenHeader1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="LabelEditMemberLogAsManagerChoose" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -820,14 +869,14 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="LabelLoginScreenHome1">
+            <Component class="javax.swing.JLabel" name="LabelEditMemberHomeChoose">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/GUIImages/icons8_Home_50px.png"/>
+                  <Image iconType="3" name="/GUIImages/icons8_Edit_50px.png"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="java.awt.Label" name="LabelLoginScreenHeader1">
+            <Component class="java.awt.Label" name="LabelEditMemberHeaderChoose">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="GungsuhChe" size="24" style="1"/>
@@ -835,37 +884,405 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Login"/>
+                <Property name="text" type="java.lang.String" value="Edit member"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="LabelEditMemberLogAsManagerChoose">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Kartika" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Logged in as Manager"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="ButtonLoginAsManager1">
+        <Component class="javax.swing.JLabel" name="LabelEditMemberChooseMember">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Iskoola Pota" size="18" style="0"/>
+              <Font name="Tahoma" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Manager"/>
+            <Property name="text" type="java.lang.String" value="Choose member"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ButtonCancelEditMemberChoose">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Iskoola Pota" size="12" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CANCEL"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLoginAsManager1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCancelEditMemberChooseActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonLoginAsCashier1">
+        <Component class="javax.swing.JButton" name="ButtonOKChooseMember">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="OK"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonOKChooseMemberActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="ComboBoxChooseMember">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="PanelEditMember">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="PanelEditMemberHeader" alignment="0" pref="810" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="LabelNewMemberBirthYear1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="LabelNewMemberName1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="LabelEditMemberMembershipType" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="LabelEditMemberActivityType" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                          <Component id="TextFieldEditMemberBirthYear" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                                          <Component id="RadioButtonEditMemberBasic" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="RadioButtonEditMemberCompetitive" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="TextFieldEditMemberName" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="RadioButtonEditMemberActive" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioButtonEditMemberPassive" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="LabelEditMemberDisciplineType" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="240" max="-2" attributes="0"/>
+                                  <Component id="LabelBirthYearFormatEditMember" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="75" pref="75" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="RadioButtonEditMemberCrawl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="RadioButtonEditMemberBreaststroke" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="RadioButtonEditMemberButterfly" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="RadioButtonEditMemberBackstroke" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ButtonCancelEditMember" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="ButtonEditMemberEditChosenMember" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="PanelEditMemberHeader" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelNewMemberName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TextFieldEditMemberName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="TextFieldEditMemberBirthYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelBirthYearFormatEditMember" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelNewMemberBirthYear1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Component id="LabelEditMemberMembershipType" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="LabelEditMemberDisciplineType" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="LabelEditMemberActivityType" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="ButtonCancelEditMember" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ButtonEditMemberEditChosenMember" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="RadioButtonEditMemberButterfly" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="RadioButtonEditMemberPassive" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="RadioButtonEditMemberActive" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="RadioButtonEditMemberBackstroke" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="RadioButtonEditMemberBreaststroke" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="RadioButtonEditMemberCrawl" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="RadioButtonEditMemberBasic" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="RadioButtonEditMemberCompetitive" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="PanelEditMemberHeader">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="99" type="rgb"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[770, 96]"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="LabelEditMemberHome" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="LabelEditMemberHeader" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="593" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="LabelEditMemberLogAsManager" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="LabelEditMemberHome" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="LabelEditMemberHeader" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="LabelEditMemberLogAsManager" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="LabelEditMemberHome">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/GUIImages/icons8_Edit_50px.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="LabelEditMemberHeader">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="GungsuhChe" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Edit member"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="LabelEditMemberLogAsManager">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Kartika" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Logged in as Manager"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="LabelNewMemberName1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Iskoola Pota" size="18" style="0"/>
+              <Font name="Tahoma" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cashier"/>
+            <Property name="text" type="java.lang.String" value="Name:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonLoginAsTrainer1">
+        <Component class="javax.swing.JLabel" name="LabelNewMemberBirthYear1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Iskoola Pota" size="18" style="0"/>
+              <Font name="Tahoma" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Trainer"/>
+            <Property name="text" type="java.lang.String" value="Birth year:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ButtonCancelEditMember">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Iskoola Pota" size="12" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CANCEL"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonCancelEditMemberActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextFieldEditMemberName">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Enter name here"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextFieldEditMemberBirthYear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Enter year here"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelBirthYearFormatEditMember">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="(YYYY)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonEditMemberPassive">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Passive"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioButtonEditMemberPassiveActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonEditMemberActive">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Active"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioButtonEditMemberActiveActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelEditMemberMembershipType">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Membership type:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelEditMemberActivityType">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Activity type:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonEditMemberBasic">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Basic"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioButtonEditMemberBasicActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonEditMemberCompetitive">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Competitive"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioButtonEditMemberCompetitiveActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelEditMemberDisciplineType">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Discipline type:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonEditMemberButterfly">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Butterfly"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonEditMemberCrawl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Crawl"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonEditMemberBackstroke">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Backstroke"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonEditMemberBreaststroke">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Breaststroke"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ButtonEditMemberEditChosenMember">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Iskoola Pota" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Confirm edit"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonEditMemberEditChosenMemberActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
