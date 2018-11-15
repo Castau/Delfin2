@@ -9,7 +9,6 @@ import Delfinen.data.ActivityType;
 import Delfinen.data.DisciplineType;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ModelController;
-import UI.UI;
 import java.time.Year;
 import java.util.ArrayList;
 import java.io.IOException;
