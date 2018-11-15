@@ -4,7 +4,6 @@ import Delfinen.data.ActivityType;
 import Delfinen.data.DisciplineType;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ModelController;
-import UI.UI;
 import java.time.Year;
 import java.util.ArrayList;
 import java.io.IOException;
@@ -15,12 +14,12 @@ import java.io.IOException;
  */
 public class Controller {
 
-    private UI ui;
+
     private ModelController modelController;
 
     public Controller() {
         modelController = new ModelController(this);
-        ui = new UI();
+
     }
 
     public ModelController getModelController() {
