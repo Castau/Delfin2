@@ -30,10 +30,8 @@ public class Member
         this.name = name;
         this.birthyear = birthyear;
         this.membershipType = membershipType;
-        yearsPaid.add(Year.now());
-
     }
-
+    
     @Override
     public String toString()
     {
@@ -80,6 +78,11 @@ public class Member
         return idMember;
     }
 
+    public void setIdMember(int idMember) 
+    {
+        this.idMember = idMember;
+    }
+
     public String getName()
     {
         return name;
@@ -112,6 +115,15 @@ public class Member
     public boolean revokePayment(Year year)
     {
         return yearsPaid.remove(year);
+    }
+    
+    public int calcArrears()
+    {
+        //This method calculates prices for all types of members (including sub-classes)
+        String birthyear = this.getBirthyear().toString();
+        int age = (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(birthyear)));
+        // enums with prices (from now price class)
+        return 1;
     }
 
 }

@@ -16,7 +16,7 @@ public class ModelController {
     private DataAccessorFile dataFile;
     private Model model;
     private Controller controller;
-    private String filePath = "";
+    private String filePath = "C:\\Users\\Shevitar\\Documents\\CBS Afleveringer\\Delfinen\\FileDestination";
     
     public ModelController(Controller controller) {
         this.controller = controller;
