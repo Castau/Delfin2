@@ -17,14 +17,14 @@ public class Member
     private String name;
     private Year birthyear;
     private MembershipType membershipType;
-    private ArrayList<Year> yearsPaid;
+    private ArrayList<Year> yearsPaid = new ArrayList();
 //    private ActivityType activityType;
 //    private DisciplineType disciplineType;
 
     //Normal member
     public Member(String name, Year birthyear, MembershipType membershipType)
 
-    {   yearsPaid = new ArrayList();    
+    {
         ++idCounter;
         idMember = idCounter;
         this.name = name;
@@ -37,7 +37,7 @@ public class Member
     @Override
     public String toString()
     {
-        return "Member with " + "id: " + idCounter + ", name: " + name + ", birthyear: " + birthyear + ", membershipType: " + membershipType + ", yearsPaid: " + yearsPaid;
+        return "ID: " + idMember + ", name: " + name + ", birthyear: " + birthyear + ", yearsPaid: " + yearsPaid + ", membershipType: " + membershipType;
     }
 
     @Override

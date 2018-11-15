@@ -27,6 +27,14 @@ public class MemberActive extends Member
     }
 
     @Override
+    public String toString() {
+        return super.toString() + ", ActivityType: " + activityType;
+    }
+
+    
+    
+    
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
