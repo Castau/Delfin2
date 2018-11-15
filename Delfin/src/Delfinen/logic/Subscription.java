@@ -10,6 +10,7 @@ import java.time.Year;
  */
 public class Subscription
 {
+
     private Controller controller;
     private ArrayList arrears;
     private ArrayList<Member> Members;
@@ -44,7 +45,7 @@ public class Subscription
 //        }
 //        return nonPayee;
 //    }
-    public ArrayList calculateArrears()
+    public ArrayList calculateArrears(ArrayList<Member> Members)
     {
         Members = controller.getAllMembers();
         //Year currentYear = Year.now();
@@ -56,13 +57,13 @@ public class Subscription
         {
             int arrearCost;
 
-            if (!(Members.get(i).getYearsPaid().contains(Year.now())) && Members.get(i).getMembershipType().equals(MembershipType.PASSIVE) )
+            if (!(Members.get(i).getYearsPaid().contains(Year.of(2019))) && Members.get(i).getMembershipType().equals(MembershipType.PASSIVE))
             {
                 arrearCost = 500;
                 arrears.add(Members.get(i) + ", ARREAR: " + arrearCost);
                 continue;
             }
-            if (Members.get(i).getMembershipType().equals(MembershipType.ACTIVE) && !Members.get(i).getYearsPaid().contains(Year.of(2019)))
+            if (!(Members.get(i).getYearsPaid().contains(Year.of(2019))) && Members.get(i).getMembershipType().equals(MembershipType.ACTIVE))
             {
                 String birthyear = Members.get(i).getBirthyear().toString();
                 int age = (Integer.parseInt(currentYear) - (Integer.parseInt(birthyear)));
@@ -74,7 +75,7 @@ public class Subscription
                     continue;
                 }
 
-                if (age > 17 && age <=59)
+                if (age > 17 && age <= 59)
                 {
                     arrearCost = 1600;
                     arrears.add(Members.get(i) + ", ARREAR: " + arrearCost);

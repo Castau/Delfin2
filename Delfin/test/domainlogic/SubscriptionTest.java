@@ -42,12 +42,24 @@ public class SubscriptionTest
     @Before
     public void setUp()
     {
-        a = new Member("Rúni", Year.of(1994), PASSIVE);
-        b = new MemberActive("Camilla", Year.of(1990), MembershipType.ACTIVE, ActivityType.BASIC);
-        c = new MemberCompetitive("Asger", Year.of(1997), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
-        Members.add(a);
-        Members.add(b);
-        Members.add(c);
+        Member m1 = new Member("Hans", Year.of(1902), MembershipType.PASSIVE);
+        Member m2 = new Member("Karl", Year.of(2001), MembershipType.PASSIVE);
+        MemberActive m3 = new MemberActive("Signe", Year.of(1996), MembershipType.ACTIVE, ActivityType.BASIC);
+        MemberActive m4 = new MemberActive("Otto", Year.of(1997), MembershipType.ACTIVE, ActivityType.BASIC);
+        MemberCompetitive m5 = new MemberCompetitive("Arne", Year.of(1999), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+        MemberCompetitive m6 = new MemberCompetitive("Lily", Year.of(2002), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+        Members.add(m1);
+        Members.add(m2);
+        Members.add(m3);
+        Members.add(m4);
+        Members.add(m5);
+        Members.add(m6);
+//        a = new Member("Rúni", Year.of(1994), PASSIVE);
+//        b = new MemberActive("Camilla", Year.of(1990), MembershipType.ACTIVE, ActivityType.BASIC);
+//        c = new MemberCompetitive("Asger", Year.of(1997), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+//        Members.add(a);
+//        Members.add(b);
+//        Members.add(c);
     }
 
 //    @Test
@@ -90,9 +102,9 @@ public class SubscriptionTest
         expResult.add(a);
         expResult.add(b);
         expResult.add(c);
-        expResult = instance.calculateArrears();
+        expResult = instance.calculateArrears(Members);
         
-        ArrayList result = instance.calculateArrears();
+        ArrayList result = instance.calculateArrears(controller.getAllMembers());
         assertNotNull(expResult);
         assertNotNull(result);
         System.out.println(expResult + "\n" + result);
@@ -107,14 +119,13 @@ public class SubscriptionTest
         a.registerPayment(Year.of(2017));
         b.registerPayment(Year.of(2017));
         c.registerPayment(Year.of(2017));
-        //Subscription sub = new Subscription();
+        Subscription sub = new Subscription(controller);
 
         ArrayList expResult = null;
-        //ArrayList result = sub.calculateArrears(Members);
+        ArrayList result = sub.calculateArrears(Members);
 
-        //assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result);
+        
     }
 
     @Test
