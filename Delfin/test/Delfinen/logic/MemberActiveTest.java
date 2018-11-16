@@ -1,4 +1,4 @@
-package domainlogic;
+package Delfinen.logic;
 
 import Delfinen.data.ActivityType;
 import Delfinen.logic.MemberActive;
@@ -28,7 +28,7 @@ public class MemberActiveTest
     {
         MemberActive m = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.BASIC); 
         assertNotNull(m);
-        assertEquals(1, m.getId());
+        assertEquals(0, m.getId());
         assertEquals("Rúni", m.getName());
         assertEquals(Year.of(1994), m.getBirthyear());
         assertEquals(MembershipType.ACTIVE, m.getMembershipType());

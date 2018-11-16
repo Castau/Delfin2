@@ -1,6 +1,5 @@
-package domainlogic;
+package Delfinen.logic;
 
-import Delfinen.logic.Member;
 import static Delfinen.data.MembershipType.PASSIVE;
 import java.time.Year;
 import java.util.ArrayList;
@@ -47,9 +46,9 @@ public class MemberTest
         assertEquals(PASSIVE, m.getMembershipType());
    }
    
-   @Test (expected = RuntimeException.class)
-   public void negativeTestCreateMember()
-   {
-        //Member m = new Member("Rúni", Year.of(1994), FALSEENUM);
-   }
+    @Test (expected = RuntimeException.class)
+    public void negativeTestCreateMember()
+    {
+        Member m = new Member("Rúni", Year.of(1994), PASSIVE);
+    }
 }

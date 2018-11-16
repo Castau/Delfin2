@@ -1,4 +1,4 @@
-package domainlogic;
+package Delfinen.logic;
 
 
 import Delfinen.data.ActivityType;
@@ -35,7 +35,7 @@ public class MemberCompetitiveTest
         MemberCompetitive member = new MemberCompetitive("Karl", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
 
         assertNotNull(member);
-        assertEquals(1, member.getId());
+        assertEquals(0, member.getId());
         assertEquals("Karl", member.getName());
         assertEquals(Year.of(1994), member.getBirthyear());
         assertEquals(MembershipType.ACTIVE, member.getMembershipType());

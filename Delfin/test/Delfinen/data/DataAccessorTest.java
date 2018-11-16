@@ -1,4 +1,4 @@
-package domaindata;
+package Delfinen.data;
 
 import Delfinen.data.DataAccessorFile;
 import Delfinen.data.Model;
