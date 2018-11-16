@@ -1,19 +1,10 @@
 package Delfinen.data;
 
-import Delfinen.data.ActivityType;
-import Delfinen.data.DisciplineType;
-import Delfinen.data.MembershipType;
-import Delfinen.data.Model;
 import Delfinen.logic.Member;
 import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
 import java.time.Year;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
