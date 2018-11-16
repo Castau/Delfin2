@@ -1,4 +1,4 @@
-package domainlogic;
+package Delfinen.logic;
 
 import Delfinen.data.MembershipType;
 import Delfinen.logic.Member;

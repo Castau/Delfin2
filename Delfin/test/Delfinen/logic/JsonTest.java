@@ -1,4 +1,4 @@
-package domainlogic;
+package Delfinen.logic;
 
 import Delfinen.data.JsonParser;
 import Delfinen.logic.Member;

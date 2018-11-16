@@ -1,4 +1,4 @@
-package domaindata;
+package Delfinen.data;
 
 import Delfinen.data.ActivityType;
 import Delfinen.data.DisciplineType;
