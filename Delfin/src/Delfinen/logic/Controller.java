@@ -166,6 +166,11 @@ public class Controller
         return modelController.getAllMembersInBasicMemberFormat();
 
     }
+    
+    public ArrayList<MemberCompetitive> getAllCompetitiveMembers()
+    {
+        return modelController.getAllCompetitiveMembers();
+    }
 
     //Cashier
     public void registerPayment(int memberID, Year year)

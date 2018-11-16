@@ -88,6 +88,13 @@ public class ModelController {
         dataFile.writeToFile(model, filePath);
     }
     
+    public ArrayList<MemberCompetitive> getAllCompetitiveMembers()
+    {
+        ArrayList<MemberCompetitive> allCompetitiveMembers = new ArrayList();
+        allCompetitiveMembers.addAll(model.getAllMembersCompetitive());
+        return allCompetitiveMembers;
+    }
+    
     public ArrayList<Member> getAllMembersInBasicMemberFormat(){
         ArrayList<Member> allMembers = new ArrayList();
         allMembers.addAll(model.getAllMembers());
