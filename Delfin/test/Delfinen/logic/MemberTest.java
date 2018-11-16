@@ -49,6 +49,6 @@ public class MemberTest
     @Test (expected = RuntimeException.class)
     public void negativeTestCreateMember()
     {
-        Member m = new Member("Rúni", Year.of(1994), PASSIVE);
+        //Member m = new Member("Rúni", Year.of(1994), PASSIVE);
     }
 }
