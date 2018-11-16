@@ -156,4 +156,14 @@ public class Member
         return 0; //Required value. 0 in arrears.
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBirthyear(Year birthyear) {
+        this.birthyear = birthyear;
+    }
+    
+    
+
 }

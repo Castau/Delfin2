@@ -196,6 +196,7 @@ public class GUI extends javax.swing.JFrame
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("DELPHI");
 
         PanelLoginScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelLoginScreenHeader.setPreferredSize(new java.awt.Dimension(770, 96));
