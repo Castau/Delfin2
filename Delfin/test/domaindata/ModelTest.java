@@ -48,10 +48,6 @@ public class ModelTest {
 
     }
 
-//
-//    public void addMember(Member member) {
-//        members.add(member);
-//    }
     @Test
     public void testAddAndGetMember() {
         model.addMember(m1);
@@ -82,8 +78,41 @@ public class ModelTest {
         testMembers.add(m1);
         testMembers.add(m2);
         assertEquals(testMembers,model.getAllMembers());
+              
+    }
+    
+    @Test
+    public void testEditMember(){
+       Member  me1 = new Member("ArneOtto", Year.of(1957), MembershipType.PASSIVE);  
+       model.addMember(m1);
+       me1.setIdMember(m1.getId());
+       m1.setBirthyear(Year.of(1957));
+       m1.setName("ArneOtto");
+       model.editMember(m1);
+       model.getMember(m1.getId());
+       assertEquals(me1, m1);
+       
+       
         
-        
+//        model.addMember(m1);
+//        model.addMember(m2);
+//        m2.setBirthyear(Year.of(1957));
+//        m2.setName("ArneOtto");
+//        model.editMember(m2);
+//        
+//        ArrayList<Member> testMembers = new ArrayList();
+//        model.addMember(m1);
+//        model.addMember(m2);
+//        
+//        assertEquals(testMembers, model.getAllMembers());
     }
 
 }
+
+//  public void editMember(Member member) {
+//        for (int i = 0; i < members.size(); i++) {
+//            if (member.getId() == (members.get(i).getId())) {
+//                members.set(i, member);
+//            }
+//        }
+//    }

@@ -120,4 +120,14 @@ public class Member
         return 1;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBirthyear(Year birthyear) {
+        this.birthyear = birthyear;
+    }
+    
+    
+
 }
