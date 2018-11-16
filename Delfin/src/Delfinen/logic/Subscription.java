@@ -7,6 +7,7 @@ import java.time.Year;
 /**
  *
  * @author runin
+ * //THIS CLASS IS UNFINISHED. MAY BE FIXED, MAY BE MOVED TO DATA.PRICE.
  */
 public class Subscription
 {
@@ -14,9 +15,7 @@ public class Subscription
     private Controller controller;
     private ArrayList arrears;
     private ArrayList<Member> Members;
-    // private ArrayList<Member> memberArrears;
-    // private ArrayList<MemberActive> memberActiveArrears;
-    // private ArrayList<MemberCompetitive> MemberCompetitiveArrears;
+    
 
     public Subscription(Controller controller)
     {
@@ -28,23 +27,7 @@ public class Subscription
         //MemberCompetitiveArrears = new ArrayList();
     }
 
-//Arraylist på member med year paid [x]
-//Arraylist i kontingent med members der ikke har current year i deres years paid liste
-//kontingent udregner hvor meget de skylder
-//kontingent skal kende (printe?) members navn id og yearspaidliste
-//    public ArrayList addMembers(ArrayList<Member> Members)
-//    {
-//        
-//        ArrayList nonPayee = new ArrayList();
-//        for (int i = 0; i < Members.size(); i++)
-//        {
-//            if (!Members.get(i).getYearsPaid().contains(Year.now()))
-//            {
-//                nonPayee.add(Members.get(i));
-//            }
-//        }
-//        return nonPayee;
-//    }
+
     public ArrayList calculateArrears(ArrayList<Member> Members)
     {
         Members = controller.getAllMembers();
@@ -82,7 +65,7 @@ public class Subscription
                     continue;
                 }
 
-                if (age > 60)
+                if (age >= 60)
                 {
                     arrearCost = (int) (1600 * 0.75); //25% discount
                     arrears.add(Members.get(i) + ", ARREAR: " + arrearCost);
@@ -93,14 +76,3 @@ public class Subscription
     }
 
 }
-// while (true)
-//        {
-//            String sNum = getString();
-//            try
-//            {
-//                return Integer.parseInt(sNum);
-//            } catch (NumberFormatException e)
-//            {
-//                print("Please enter an integer! \n ");
-//            }
-//        }
