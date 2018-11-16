@@ -1737,7 +1737,7 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonViewAllMembersCompetitionModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewAllMembersCompetitionModeActionPerformed
         this.textAreaAllMembers.setText("");
-        for (int i = 0; i < c.getAllMembers().size(); ++i)
+        for (int i = 0; i < c.getAllCompetitiveMembers().size(); ++i)
         {
             this.textAreaAllMembers.append(c.getAllCompetitiveMembers().get(i).toStringCompetitionVersion());
             this.textAreaAllMembers.append("\n");
