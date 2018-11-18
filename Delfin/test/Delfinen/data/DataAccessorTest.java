@@ -1,13 +1,8 @@
 package Delfinen.data;
 
-import Delfinen.data.DataAccessorFile;
-import Delfinen.data.Model;
-import Delfinen.data.ActivityType;
-import Delfinen.data.DisciplineType;
 import Delfinen.logic.Member;
 import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
-import Delfinen.data.MembershipType;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.FileReader;
