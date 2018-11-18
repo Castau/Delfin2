@@ -107,36 +107,6 @@ public class Model {
         return null;
     }
 
-    public ArrayList<Member> getMember(String memberName) {
-        ArrayList<Member> membersByName = new ArrayList();
-        for (int i = 0; i < members.size(); i++) {
-            if (memberName.equals(members.get(i).getName())) {
-                membersByName.add(members.get(i));
-            }
-        }
-        return membersByName;
-    }
-
-    public ArrayList<MemberActive> getMemberActive(String memberName) {
-        ArrayList<MemberActive> membersActiveByName = new ArrayList();
-        for (int i = 0; i < membersActive.size(); i++) {
-            if (memberName.equals(membersActive.get(i).getName())) {
-                membersActiveByName.add(membersActive.get(i));
-            }
-        }
-        return membersActiveByName;
-    }
-
-    public ArrayList<MemberCompetitive> getMemberCompetitive(String memberName) {
-        ArrayList<MemberCompetitive> membersCompetitiveByName = new ArrayList();
-        for (int i = 0; i < membersCompetitive.size(); i++) {
-            if (memberName.equals(membersCompetitive.get(i).getName())) {
-                membersCompetitiveByName.add(membersCompetitive.get(i));
-            }
-        }
-        return membersCompetitiveByName;
-    }
-
     public void deleteMember(int memberID) {
         for (int i = 0; i < members.size(); i++) {
             if ((members.get(i).getId()) == memberID) {

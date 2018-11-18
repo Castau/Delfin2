@@ -59,6 +59,7 @@ public class ModelTest {
         assertEquals(m5, model.getMemberCompetitive(m5.getId()));
 
     }
+    
 
     @Test
     public void testGetAllMembers() {
