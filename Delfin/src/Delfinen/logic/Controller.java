@@ -187,8 +187,7 @@ public class Controller
     public void getMemberArrear(int memberID) //Single user based on ID. ONLY RETURNS ARREAR, NOT USER INFO.    
 	
    {
-	
-     getMember(memberID).calculateArrear();
+        getMember(memberID).calculateArrear();
 	
    }
 

@@ -23,7 +23,7 @@ public class Member
 //    private ActivityType activityType;
 //    private DisciplineType disciplineType;
 
-    //Normal member
+    //Normal member, passive membership.
     public Member(String name, Year birthyear, MembershipType membershipType)
 
     {
@@ -72,6 +72,14 @@ public class Member
         {
             return false;
         }
+        if (!Objects.equals(this.yearsPaid, other.yearsPaid))
+        {
+            return false;
+        }
+        if (!Objects.equals(this.price, other.price))
+        {
+            return false;
+        }
         return true;
     }
 
@@ -90,9 +98,19 @@ public class Member
         return name;
     }
 
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
     public Year getBirthyear()
     {
         return birthyear;
+    }
+
+    public void setBirthyear(Year birthyear)
+    {
+        this.birthyear = birthyear;
     }
 
     public MembershipType getMembershipType()
@@ -119,51 +137,50 @@ public class Member
         return yearsPaid.remove(year);
     }
 
+    public int getAge()
+    {
+        int age;
+        String thisBirthYear = this.getBirthyear().toString();
+        return age = (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(thisBirthYear))); //CurrentYear-Birthyear = age
+    }
+
     public int calculateArrear() //Calculates and returns user arrear. DOES NOT RETURN USER INFO!!
     {
         //This method calculates prices for all types of members (including sub-classes)
-        String birthyear = this.getBirthyear().toString();
-        int age = (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(birthyear)));
 
-        if (!(this.getYearsPaid().contains(Year.now()))) //If this member has NOT already paid for the current year
+        if ((this.getYearsPaid().contains(Year.now()))) //If this member has already paid for the current year
         {
-            if (this.getMembershipType().equals(MembershipType.PASSIVE)) //If user is on passive membership subscription
-            {
-                price.getPrice(Price.priceType.PASSIVE);
-            }
-
-            if (this.getMembershipType().equals(MembershipType.ACTIVE)) //If user is on active membership subscription
-            {
-
-                if (age <= 17)
-                {
-                    price.getPrice(Price.priceType.YOUTH); //Returns value based on age 0-17 (inclusive)
-
-                }
-
-                if (age > 17 && age <= 59)
-                {
-                    price.getPrice(Price.priceType.SENIOR); //Returns value based on age 18-59 (inclusive)
-                }
-
-                if (age >= 60)
-                {
-                    price.getPrice(Price.priceType.PENSIONIST); //Returns value based on age 60+ (inclusive)
-                }
-
-            }
+            return 0;
         }
+        if (this.getMembershipType().equals(MembershipType.PASSIVE)) //If user is on passive membership subscription
+        {
+            return price.getPrice(Price.priceType.PASSIVE);
+        }
+
+        int age = this.getAge();
+
+        if (this.getMembershipType().equals(MembershipType.ACTIVE)) //If user is on active membership subscription
+        {
+
+            if (age <= 17)
+            {
+                return price.getPrice(Price.priceType.YOUTH); //Returns value based on age (0)-17 (inclusive)
+
+            }
+
+            if (age > 17 && age <= 59)
+            {
+                return price.getPrice(Price.priceType.SENIOR); //Returns value based on age 18-59 (inclusive)
+            }
+
+            if (age >= 60)
+            {
+                return price.getPrice(Price.priceType.PENSIONIST); //Returns value based on age 60+ (inclusive)
+            }
+
+        }
+
         return 0; //Required value. 0 in arrears.
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setBirthyear(Year birthyear) {
-        this.birthyear = birthyear;
-    }
-    
-    
 
 }
