@@ -40,4 +40,9 @@ public class DataAccessorFile {
         writer.close();
 
     }
+
+    public void setFILENAME(String FILENAME) {
+        this.FILENAME = FILENAME;
+    }
+    
 }

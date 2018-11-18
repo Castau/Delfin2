@@ -25,9 +25,11 @@ public class DataAccessorTest {
     private Model model;
     private DataAccessorFile data;
     private String filePath = "";
+    private String testFileName = "DelfinTEST.json";
 
     public DataAccessorTest() {
         data = new DataAccessorFile();
+        data.setFILENAME(testFileName);
     }
 
     @Before
