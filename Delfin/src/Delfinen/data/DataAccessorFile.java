@@ -21,6 +21,9 @@ public class DataAccessorFile {
 
     public DataAccessorFile() {
         jsonParser = new JsonParser();
+        if (Config.getTestMode() == true){
+            FILENAME = "DelfinTEST.json";
+        }
     }
 
     public Model readFile(String filePath) throws Exception {
