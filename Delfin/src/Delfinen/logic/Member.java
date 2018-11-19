@@ -149,14 +149,15 @@ public class Member
     {
         return yearsPaid.remove(year);
     }
-    
+
     /**
      * CurrentYear-Birthyear = age.
+     *
      * @return Returns the users age.
      */
     public int getAge()
     {
-        return (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(this.getBirthyear().toString()))); 
+        return (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(this.getBirthyear().toString())));
     }
 
     /**
