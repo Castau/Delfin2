@@ -39,7 +39,20 @@ public class MemberCompetitive extends MemberActive
         return "ID: " + super.getId() + ", Name: " + super.getName() + ", Birthyear: " + super.getBirthyear() 
                 + ", Activity type: " + super.getActivityType() + ", Disciplines: " + disciplineTypes;
     }
-        
+
+    @Override
+    public String toString() {
+        return "MemberCompetitive{" + super.toString() + "disciplineTypes=" + disciplineTypes + '}';
+    }
+    
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.disciplineTypes);
+        return hash;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)){
@@ -51,9 +64,6 @@ public class MemberCompetitive extends MemberActive
         if (obj == null) {
             return false;
         }
-        if (!super.equals(obj)){
-            return false;
-        }
         if (getClass() != obj.getClass()) {
             return false;
         }
@@ -63,5 +73,8 @@ public class MemberCompetitive extends MemberActive
         }
         return true;
     }
+        
+    
+  
     
 }

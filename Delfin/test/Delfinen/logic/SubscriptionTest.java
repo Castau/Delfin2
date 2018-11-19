@@ -39,6 +39,8 @@ public class SubscriptionTest
         disciplineList.add(DisciplineType.BREASTSTROKE);
     }
 
+    //Ryk det op i konstruktøren og sæt members som fields også evt. Hvis du skal bruge en frisk liste af members i dine tests,
+    //så skal du lave en ny arrayList i @Before før du laver dine members (så skal de ikke op i konstruktøren). 
     @Before
     public void setUp()
     {

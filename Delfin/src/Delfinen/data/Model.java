@@ -127,7 +127,8 @@ public class Model {
             }
         }
     }
-    
+
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -140,6 +141,9 @@ public class Model {
             return false;
         }
         final Model other = (Model) obj;
+        if (this.IdCounter != other.IdCounter) {
+            return false;
+        }
         if (!Objects.equals(this.members, other.members)) {
             return false;
         }
@@ -151,5 +155,13 @@ public class Model {
         }
         return true;
     }
+    
+   
+
+    @Override
+    public String toString() {
+        return "Model{" + "members=" + members + ", membersActive=" + membersActive + ", membersCompetitive=" + membersCompetitive + ", IdCounter=" + IdCounter + '}';
+    }
+    
 
 }
