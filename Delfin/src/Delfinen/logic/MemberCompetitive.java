@@ -14,6 +14,8 @@ import java.util.Objects;
 public class MemberCompetitive extends MemberActive
 {
 
+    private Training trainingSessions;
+    private Competition competitionResults;
     private ArrayList<DisciplineType> disciplineTypes;
 
     // ArrayList<DisciplineType> disciplineList laves evt. i GUI
@@ -29,6 +31,16 @@ public class MemberCompetitive extends MemberActive
         return disciplineTypes;
     }
 
+    public Training getTrainingSessions() {
+        return trainingSessions;
+    }
+
+    public Competition getCompetitionResults() {
+        return competitionResults;
+    }
+    
+    
+
     /*
     This secondary .toString() method specific to this subclass is necessary for
     special use in certain situations in the GUI class. 
@@ -43,14 +55,7 @@ public class MemberCompetitive extends MemberActive
     public String toString() {
         return "MemberCompetitive{" + super.toString() + "disciplineTypes=" + disciplineTypes + '}';
     }
-    
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.disciplineTypes);
-        return hash;
-    }
 
     @Override
     public boolean equals(Object obj) {

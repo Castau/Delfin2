@@ -1,17 +1,30 @@
 
 package Delfinen.logic;
 
+import java.util.ArrayList;
+
 /**
  * @author Camilla
  */
-public class CompetitionResults //extends TrainingResults
+public class Competition //extends TrainingResults
 {
+    private ArrayList<CompetitionResult> competitionsList;
+
+    public Competition(ArrayList<CompetitionResult> competitionsList) {
+        this.competitionsList = competitionsList;
+    }
     
-    //Runi:
+    public void addCompetitionResult(CompetitionResult result) {
+        competitionsList.add(result);
+    }
+    
+    
+}
+
+
+
+//Runi:
     //Competition: ForEachMember: CompetitionName (Stævne),  Result (placement), Time. (Date is not mentioned. Include?)
     
     //skal gemmes som object på MemberCompetitive
-    //nedarver fra TrainingResults
-    //herudover skal der være en liste med stævnenavn, placering og tid (og diciplin?)
-    
-}
+    //har liste af CompettitionResult objekter

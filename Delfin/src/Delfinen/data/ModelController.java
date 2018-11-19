@@ -1,11 +1,15 @@
 
 package Delfinen.data;
 
+import Delfinen.logic.CompetitionResult;
 import Delfinen.logic.Controller;
+import Delfinen.logic.Distance;
 import Delfinen.logic.Member;
 import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
+import Delfinen.logic.TrainingSession;
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 /**
@@ -91,6 +95,24 @@ public class ModelController {
         return allMembers;
     }
     
+    public void addTrainingSession(int memberID, LocalTime date, DisciplineType diciplineType, Distance distance, int timeInSec) throws IOException{
+        TrainingSession training = new TrainingSession(date, diciplineType, distance, timeInSec);
+        MemberCompetitive temp = model.getMemberCompetitive(memberID);
+        temp.getTrainingSessions().addTrainingSession(training);
+        model.editMemberCompetitive(temp);
+        dataFile.writeToFile(model, filePath);
+        
+    }
+    
+    public void addCompetitionResult(int memberID, LocalTime date, DisciplineType diciplineType, 
+                                     Distance distance, int timeInSec, int placement, String eventName) throws IOException{
+        CompetitionResult result = new CompetitionResult(date, diciplineType, distance, timeInSec, placement, eventName);
+        MemberCompetitive temp = model.getMemberCompetitive(memberID);
+        temp.getCompetitionResults().addCompetitionResult(result);
+        model.editMemberCompetitive(temp);
+        dataFile.writeToFile(model, filePath);
+        
+    }
     
     
 }

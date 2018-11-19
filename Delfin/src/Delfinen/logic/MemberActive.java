@@ -37,14 +37,6 @@ public class MemberActive extends Member
         return "MemberActive{" + super.toString() + "activityType=" + activityType + '}';
     }
 
-    
-    
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.activityType);
-        return hash;
-    }
 
     @Override
     public boolean equals(Object obj) {

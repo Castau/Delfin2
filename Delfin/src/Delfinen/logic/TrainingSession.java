@@ -1,6 +1,7 @@
 
 package Delfinen.logic;
 
+
 import Delfinen.data.DisciplineType;
 import java.time.LocalTime;
 import java.util.Objects;
@@ -8,22 +9,18 @@ import java.util.Objects;
 /**
  * @author Camilla
  */
-public class CompetitionResult implements Comparable<CompetitionResult>{
-    
+public class TrainingSession implements Comparable<TrainingSession>{
+
     private LocalTime date;
     private DisciplineType diciplineType;
     private Distance distance;
     private int timeInSec;  //evt localTime type?
-    private int placement;
-    private String eventName;
 
-    public CompetitionResult(LocalTime date, DisciplineType diciplineType, Distance distance, int timeInSec, int placement, String eventName) {
+    public TrainingSession(LocalTime date, DisciplineType diciplineType, Distance distance, int timeInSec) {
         this.date = date;
         this.diciplineType = diciplineType;
         this.distance = distance;
         this.timeInSec = timeInSec;
-        this.placement = placement;
-        this.eventName = eventName;
     }
 
     @Override
@@ -37,14 +34,8 @@ public class CompetitionResult implements Comparable<CompetitionResult>{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CompetitionResult other = (CompetitionResult) obj;
+        final TrainingSession other = (TrainingSession) obj;
         if (this.timeInSec != other.timeInSec) {
-            return false;
-        }
-        if (this.placement != other.placement) {
-            return false;
-        }
-        if (!Objects.equals(this.eventName, other.eventName)) {
             return false;
         }
         if (!Objects.equals(this.date, other.date)) {
@@ -60,11 +51,8 @@ public class CompetitionResult implements Comparable<CompetitionResult>{
     }
 
     @Override
-    public int compareTo(CompetitionResult other) {
-        return Integer.compare(timeInSec, other.timeInSec);
+    public int compareTo(TrainingSession other) {
+       return Integer.compare(timeInSec, other.timeInSec);
     }
-    
-    
-    
-    
+
 }
