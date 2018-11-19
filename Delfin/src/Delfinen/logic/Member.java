@@ -13,74 +13,81 @@ import java.util.Objects;
 public class Member
 {
 
-    private static int idCounter = 0;
     private int idMember;
     private String name;
     private Year birthyear;
     private MembershipType membershipType;
     private ArrayList<Year> yearsPaid = new ArrayList();
     private Price price = new Price();
-//    private ActivityType activityType;
-//    private DisciplineType disciplineType;
+
 
     //Normal member, passive membership.
     public Member(String name, Year birthyear, MembershipType membershipType)
 
     {
-        idMember = ++idCounter;
         this.name = name;
         this.birthyear = birthyear;
         this.membershipType = membershipType;
     }
 
+//    @Override
+//    public String toString()
+//    {
+//        return "ID: " + idMember + ", Name: " + name + ", Birthyear: " + birthyear + ", Years Paid: " + yearsPaid + ", MembershipType: " + membershipType;
+//    }
+
     @Override
-    public String toString()
-    {
-        return "ID: " + idMember + ", Name: " + name + ", Birthyear: " + birthyear + ", Years Paid: " + yearsPaid + ", MembershipType: " + membershipType;
+    public String toString() {
+        return "Member{" + "idMember=" + idMember + ", name=" + name + ", birthyear=" + birthyear + ", membershipType=" + membershipType + ", yearsPaid=" + yearsPaid + ", price=" + price + '}';
+    }
+    
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + this.idMember;
+        hash = 89 * hash + Objects.hashCode(this.name);
+        hash = 89 * hash + Objects.hashCode(this.birthyear);
+        hash = 89 * hash + Objects.hashCode(this.membershipType);
+        hash = 89 * hash + Objects.hashCode(this.yearsPaid);
+        hash = 89 * hash + Objects.hashCode(this.price);
+        return hash;
     }
 
     @Override
-    public boolean equals(Object obj)
-    {
-        if (this == obj)
-        {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (obj == null)
-        {
+        if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass())
-        {
+        if (getClass() != obj.getClass()) {
             return false;
         }
         final Member other = (Member) obj;
-        if (this.idMember != other.idMember)
-        {
+        if (this.idMember != other.idMember) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name))
-        {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.birthyear, other.birthyear))
-        {
+        if (!Objects.equals(this.birthyear, other.birthyear)) {
             return false;
         }
-        if (this.membershipType != other.membershipType)
-        {
+        if (this.membershipType != other.membershipType) {
             return false;
         }
-        if (!Objects.equals(this.yearsPaid, other.yearsPaid))
-        {
+        if (!Objects.equals(this.yearsPaid, other.yearsPaid)) {
             return false;
         }
-        if (!Objects.equals(this.price, other.price))
-        {
+        if (!Objects.equals(this.price, other.price)) {
             return false;
         }
         return true;
     }
+
+  
 
     public int getId()
     {

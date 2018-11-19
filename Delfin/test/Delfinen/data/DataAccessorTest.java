@@ -72,6 +72,8 @@ public class DataAccessorTest {
 
     @Test
     public void testFileToModel() throws Exception {
+        System.out.println(model);
+        System.out.println(data.readFile(filePath));
         assertEquals(model, data.readFile(filePath));
     }
 

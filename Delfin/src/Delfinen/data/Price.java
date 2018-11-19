@@ -1,6 +1,7 @@
 package Delfinen.data;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  *
@@ -84,4 +85,47 @@ public class Price
     {
         PASSIVE, YOUTH, SENIOR, PENSIONIST;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + this.passivePrice;
+        hash = 89 * hash + this.youthPrice;
+        hash = 89 * hash + this.seniorPrice;
+        hash = 89 * hash + this.pensionistPrice;
+        hash = 89 * hash + Objects.hashCode(this.allPrices);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Price other = (Price) obj;
+        if (this.passivePrice != other.passivePrice) {
+            return false;
+        }
+        if (this.youthPrice != other.youthPrice) {
+            return false;
+        }
+        if (this.seniorPrice != other.seniorPrice) {
+            return false;
+        }
+        if (this.pensionistPrice != other.pensionistPrice) {
+            return false;
+        }
+        if (!Objects.equals(this.allPrices, other.allPrices)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }

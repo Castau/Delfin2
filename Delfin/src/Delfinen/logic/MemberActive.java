@@ -3,6 +3,7 @@ package Delfinen.logic;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ActivityType;
 import java.time.Year;
+import java.util.Objects;
 
 
 /**
@@ -26,12 +27,25 @@ public class MemberActive extends Member
         return activityType;
     }
 
+//    @Override
+//    public String toString() {
+//        return super.toString() + ", ActivityType: " + activityType;
+//    }
+
     @Override
     public String toString() {
-        return super.toString() + ", ActivityType: " + activityType;
+        return "MemberActive{" + super.toString() + "activityType=" + activityType + '}';
     }
 
- 
+    
+    
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.activityType);
+        return hash;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)){
@@ -39,9 +53,6 @@ public class MemberActive extends Member
         }
         if (this == obj) {
             return true;
-        }
-        if (!super.equals(obj)){
-            return false;
         }
         if (obj == null) {
             return false;
@@ -55,6 +66,9 @@ public class MemberActive extends Member
         }
         return true;
     }
+
+ 
+    
 
     
     
