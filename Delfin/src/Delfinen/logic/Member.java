@@ -41,6 +41,11 @@ public class Member
         return "Member{" + "idMember:" + idMember + ", name=" + name + ", birthyear=" + birthyear + ", membershipType=" + membershipType + ", yearsPaid=" + yearsPaid + ", price=" + price + '}';
     }
     
+    
+    public String toStringNameID()
+    {
+        return "ID: " + idMember + ", Name: " + name + ", Years Paid: " + yearsPaid;
+    }
 
     @Override
     public int hashCode() {

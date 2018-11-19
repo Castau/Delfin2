@@ -50,6 +50,8 @@ public class GUI extends javax.swing.JFrame
         PanelEditMember.setVisible(false);
         PanelDeleteMember.setVisible(false);
         PanelViewMembers.setVisible(false);
+        PanelLoggedInAsCashier.setVisible(false);
+        PanelRegisterPayment.setVisible(false);
         //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -73,10 +75,10 @@ public class GUI extends javax.swing.JFrame
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         jSplitPane1 = new javax.swing.JSplitPane();
-        jPanel1 = new javax.swing.JPanel();
         buttonGroupCreateMemberPassiveActive = new javax.swing.ButtonGroup();
         buttonGroupCreateMemberActivityType = new javax.swing.ButtonGroup();
         buttonGroupEditMemberPassiveActive = new javax.swing.ButtonGroup();
@@ -171,17 +173,30 @@ public class GUI extends javax.swing.JFrame
         textAreaAllMembers = new java.awt.TextArea();
         ButtonViewAllMembersAll = new javax.swing.JButton();
         ButtonViewAllMembersCompetitionMode = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 221, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 181, Short.MAX_VALUE)
-        );
+        PanelLoggedInAsCashier = new javax.swing.JPanel();
+        PanelLoggedInAsCashierScreenHeader = new javax.swing.JPanel();
+        LabelCashierScreenHome = new javax.swing.JLabel();
+        LabelCashierScreenHeader = new java.awt.Label();
+        ButtonRegisterPayment = new javax.swing.JButton();
+        ButtonRevokePayment = new javax.swing.JButton();
+        ButtonCheckMembersArrear = new javax.swing.JButton();
+        ButtonAllArrears = new javax.swing.JButton();
+        ButtonAllMembersArrears = new javax.swing.JButton();
+        ButtonBackToMainMenuFromCashier = new javax.swing.JButton();
+        PanelRegisterPayment = new javax.swing.JPanel();
+        PanelRegisterPaymentHeader = new javax.swing.JPanel();
+        LabelRegisterPaymentHome = new javax.swing.JLabel();
+        LabelRegisterPaymentHeader = new java.awt.Label();
+        LabelRegisterPaymentLogAsCashier = new java.awt.Label();
+        LabelRegisterPaymentAllMembersIDName = new javax.swing.JLabel();
+        ButtonBackFromRegisterPayment = new javax.swing.JButton();
+        textAreaRegisterPaymentMemberList = new java.awt.TextArea();
+        TextFieldRegisterPaymentID = new javax.swing.JTextField();
+        LabelRegisterPaymentInsertID = new javax.swing.JLabel();
+        LabelRegisterPaymentPaymentYear = new javax.swing.JLabel();
+        TextFieldRegisterPaymentPaymentYear = new javax.swing.JTextField();
+        LabelRegisterPaymentYearFormat = new javax.swing.JLabel();
+        ButtonRegisterPaymentRegisterPayment = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DELPHI");
@@ -221,14 +236,23 @@ public class GUI extends javax.swing.JFrame
 
         ButtonLoginAsManager.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonLoginAsManager.setText("Manager");
-        ButtonLoginAsManager.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonLoginAsManager.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonLoginAsManagerActionPerformed(evt);
             }
         });
 
         ButtonLoginAsCashier.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonLoginAsCashier.setText("Cashier");
+        ButtonLoginAsCashier.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonLoginAsCashierActionPerformed(evt);
+            }
+        });
 
         ButtonLoginAsTrainer.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonLoginAsTrainer.setText("Trainer");
@@ -296,8 +320,10 @@ public class GUI extends javax.swing.JFrame
         ButtonCreateNewMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonCreateNewMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_User_Group_Man_Man_26px.png"))); // NOI18N
         ButtonCreateNewMember.setText("New member   ");
-        ButtonCreateNewMember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonCreateNewMember.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonCreateNewMemberActionPerformed(evt);
             }
         });
@@ -305,8 +331,10 @@ public class GUI extends javax.swing.JFrame
         ButtonEditMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonEditMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Edit_26px.png"))); // NOI18N
         ButtonEditMember.setText("Edit member    ");
-        ButtonEditMember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonEditMember.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonEditMemberActionPerformed(evt);
             }
         });
@@ -314,8 +342,10 @@ public class GUI extends javax.swing.JFrame
         ButtonDeleteMember.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonDeleteMember.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Remove_User_Group_Man_Man_26px.png"))); // NOI18N
         ButtonDeleteMember.setText("Delete member ");
-        ButtonDeleteMember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonDeleteMember.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonDeleteMemberActionPerformed(evt);
             }
         });
@@ -323,16 +353,20 @@ public class GUI extends javax.swing.JFrame
         ButtonViewMembers.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonViewMembers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_User_Groups_26px.png"))); // NOI18N
         ButtonViewMembers.setText("View members ");
-        ButtonViewMembers.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonViewMembers.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonViewMembersActionPerformed(evt);
             }
         });
 
         ButtonBackToMainMenu.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
         ButtonBackToMainMenu.setText("BACK TO MAIN MENU");
-        ButtonBackToMainMenu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonBackToMainMenu.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonBackToMainMenuActionPerformed(evt);
             }
         });
@@ -371,6 +405,8 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonBackToMainMenu)
                 .addContainerGap())
         );
+
+        PanelCreateNewMember.setPreferredSize(new java.awt.Dimension(858, 457));
 
         PanelCreateNewMemberHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelCreateNewMemberHeader.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -424,8 +460,10 @@ public class GUI extends javax.swing.JFrame
 
         ButtonCancelCreateNewMember.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
         ButtonCancelCreateNewMember.setText("CANCEL");
-        ButtonCancelCreateNewMember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonCancelCreateNewMember.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonCancelCreateNewMemberActionPerformed(evt);
             }
         });
@@ -443,15 +481,19 @@ public class GUI extends javax.swing.JFrame
         LabelBirthYearFormat.setText("(YYYY)");
 
         RadioButtonNewMemberPassive.setText("Passive");
-        RadioButtonNewMemberPassive.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RadioButtonNewMemberPassive.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RadioButtonNewMemberPassiveActionPerformed(evt);
             }
         });
 
         RadioButtonNewMemberActive.setText("Active");
-        RadioButtonNewMemberActive.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RadioButtonNewMemberActive.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RadioButtonNewMemberActiveActionPerformed(evt);
             }
         });
@@ -463,15 +505,19 @@ public class GUI extends javax.swing.JFrame
         LabelNewMemberActivityType.setText("Activity type:");
 
         RadioButtonNewMemberBasic.setText("Basic");
-        RadioButtonNewMemberBasic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RadioButtonNewMemberBasic.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RadioButtonNewMemberBasicActionPerformed(evt);
             }
         });
 
         RadioButtonNewMemberCompetitive.setText("Competitive");
-        RadioButtonNewMemberCompetitive.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RadioButtonNewMemberCompetitive.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RadioButtonNewMemberCompetitiveActionPerformed(evt);
             }
         });
@@ -489,8 +535,10 @@ public class GUI extends javax.swing.JFrame
 
         ButtonNewMemberCreateMember.setFont(new java.awt.Font("Iskoola Pota", 0, 14)); // NOI18N
         ButtonNewMemberCreateMember.setText("Create member");
-        ButtonNewMemberCreateMember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonNewMemberCreateMember.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonNewMemberCreateMemberActionPerformed(evt);
             }
         });
@@ -521,7 +569,7 @@ public class GUI extends javax.swing.JFrame
                                             .addComponent(TextFieldNewMemberBirthYear, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(RadioButtonNewMemberBasic)
                                             .addComponent(RadioButtonNewMemberCompetitive))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE))
                                     .addGroup(PanelCreateNewMemberLayout.createSequentialGroup()
                                         .addGroup(PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(RadioButtonNewMemberActive)
@@ -545,7 +593,7 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonNewMemberCreateMember)
                 .addGap(18, 18, 18))
-            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
         );
         PanelCreateNewMemberLayout.setVerticalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -593,8 +641,10 @@ public class GUI extends javax.swing.JFrame
                             .addComponent(RadioButtonNewMemberBasic))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(RadioButtonNewMemberCompetitive)
-                        .addGap(33, 86, Short.MAX_VALUE))))
+                        .addGap(33, 109, Short.MAX_VALUE))))
         );
+
+        PanelEditMemberChooseMember.setPreferredSize(new java.awt.Dimension(858, 457));
 
         PanelEditMemberHeaderChoose.setBackground(new java.awt.Color(153, 153, 255));
         PanelEditMemberHeaderChoose.setPreferredSize(new java.awt.Dimension(770, 96));
@@ -620,7 +670,7 @@ public class GUI extends javax.swing.JFrame
                     .addGroup(PanelEditMemberHeaderChooseLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelEditMemberHeaderChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(593, Short.MAX_VALUE))
+                        .addContainerGap(641, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberHeaderChooseLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LabelEditMemberLogAsManagerChoose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -650,15 +700,19 @@ public class GUI extends javax.swing.JFrame
 
         ButtonCancelEditMemberChoose.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
         ButtonCancelEditMemberChoose.setText("CANCEL");
-        ButtonCancelEditMemberChoose.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonCancelEditMemberChoose.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonCancelEditMemberChooseActionPerformed(evt);
             }
         });
 
         ButtonOKChooseMemberToEdit.setText("OK");
-        ButtonOKChooseMemberToEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonOKChooseMemberToEdit.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonOKChooseMemberToEditActionPerformed(evt);
             }
         });
@@ -667,7 +721,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setLayout(PanelEditMemberChooseMemberLayout);
         PanelEditMemberChooseMemberLayout.setHorizontalGroup(
             PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -689,10 +743,12 @@ public class GUI extends javax.swing.JFrame
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonOKChooseMemberToEdit)
                     .addComponent(ComboBoxChooseMemberToEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
                 .addComponent(ButtonCancelEditMemberChoose)
                 .addContainerGap())
         );
+
+        PanelEditMember.setPreferredSize(new java.awt.Dimension(858, 457));
 
         PanelEditMemberHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelEditMemberHeader.setPreferredSize(new java.awt.Dimension(770, 96));
@@ -718,7 +774,7 @@ public class GUI extends javax.swing.JFrame
                     .addGroup(PanelEditMemberHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelEditMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(593, Short.MAX_VALUE))
+                        .addContainerGap(641, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelEditMemberHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LabelEditMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -751,8 +807,10 @@ public class GUI extends javax.swing.JFrame
 
         ButtonCancelEditMember.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
         ButtonCancelEditMember.setText("CANCEL");
-        ButtonCancelEditMember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonCancelEditMember.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonCancelEditMemberActionPerformed(evt);
             }
         });
@@ -764,15 +822,19 @@ public class GUI extends javax.swing.JFrame
         LabelBirthYearFormatEditMember.setText("(YYYY)");
 
         RadioButtonEditMemberPassive.setText("Passive");
-        RadioButtonEditMemberPassive.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RadioButtonEditMemberPassive.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RadioButtonEditMemberPassiveActionPerformed(evt);
             }
         });
 
         RadioButtonEditMemberActive.setText("Active");
-        RadioButtonEditMemberActive.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RadioButtonEditMemberActive.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RadioButtonEditMemberActiveActionPerformed(evt);
             }
         });
@@ -784,15 +846,19 @@ public class GUI extends javax.swing.JFrame
         LabelEditMemberActivityType.setText("Activity type:");
 
         RadioButtonEditMemberBasic.setText("Basic");
-        RadioButtonEditMemberBasic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RadioButtonEditMemberBasic.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RadioButtonEditMemberBasicActionPerformed(evt);
             }
         });
 
         RadioButtonEditMemberCompetitive.setText("Competitive");
-        RadioButtonEditMemberCompetitive.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        RadioButtonEditMemberCompetitive.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 RadioButtonEditMemberCompetitiveActionPerformed(evt);
             }
         });
@@ -810,8 +876,10 @@ public class GUI extends javax.swing.JFrame
 
         ButtonEditMemberConfirmEditChosenMember.setFont(new java.awt.Font("Iskoola Pota", 0, 14)); // NOI18N
         ButtonEditMemberConfirmEditChosenMember.setText("Confirm edit");
-        ButtonEditMemberConfirmEditChosenMember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonEditMemberConfirmEditChosenMember.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonEditMemberConfirmEditChosenMemberActionPerformed(evt);
             }
         });
@@ -820,7 +888,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMember.setLayout(PanelEditMemberLayout);
         PanelEditMemberLayout.setHorizontalGroup(
             PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(PanelEditMemberLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -911,6 +979,8 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        PanelDeleteMember.setPreferredSize(new java.awt.Dimension(858, 457));
+
         PanelDeleteMemberHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelDeleteMemberHeader.setPreferredSize(new java.awt.Dimension(770, 96));
 
@@ -935,7 +1005,7 @@ public class GUI extends javax.swing.JFrame
                     .addGroup(PanelDeleteMemberHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelDeleteMemberHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(577, Short.MAX_VALUE))
+                        .addContainerGap(615, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDeleteMemberHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LabelDeleteMemberLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -965,15 +1035,19 @@ public class GUI extends javax.swing.JFrame
 
         ButtonCancelDeleteMember.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
         ButtonCancelDeleteMember.setText("CANCEL");
-        ButtonCancelDeleteMember.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonCancelDeleteMember.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonCancelDeleteMemberActionPerformed(evt);
             }
         });
 
         ButtonOKChooseMemberToDelete.setText("DELETE");
-        ButtonOKChooseMemberToDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonOKChooseMemberToDelete.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonOKChooseMemberToDeleteActionPerformed(evt);
             }
         });
@@ -982,7 +1056,7 @@ public class GUI extends javax.swing.JFrame
         PanelDeleteMember.setLayout(PanelDeleteMemberLayout);
         PanelDeleteMemberLayout.setHorizontalGroup(
             PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
+            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(PanelDeleteMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -992,7 +1066,7 @@ public class GUI extends javax.swing.JFrame
                         .addGap(40, 40, 40)
                         .addComponent(ButtonOKChooseMemberToDelete))
                     .addComponent(LabelDeleteMemberChooseMember))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         PanelDeleteMemberLayout.setVerticalGroup(
             PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1004,10 +1078,12 @@ public class GUI extends javax.swing.JFrame
                 .addGroup(PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboBoxChooseMemberToDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonOKChooseMemberToDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
                 .addComponent(ButtonCancelDeleteMember)
                 .addContainerGap())
         );
+
+        PanelViewMembers.setPreferredSize(new java.awt.Dimension(858, 457));
 
         PanelViewMembersHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelViewMembersHeader.setPreferredSize(new java.awt.Dimension(770, 96));
@@ -1033,7 +1109,7 @@ public class GUI extends javax.swing.JFrame
                     .addGroup(PanelViewMembersHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelViewMembersHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(590, Short.MAX_VALUE))
+                        .addContainerGap(628, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelViewMembersHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LabelViewMembersLogAsManager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1063,8 +1139,10 @@ public class GUI extends javax.swing.JFrame
 
         ButtonBackFromViewAllMembers.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
         ButtonBackFromViewAllMembers.setText("BACK");
-        ButtonBackFromViewAllMembers.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonBackFromViewAllMembers.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonBackFromViewAllMembersActionPerformed(evt);
             }
         });
@@ -1072,15 +1150,19 @@ public class GUI extends javax.swing.JFrame
         textAreaAllMembers.setEditable(false);
 
         ButtonViewAllMembersAll.setText("All");
-        ButtonViewAllMembersAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonViewAllMembersAll.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonViewAllMembersAllActionPerformed(evt);
             }
         });
 
         ButtonViewAllMembersCompetitionMode.setText("Only competitive");
-        ButtonViewAllMembersCompetitionMode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        ButtonViewAllMembersCompetitionMode.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 ButtonViewAllMembersCompetitionModeActionPerformed(evt);
             }
         });
@@ -1089,7 +1171,7 @@ public class GUI extends javax.swing.JFrame
         PanelViewMembers.setLayout(PanelViewMembersLayout);
         PanelViewMembersLayout.setHorizontalGroup(
             PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
+            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(PanelViewMembersLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1115,12 +1197,277 @@ public class GUI extends javax.swing.JFrame
                 .addGap(18, 18, 18)
                 .addComponent(LabelViewMembersAllMembers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textAreaAllMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                .addComponent(textAreaAllMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonBackFromViewAllMembers)
                     .addComponent(ButtonViewAllMembersAll)
                     .addComponent(ButtonViewAllMembersCompetitionMode))
+                .addContainerGap())
+        );
+
+        PanelLoggedInAsCashierScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelLoggedInAsCashierScreenHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelCashierScreenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Cash_Counter_50px.png"))); // NOI18N
+
+        LabelCashierScreenHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelCashierScreenHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelCashierScreenHeader.setText("Logged in as Cashier");
+
+        javax.swing.GroupLayout PanelLoggedInAsCashierScreenHeaderLayout = new javax.swing.GroupLayout(PanelLoggedInAsCashierScreenHeader);
+        PanelLoggedInAsCashierScreenHeader.setLayout(PanelLoggedInAsCashierScreenHeaderLayout);
+        PanelLoggedInAsCashierScreenHeaderLayout.setHorizontalGroup(
+            PanelLoggedInAsCashierScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsCashierScreenHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelCashierScreenHome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelCashierScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(524, Short.MAX_VALUE))
+        );
+        PanelLoggedInAsCashierScreenHeaderLayout.setVerticalGroup(
+            PanelLoggedInAsCashierScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsCashierScreenHeaderLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(PanelLoggedInAsCashierScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsCashierScreenHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelCashierScreenHome)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsCashierScreenHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelCashierScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
+        );
+
+        ButtonRegisterPayment.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonRegisterPayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Request_Money_26px.png"))); // NOI18N
+        ButtonRegisterPayment.setText("Register payment    ");
+        ButtonRegisterPayment.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonRegisterPaymentActionPerformed(evt);
+            }
+        });
+
+        ButtonRevokePayment.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonRevokePayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Delete_Document_26px.png"))); // NOI18N
+        ButtonRevokePayment.setText("Revoke payment     ");
+
+        ButtonCheckMembersArrear.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonCheckMembersArrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Payment_History_26px_1.png"))); // NOI18N
+        ButtonCheckMembersArrear.setText("Check member's arrear");
+
+        ButtonAllArrears.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonAllArrears.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Stocks_26px.png"))); // NOI18N
+        ButtonAllArrears.setText("Show all arrears    ");
+        ButtonAllArrears.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonAllArrearsActionPerformed(evt);
+            }
+        });
+
+        ButtonAllMembersArrears.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonAllMembersArrears.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_MoneyStack_26px.png"))); // NOI18N
+        ButtonAllMembersArrears.setText("All members' arrears  ");
+        ButtonAllMembersArrears.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonAllMembersArrearsActionPerformed(evt);
+            }
+        });
+
+        ButtonBackToMainMenuFromCashier.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackToMainMenuFromCashier.setText("BACK TO MAIN MENU");
+        ButtonBackToMainMenuFromCashier.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackToMainMenuFromCashierActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelLoggedInAsCashierLayout = new javax.swing.GroupLayout(PanelLoggedInAsCashier);
+        PanelLoggedInAsCashier.setLayout(PanelLoggedInAsCashierLayout);
+        PanelLoggedInAsCashierLayout.setHorizontalGroup(
+            PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addGroup(PanelLoggedInAsCashierLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ButtonBackToMainMenuFromCashier)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsCashierLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ButtonCheckMembersArrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonAllMembersArrears, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonRevokePayment, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(333, 333, 333))
+        );
+        PanelLoggedInAsCashierLayout.setVerticalGroup(
+            PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsCashierLayout.createSequentialGroup()
+                .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(ButtonRegisterPayment)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonRevokePayment)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonCheckMembersArrear)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonAllArrears)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonAllMembersArrears)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(ButtonBackToMainMenuFromCashier)
+                .addContainerGap())
+        );
+
+        PanelRegisterPayment.setPreferredSize(new java.awt.Dimension(858, 457));
+
+        PanelRegisterPaymentHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelRegisterPaymentHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelRegisterPaymentHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Request_Money_50px.png"))); // NOI18N
+
+        LabelRegisterPaymentHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelRegisterPaymentHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelRegisterPaymentHeader.setText("Register payment");
+
+        LabelRegisterPaymentLogAsCashier.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelRegisterPaymentLogAsCashier.setForeground(new java.awt.Color(0, 0, 0));
+        LabelRegisterPaymentLogAsCashier.setText("Logged in as Cashier");
+
+        javax.swing.GroupLayout PanelRegisterPaymentHeaderLayout = new javax.swing.GroupLayout(PanelRegisterPaymentHeader);
+        PanelRegisterPaymentHeader.setLayout(PanelRegisterPaymentHeaderLayout);
+        PanelRegisterPaymentHeaderLayout.setHorizontalGroup(
+            PanelRegisterPaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegisterPaymentHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelRegisterPaymentHome)
+                .addGroup(PanelRegisterPaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRegisterPaymentHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelRegisterPaymentHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(576, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterPaymentHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelRegisterPaymentLogAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelRegisterPaymentHeaderLayout.setVerticalGroup(
+            PanelRegisterPaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegisterPaymentHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelRegisterPaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRegisterPaymentHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelRegisterPaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterPaymentHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelRegisterPaymentHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterPaymentHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelRegisterPaymentHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelRegisterPaymentHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelRegisterPaymentLogAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelRegisterPaymentAllMembersIDName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelRegisterPaymentAllMembersIDName.setText("All members");
+
+        ButtonBackFromRegisterPayment.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackFromRegisterPayment.setText("BACK");
+        ButtonBackFromRegisterPayment.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackFromRegisterPaymentActionPerformed(evt);
+            }
+        });
+
+        textAreaRegisterPaymentMemberList.setEditable(false);
+
+        TextFieldRegisterPaymentID.setText("ID");
+
+        LabelRegisterPaymentInsertID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelRegisterPaymentInsertID.setText("ID");
+
+        LabelRegisterPaymentPaymentYear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelRegisterPaymentPaymentYear.setText("Payment year");
+
+        TextFieldRegisterPaymentPaymentYear.setText("(YYYY)");
+
+        LabelRegisterPaymentYearFormat.setText("(YYYY)");
+
+        ButtonRegisterPaymentRegisterPayment.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ButtonRegisterPaymentRegisterPayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_20px.png"))); // NOI18N
+        ButtonRegisterPaymentRegisterPayment.setText("Register payment   ");
+        ButtonRegisterPaymentRegisterPayment.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonRegisterPaymentRegisterPaymentActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelRegisterPaymentLayout = new javax.swing.GroupLayout(PanelRegisterPayment);
+        PanelRegisterPayment.setLayout(PanelRegisterPaymentLayout);
+        PanelRegisterPaymentLayout.setHorizontalGroup(
+            PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelRegisterPaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addGroup(PanelRegisterPaymentLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(ButtonBackFromRegisterPayment)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRegisterPaymentLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelRegisterPaymentInsertID)
+                    .addComponent(TextFieldRegisterPaymentID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelRegisterPaymentPaymentYear)
+                    .addGroup(PanelRegisterPaymentLayout.createSequentialGroup()
+                        .addComponent(TextFieldRegisterPaymentPaymentYear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(LabelRegisterPaymentYearFormat))
+                    .addComponent(ButtonRegisterPaymentRegisterPayment))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelRegisterPaymentAllMembersIDName)
+                    .addComponent(textAreaRegisterPaymentMemberList, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(92, 92, 92))
+        );
+        PanelRegisterPaymentLayout.setVerticalGroup(
+            PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRegisterPaymentLayout.createSequentialGroup()
+                .addComponent(PanelRegisterPaymentHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelRegisterPaymentAllMembersIDName)
+                    .addComponent(LabelRegisterPaymentInsertID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRegisterPaymentLayout.createSequentialGroup()
+                        .addComponent(textAreaRegisterPaymentMemberList, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ButtonBackFromRegisterPayment))
+                    .addGroup(PanelRegisterPaymentLayout.createSequentialGroup()
+                        .addComponent(TextFieldRegisterPaymentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(LabelRegisterPaymentPaymentYear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TextFieldRegisterPaymentPaymentYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelRegisterPaymentYearFormat))
+                        .addGap(30, 30, 30)
+                        .addComponent(ButtonRegisterPaymentRegisterPayment)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1132,7 +1479,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -1159,6 +1506,16 @@ public class GUI extends javax.swing.JFrame
                     .addGap(20, 20, 20)
                     .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1166,7 +1523,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -1193,6 +1550,16 @@ public class GUI extends javax.swing.JFrame
                     .addGap(21, 21, 21)
                     .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(4, 4, 4)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(56, 56, 56)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(56, 56, 56)))
         );
 
         pack();
@@ -1717,6 +2084,93 @@ public class GUI extends javax.swing.JFrame
             this.textAreaAllMembers.append("\n");
         }
     }//GEN-LAST:event_ButtonViewAllMembersCompetitionModeActionPerformed
+
+    private void ButtonRegisterPaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRegisterPaymentActionPerformed
+    {//GEN-HEADEREND:event_ButtonRegisterPaymentActionPerformed
+        PanelLoggedInAsCashier.setVisible(false);
+        PanelRegisterPayment.setVisible(true);
+        this.textAreaRegisterPaymentMemberList.setText("");
+        for (int i = 0; i < c.getAllMembers().size(); ++i)
+        {
+            this.textAreaRegisterPaymentMemberList.append(c.getAllMembers().get(i).toStringNameID());
+            this.textAreaRegisterPaymentMemberList.append("\n");
+        }
+    }//GEN-LAST:event_ButtonRegisterPaymentActionPerformed
+
+    private void ButtonAllArrearsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAllArrearsActionPerformed
+    {//GEN-HEADEREND:event_ButtonAllArrearsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonAllArrearsActionPerformed
+
+    private void ButtonAllMembersArrearsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAllMembersArrearsActionPerformed
+    {//GEN-HEADEREND:event_ButtonAllMembersArrearsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonAllMembersArrearsActionPerformed
+
+    private void ButtonBackToMainMenuFromCashierActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackToMainMenuFromCashierActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackToMainMenuFromCashierActionPerformed
+        PanelLoggedInAsCashier.setVisible(false);
+        PanelLoginScreen.setVisible(true);
+    }//GEN-LAST:event_ButtonBackToMainMenuFromCashierActionPerformed
+
+    private void ButtonLoginAsCashierActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonLoginAsCashierActionPerformed
+    {//GEN-HEADEREND:event_ButtonLoginAsCashierActionPerformed
+        PanelLoginScreen.setVisible(false);
+        PanelLoggedInAsCashier.setVisible(true);
+    }//GEN-LAST:event_ButtonLoginAsCashierActionPerformed
+
+    private void ButtonBackFromRegisterPaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackFromRegisterPaymentActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackFromRegisterPaymentActionPerformed
+        PanelLoggedInAsCashier.setVisible(true);
+        PanelRegisterPayment.setVisible(false);
+    }//GEN-LAST:event_ButtonBackFromRegisterPaymentActionPerformed
+
+    private void ButtonRegisterPaymentRegisterPaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
+    {//GEN-HEADEREND:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        int ID = 0;
+        Year year = null; 
+        try
+        {
+            ID = Integer.parseInt(this.TextFieldRegisterPaymentID.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for ID");
+        }
+        try
+        {
+            year = Year.parse(this.TextFieldRegisterPaymentPaymentYear.getText());
+        }
+        catch (DateTimeException dx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for year");
+        }
+        if (ID <= 0 || year == null)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not register payment");
+            return;
+        }
+        try
+        {
+            c.registerPayment(ID, year);
+        }
+        catch (NullPointerException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Unable to register payment with given ID");
+            return;
+        }
+        JOptionPane.showMessageDialog(frame, "Register complete");
+        this.TextFieldRegisterPaymentID.setText("ID");
+        this.TextFieldRegisterPaymentPaymentYear.setText("YYYY");
+        this.textAreaRegisterPaymentMemberList.setText("");
+        for (int i = 0; i < c.getAllMembers().size(); ++i)
+        {
+            this.textAreaRegisterPaymentMemberList.append(c.getAllMembers().get(i).toStringNameID());
+            this.textAreaRegisterPaymentMemberList.append("\n");
+        }
+    }//GEN-LAST:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1764,12 +2218,17 @@ public class GUI extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonAllArrears;
+    private javax.swing.JButton ButtonAllMembersArrears;
+    private javax.swing.JButton ButtonBackFromRegisterPayment;
     private javax.swing.JButton ButtonBackFromViewAllMembers;
     private javax.swing.JButton ButtonBackToMainMenu;
+    private javax.swing.JButton ButtonBackToMainMenuFromCashier;
     private javax.swing.JButton ButtonCancelCreateNewMember;
     private javax.swing.JButton ButtonCancelDeleteMember;
     private javax.swing.JButton ButtonCancelEditMember;
     private javax.swing.JButton ButtonCancelEditMemberChoose;
+    private javax.swing.JButton ButtonCheckMembersArrear;
     private javax.swing.JButton ButtonCreateNewMember;
     private javax.swing.JButton ButtonDeleteMember;
     private javax.swing.JButton ButtonEditMember;
@@ -1780,6 +2239,9 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonNewMemberCreateMember;
     private javax.swing.JButton ButtonOKChooseMemberToDelete;
     private javax.swing.JButton ButtonOKChooseMemberToEdit;
+    private javax.swing.JButton ButtonRegisterPayment;
+    private javax.swing.JButton ButtonRegisterPaymentRegisterPayment;
+    private javax.swing.JButton ButtonRevokePayment;
     private javax.swing.JButton ButtonViewAllMembersAll;
     private javax.swing.JButton ButtonViewAllMembersCompetitionMode;
     private javax.swing.JButton ButtonViewMembers;
@@ -1789,6 +2251,8 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel LabeManagerScreenHome;
     private javax.swing.JLabel LabelBirthYearFormat;
     private javax.swing.JLabel LabelBirthYearFormatEditMember;
+    private java.awt.Label LabelCashierScreenHeader;
+    private javax.swing.JLabel LabelCashierScreenHome;
     private java.awt.Label LabelCreateNewMemberHeader;
     private javax.swing.JLabel LabelCreateNewMemberHome;
     private java.awt.Label LabelCreateNewMemberLogAsManager;
@@ -1815,6 +2279,13 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel LabelNewMemberMembershipType;
     private javax.swing.JLabel LabelNewMemberName;
     private javax.swing.JLabel LabelNewMemberName1;
+    private javax.swing.JLabel LabelRegisterPaymentAllMembersIDName;
+    private java.awt.Label LabelRegisterPaymentHeader;
+    private javax.swing.JLabel LabelRegisterPaymentHome;
+    private javax.swing.JLabel LabelRegisterPaymentInsertID;
+    private java.awt.Label LabelRegisterPaymentLogAsCashier;
+    private javax.swing.JLabel LabelRegisterPaymentPaymentYear;
+    private javax.swing.JLabel LabelRegisterPaymentYearFormat;
     private javax.swing.JLabel LabelViewMembersAllMembers;
     private java.awt.Label LabelViewMembersHeader;
     private javax.swing.JLabel LabelViewMembersHome;
@@ -1827,10 +2298,14 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JPanel PanelEditMemberChooseMember;
     private javax.swing.JPanel PanelEditMemberHeader;
     private javax.swing.JPanel PanelEditMemberHeaderChoose;
+    private javax.swing.JPanel PanelLoggedInAsCashier;
+    private javax.swing.JPanel PanelLoggedInAsCashierScreenHeader;
     private javax.swing.JPanel PanelLoggedInAsManager;
     private javax.swing.JPanel PanelLoggedInAsManagerScreenHeader;
     private javax.swing.JPanel PanelLoginScreen;
     private javax.swing.JPanel PanelLoginScreenHeader;
+    private javax.swing.JPanel PanelRegisterPayment;
+    private javax.swing.JPanel PanelRegisterPaymentHeader;
     private javax.swing.JPanel PanelViewMembers;
     private javax.swing.JPanel PanelViewMembersHeader;
     private javax.swing.JRadioButton RadioButtonEditMemberActive;
@@ -1853,6 +2328,8 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JTextField TextFieldEditMemberName;
     private javax.swing.JTextField TextFieldNewMemberBirthYear;
     private javax.swing.JTextField TextFieldNewMemberName;
+    private javax.swing.JTextField TextFieldRegisterPaymentID;
+    private javax.swing.JTextField TextFieldRegisterPaymentPaymentYear;
     private javax.swing.ButtonGroup buttonGroupCreateMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupCreateMemberPassiveActive;
     private javax.swing.ButtonGroup buttonGroupEditMemberActivityType;
@@ -1860,5 +2337,6 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private java.awt.TextArea textAreaAllMembers;
+    private java.awt.TextArea textAreaRegisterPaymentMemberList;
     // End of variables declaration//GEN-END:variables
 }

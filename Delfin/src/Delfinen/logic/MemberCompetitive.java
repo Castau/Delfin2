@@ -30,9 +30,8 @@ public class MemberCompetitive extends MemberActive
     }
 
     /*
-    .toString() override not necessary in this sub class. However, a secondary 
-    .toString() method specific to this subclass is necessary for special use 
-    in certain situations in the GUI class. 
+    This secondary .toString() method specific to this subclass is necessary for
+    special use in certain situations in the GUI class. 
     Attention: DO NOT DELETE OR MODIFY THE FOLLOWING CODE!!
     */
     public String toStringCompetitionVersion() {
