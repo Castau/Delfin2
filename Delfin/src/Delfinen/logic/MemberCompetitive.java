@@ -29,13 +29,11 @@ public class MemberCompetitive extends MemberActive
         return disciplineTypes;
     }
 
-    
-    public String toStringCompetitionVersion()
-    {
-        return "ID: " + super.getId() + ", Name: " + super.getName() + ", Birthyear: " + super.getBirthyear() + ", ActivityType: " + super.getActivityType()
-                + ", Disciplines: " + disciplineTypes;
+    @Override
+    public String toString() {
+        return super.toString() + ", Disciplines: " + disciplineTypes;
     }
-    
+        
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)){

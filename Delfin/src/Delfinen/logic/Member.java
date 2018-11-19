@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Member
 {
 
-    private static int idCounter = 0;
+    private int idCounter = 0;
     private int idMember;
     private String name;
     private Year birthyear;
@@ -27,8 +27,7 @@ public class Member
     public Member(String name, Year birthyear, MembershipType membershipType)
 
     {
-        ++idCounter;
-        idMember = idCounter;
+        idMember = ++idCounter;
         this.name = name;
         this.birthyear = birthyear;
         this.membershipType = membershipType;
@@ -139,14 +138,20 @@ public class Member
 
     public int getAge()
     {
-        int age;
-        String thisBirthYear = this.getBirthyear().toString();
-        return age = (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(thisBirthYear))); //CurrentYear-Birthyear = age
+        return (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(this.getBirthyear().toString()))); //CurrentYear-Birthyear = age
     }
 
     public int calculateArrear() //Calculates and returns user arrear. DOES NOT RETURN USER INFO!!
     {
-        //This method calculates prices for all types of members (including sub-classes)
+        /**
+         * //returns prices for all types of members (including sub-classes)
+         *
+         * @param contains(Year.now())
+         * @if this member has already paid
+         * @returns 0
+         *
+         * *
+         */
 
         if ((this.getYearsPaid().contains(Year.now()))) //If this member has already paid for the current year
         {
