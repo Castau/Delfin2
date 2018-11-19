@@ -20,7 +20,6 @@ public class Member
     private ArrayList<Year> yearsPaid = new ArrayList();
     private Price price = new Price();
 
-
     //Normal member, passive membership.
     public Member(String name, Year birthyear, MembershipType membershipType)
 
@@ -35,15 +34,20 @@ public class Member
 //    {
 //        return "ID: " + idMember + ", Name: " + name + ", Birthyear: " + birthyear + ", Years Paid: " + yearsPaid + ", MembershipType: " + membershipType;
 //    }
-
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Member{" + "idMember:" + idMember + ", name=" + name + ", birthyear=" + birthyear + ", membershipType=" + membershipType + ", yearsPaid=" + yearsPaid + ", price=" + price + '}';
     }
-    
+
+    public String toStringNameID()
+    {
+        return "ID: " + idMember + ", Name: " + name + ", Years Paid: " + yearsPaid;
+    }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         int hash = 7;
         hash = 89 * hash + this.idMember;
         hash = 89 * hash + Objects.hashCode(this.name);
@@ -55,39 +59,47 @@ public class Member
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null)
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass())
+        {
             return false;
         }
         final Member other = (Member) obj;
-        if (this.idMember != other.idMember) {
+        if (this.idMember != other.idMember)
+        {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.name, other.name))
+        {
             return false;
         }
-        if (!Objects.equals(this.birthyear, other.birthyear)) {
+        if (!Objects.equals(this.birthyear, other.birthyear))
+        {
             return false;
         }
-        if (this.membershipType != other.membershipType) {
+        if (this.membershipType != other.membershipType)
+        {
             return false;
         }
-        if (!Objects.equals(this.yearsPaid, other.yearsPaid)) {
+        if (!Objects.equals(this.yearsPaid, other.yearsPaid))
+        {
             return false;
         }
-        if (!Objects.equals(this.price, other.price)) {
+        if (!Objects.equals(this.price, other.price))
+        {
             return false;
         }
         return true;
     }
-
-  
 
     public int getId()
     {
@@ -148,18 +160,13 @@ public class Member
         return (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(this.getBirthyear().toString()))); //CurrentYear-Birthyear = age
     }
 
+    /**
+     *
+     * @return Returns prices for all types of members (including sub-classes)
+     *
+     */
     public int calculateArrear() //Calculates and returns user arrear. DOES NOT RETURN USER INFO!!
     {
-        /**
-         * //returns prices for all types of members (including sub-classes)
-         *
-         * @param contains(Year.now())
-         * @if this member has already paid
-         * @returns 0
-         *
-         * *
-         */
-
         if ((this.getYearsPaid().contains(Year.now()))) //If this member has already paid for the current year
         {
             return 0;
@@ -189,9 +196,7 @@ public class Member
             {
                 return price.getPrice(Price.priceType.PENSIONIST); //Returns value based on age 60+ (inclusive)
             }
-
         }
-
         return 0; //Required value. 0 in arrears.
     }
 

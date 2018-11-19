@@ -22,7 +22,6 @@ public class Controller
     {
         modelController = new ModelController(this);
         subscription = new Subscription(this);
-
     }
 
     public ModelController getModelController()
@@ -177,30 +176,56 @@ public class Controller
     }
 
     //Cashier
+    
+    /**
+     *
+     * @param memberID
+     * @param year
+     * Registers a payment for a single user for a given year.
+     */
     public void registerPayment(int memberID, Year year)
     {
         getMember(memberID).registerPayment(year);
     }
 
+    /**
+     *
+     * @param memberID
+     * @param year
+     * Removes a single users given payment (in case of chargeback, etc)
+     */
     public void revokePayment(int memberID, Year year)
     {
         getMember(memberID).revokePayment(year);
     }
 
-    public void getMemberArrear(int memberID) //Single user based on ID. ONLY RETURNS ARREAR, NOT USER INFO.    
+    /**
+     *
+     * @return Returns all members with outstanding arrears.
+     */
+    public ArrayList<Member> getAllArrearMembers() //Returns all members who has not paid
 
-    {
-        getMember(memberID).calculateArrear();
-    }
-
-    public ArrayList getAllArrears()
-    {
-        return subscription.calculateArrears(getAllMembers());
-    }
-
-    public ArrayList getAllMemberArrears()
     {
         return subscription.getArrearMembers(getAllMembers());
+    }
+
+    /**
+     *
+     * @param memberID
+     * @return Returns a single users arrear (if any)
+     */
+    public int getSingleMemberArrear(int memberID) //Single user based on ID. ONLY RETURNS ARREAR, NOT USER INFO.    
+    {
+        return getMember(memberID).calculateArrear();
+    }
+
+    /**
+     *
+     * @return Returns all outstanding arrears as one integer.
+     */
+    public int getAllMemberArrears() //Returns all members with arrears as an integer
+    {
+        return subscription.getAllArrears(getAllArrearMembers());
     }
 
     //Trainer

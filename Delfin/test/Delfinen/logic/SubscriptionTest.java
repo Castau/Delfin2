@@ -1,159 +1,140 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Delfinen.logic;
 
-import Delfinen.data.ActivityType;
-import Delfinen.data.DisciplineType;
-import Delfinen.logic.Member;
-import Delfinen.logic.MemberActive;
-import Delfinen.logic.MemberCompetitive;
-import Delfinen.data.MembershipType;
-import static Delfinen.data.MembershipType.PASSIVE;
-import Delfinen.logic.Controller;
-import Delfinen.logic.Subscription;
 import java.time.Year;
 import java.util.ArrayList;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Before;
 
 /**
  *
- * @author runin
+ * @author Rúni
  */
 public class SubscriptionTest
 {
+
     private Controller controller;
+    Subscription sub;
     ArrayList yearsPaid;
     ArrayList disciplineList;
     ArrayList<Member> Members;
-    private Member a; //String name, Year birthyear, MembershipType membershipType, ArrayList yearsPaid
-    private MemberActive b; //String name, Year birthyear, MembershipType membershipType, ArrayList yearsPaid, ActivityType activityType
-    private MemberCompetitive c; //String name, Year birthyear, MembershipType membershipType, ArrayList yearsPaid, ActivityType activityType, ArrayList<DisciplineType> disciplineList
+    Member m1;
+    MemberActive m2;
+    MemberActive m3;
+    MemberCompetitive m4;
 
     public SubscriptionTest()
     {
         controller = new Controller();
+        sub = new Subscription(controller);
         yearsPaid = new ArrayList();
         disciplineList = new ArrayList();
         Members = new ArrayList();
-        disciplineList.add(DisciplineType.CRAWL);
-        disciplineList.add(DisciplineType.BREASTSTROKE);
-    }
+        disciplineList.add(Delfinen.data.DisciplineType.CRAWL);
+        disciplineList.add(Delfinen.data.DisciplineType.BREASTSTROKE);
 
-    //Ryk det op i konstruktøren og sæt members som fields også evt. Hvis du skal bruge en frisk liste af members i dine tests,
-    //så skal du lave en ny arrayList i @Before før du laver dine members (så skal de ikke op i konstruktøren). 
-    @Before
-    public void setUp()
-    {
-        Member m1 = new Member("Hans", Year.of(1902), MembershipType.PASSIVE);
-        Member m2 = new Member("Karl", Year.of(2001), MembershipType.PASSIVE);
-        MemberActive m3 = new MemberActive("Signe", Year.of(1996), MembershipType.ACTIVE, ActivityType.BASIC);
-        MemberActive m4 = new MemberActive("Otto", Year.of(1997), MembershipType.ACTIVE, ActivityType.BASIC);
-        MemberCompetitive m5 = new MemberCompetitive("Arne", Year.of(1999), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
-        MemberCompetitive m6 = new MemberCompetitive("Lily", Year.of(2002), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+        m1 = new Member("Hans", Year.of(1965), Delfinen.data.MembershipType.PASSIVE);
+        m1.setIdMember(1);
+        m2 = new MemberActive("Signe", Year.of(1940), Delfinen.data.MembershipType.ACTIVE, Delfinen.data.ActivityType.BASIC); //age = 78 (pensionist)
+        m2.setIdMember(2);
+        m3 = new MemberActive("Otto", Year.of(2005), Delfinen.data.MembershipType.ACTIVE, Delfinen.data.ActivityType.BASIC); //age = 13 (youth)
+        m3.setIdMember(3);
+        m4 = new MemberCompetitive("Arne", Year.of(1990), Delfinen.data.MembershipType.ACTIVE, Delfinen.data.ActivityType.COMPETITIVE, disciplineList); //age = 28 (senior)
+        m4.setIdMember(4);
         Members.add(m1);
         Members.add(m2);
         Members.add(m3);
         Members.add(m4);
-        Members.add(m5);
-        Members.add(m6);
-//        a = new Member("Rúni", Year.of(1994), PASSIVE);
-//        b = new MemberActive("Camilla", Year.of(1990), MembershipType.ACTIVE, ActivityType.BASIC);
-//        c = new MemberCompetitive("Asger", Year.of(1997), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
-//        Members.add(a);
-//        Members.add(b);
-//        Members.add(c);
     }
 
-//    @Test
-//    public void testAddMembers()
-//    {
-//        System.out.println("addMembers");
-//        //a.registerPayment(Year.of(2018));
-//        
-//        //Subscription instance = new Subscription();
-//        //System.out.println(instance.addMembers(Members));
-//    }
     @Test
     public void testPaymentMember()
     {
-        assertTrue(a.getYearsPaid().isEmpty());
+        assertTrue(m1.getYearsPaid().isEmpty());
 
-        a.registerPayment(Year.of(2016));
-        a.registerPayment(Year.of(2017));
-        assertEquals(2, a.getYearsPaid().size());
-        assertEquals(Year.of(2016), a.getYearsPaid().get(0));
+        m1.registerPayment(Year.of(2016));
+        m1.registerPayment(Year.of(2017));
+        assertEquals(2, m1.getYearsPaid().size());
+        assertEquals(Year.of(2016), m1.getYearsPaid().get(0));
 
-        a.revokePayment(Year.of(2016));
-        assertEquals(1, a.getYearsPaid().size());
-        assertEquals(Year.of(2017), a.getYearsPaid().get(0));
+        m1.revokePayment(Year.of(2016));
+        assertEquals(1, m1.getYearsPaid().size());
+        assertEquals(Year.of(2017), m1.getYearsPaid().get(0));
 
-        boolean res = a.revokePayment(Year.of(2016));
+        boolean res = m1.revokePayment(Year.of(2016));
         assertFalse(res);
 
-        a.revokePayment(Year.of(2017));
-        assertTrue(a.getYearsPaid().isEmpty());
+        m1.revokePayment(Year.of(2017));
+        assertTrue(m1.getYearsPaid().isEmpty());
     }
 
+    /**
+     * Test of getAllArrears method, of class Subscription.
+     */
     @Test
-    public void testCalculateArrears()
+    public void testGetAllArrears()
     {
-        
-        ArrayList expResult = new ArrayList();
-        System.out.println("calculateArrears1");
-        Subscription instance = new Subscription(controller);
-        expResult.add(a);
-        expResult.add(b);
-        expResult.add(c);
-        expResult = instance.calculateArrears(Members);
-        
-        ArrayList result = instance.calculateArrears(controller.getAllMembers());
-        assertNotNull(expResult);
-        assertNotNull(result);
-        System.out.println(expResult + "\n" + result);
+        ArrayList<Member> arrearMembers = Members;
+        Subscription instance = sub;
+        int expResult = 4300; // Passive (500) + Pensionist (1200) + Youth (1000) + Senior (1600)
+        int result = instance.getAllArrears(arrearMembers);
+        System.out.println("testGetAllArrears: \n" + result);
         assertEquals(expResult, result);
-       
     }
-    
+
     @Test
-    public void testCalculateArrearsNoPayment()
+    public void testGetAllArrearsSomePaid()
     {
-        System.out.println("calculateArrears2");
-        a.registerPayment(Year.of(2017));
-        b.registerPayment(Year.of(2017));
-        c.registerPayment(Year.of(2017));
-        Subscription sub = new Subscription(controller);
-
-        ArrayList expResult = null;
-        ArrayList result = sub.calculateArrears(Members);
-
+        m1.registerPayment(Year.of(2018));
+        m2.registerPayment(Year.of(2018));
+        ArrayList<Member> arrearMembers = Members;
+        Subscription instance = sub;
+        int expResult = 2600; //  Youth (1000) + Senior (1600)
+        int result = instance.getAllArrears(arrearMembers);
+        System.out.println("testGetAllArrearsSomePaid: \n" + result);
         assertEquals(expResult, result);
-        
+    }
+
+    /**
+     * Test of getArrearMembers method, of class Subscription.
+     */
+    @Test
+    public void testGetArrearMembers()
+    {
+        ArrayList<Member> fakeMembers = new ArrayList(Members);
+        ArrayList<Member> allMembers = new ArrayList(Members);
+
+        Subscription instance = sub;
+        ArrayList expResult = fakeMembers;
+        ArrayList result = instance.getArrearMembers(allMembers);
+        System.out.println("testGetArrearMembers \n" + result);
+        assertEquals(expResult, result);
     }
 
     @Test
-    public void testCalculateArrearsOnePayment()
+    public void testGetArrearMembersSomePaid()
     {
-        System.out.println("calculateArrears3");
-        a.registerPayment(Year.of(2017));
-        b.registerPayment(Year.of(2017));
-        c.registerPayment(Year.of(2017));
-        a.registerPayment(Year.of(2018));
-        c.registerPayment(Year.of(2018));
-        //Subscription sub = new Subscription();
+        ArrayList<Member> allMembers = new ArrayList(Members);
+        ArrayList<Member> fakeMembers = new ArrayList(Members);
 
-        ArrayList expResult = null;
-        //ArrayList result = sub.calculateArrears(Members);
+        fakeMembers.get(0).registerPayment(Year.of(2018));
+        fakeMembers.get(1).registerPayment(Year.of(2018));
+        Members.get(0).registerPayment(Year.of(2018));
+        Members.get(1).registerPayment(Year.of(2018));
 
-        //assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    @Test
-    public void testEquals()
-    {
-        Member aa = new Member("Rúni", Year.of(1994), PASSIVE);
-        assertEquals(aa, a);
+        Subscription instance = sub;
+        ArrayList expResult = instance.getArrearMembers(fakeMembers);
+        ArrayList result = instance.getArrearMembers(allMembers);
+        System.out.println("testGetArrearMembersSomePaid \n" + expResult + "\n" + result);
+        assertEquals(expResult, result);
     }
 
 }
