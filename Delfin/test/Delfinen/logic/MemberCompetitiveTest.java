@@ -17,24 +17,28 @@ public class MemberCompetitiveTest
 
     ArrayList<DisciplineType> disciplineList;
     ArrayList<Year> yearsPaid;
-    ArrayList<Member> Members = new ArrayList<>();
-    private Controller controller;
+    ArrayList<Member> Members;
+    Member m1;
+    MemberActive m2;
+    MemberActive m3;
+    MemberCompetitive m4;
 
     public MemberCompetitiveTest()
     {
-        
         yearsPaid = new ArrayList();
-        //yearsPaid.add(Year.of(2016));
-        controller = new Controller();
         disciplineList = new ArrayList();
-       // Members = new ArrayList();
-       disciplineList.add(Delfinen.data.DisciplineType.CRAWL);
+        Members = new ArrayList();
+        disciplineList.add(Delfinen.data.DisciplineType.CRAWL);
         disciplineList.add(Delfinen.data.DisciplineType.BREASTSTROKE);
 
-        Member m1 = new Member("Hans", Year.of(1965), MembershipType.PASSIVE);
-        MemberActive m2 = new MemberActive("Signe", Year.of(1940), MembershipType.ACTIVE, Delfinen.data.ActivityType.BASIC); //age = 78 (pensionist)
-        MemberActive m3 = new MemberActive("Otto", Year.of(2005), MembershipType.ACTIVE, Delfinen.data.ActivityType.BASIC); //age = 13 (youth)
-        MemberCompetitive m4 = new MemberCompetitive("Arne", Year.of(1990), MembershipType.ACTIVE, Delfinen.data.ActivityType.COMPETITIVE, disciplineList); //age = 28 (senior)
+        m1 = new Member("Hans", Year.of(1965), MembershipType.PASSIVE);
+        m1.setIdMember(1);
+        m2 = new MemberActive("Signe", Year.of(1940), MembershipType.ACTIVE, Delfinen.data.ActivityType.BASIC); //age = 78 (pensionist)
+        m2.setIdMember(2);
+        m3 = new MemberActive("Otto", Year.of(2005), MembershipType.ACTIVE, Delfinen.data.ActivityType.BASIC); //age = 13 (youth)
+        m3.setIdMember(3);
+        m4 = new MemberCompetitive("Arne", Year.of(1990), MembershipType.ACTIVE, Delfinen.data.ActivityType.COMPETITIVE, disciplineList); //age = 28 (senior)
+        m4.setIdMember(4);
         Members.add(m1);
         Members.add(m2);
         Members.add(m3);
@@ -44,36 +48,36 @@ public class MemberCompetitiveTest
     @Test
     public void testCreateMembersCompetitive()
     {
-        MemberCompetitive m1 = new MemberCompetitive("Karl", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
-        MemberCompetitive m2 = new MemberCompetitive("Johnny", Year.of(1992), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+        MemberCompetitive m5 = new MemberCompetitive("Johnny", Year.of(1992), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+        m5.setIdMember(5);
 
-        assertNotNull(m1);
-        assertEquals(1, m1.getId());
-        assertEquals("Karl", m1.getName());
-        assertEquals(Year.of(1994), m1.getBirthyear());
-        assertEquals(MembershipType.ACTIVE, m1.getMembershipType());
-        assertEquals(ActivityType.COMPETITIVE, m1.getActivityType());
-        assertEquals(disciplineList, m1.getDisciplineTypes());
+        assertNotNull(m4);
+        assertEquals(4, m4.getId());
+        assertEquals("Arne", m4.getName());
+        assertEquals(Year.of(1990), m4.getBirthyear());
+        assertEquals(MembershipType.ACTIVE, m4.getMembershipType());
+        assertEquals(ActivityType.COMPETITIVE, m4.getActivityType());
+        assertEquals(disciplineList, m4.getDisciplineTypes());
 
-        assertNotNull(m2);
-        assertEquals(2, m2.getId());
-        assertEquals("Johnny", m2.getName());
-        assertEquals(Year.of(1992), m2.getBirthyear());
-        assertEquals(MembershipType.ACTIVE, m2.getMembershipType());
-        assertEquals(ActivityType.COMPETITIVE, m2.getActivityType());
-        assertEquals(disciplineList, m2.getDisciplineTypes());
+        assertNotNull(m5);
+        assertEquals(5, m5.getId());
+        assertEquals("Johnny", m5.getName());
+        assertEquals(Year.of(1992), m5.getBirthyear());
+        assertEquals(MembershipType.ACTIVE, m5.getMembershipType());
+        assertEquals(ActivityType.COMPETITIVE, m5.getActivityType());
+        assertEquals(disciplineList, m5.getDisciplineTypes());
+
     }
 
-    @Test(expected = RuntimeException.class)
-    public void negativeTestCreateMember()
-    {
-        //MemberActive member = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVUS,disciplineList);
-    }
-
+//    @Test(expected = RuntimeException.class)
+//    public void negativeTestCreateMember()
+//    {
+//        //MemberActive member = new MemberActive("Rúni", Year.of(1994), MembershipType.ACTIVE, ActivityType.COMPETITIVUS,disciplineList);
+//    }
     @Test
     public void testCalculateArrearActiveSenior()
     {
-        Member instance = Members.get(3);
+        Member instance = m4;
         System.out.println("testCalculateArrearActiveSenior: \n" + instance);
         int expResult = 1600; //Active (Senior) membership cost
         int result = instance.calculateArrear();

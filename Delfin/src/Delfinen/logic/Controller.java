@@ -15,7 +15,6 @@ import java.io.IOException;
 public class Controller
 {
 
-
     private ModelController modelController;
     private Subscription subscription;
 
@@ -39,7 +38,7 @@ public class Controller
         try
         {
             modelController.addMember(m);
-        } 
+        }
         catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
@@ -53,7 +52,8 @@ public class Controller
         try
         {
             modelController.addMember(m);
-        } catch (IOException i)
+        }
+        catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -66,7 +66,8 @@ public class Controller
         try
         {
             modelController.addMember(m);
-        } catch (IOException i)
+        }
+        catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -95,8 +96,9 @@ public class Controller
         System.out.println(m);
         return m;
     }
-    
-    public void editMember(Member member) {
+
+    public void editMember(Member member)
+    {
         try
         {
             modelController.editMember(member);
@@ -106,19 +108,21 @@ public class Controller
             System.out.println("Unable to write to file using the given file path");
         }
     }
-    
-    public void editMember(MemberActive member) {
+
+    public void editMember(MemberActive member)
+    {
         try
         {
-        modelController.editMemberActive(member);
+            modelController.editMemberActive(member);
         }
         catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
     }
-    
-    public void editMember(MemberCompetitive member) {
+
+    public void editMember(MemberCompetitive member)
+    {
         try
         {
             modelController.editMemberCompetitive(member);
@@ -154,7 +158,7 @@ public class Controller
     {
         try
         {
-        modelController.deleteMember(MemberID);
+            modelController.deleteMember(MemberID);
         }
         catch (IOException ix)
         {
@@ -165,9 +169,8 @@ public class Controller
     public ArrayList<Member> getAllMembers()
     {
         return modelController.getAllMembersInBasicMemberFormat();
-
     }
-    
+
     public ArrayList<MemberCompetitive> getAllCompetitiveMembers()
     {
         return modelController.getAllCompetitiveMembers();
@@ -182,21 +185,19 @@ public class Controller
     public void revokePayment(int memberID, Year year)
     {
         getMember(memberID).revokePayment(year);
-
     }
-    
-    public void getMemberArrear(int memberID) //Single user based on ID. ONLY RETURNS ARREAR, NOT USER INFO.    
-	
-   {
-        getMember(memberID).calculateArrear();
-	
-   }
 
-   public ArrayList getAllArrears()
+    public void getMemberArrear(int memberID) //Single user based on ID. ONLY RETURNS ARREAR, NOT USER INFO.    
+
+    {
+        getMember(memberID).calculateArrear();
+    }
+
+    public ArrayList getAllArrears()
     {
         return subscription.calculateArrears(getAllMembers());
     }
-    
+
     public ArrayList getAllMemberArrears()
     {
         return subscription.getArrearMembers(getAllMembers());

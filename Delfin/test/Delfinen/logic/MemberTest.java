@@ -17,7 +17,7 @@ public class MemberTest
     ArrayList<Year> yearsPaid;
     ArrayList disciplineList;
     ArrayList<Member> Members;
-    
+
     Member m1;
     MemberActive m2;
     MemberActive m3;
@@ -26,8 +26,6 @@ public class MemberTest
     public MemberTest()
     {
         yearsPaid = new ArrayList();
-        //yearsPaid.add(Year.of(2016));
-        //controller = new Controller();
         disciplineList = new ArrayList();
         Members = new ArrayList();
         disciplineList.add(Delfinen.data.DisciplineType.CRAWL);
@@ -44,24 +42,17 @@ public class MemberTest
         Members.add(m2);
         Members.add(m3);
         Members.add(m4);
-        
-        //giver members et id efter de er blevet oprettet, da det er midlertidige members og members først får et ID når de 
-        //gemmen gennem modelcontrolleren. Members der IKKE gemmes på denne måde har altid ID 0 (ikke null).
-
     }
 
     @Test
     public void testCreateMembers()
     {
-        //controller = new Controller();
-//        Member m1 = new Member("Rúni", Year.of(1994), PASSIVE);
         assertNotNull(m1);
         assertEquals(1, m1.getId()); //First member's ID will be == 1, second == 2 etc.
         assertEquals("Hans", m1.getName());
         assertEquals(Year.of(1965), m1.getBirthyear());
         assertEquals(MembershipType.PASSIVE, m1.getMembershipType());
 
-//        Member m2 = new Member("Vaskebjørn", Year.of(2016), PASSIVE);
         assertNotNull(m2);
         assertEquals(2, m2.getId()); //First member's ID will be == 1, second == 2 etc.
         assertEquals("Signe", m2.getName());
@@ -69,22 +60,18 @@ public class MemberTest
         assertEquals(MembershipType.ACTIVE, m2.getMembershipType());
     }
 
-    //den fejler ikke som forventet, så har udkommenteret den indtil videre
 //    @Test(expected = RuntimeException.class)
 //    public void negativeTestCreateMember()
 //    {
 //        Member m = new Member("Rúni", Year.of(1994), PASSIVE);
 //    }
-
     /**
      * Test of toString method, of class Member.
      */
-    
-    //fejler fordi der er rettet i toString metoden i member, da pricer med mere ikke var med i den
     @Test
-    public void testToString()
+    public void testToString() //fix before export - toString unfinished
     {
-        Member instance = Members.get(0);
+        Member instance = m1;
         String expResult = "ID: 8, Name: Hans, Birthyear: 1965, Years Paid: [], MembershipType: PASSIVE";
         String result = instance.toString();
         assertEquals(expResult, result);
@@ -96,8 +83,9 @@ public class MemberTest
     @Test
     public void testEquals() //they got unique IDs mate
     {
-        Object obj = Members.get(0);
+        Object obj = m1;
         Member instance = new Member("Hans", Year.of(1965), MembershipType.PASSIVE);
+        System.out.println("INSTANCETOSTRING: " + instance);
         boolean expResult = false;
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);
@@ -107,10 +95,10 @@ public class MemberTest
      * Test of getId method, of class Member.
      */
     @Test
-    public void testGetId() //UNFINISHED. WHERE IS THE ID (14? 33?) FROM?
+    public void testGetId()
     {
-        Member instance = Members.get(0);
-        int expResult = 1; //what
+        Member instance = m1;
+        int expResult = 1;
         int result = instance.getId();
         assertEquals(expResult, result);
     }
@@ -122,7 +110,7 @@ public class MemberTest
     public void testSetIdMember()
     {
         int idMember = 200;
-        Member instance = Members.get(0);
+        Member instance = m1;
         instance.setIdMember(idMember);
         assertEquals(Members.get(0).getId(), idMember);
     }
@@ -133,7 +121,7 @@ public class MemberTest
     @Test
     public void testGetName()
     {
-        Member instance = Members.get(0);
+        Member instance = m1;
         String expResult = "Hans";
         String result = instance.getName();
         assertEquals(expResult, result);
@@ -145,7 +133,7 @@ public class MemberTest
     @Test
     public void testGetBirthyear()
     {
-        Member instance = Members.get(0);
+        Member instance = m1;
         Year expResult = Year.of(1965);
         Year result = instance.getBirthyear();
         assertEquals(expResult, result);
@@ -157,7 +145,7 @@ public class MemberTest
     @Test
     public void testGetMembershipType()
     {
-        Member instance = Members.get(0);
+        Member instance = m1;
         MembershipType expResult = PASSIVE;
         MembershipType result = instance.getMembershipType();
         assertEquals(expResult, result);
@@ -170,7 +158,7 @@ public class MemberTest
     public void testGetYearsPaid()
     {
         System.out.println("   testGetYearsPaid:");
-        Member instance = Members.get(0);
+        Member instance = m1;
         System.out.println("OLD: " + instance);
         ArrayList<Year> expResult = new ArrayList();
         expResult.add(Year.of(2016));
@@ -193,7 +181,7 @@ public class MemberTest
     public void testRegisterPaymentExtended()
     {
         Year year = Year.of(2016);
-        Member instance = Members.get(0);
+        Member instance = m1;
         instance.registerPayment(year);
         assertEquals(instance.getYearsPaid().get(0), year); //added
     }
@@ -205,7 +193,7 @@ public class MemberTest
     public void testRevokePayment()
     {
         Year year = Year.of(2018);
-        Member instance = Members.get(0);
+        Member instance = m1;
         instance.registerPayment(Year.of(2016));
         instance.registerPayment(Year.of(2017));
         instance.registerPayment(Year.of(2018));
@@ -218,7 +206,7 @@ public class MemberTest
     public void testRevokePaymentNegative()
     {
         Year year = Year.of(2018);
-        Member instance = Members.get(0);
+        Member instance = m1;
         instance.registerPayment(Year.of(2016));
         instance.registerPayment(Year.of(2017));
         //instance.registerPayment(Year.of(2018));
@@ -230,7 +218,7 @@ public class MemberTest
     @Test
     public void testCalculateArrearAlreadyPaid()
     {
-        Member instance = Members.get(0);
+        Member instance = m1;
         instance.registerPayment(Year.of(2018));
         int expResult = 0;
         int result = instance.calculateArrear();
@@ -243,7 +231,7 @@ public class MemberTest
     @Test
     public void testCalculateArrearPassive()
     {
-        Member instance = Members.get(0);
+        Member instance = m1;
         System.out.println("testCalculateArrearPassive: \n" + instance);
         int expResult = 500; //Passive membership cost
         int result = instance.calculateArrear();
