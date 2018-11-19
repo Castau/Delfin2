@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
  *
  * @author runin, Asger, Camilla
- * 
+ *
  */
 public class Member
 {
@@ -23,10 +23,11 @@ public class Member
 
     /**
      * Member with a passive membership
+     *
      * @param name
      * @param birthyear
      * @param membershipType
-     * 
+     *
      */
     public Member(String name, Year birthyear, MembershipType membershipType)
 
@@ -50,19 +51,6 @@ public class Member
     public String toStringNameID()
     {
         return "ID: " + idMember + ", Name: " + name + ", Years Paid: " + yearsPaid;
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int hash = 7;
-        hash = 89 * hash + this.idMember;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + Objects.hashCode(this.birthyear);
-        hash = 89 * hash + Objects.hashCode(this.membershipType);
-        hash = 89 * hash + Objects.hashCode(this.yearsPaid);
-        hash = 89 * hash + Objects.hashCode(this.price);
-        return hash;
     }
 
     @Override
@@ -161,10 +149,14 @@ public class Member
     {
         return yearsPaid.remove(year);
     }
-
+    
+    /**
+     * CurrentYear-Birthyear = age.
+     * @return Returns the users age.
+     */
     public int getAge()
     {
-        return (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(this.getBirthyear().toString()))); //CurrentYear-Birthyear = age
+        return (Integer.parseInt(Year.now().toString()) - (Integer.parseInt(this.getBirthyear().toString()))); 
     }
 
     /**
