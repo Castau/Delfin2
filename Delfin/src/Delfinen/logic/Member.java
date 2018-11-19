@@ -9,6 +9,7 @@ import java.util.Objects;
 /**
  *
  * @author runin, Asger, Camilla
+ * 
  */
 public class Member
 {
@@ -20,7 +21,13 @@ public class Member
     private ArrayList<Year> yearsPaid = new ArrayList();
     private Price price = new Price();
 
-    //Normal member, passive membership.
+    /**
+     * Member with a passive membership
+     * @param name
+     * @param birthyear
+     * @param membershipType
+     * 
+     */
     public Member(String name, Year birthyear, MembershipType membershipType)
 
     {

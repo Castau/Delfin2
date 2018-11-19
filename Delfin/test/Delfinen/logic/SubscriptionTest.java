@@ -31,6 +31,10 @@ public class SubscriptionTest
     MemberActive m3;
     MemberCompetitive m4;
 
+    /**
+     *Tests an implementation of the Subscription class.
+     * @see Subscription
+     */
     public SubscriptionTest()
     {
         controller = new Controller();

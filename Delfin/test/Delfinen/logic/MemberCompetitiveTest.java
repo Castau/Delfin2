@@ -23,6 +23,10 @@ public class MemberCompetitiveTest
     MemberActive m3;
     MemberCompetitive m4;
 
+    /**
+     *Tests active members who also competes.
+     * @see MemberCompetitive
+     */
     public MemberCompetitiveTest()
     {
         yearsPaid = new ArrayList();

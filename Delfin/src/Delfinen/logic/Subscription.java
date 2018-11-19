@@ -12,6 +12,10 @@ public class Subscription
 
     private Controller controller;
 
+    /**
+     *Class used for handling Arrears for current year ONLY.
+     * @param controller
+     */
     public Subscription(Controller controller)
     {
         this.controller = controller;

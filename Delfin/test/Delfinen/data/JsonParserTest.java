@@ -1,8 +1,6 @@
-package Delfinen.logic;
+package Delfinen.data;
 
-import Delfinen.data.JsonParser;
 import Delfinen.logic.Member;
-import Delfinen.data.MembershipType;
 import java.time.Year;
 import java.util.ArrayList;
 import org.junit.Test;
@@ -12,13 +10,13 @@ import static org.junit.Assert.*;
  *
  * @author Camilla
  */
-public class JsonTest
+public class JsonParserTest
 {
 
     JsonParser jsonParser;
     ArrayList<Year> yearsPaid;
 
-    public JsonTest()
+    public JsonParserTest()
     {
         jsonParser = new JsonParser();
         yearsPaid = new ArrayList();

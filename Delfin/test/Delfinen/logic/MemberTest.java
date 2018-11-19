@@ -23,6 +23,10 @@ public class MemberTest
     MemberActive m3;
     MemberCompetitive m4;
 
+    /**
+     *Tests passive members
+     * @see Member
+     */
     public MemberTest()
     {
         yearsPaid = new ArrayList();
@@ -85,7 +89,6 @@ public class MemberTest
     {
         Object obj = m1;
         Member instance = new Member("Hans", Year.of(1965), MembershipType.PASSIVE);
-        System.out.println("INSTANCETOSTRING: " + instance);
         boolean expResult = false;
         boolean result = instance.equals(obj);
         assertEquals(expResult, result);

@@ -16,14 +16,14 @@ import static org.junit.Assert.*;
 /**
  * @author Camilla
  */
-public class DataAccessorTest {
+public class DataAccessorFileTest {
 
     private Model model;
     private DataAccessorFile data;
     private String filePath = "";
     private String testjson = "";
 
-    public DataAccessorTest() {
+    public DataAccessorFileTest() {
         Config.setTestMode(false);
         data = new DataAccessorFile();
         

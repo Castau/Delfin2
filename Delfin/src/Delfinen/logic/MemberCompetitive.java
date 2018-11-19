@@ -17,8 +17,17 @@ public class MemberCompetitive extends MemberActive
     private Training trainingSessions;
     private Competition competitionResults;
     private ArrayList<DisciplineType> disciplineTypes;
-
     // ArrayList<DisciplineType> disciplineList laves evt. i GUI
+
+    /**
+     * Member with an active membership, who also competes.
+     * @see MemberActive
+     * @param name
+     * @param birthyear
+     * @param membershipType
+     * @param activityType
+     * @param disciplineList
+     */
     public MemberCompetitive(String name, Year birthyear, MembershipType membershipType,
             ActivityType activityType, ArrayList<DisciplineType> disciplineList)
     {

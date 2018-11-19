@@ -15,6 +15,14 @@ public class MemberActive extends Member
 
     private ActivityType activityType;
 
+    /**
+     * Member with an active membership. 
+     * @see Member
+     * @param name
+     * @param birthyear
+     * @param membershipType
+     * @param activityType
+     */
     public MemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
 
     {
