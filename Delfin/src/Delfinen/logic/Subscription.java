@@ -1,83 +1,48 @@
 package Delfinen.logic;
 
-import Delfinen.data.MembershipType;
 import java.util.ArrayList;
 import java.time.Year;
 
 /**
  *
  * @author runin
- * //THIS CLASS IS UNFINISHED. MAY BE FIXED, MAY BE MOVED TO DATA.PRICE.
  */
 public class Subscription
 {
 
     private Controller controller;
-    private ArrayList arrears;
-    private ArrayList<Member> Members;
-    
 
     public Subscription(Controller controller)
     {
         this.controller = controller;
-        arrears = new ArrayList();
-        Members = new ArrayList();
-        // memberArrears = new ArrayList();
-        //memberActiveArrears = new ArrayList();
-        //MemberCompetitiveArrears = new ArrayList();
     }
 
-
-    public ArrayList calculateArrears(ArrayList<Member> Members)
+    public int getAllArrears(ArrayList<Member> arrearMembers) //Returns missing money
     {
-        //Members = controller.getAllMembers();
-        //Year currentYear = Year.now();
-        //int currentYear = Year.now().getValue(); //also works
-        String currentYear = Year.now().toString();
-        //arrears.add(addMembers(Members));
+        int totalArrear = 0;
 
-        for (int i = 0; i < Members.size(); i++)
+        for (int i = 0; i < arrearMembers.size(); i++)
         {
-            int arrearCost;
+            totalArrear += arrearMembers.get(i).calculateArrear();
+        }
+        return totalArrear;
+    }
 
-            if (!(Members.get(i).getYearsPaid().contains(Year.of(2019))) && Members.get(i).getMembershipType().equals(MembershipType.PASSIVE))
+    public ArrayList getArrearMembers(ArrayList<Member> allMembers) //Returns who needs to pay
+    {
+        ArrayList<Member> arrearMembers = new ArrayList();
+
+        for (int i = 0; i < allMembers.size(); i++)
+        {
+            if (allMembers.get(i).getYearsPaid().contains(Year.now()))
             {
-                arrearCost = 500;
-                arrears.add(Members.get(i) + ", ARREAR: " + arrearCost);
-                continue;
             }
-            if (!(Members.get(i).getYearsPaid().contains(Year.of(2019))) && Members.get(i).getMembershipType().equals(MembershipType.ACTIVE))
+
+            if (!allMembers.get(i).getYearsPaid().contains(Year.now()))
             {
-                String birthyear = Members.get(i).getBirthyear().toString();
-                int age = (Integer.parseInt(currentYear) - (Integer.parseInt(birthyear)));
-
-                if (age <= 17)
-                {
-                    arrearCost = 1000;
-                    arrears.add(Members.get(i) + ", ARREAR: " + arrearCost);
-                    continue;
-                }
-
-                if (age > 17 && age <= 59)
-                {
-                    arrearCost = 1600;
-                    arrears.add(Members.get(i) + ", ARREAR: " + arrearCost);
-                    continue;
-                }
-
-                if (age >= 60)
-                {
-                    arrearCost = (int) (1600 * 0.75); //25% discount
-                    arrears.add(Members.get(i) + ", ARREAR: " + arrearCost);
-                }
+                arrearMembers.add(allMembers.get(i));
             }
         }
-        return arrears;
+        return arrearMembers;
     }
-
-    ArrayList getArrearMembers(ArrayList<Member> allMembers)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
