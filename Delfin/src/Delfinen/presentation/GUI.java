@@ -6,17 +6,11 @@
 package Delfinen.presentation;
 
 import Delfinen.data.ActivityType;
-//import static Delfinen.data.ActivityType.COMPETITIVE;
-//import Delfinen.data.DataAccessorFile;
 import Delfinen.data.MembershipType;
-//import static Delfinen.data.MembershipType.ACTIVE;
-//import static Delfinen.data.MembershipType.PASSIVE;
 import Delfinen.logic.Controller;
 import java.time.Year;
-//import static Delfinen.data.ActivityType.BASIC;
 import Delfinen.data.DisciplineType;
 import Delfinen.logic.Member;
-//import java.io.IOException;
 import java.time.DateTimeException;
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -51,17 +45,11 @@ public class GUI extends javax.swing.JFrame
         this.buttonGroupEditMemberActivityType.add(RadioButtonEditMemberCompetitive);
         //Making panels invisible
         PanelLoggedInAsManager.setVisible(false);
-        PanelLoggedInAsManagerScreenHeader.setVisible(false);
         PanelCreateNewMember.setVisible(false);
-        PanelCreateNewMemberHeader.setVisible(false);
         PanelEditMemberChooseMember.setVisible(false);
-        PanelEditMemberHeaderChoose.setVisible(false);
         PanelEditMember.setVisible(false);
-        PanelEditMemberHeader.setVisible(false);
         PanelDeleteMember.setVisible(false);
-        PanelDeleteMemberHeader.setVisible(false);
         PanelViewMembers.setVisible(false);
-        PanelViewMembersHeader.setVisible(false);
         //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -256,7 +244,7 @@ public class GUI extends javax.swing.JFrame
                     .addComponent(ButtonLoginAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonLoginAsManager))
                 .addGap(335, 335, 335))
-            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
         );
         PanelLoginScreenLayout.setVerticalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,7 +259,7 @@ public class GUI extends javax.swing.JFrame
                 .addGap(0, 177, Short.MAX_VALUE))
         );
 
-        PanelLoggedInAsManager.setPreferredSize(new java.awt.Dimension(770, 434));
+        PanelLoggedInAsManager.setPreferredSize(new java.awt.Dimension(858, 457));
 
         PanelLoggedInAsManagerScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -354,19 +342,18 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsManagerLayout.setHorizontalGroup(
             PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
-                .addGroup(PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
-                        .addGap(301, 301, 301)
-                        .addGroup(PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ButtonViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ButtonDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ButtonCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ButtonEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(PanelLoggedInAsManagerLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(ButtonBackToMainMenu)))
-                .addContainerGap(292, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(ButtonBackToMainMenu)
+                .addContainerGap(685, Short.MAX_VALUE))
             .addComponent(PanelLoggedInAsManagerScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsManagerLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonCreateNewMember, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonViewMembers, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonDeleteMember)
+                    .addComponent(ButtonEditMember, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(327, 327, 327))
         );
         PanelLoggedInAsManagerLayout.setVerticalGroup(
             PanelLoggedInAsManagerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,11 +363,11 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonCreateNewMember)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonEditMember)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(11, 11, 11)
                 .addComponent(ButtonDeleteMember)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonViewMembers)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addComponent(ButtonBackToMainMenu)
                 .addContainerGap())
         );
@@ -558,7 +545,7 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonNewMemberCreateMember)
                 .addGap(18, 18, 18))
-            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
         );
         PanelCreateNewMemberLayout.setVerticalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -680,7 +667,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setLayout(PanelEditMemberChooseMemberLayout);
         PanelEditMemberChooseMemberLayout.setHorizontalGroup(
             PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
             .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -833,7 +820,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMember.setLayout(PanelEditMemberLayout);
         PanelEditMemberLayout.setHorizontalGroup(
             PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
             .addGroup(PanelEditMemberLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -995,7 +982,7 @@ public class GUI extends javax.swing.JFrame
         PanelDeleteMember.setLayout(PanelDeleteMemberLayout);
         PanelDeleteMemberLayout.setHorizontalGroup(
             PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
             .addGroup(PanelDeleteMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1102,7 +1089,7 @@ public class GUI extends javax.swing.JFrame
         PanelViewMembers.setLayout(PanelViewMembersLayout);
         PanelViewMembersLayout.setHorizontalGroup(
             PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 820, Short.MAX_VALUE)
+            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 828, Short.MAX_VALUE)
             .addGroup(PanelViewMembersLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1145,7 +1132,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 838, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -1213,29 +1200,20 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonCreateNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateNewMemberActionPerformed
         PanelCreateNewMember.setVisible(true);
-        PanelCreateNewMemberHeader.setVisible(true);
         PanelLoginScreen.setVisible(false);
-        PanelLoginScreenHeader.setVisible(false);
         PanelLoggedInAsManager.setVisible(false);
-        PanelLoggedInAsManagerScreenHeader.setVisible(false);
     }//GEN-LAST:event_ButtonCreateNewMemberActionPerformed
 
     private void ButtonBackToMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackToMainMenuActionPerformed
         PanelLoginScreen.setVisible(true);
-        PanelLoginScreenHeader.setVisible(true);
         PanelLoggedInAsManager.setVisible(false);
-        PanelLoggedInAsManagerScreenHeader.setVisible(false);
         PanelCreateNewMember.setVisible(false);
-        PanelCreateNewMemberHeader.setVisible(false);
     }//GEN-LAST:event_ButtonBackToMainMenuActionPerformed
 
     private void ButtonCancelCreateNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelCreateNewMemberActionPerformed
         PanelLoginScreen.setVisible(false);
-        PanelLoginScreenHeader.setVisible(false);
         PanelLoggedInAsManager.setVisible(true);
-        PanelLoggedInAsManagerScreenHeader.setVisible(true);
         PanelCreateNewMember.setVisible(false);
-        PanelCreateNewMemberHeader.setVisible(false);
         //Clearing selection
         buttonGroupCreateMemberActivityType.clearSelection();
         buttonGroupCreateMemberPassiveActive.clearSelection();
@@ -1425,16 +1403,12 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonLoginAsManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginAsManagerActionPerformed
         PanelLoginScreen.setVisible(false);
-        PanelLoginScreenHeader.setVisible(false);
         PanelLoggedInAsManager.setVisible(true);
-        PanelLoggedInAsManagerScreenHeader.setVisible(true);
     }//GEN-LAST:event_ButtonLoginAsManagerActionPerformed
 
     private void ButtonEditMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberActionPerformed
         PanelLoggedInAsManager.setVisible(false);
-        PanelLoggedInAsManagerScreenHeader.setVisible(false);
         PanelEditMemberChooseMember.setVisible(true);
-        PanelEditMemberHeaderChoose.setVisible(true);
         ComboBoxChooseMemberToEdit.removeAllItems();
         ArrayList<Member> members = c.getAllMembers();
         for (int i = 0; i < members.size(); ++i)
@@ -1445,22 +1419,16 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonCancelEditMemberChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelEditMemberChooseActionPerformed
         PanelLoggedInAsManager.setVisible(true);
-        PanelLoggedInAsManagerScreenHeader.setVisible(true);
         PanelEditMemberChooseMember.setVisible(false);
-        PanelEditMemberHeaderChoose.setVisible(false);
         PanelEditMember.setVisible(false);
-        PanelEditMemberHeader.setVisible(false);
     }//GEN-LAST:event_ButtonCancelEditMemberChooseActionPerformed
 
     private void ButtonOKChooseMemberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberToEditActionPerformed
         try
         {
             PanelLoggedInAsManager.setVisible(false);
-            PanelLoggedInAsManagerScreenHeader.setVisible(false);
             PanelEditMemberChooseMember.setVisible(false);
-            PanelEditMemberHeaderChoose.setVisible(false);
             PanelEditMember.setVisible(true);
-            PanelEditMemberHeader.setVisible(true);
             String StrMember = ComboBoxChooseMemberToEdit.getSelectedItem().toString();
             String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
                              StrMember.indexOf(","));
@@ -1485,11 +1453,8 @@ public class GUI extends javax.swing.JFrame
     
     private void ButtonCancelEditMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelEditMemberActionPerformed
         PanelLoggedInAsManager.setVisible(true);
-        PanelLoggedInAsManagerScreenHeader.setVisible(true);
         PanelEditMember.setVisible(false);
-        PanelEditMemberHeader.setVisible(false);
         PanelEditMemberChooseMember.setVisible(false);
-        PanelEditMemberHeaderChoose.setVisible(false);
     }//GEN-LAST:event_ButtonCancelEditMemberActionPerformed
 
     private void RadioButtonEditMemberPassiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonEditMemberPassiveActionPerformed
@@ -1663,9 +1628,7 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDeleteMemberActionPerformed
         PanelLoggedInAsManager.setVisible(false);
-        PanelLoggedInAsManagerScreenHeader.setVisible(false);
         PanelDeleteMember.setVisible(true);
-        PanelDeleteMemberHeader.setVisible(true);
         ComboBoxChooseMemberToDelete.removeAllItems();
         ArrayList<Member> members = c.getAllMembers();
         for (int i = 0; i < members.size(); ++i)
@@ -1676,9 +1639,7 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonCancelDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelDeleteMemberActionPerformed
         PanelLoggedInAsManager.setVisible(true);
-        PanelLoggedInAsManagerScreenHeader.setVisible(true);
         PanelDeleteMember.setVisible(false);
-        PanelDeleteMemberHeader.setVisible(false);
     }//GEN-LAST:event_ButtonCancelDeleteMemberActionPerformed
 
     private void ButtonOKChooseMemberToDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberToDeleteActionPerformed
@@ -1702,16 +1663,12 @@ public class GUI extends javax.swing.JFrame
         }
         //Going back to manager's menu
         PanelDeleteMember.setVisible(false);
-        PanelDeleteMemberHeader.setVisible(false);
         PanelLoggedInAsManager.setVisible(true);
-        PanelLoggedInAsManagerScreenHeader.setVisible(true);
     }//GEN-LAST:event_ButtonOKChooseMemberToDeleteActionPerformed
 
     private void ButtonViewMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewMembersActionPerformed
         PanelLoggedInAsManager.setVisible(false);
-        PanelLoggedInAsManagerScreenHeader.setVisible(false);
         PanelViewMembers.setVisible(true);
-        PanelViewMembersHeader.setVisible(true);
         this.textAreaAllMembers.setText("");
         for (int i = 0; i < c.getAllMembers().size(); ++i)
         {
@@ -1722,9 +1679,7 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonBackFromViewAllMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackFromViewAllMembersActionPerformed
         PanelLoggedInAsManager.setVisible(true);
-        PanelLoggedInAsManagerScreenHeader.setVisible(true);
         PanelViewMembers.setVisible(false);
-        PanelViewMembersHeader.setVisible(false);
     }//GEN-LAST:event_ButtonBackFromViewAllMembersActionPerformed
 
     private void ButtonViewAllMembersAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewAllMembersAllActionPerformed

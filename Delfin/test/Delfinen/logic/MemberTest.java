@@ -30,11 +30,6 @@ public class MemberTest
         Members = new ArrayList();
         disciplineList.add(Delfinen.data.DisciplineType.CRAWL);
         disciplineList.add(Delfinen.data.DisciplineType.BREASTSTROKE);
-    }
-
-    @Before
-    public void setUp()
-    {
         Member m1 = new Member("Hans", Year.of(1965), MembershipType.PASSIVE);
         Member m2 = new Member("Karl", Year.of(2001), MembershipType.PASSIVE);
         MemberActive m3 = new MemberActive("Signe", Year.of(1940), MembershipType.ACTIVE, Delfinen.data.ActivityType.BASIC); //age = 78 (pensionist)

@@ -4,7 +4,8 @@ package Delfinen.logic;
 /**
  * @author Camilla
  */
-public class CompetitionResults extends TrainingResults{
+public class CompetitionResults //extends TrainingResults
+{
     
     //Runi:
     //Competition: ForEachMember: CompetitionName (Stævne),  Result (placement), Time. (Date is not mentioned. Include?)

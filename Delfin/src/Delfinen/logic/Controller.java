@@ -39,7 +39,8 @@ public class Controller
         try
         {
             modelController.addMember(m);
-        } catch (IOException i)
+        } 
+        catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
