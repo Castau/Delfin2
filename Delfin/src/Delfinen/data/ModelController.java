@@ -71,18 +71,6 @@ public class ModelController {
         return model.getMemberCompetitive(memberID);
     }
     
-    public ArrayList<Member> getMember(String memberName){
-        return model.getMember(memberName);
-    }
-    
-    public ArrayList<MemberActive> getMemberActive(String memberName){
-        return model.getMemberActive(memberName);
-    }
-    
-    public ArrayList<MemberCompetitive> getMemberCompetitive(String memberName){
-      return model.getMemberCompetitive(memberName);
-    }
-    
     public void deleteMember (int memberID) throws IOException{
         model.deleteMember(memberID);
         dataFile.writeToFile(model, filePath);

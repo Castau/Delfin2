@@ -57,7 +57,7 @@
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsManager" pref="830" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsManager" pref="838" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -514,7 +514,7 @@
                   <Component id="ButtonNewMemberCreateMember" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
-              <Component id="PanelCreateNewMemberHeader" alignment="0" pref="830" max="32767" attributes="0"/>
+              <Component id="PanelCreateNewMemberHeader" alignment="0" pref="838" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -810,7 +810,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelEditMemberHeaderChoose" alignment="0" pref="830" max="32767" attributes="0"/>
+              <Component id="PanelEditMemberHeaderChoose" alignment="0" pref="838" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -979,7 +979,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelEditMemberHeader" alignment="0" pref="820" max="32767" attributes="0"/>
+              <Component id="PanelEditMemberHeader" alignment="0" pref="824" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1324,7 +1324,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelDeleteMemberHeader" alignment="0" pref="820" max="32767" attributes="0"/>
+              <Component id="PanelDeleteMemberHeader" alignment="0" pref="824" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1493,7 +1493,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelViewMembersHeader" alignment="0" pref="820" max="32767" attributes="0"/>
+              <Component id="PanelViewMembersHeader" alignment="0" pref="824" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">

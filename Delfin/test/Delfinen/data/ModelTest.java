@@ -110,5 +110,38 @@ public class ModelTest {
         assertEquals(me5, m5);
 
     }
+    
+    @Test
+    public void testDeleteMember(){
+        ArrayList<Member> testMembers = new ArrayList();
+        testMembers.add(m2);
+        model.addMember(m1);
+        model.addMember(m2);
+        
+        model.deleteMember(m1.getId());
+        assertEquals(testMembers, model.getAllMembers());
+    }
+    
+    @Test
+    public void testDeleteMemberActive(){
+        ArrayList<MemberActive> testMembers = new ArrayList();
+        testMembers.add(m3);
+        model.addMember(m3);
+        model.addMember(m4);
+        
+        model.deleteMember(m4.getId());
+        assertEquals(testMembers, model.getAllMembersActive());
+    }
+    
+    @Test
+    public void testDeleteMemberCompetitive(){
+        ArrayList<MemberActive> testMembers = new ArrayList();
+        testMembers.add(m6);
+        model.addMember(m5);
+        model.addMember(m6);
+        
+        model.deleteMember(m5.getId());
+        assertEquals(testMembers, model.getAllMembersCompetitive());
+    }
 
 }
