@@ -56,6 +56,25 @@ public class DataAccessorFile {
 
     }
     
+    //    public void writeToFile(Model model, String filePath) {
+//        Gson gson = new GsonBuilder().create();
+//        Writer writer = null;
+//        try {
+//            writer = new FileWriter(filePath + FILENAME);
+//            gson.toJson(model, writer);
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found");
+//        } finally {
+//            try {
+//                if (writer != null) {
+//                    writer.close();
+//                }
+//            } catch (IOException io) {
+//                System.out.println("");
+//            }
+//        }
+//    }
     public void writeToFile(Model model, String filePath) throws IOException {
         Writer writer = new FileWriter(filePath + FILENAME);
         Gson gson = new GsonBuilder().create();

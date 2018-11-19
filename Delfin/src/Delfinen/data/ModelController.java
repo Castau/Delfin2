@@ -95,6 +95,8 @@ public class ModelController {
         return allMembers;
     }
     
+    
+    
     public void addTrainingSession(int memberID, LocalTime date, DisciplineType diciplineType, Distance distance, int timeInSec) throws IOException{
         TrainingSession training = new TrainingSession(date, diciplineType, distance, timeInSec);
         MemberCompetitive temp = model.getMemberCompetitive(memberID);

@@ -196,6 +196,7 @@ public class Controller
      */
     public void revokePayment(int memberID, Year year)
     {
+        
         getMember(memberID).revokePayment(year);
     }
 
