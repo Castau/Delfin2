@@ -1,5 +1,4 @@
 package Delfinen.logic;
-
 import java.util.ArrayList;
 import java.time.Year;
 
