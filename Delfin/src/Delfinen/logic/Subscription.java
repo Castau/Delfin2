@@ -1,4 +1,5 @@
 package Delfinen.logic;
+
 import java.util.ArrayList;
 import java.time.Year;
 
@@ -16,7 +17,12 @@ public class Subscription
         this.controller = controller;
     }
 
-    public int getAllArrears(ArrayList<Member> arrearMembers) //Returns missing money
+    /**
+     *
+     * @param arrearMembers
+     * @return Returns total missing money for current year.
+     */
+    public int getAllArrears(ArrayList<Member> arrearMembers)
     {
         int totalArrear = 0;
 
@@ -27,7 +33,12 @@ public class Subscription
         return totalArrear;
     }
 
-    public ArrayList getArrearMembers(ArrayList<Member> allMembers) //Returns who needs to pay
+    /**
+     *
+     * @param allMembers
+     * @return Returns ArrayList of members who have yet to pay.
+     */
+    public ArrayList getArrearMembers(ArrayList<Member> allMembers)
     {
         ArrayList<Member> arrearMembers = new ArrayList();
 
