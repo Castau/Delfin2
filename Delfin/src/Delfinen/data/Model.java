@@ -6,6 +6,7 @@ import Delfinen.logic.MemberCompetitive;
 import java.util.ArrayList;
 import java.util.Objects;
 
+
 /**
  * @author Camilla
  */
