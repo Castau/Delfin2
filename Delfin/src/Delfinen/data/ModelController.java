@@ -50,12 +50,12 @@ public class ModelController {
     }
     
     public void editMemberActive(MemberActive member) throws IOException{
-        model.editMember(member);
+        model.editMemberActive(member);
         dataFile.writeToFile(model, filePath);
     }
     
     public void editMemberCompetitive(MemberCompetitive member) throws IOException{
-        model.editMember(member);
+        model.editMemberCompetitive(member);
         dataFile.writeToFile(model, filePath);
     }
     
