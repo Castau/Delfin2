@@ -185,7 +185,9 @@ public class Controller
      */
     public void registerPayment(int memberID, Year year)
     {
-        getMember(memberID).registerPayment(year);
+        Member temp = getMember(memberID);
+        temp.registerPayment(year);
+        editMember(temp);
     }
 
     /**
@@ -196,8 +198,9 @@ public class Controller
      */
     public void revokePayment(int memberID, Year year)
     {
-        
-        getMember(memberID).revokePayment(year);
+        Member temp = getMember(memberID);
+        temp.revokePayment(year);
+        editMember(temp);
     }
 
     /**
