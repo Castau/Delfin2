@@ -52,6 +52,7 @@ public class GUI extends javax.swing.JFrame
         PanelViewMembers.setVisible(false);
         PanelLoggedInAsCashier.setVisible(false);
         PanelRegisterPayment.setVisible(false);
+        PanelRevokePayment.setVisible(false);
         //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -197,6 +198,20 @@ public class GUI extends javax.swing.JFrame
         TextFieldRegisterPaymentPaymentYear = new javax.swing.JTextField();
         LabelRegisterPaymentYearFormat = new javax.swing.JLabel();
         ButtonRegisterPaymentRegisterPayment = new javax.swing.JButton();
+        PanelRevokePayment = new javax.swing.JPanel();
+        PanelRevokePaymentHeader = new javax.swing.JPanel();
+        LabelRegisterPaymentHome1 = new javax.swing.JLabel();
+        LabelRegisterPaymentHeader1 = new java.awt.Label();
+        LabelRegisterPaymentLogAsCashier1 = new java.awt.Label();
+        LabelRevokePaymentAllMembersIDName = new javax.swing.JLabel();
+        ButtonBackFromRevokePayment = new javax.swing.JButton();
+        textAreaRevokePaymentMemberList = new java.awt.TextArea();
+        TextFieldRevokePaymentID = new javax.swing.JTextField();
+        LabelRevokePaymentInsertID = new javax.swing.JLabel();
+        LabelRevokePaymentPaymentYear = new javax.swing.JLabel();
+        TextFieldRevokePaymentPaymentYear = new javax.swing.JTextField();
+        LabelRevokePaymentYearFormat = new javax.swing.JLabel();
+        ButtonRevokePaymentRevokePayment = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DELPHI");
@@ -1253,6 +1268,13 @@ public class GUI extends javax.swing.JFrame
         ButtonRevokePayment.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonRevokePayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Delete_Document_26px.png"))); // NOI18N
         ButtonRevokePayment.setText("Revoke payment     ");
+        ButtonRevokePayment.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonRevokePaymentActionPerformed(evt);
+            }
+        });
 
         ButtonCheckMembersArrear.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonCheckMembersArrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Payment_History_26px_1.png"))); // NOI18N
@@ -1471,6 +1493,149 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        PanelRevokePayment.setPreferredSize(new java.awt.Dimension(858, 457));
+
+        PanelRevokePaymentHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelRevokePaymentHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelRegisterPaymentHome1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Delete_Document_50px.png"))); // NOI18N
+
+        LabelRegisterPaymentHeader1.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelRegisterPaymentHeader1.setForeground(new java.awt.Color(255, 255, 255));
+        LabelRegisterPaymentHeader1.setText("Revoke payment");
+
+        LabelRegisterPaymentLogAsCashier1.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelRegisterPaymentLogAsCashier1.setForeground(new java.awt.Color(0, 0, 0));
+        LabelRegisterPaymentLogAsCashier1.setText("Logged in as Cashier");
+
+        javax.swing.GroupLayout PanelRevokePaymentHeaderLayout = new javax.swing.GroupLayout(PanelRevokePaymentHeader);
+        PanelRevokePaymentHeader.setLayout(PanelRevokePaymentHeaderLayout);
+        PanelRevokePaymentHeaderLayout.setHorizontalGroup(
+            PanelRevokePaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRevokePaymentHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelRegisterPaymentHome1)
+                .addGroup(PanelRevokePaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRevokePaymentHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelRegisterPaymentHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(602, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRevokePaymentHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelRegisterPaymentLogAsCashier1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelRevokePaymentHeaderLayout.setVerticalGroup(
+            PanelRevokePaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRevokePaymentHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelRevokePaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRevokePaymentHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelRevokePaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRevokePaymentHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelRegisterPaymentHome1)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRevokePaymentHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelRegisterPaymentHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelRevokePaymentHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelRegisterPaymentLogAsCashier1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelRevokePaymentAllMembersIDName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelRevokePaymentAllMembersIDName.setText("All members");
+
+        ButtonBackFromRevokePayment.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackFromRevokePayment.setText("BACK");
+        ButtonBackFromRevokePayment.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackFromRevokePaymentActionPerformed(evt);
+            }
+        });
+
+        textAreaRevokePaymentMemberList.setEditable(false);
+
+        TextFieldRevokePaymentID.setText("ID");
+
+        LabelRevokePaymentInsertID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelRevokePaymentInsertID.setText("ID");
+
+        LabelRevokePaymentPaymentYear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelRevokePaymentPaymentYear.setText("Payment year");
+
+        TextFieldRevokePaymentPaymentYear.setText("(YYYY)");
+
+        LabelRevokePaymentYearFormat.setText("(YYYY)");
+
+        ButtonRevokePaymentRevokePayment.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ButtonRevokePaymentRevokePayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Minus_20px.png"))); // NOI18N
+        ButtonRevokePaymentRevokePayment.setText("Revoke payment   ");
+        ButtonRevokePaymentRevokePayment.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonRevokePaymentRevokePaymentActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelRevokePaymentLayout = new javax.swing.GroupLayout(PanelRevokePayment);
+        PanelRevokePayment.setLayout(PanelRevokePaymentLayout);
+        PanelRevokePaymentLayout.setHorizontalGroup(
+            PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelRevokePaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addGroup(PanelRevokePaymentLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(ButtonBackFromRevokePayment)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRevokePaymentLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelRevokePaymentInsertID)
+                    .addComponent(TextFieldRevokePaymentID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelRevokePaymentPaymentYear)
+                    .addGroup(PanelRevokePaymentLayout.createSequentialGroup()
+                        .addComponent(TextFieldRevokePaymentPaymentYear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(LabelRevokePaymentYearFormat))
+                    .addComponent(ButtonRevokePaymentRevokePayment))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelRevokePaymentAllMembersIDName)
+                    .addComponent(textAreaRevokePaymentMemberList, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(92, 92, 92))
+        );
+        PanelRevokePaymentLayout.setVerticalGroup(
+            PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelRevokePaymentLayout.createSequentialGroup()
+                .addComponent(PanelRevokePaymentHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelRevokePaymentAllMembersIDName)
+                    .addComponent(LabelRevokePaymentInsertID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelRevokePaymentLayout.createSequentialGroup()
+                        .addComponent(textAreaRevokePaymentMemberList, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ButtonBackFromRevokePayment))
+                    .addGroup(PanelRevokePaymentLayout.createSequentialGroup()
+                        .addComponent(TextFieldRevokePaymentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(LabelRevokePaymentPaymentYear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TextFieldRevokePaymentPaymentYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelRevokePaymentYearFormat))
+                        .addGap(30, 30, 30)
+                        .addComponent(ButtonRevokePaymentRevokePayment)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1516,6 +1681,11 @@ public class GUI extends javax.swing.JFrame
                     .addContainerGap()
                     .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1559,6 +1729,11 @@ public class GUI extends javax.swing.JFrame
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(56, 56, 56)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
         );
 
@@ -2171,6 +2346,72 @@ public class GUI extends javax.swing.JFrame
             this.textAreaRegisterPaymentMemberList.append("\n");
         }
     }//GEN-LAST:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
+
+    
+    private void ButtonRevokePaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRevokePaymentActionPerformed
+    {//GEN-HEADEREND:event_ButtonRevokePaymentActionPerformed
+        PanelLoggedInAsCashier.setVisible(false);
+        PanelRevokePayment.setVisible(true);
+        this.textAreaRevokePaymentMemberList.setText("");
+        for (int i = 0; i < c.getAllMembers().size(); ++i)
+        {
+            this.textAreaRevokePaymentMemberList.append(c.getAllMembers().get(i).toStringNameID());
+            this.textAreaRevokePaymentMemberList.append("\n");
+        }
+    }//GEN-LAST:event_ButtonRevokePaymentActionPerformed
+
+    private void ButtonBackFromRevokePaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackFromRevokePaymentActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackFromRevokePaymentActionPerformed
+        PanelRevokePayment.setVisible(false);
+        PanelLoggedInAsCashier.setVisible(true);
+    }//GEN-LAST:event_ButtonBackFromRevokePaymentActionPerformed
+
+    private void ButtonRevokePaymentRevokePaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRevokePaymentRevokePaymentActionPerformed
+    {//GEN-HEADEREND:event_ButtonRevokePaymentRevokePaymentActionPerformed
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        int ID = 0;
+        Year year = null; 
+        try
+        {
+            ID = Integer.parseInt(this.TextFieldRevokePaymentID.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for ID");
+        }
+        try
+        {
+            year = Year.parse(this.TextFieldRevokePaymentPaymentYear.getText());
+        }
+        catch (DateTimeException dx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for year");
+        }
+        if (ID <= 0 || year == null)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not revoke payment");
+            return;
+        }
+        try
+        {
+            c.registerPayment(ID, year);
+        }
+        catch (NullPointerException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Unable to revoke payment with given ID");
+            return;
+        }
+        JOptionPane.showMessageDialog(frame, "Revocation complete");
+        this.TextFieldRevokePaymentID.setText("ID");
+        this.TextFieldRevokePaymentPaymentYear.setText("YYYY");
+        this.textAreaRevokePaymentMemberList.setText("");
+        for (int i = 0; i < c.getAllMembers().size(); ++i)
+        {
+            this.textAreaRevokePaymentMemberList.append(c.getAllMembers().get(i).toStringNameID());
+            this.textAreaRevokePaymentMemberList.append("\n");
+        }
+    }//GEN-LAST:event_ButtonRevokePaymentRevokePaymentActionPerformed
     
     /**
      * @param args the command line arguments
@@ -2221,6 +2462,7 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonAllArrears;
     private javax.swing.JButton ButtonAllMembersArrears;
     private javax.swing.JButton ButtonBackFromRegisterPayment;
+    private javax.swing.JButton ButtonBackFromRevokePayment;
     private javax.swing.JButton ButtonBackFromViewAllMembers;
     private javax.swing.JButton ButtonBackToMainMenu;
     private javax.swing.JButton ButtonBackToMainMenuFromCashier;
@@ -2242,6 +2484,7 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonRegisterPayment;
     private javax.swing.JButton ButtonRegisterPaymentRegisterPayment;
     private javax.swing.JButton ButtonRevokePayment;
+    private javax.swing.JButton ButtonRevokePaymentRevokePayment;
     private javax.swing.JButton ButtonViewAllMembersAll;
     private javax.swing.JButton ButtonViewAllMembersCompetitionMode;
     private javax.swing.JButton ButtonViewMembers;
@@ -2281,11 +2524,18 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel LabelNewMemberName1;
     private javax.swing.JLabel LabelRegisterPaymentAllMembersIDName;
     private java.awt.Label LabelRegisterPaymentHeader;
+    private java.awt.Label LabelRegisterPaymentHeader1;
     private javax.swing.JLabel LabelRegisterPaymentHome;
+    private javax.swing.JLabel LabelRegisterPaymentHome1;
     private javax.swing.JLabel LabelRegisterPaymentInsertID;
     private java.awt.Label LabelRegisterPaymentLogAsCashier;
+    private java.awt.Label LabelRegisterPaymentLogAsCashier1;
     private javax.swing.JLabel LabelRegisterPaymentPaymentYear;
     private javax.swing.JLabel LabelRegisterPaymentYearFormat;
+    private javax.swing.JLabel LabelRevokePaymentAllMembersIDName;
+    private javax.swing.JLabel LabelRevokePaymentInsertID;
+    private javax.swing.JLabel LabelRevokePaymentPaymentYear;
+    private javax.swing.JLabel LabelRevokePaymentYearFormat;
     private javax.swing.JLabel LabelViewMembersAllMembers;
     private java.awt.Label LabelViewMembersHeader;
     private javax.swing.JLabel LabelViewMembersHome;
@@ -2306,6 +2556,8 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JPanel PanelLoginScreenHeader;
     private javax.swing.JPanel PanelRegisterPayment;
     private javax.swing.JPanel PanelRegisterPaymentHeader;
+    private javax.swing.JPanel PanelRevokePayment;
+    private javax.swing.JPanel PanelRevokePaymentHeader;
     private javax.swing.JPanel PanelViewMembers;
     private javax.swing.JPanel PanelViewMembersHeader;
     private javax.swing.JRadioButton RadioButtonEditMemberActive;
@@ -2330,6 +2582,8 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JTextField TextFieldNewMemberName;
     private javax.swing.JTextField TextFieldRegisterPaymentID;
     private javax.swing.JTextField TextFieldRegisterPaymentPaymentYear;
+    private javax.swing.JTextField TextFieldRevokePaymentID;
+    private javax.swing.JTextField TextFieldRevokePaymentPaymentYear;
     private javax.swing.ButtonGroup buttonGroupCreateMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupCreateMemberPassiveActive;
     private javax.swing.ButtonGroup buttonGroupEditMemberActivityType;
@@ -2338,5 +2592,6 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JSplitPane jSplitPane1;
     private java.awt.TextArea textAreaAllMembers;
     private java.awt.TextArea textAreaRegisterPaymentMemberList;
+    private java.awt.TextArea textAreaRevokePaymentMemberList;
     // End of variables declaration//GEN-END:variables
 }
