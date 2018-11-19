@@ -1289,6 +1289,15 @@ public class GUI extends javax.swing.JFrame
                 disciplineList.add(DisciplineType.CRAWL);
             }
         }
+        //Guard checking if competitive member actually has a discipline
+        if (this.RadioButtonNewMemberCompetitive.isSelected())
+        {
+            if (disciplineList.isEmpty())
+            {
+                JOptionPane.showMessageDialog(frame, "Could not create member, discipline type missing");
+                return;
+            }
+        }
         /*
         Creating new member
         */
@@ -1547,6 +1556,15 @@ public class GUI extends javax.swing.JFrame
             if (this.RadioButtonEditMemberCrawl.isSelected())
             {
                 disciplineList.add(DisciplineType.CRAWL);
+            }
+        }
+        //Guard checking if competitive member actually has a discipline
+        if (this.RadioButtonEditMemberCompetitive.isEnabled() && this.RadioButtonEditMemberCompetitive.isSelected())
+        {
+            if (disciplineList.isEmpty())
+            {
+                JOptionPane.showMessageDialog(frame, "Could not edit member, discipline type missing");
+                return;
             }
         }
         /*

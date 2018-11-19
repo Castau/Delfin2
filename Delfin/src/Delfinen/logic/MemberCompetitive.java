@@ -29,13 +29,17 @@ public class MemberCompetitive extends MemberActive
         return disciplineTypes;
     }
 
-    
-    public String toStringCompetitionVersion()
-    {
-        return "ID: " + super.getId() + ", Name: " + super.getName() + ", Birthyear: " + super.getBirthyear() + ", ActivityType: " + super.getActivityType()
-                + ", Disciplines: " + disciplineTypes;
+    /*
+    .toString() override not necessary in this sub class. However, a secondary 
+    .toString() method specific to this subclass is necessary for special use 
+    in certain situations in the GUI class. 
+    Attention: DO NOT DELETE OR MODIFY THE FOLLOWING CODE!!
+    */
+    public String toStringCompetitionVersion() {
+        return "ID: " + super.getId() + ", Name: " + super.getName() + ", Birthyear: " + super.getBirthyear() 
+                + ", Activity type: " + super.getActivityType() + ", Disciplines: " + disciplineTypes;
     }
-    
+        
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)){
