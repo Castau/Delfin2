@@ -30,7 +30,7 @@ public class Subscription
 
     public ArrayList calculateArrears(ArrayList<Member> Members)
     {
-        Members = controller.getAllMembers();
+        //Members = controller.getAllMembers();
         //Year currentYear = Year.now();
         //int currentYear = Year.now().getValue(); //also works
         String currentYear = Year.now().toString();
@@ -73,6 +73,11 @@ public class Subscription
             }
         }
         return arrears;
+    }
+
+    ArrayList getArrearMembers(ArrayList<Member> allMembers)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

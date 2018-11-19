@@ -192,9 +192,14 @@ public class Controller
 	
    }
 
-    public ArrayList getAllArrears() //all users
+   public ArrayList getAllArrears()
     {
         return subscription.calculateArrears(getAllMembers());
+    }
+    
+    public ArrayList getAllMemberArrears()
+    {
+        return subscription.getArrearMembers(getAllMembers());
     }
 
     //Trainer

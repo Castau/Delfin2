@@ -9,7 +9,9 @@ import java.util.HashMap;
 public class Price
 {
     //Yearly cost of membership
-    private int passivePrice = 500;
+    //Passive membership:
+    private int passivePrice = 500; 
+    //Active memberships:
     private int youthPrice = 1000;
     private int seniorPrice = 1600;
     private int pensionistPrice = (int) (1600 * 0.75); //25% discount for age 60+
@@ -18,10 +20,7 @@ public class Price
     public Price()
     {
         allPrices = new HashMap();
-
-        //Passive membership:
         allPrices.put(priceType.PASSIVE, passivePrice);
-        //Active memberships:
         allPrices.put(priceType.YOUTH, youthPrice); //Between the age of 0 and 17 (including)
         allPrices.put(priceType.SENIOR, seniorPrice); //Between the age of 18 and 59 (including)
         allPrices.put(priceType.PENSIONIST, pensionistPrice); //For age 60 (including) and above
