@@ -38,7 +38,7 @@ public class Member
 
     @Override
     public String toString() {
-        return "Member{" + "idMember=" + idMember + ", name=" + name + ", birthyear=" + birthyear + ", membershipType=" + membershipType + ", yearsPaid=" + yearsPaid + ", price=" + price + '}';
+        return "Member{" + "idMember:" + idMember + ", name=" + name + ", birthyear=" + birthyear + ", membershipType=" + membershipType + ", yearsPaid=" + yearsPaid + ", price=" + price + '}';
     }
     
 
