@@ -4,7 +4,6 @@ package Delfinen.data;
  *
  * @author Camilla
  */
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.io.Writer;
 
-
 public class DataAccessorFile {
 
     private String FILENAME = "Delfin.json";
@@ -21,10 +19,32 @@ public class DataAccessorFile {
 
     public DataAccessorFile() {
         jsonParser = new JsonParser();
-        if (Config.getTestMode() == true){
+        if (Config.getTestMode() == true) {
             FILENAME = "DelfinTEST.json";
         }
     }
+
+//    public Model readFile(String filePath) {
+//        Gson gson = new Gson();
+//        JsonReader reader = null;
+//        Model model = null;
+//        try {
+//            reader = new JsonReader(new FileReader(filePath + FILENAME));
+//            model = gson.fromJson(reader, Model.class);
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found");
+//        } finally {
+//            try {
+//                if (reader != null) {
+//                    reader.close();
+//                }
+//            } catch (IOException io) {
+//                System.out.println("");
+//            }
+//        }
+//        return model;
+//    }
 
     public Model readFile(String filePath) throws Exception {
 
@@ -35,7 +55,7 @@ public class DataAccessorFile {
         return model;
 
     }
-
+    
     public void writeToFile(Model model, String filePath) throws IOException {
         Writer writer = new FileWriter(filePath + FILENAME);
         Gson gson = new GsonBuilder().create();
@@ -47,5 +67,5 @@ public class DataAccessorFile {
     public void setFILENAME(String FILENAME) {
         this.FILENAME = FILENAME;
     }
-    
+
 }

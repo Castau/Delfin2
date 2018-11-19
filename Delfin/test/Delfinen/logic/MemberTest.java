@@ -112,7 +112,7 @@ public class MemberTest
         int idMember = 200;
         Member instance = m1;
         instance.setIdMember(idMember);
-        assertEquals(Members.get(0).getId(), idMember);
+        assertEquals(m1.getId(), idMember);
     }
 
     /**
