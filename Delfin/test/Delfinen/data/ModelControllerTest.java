@@ -10,10 +10,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -92,7 +88,7 @@ public class ModelControllerTest {
         exp.add(m6);
         exp.add(m1);
 
-        ArrayList<MemberCompetitive> result = modelController.getTop5(DisciplineType.BUTTERFLY, Distance.METERS_100, members);
+        ArrayList<MemberCompetitive> result = modelController.getTop5Training(DisciplineType.BUTTERFLY, Distance.METERS_100, members);
         
         assertEquals(exp, result);
         
