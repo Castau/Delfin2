@@ -2,11 +2,13 @@ package Delfinen.logic;
 
 import Delfinen.data.ActivityType;
 import Delfinen.data.DisciplineType;
+import Delfinen.data.Distance;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ModelController;
 import java.time.Year;
 import java.util.ArrayList;
 import java.io.IOException;
+import java.util.Date;
 
 /**
  *
@@ -177,14 +179,6 @@ public class Controller
         }
     }
 
-    public void getMember(String Username)
-    {
-//        modelController.getMember(Username);
-//        modelController.getMemberActive(Username);
-//        modelController.getMemberCompetitive(Username);
-
-    }
-
     /**
      * Manager: Returns a member based on their ID.
      *
@@ -306,8 +300,23 @@ public class Controller
     /**
      *Trainer: Returns top five competitive Members
      */
-    public void getTopFive()
-    {
+    public void addTrainingSession(int memberID, Date date, DisciplineType diciplineType, Distance distance, int timeInSec){
+        //modelController.addTrainingSession(memberID, date, diciplineType, distance, timeInSec);
+    }
+    
+    public void addCompetitionResult(int memberID, Date date, DisciplineType diciplineType,Distance distance, int timeInSec, int placement, String eventName){
+        //modelController.addCompetitionResult(memberID, date, diciplineType, distance, timeInSec, placement, eventName);
+    }    
+    
+    public void getTopFiveTraining()
+    {                                                                                //modelController.getAllCompetitiveMembers()
+       // modelController.getTop5Training(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members);
+
+    }
+    
+    public void getTopFiveCompetition()
+    {                                                                                   //modelController.getAllCompetitiveMembers()
+       // modelController.getTop5Competition(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members);
 
     }
 

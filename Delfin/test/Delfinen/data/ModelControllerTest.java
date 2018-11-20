@@ -88,7 +88,7 @@ public class ModelControllerTest {
         exp.add(m6);
         exp.add(m1);
 
-        ArrayList<MemberCompetitive> result = modelController.getTop5(DisciplineType.BUTTERFLY, Distance.METERS_100, members);
+        ArrayList<MemberCompetitive> result = modelController.getTop5Training(DisciplineType.BUTTERFLY, Distance.METERS_100, members);
         
         assertEquals(exp, result);
         

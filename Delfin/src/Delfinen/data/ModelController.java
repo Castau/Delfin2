@@ -103,9 +103,9 @@ public class ModelController {
         dataFile.writeToFile(model, filePath);
 
     }
-
+    
     public void addCompetitionResult(int memberID, Date date, DisciplineType diciplineType,
-            Distance distance, int timeInSec, int placement, String eventName) throws IOException {
+                                     Distance distance, int timeInSec, int placement, String eventName) throws IOException {
         CompetitionResult result = new CompetitionResult(date, diciplineType, distance, timeInSec, placement, eventName);
         MemberCompetitive temp = model.getMemberCompetitive(memberID);
         temp.getCompetitionResults().addCompetitionResult(result);
@@ -114,7 +114,7 @@ public class ModelController {
 
     }
 
-    public ArrayList<MemberCompetitive> getTop5(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members) {
+    public ArrayList<MemberCompetitive> getTop5Training(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members) {
         ArrayList<MemberCompetitive> sortList = new ArrayList();
         ArrayList<MemberCompetitive> temp = members;
         for (int i = 0; i < temp.size(); i++) {
@@ -127,6 +127,41 @@ public class ModelController {
             public int compare(MemberCompetitive o1, MemberCompetitive o2) {
                 int o1Time = o1.getTrainingSessions().getBestTraining(disciplineType, distance).getTimeInSec();
                 int o2Time = o2.getTrainingSessions().getBestTraining(disciplineType, distance).getTimeInSec();
+                
+                if(o1Time > o2Time){
+                    return 1;
+                } else if (o1Time < o2Time){
+                    return -1;
+                } else{
+                    return 0;
+                }                        
+            }
+        });
+        
+        ArrayList<MemberCompetitive> top5 = new ArrayList();
+        for(int i = 0; i < sortList.size(); i++){
+            if(i >= 5){
+                break;
+            }
+            top5.add(sortList.get(i));
+        }
+        
+       return top5;
+    }
+    
+    public ArrayList<MemberCompetitive> getTop5Competition(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members) {
+        ArrayList<MemberCompetitive> sortList = new ArrayList();
+        ArrayList<MemberCompetitive> temp = members;
+        for (int i = 0; i < temp.size(); i++) {
+            if((temp.get(i).getCompetitionResults().getBestCompetitionRes(disciplineType, distance)) != null){
+                sortList.add(temp.get(i));
+            }
+        }
+        sortList.sort(new Comparator<MemberCompetitive>() {
+            @Override
+            public int compare(MemberCompetitive o1, MemberCompetitive o2) {
+                int o1Time = o1.getCompetitionResults().getBestCompetitionRes(disciplineType, distance).getTimeInSec();
+                int o2Time = o2.getCompetitionResults().getBestCompetitionRes(disciplineType, distance).getTimeInSec();
                 
                 if(o1Time > o2Time){
                     return 1;
