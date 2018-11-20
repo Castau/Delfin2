@@ -2,9 +2,9 @@
  
 Delfin2 - Svømmeklubben Delfinen
 ======
-This is the repository for a first semester project.
-Made by [3 students](https://github.com/Castau/Delfin2/graphs/contributors) of Computer Science AP, CPHBusiness, Kgs. Lyngby, Denmark. 
-See the projects `Javadoc` for explanations of classes, methods and the like.
+This is the repository for a first semester project.  
+Made by [3 students](https://github.com/Castau/Delfin2/graphs/contributors) of Computer Science AP, CPHBusiness, Kgs. Lyngby, Denmark.  
+See the projects `Javadoc` for detailed explanation.
 
 #### Dependencies/Other:
 - Requires [Google GSON 2.8.2+](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/) to work.  
