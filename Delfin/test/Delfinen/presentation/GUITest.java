@@ -16,5 +16,13 @@ public class GUITest
     {
         
     }
+
+    /**
+     * Test of main method, of class GUI.
+     */
+    @Test
+    public void testMain()
+    {
+    }
     
 }

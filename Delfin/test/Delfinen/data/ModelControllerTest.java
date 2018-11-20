@@ -2,7 +2,6 @@
 package Delfinen.data;
 
 import Delfinen.logic.Controller;
-import Delfinen.logic.Distance;
 import Delfinen.logic.MemberCompetitive;
 import Delfinen.logic.TrainingSession;
 import java.io.IOException;

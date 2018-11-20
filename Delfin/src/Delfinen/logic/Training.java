@@ -1,6 +1,7 @@
 package Delfinen.logic;
 
 import Delfinen.data.DisciplineType;
+import Delfinen.data.Distance;
 import java.util.ArrayList;
 import java.util.Collections;
 
