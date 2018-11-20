@@ -1,13 +1,10 @@
 <img align="right" width="100" height="100" src="https://i.imgur.com/aFsVizT.png">  
-
-<p align="center">
  
 Delfin2 - Svømmeklubben Delfinen
 ======
 This is the repository for a project at CPHBusiness.  
 Made by [3 students](https://github.com/Castau/Delfin2/graphs/contributors) during their first semester of Computer Science AP.  
 See the projects `Javadoc` for explanations of classes, methods and the like.
-</p>  
 
 #### Dependencies/Other:
 - Requires [Google GSON 2.8.2+](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.2/) to work.  
@@ -44,15 +41,15 @@ Overview of fulfilled requirements
 
 <p align="center">
  
- 1. Our Domain model:
+ Our Domain model:
  
  ![Domain Model](https://imgur.com/ZG5Pssg.png)
 
-2. Our Use Case Diagram:
+Our Use Case Diagram:
 
 ![Use Case Diagram](https://i.imgur.com/hKV5w9D.png)
 
-3. Our Mockup of key system parts: 
+Our Mockup of key system parts: 
 
 Download our [PowerPoint](https://www.dropbox.com/s/5vweheudzo8f874/MockUp.pptx?dl=0)-file for an interactive experience.
 
