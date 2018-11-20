@@ -6,19 +6,21 @@ import java.time.Year;
 /**
  *
  * @author runin
+ *
+ * The Subscription class handles arrears based on the Member.yearsPaid field.
+ * It also works off of the Member.calculateArrear method.
  */
 public class Subscription
 {
 
-    private Controller controller;
-
     /**
-     *Class used for handling Arrears for current year ONLY.
-     * @param controller
+     * Class used for handling Arrears for current year ONLY.
+     *
+     *
      */
-    public Subscription(Controller controller)
+    public Subscription()
     {
-        this.controller = controller;
+
     }
 
     /**

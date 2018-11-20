@@ -1,30 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Delfinen.logic;
 
-import Delfinen.data.ActivityType;
-import Delfinen.data.DisciplineType;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ModelController;
 import java.time.Year;
 import java.util.ArrayList;
-import java.io.IOException;
 
-public class TestMain 
+public class TestMain
 {
-    public static void main(String[] args) 
+
+    public static void main(String[] args)
     {
         Controller c = new Controller();
         ModelController modelController = new ModelController(c);
 //        System.out.println("Expected null and got:");
 //        System.out.println(modelController.getMemberCompetitive(10));
         ArrayList<Year> yearsPaid;
-    ArrayList disciplineList;
-    ArrayList<Member> Members;
-    Controller controller = new Controller();
+        ArrayList disciplineList;
+        ArrayList<Member> Members;
+        Controller controller = new Controller();
 
         yearsPaid = new ArrayList();
         //yearsPaid.add(Year.of(2016));
@@ -44,7 +37,7 @@ public class TestMain
         Members.add(m4);
         Members.add(m5);
         Members.add(m6);
-        
+
         Member instance = Members.get(4);
         int expResult = 5; //wat
         int result = instance.getId();

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Delfinen.presentation;
 
 import Delfinen.data.ActivityType;
@@ -18,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author runin
+ * @author shevitar
  */
 public class GUI extends javax.swing.JFrame
 {
@@ -53,6 +48,8 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setVisible(false);
         PanelRegisterPayment.setVisible(false);
         PanelRevokePayment.setVisible(false);
+        PanelSingleMemberArrear.setVisible(false);
+        PanelShowAllArrears.setVisible(false);
         //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -182,7 +179,6 @@ public class GUI extends javax.swing.JFrame
         ButtonRevokePayment = new javax.swing.JButton();
         ButtonCheckMembersArrear = new javax.swing.JButton();
         ButtonAllArrears = new javax.swing.JButton();
-        ButtonAllMembersArrears = new javax.swing.JButton();
         ButtonBackToMainMenuFromCashier = new javax.swing.JButton();
         PanelRegisterPayment = new javax.swing.JPanel();
         PanelRegisterPaymentHeader = new javax.swing.JPanel();
@@ -212,6 +208,30 @@ public class GUI extends javax.swing.JFrame
         TextFieldRevokePaymentPaymentYear = new javax.swing.JTextField();
         LabelRevokePaymentYearFormat = new javax.swing.JLabel();
         ButtonRevokePaymentRevokePayment = new javax.swing.JButton();
+        PanelSingleMemberArrear = new javax.swing.JPanel();
+        PanelSingleMemberArrearHeader = new javax.swing.JPanel();
+        LabelSingleMemberArrearHome = new javax.swing.JLabel();
+        LabelSingleMemberArrearHeader = new java.awt.Label();
+        LabelSingleMemberArrearLogAsCashier = new java.awt.Label();
+        LabelSingleMemberArrearAllMembersIDName = new javax.swing.JLabel();
+        ButtonBackFromSingleMemberArrear = new javax.swing.JButton();
+        textAreaSingleMemberArrearMemberList = new java.awt.TextArea();
+        TextFieldSingleMemberArrearID = new javax.swing.JTextField();
+        LabelSingleMemberArrearInsertID = new javax.swing.JLabel();
+        LabelSingleMemberArrearCurrentArrear = new javax.swing.JLabel();
+        TextFieldSingleMemberArrearCurrentArrear = new javax.swing.JTextField();
+        ButtonSingleMemberArrearShowArrear = new javax.swing.JButton();
+        PanelShowAllArrears = new javax.swing.JPanel();
+        PanelShowAllArrearsHeader = new javax.swing.JPanel();
+        LabelShowAllArrearsHome = new javax.swing.JLabel();
+        LabelShowAllArrearsHeader = new java.awt.Label();
+        LabelShowAllArrearsLogAsCashier = new java.awt.Label();
+        LabelShowAllArrearsAllArrears = new javax.swing.JLabel();
+        ButtonBackFromShowAllArrears = new javax.swing.JButton();
+        TextFieldTotalAmountArrears = new javax.swing.JTextField();
+        LabelShowAllArrearsTotalAmount = new javax.swing.JLabel();
+        textAreaShowAllArrearsMemberList = new java.awt.TextArea();
+        LabelShowAllArrearsAllArrearMembers = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DELPHI");
@@ -276,7 +296,7 @@ public class GUI extends javax.swing.JFrame
         PanelLoginScreen.setLayout(PanelLoginScreenLayout);
         PanelLoginScreenLayout.setHorizontalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenLayout.createSequentialGroup()
                 .addContainerGap(399, Short.MAX_VALUE)
                 .addGroup(PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -608,7 +628,7 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonNewMemberCreateMember)
                 .addGap(18, 18, 18))
-            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
         );
         PanelCreateNewMemberLayout.setVerticalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -736,7 +756,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setLayout(PanelEditMemberChooseMemberLayout);
         PanelEditMemberChooseMemberLayout.setHorizontalGroup(
             PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
             .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1279,6 +1299,13 @@ public class GUI extends javax.swing.JFrame
         ButtonCheckMembersArrear.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonCheckMembersArrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Payment_History_26px_1.png"))); // NOI18N
         ButtonCheckMembersArrear.setText("Check member's arrear");
+        ButtonCheckMembersArrear.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonCheckMembersArrearActionPerformed(evt);
+            }
+        });
 
         ButtonAllArrears.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonAllArrears.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Stocks_26px.png"))); // NOI18N
@@ -1288,17 +1315,6 @@ public class GUI extends javax.swing.JFrame
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 ButtonAllArrearsActionPerformed(evt);
-            }
-        });
-
-        ButtonAllMembersArrears.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
-        ButtonAllMembersArrears.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_MoneyStack_26px.png"))); // NOI18N
-        ButtonAllMembersArrears.setText("All members' arrears  ");
-        ButtonAllMembersArrears.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ButtonAllMembersArrearsActionPerformed(evt);
             }
         });
 
@@ -1316,18 +1332,17 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setLayout(PanelLoggedInAsCashierLayout);
         PanelLoggedInAsCashierLayout.setHorizontalGroup(
             PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
             .addGroup(PanelLoggedInAsCashierLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ButtonBackToMainMenuFromCashier)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsCashierLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(304, Short.MAX_VALUE)
                 .addGroup(PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ButtonCheckMembersArrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ButtonAllMembersArrears, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonRevokePayment, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(333, 333, 333))
         );
@@ -1343,9 +1358,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonCheckMembersArrear)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonAllArrears)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonAllMembersArrears)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addComponent(ButtonBackToMainMenuFromCashier)
                 .addContainerGap())
         );
@@ -1636,6 +1649,257 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        PanelSingleMemberArrear.setPreferredSize(new java.awt.Dimension(858, 457));
+
+        PanelSingleMemberArrearHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelSingleMemberArrearHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelSingleMemberArrearHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Payment_History_50px.png"))); // NOI18N
+
+        LabelSingleMemberArrearHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelSingleMemberArrearHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelSingleMemberArrearHeader.setText("Single member arrear");
+
+        LabelSingleMemberArrearLogAsCashier.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelSingleMemberArrearLogAsCashier.setForeground(new java.awt.Color(0, 0, 0));
+        LabelSingleMemberArrearLogAsCashier.setText("Logged in as Cashier");
+
+        javax.swing.GroupLayout PanelSingleMemberArrearHeaderLayout = new javax.swing.GroupLayout(PanelSingleMemberArrearHeader);
+        PanelSingleMemberArrearHeader.setLayout(PanelSingleMemberArrearHeaderLayout);
+        PanelSingleMemberArrearHeaderLayout.setHorizontalGroup(
+            PanelSingleMemberArrearHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelSingleMemberArrearHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelSingleMemberArrearHome)
+                .addGroup(PanelSingleMemberArrearHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelSingleMemberArrearHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelSingleMemberArrearHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(524, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSingleMemberArrearHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelSingleMemberArrearLogAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelSingleMemberArrearHeaderLayout.setVerticalGroup(
+            PanelSingleMemberArrearHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelSingleMemberArrearHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelSingleMemberArrearHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelSingleMemberArrearHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelSingleMemberArrearHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSingleMemberArrearHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelSingleMemberArrearHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSingleMemberArrearHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelSingleMemberArrearHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelSingleMemberArrearHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelSingleMemberArrearLogAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelSingleMemberArrearAllMembersIDName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelSingleMemberArrearAllMembersIDName.setText("All members");
+
+        ButtonBackFromSingleMemberArrear.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackFromSingleMemberArrear.setText("BACK");
+        ButtonBackFromSingleMemberArrear.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackFromSingleMemberArrearActionPerformed(evt);
+            }
+        });
+
+        textAreaSingleMemberArrearMemberList.setEditable(false);
+
+        TextFieldSingleMemberArrearID.setText("ID");
+
+        LabelSingleMemberArrearInsertID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelSingleMemberArrearInsertID.setText("ID");
+
+        LabelSingleMemberArrearCurrentArrear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelSingleMemberArrearCurrentArrear.setText("Current arrear");
+
+        TextFieldSingleMemberArrearCurrentArrear.setEditable(false);
+        TextFieldSingleMemberArrearCurrentArrear.setText("€");
+
+        ButtonSingleMemberArrearShowArrear.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ButtonSingleMemberArrearShowArrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Stack_of_Money_20px.png"))); // NOI18N
+        ButtonSingleMemberArrearShowArrear.setText("Show arrear   ");
+        ButtonSingleMemberArrearShowArrear.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonSingleMemberArrearShowArrearActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelSingleMemberArrearLayout = new javax.swing.GroupLayout(PanelSingleMemberArrear);
+        PanelSingleMemberArrear.setLayout(PanelSingleMemberArrearLayout);
+        PanelSingleMemberArrearLayout.setHorizontalGroup(
+            PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelSingleMemberArrearHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addGroup(PanelSingleMemberArrearLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(ButtonBackFromSingleMemberArrear)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelSingleMemberArrearLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelSingleMemberArrearInsertID)
+                    .addComponent(TextFieldSingleMemberArrearID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelSingleMemberArrearCurrentArrear)
+                    .addComponent(TextFieldSingleMemberArrearCurrentArrear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonSingleMemberArrearShowArrear))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelSingleMemberArrearAllMembersIDName)
+                    .addComponent(textAreaSingleMemberArrearMemberList, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(92, 92, 92))
+        );
+        PanelSingleMemberArrearLayout.setVerticalGroup(
+            PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelSingleMemberArrearLayout.createSequentialGroup()
+                .addComponent(PanelSingleMemberArrearHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelSingleMemberArrearAllMembersIDName)
+                    .addComponent(LabelSingleMemberArrearInsertID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelSingleMemberArrearLayout.createSequentialGroup()
+                        .addComponent(textAreaSingleMemberArrearMemberList, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ButtonBackFromSingleMemberArrear))
+                    .addGroup(PanelSingleMemberArrearLayout.createSequentialGroup()
+                        .addComponent(TextFieldSingleMemberArrearID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(LabelSingleMemberArrearCurrentArrear)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TextFieldSingleMemberArrearCurrentArrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(ButtonSingleMemberArrearShowArrear)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        PanelShowAllArrears.setPreferredSize(new java.awt.Dimension(858, 457));
+
+        PanelShowAllArrearsHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelShowAllArrearsHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelShowAllArrearsHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Stocks_50px.png"))); // NOI18N
+
+        LabelShowAllArrearsHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelShowAllArrearsHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelShowAllArrearsHeader.setText("All arrears");
+
+        LabelShowAllArrearsLogAsCashier.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelShowAllArrearsLogAsCashier.setForeground(new java.awt.Color(0, 0, 0));
+        LabelShowAllArrearsLogAsCashier.setText("Logged in as Cashier");
+
+        javax.swing.GroupLayout PanelShowAllArrearsHeaderLayout = new javax.swing.GroupLayout(PanelShowAllArrearsHeader);
+        PanelShowAllArrearsHeader.setLayout(PanelShowAllArrearsHeaderLayout);
+        PanelShowAllArrearsHeaderLayout.setHorizontalGroup(
+            PanelShowAllArrearsHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelShowAllArrearsHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelShowAllArrearsHome)
+                .addGroup(PanelShowAllArrearsHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelShowAllArrearsHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelShowAllArrearsHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(641, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelShowAllArrearsHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelShowAllArrearsLogAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelShowAllArrearsHeaderLayout.setVerticalGroup(
+            PanelShowAllArrearsHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelShowAllArrearsHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelShowAllArrearsHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelShowAllArrearsHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelShowAllArrearsHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelShowAllArrearsHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelShowAllArrearsHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelShowAllArrearsHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelShowAllArrearsHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelShowAllArrearsHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelShowAllArrearsLogAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelShowAllArrearsAllArrears.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelShowAllArrearsAllArrears.setText("All arrears");
+
+        ButtonBackFromShowAllArrears.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackFromShowAllArrears.setText("BACK");
+        ButtonBackFromShowAllArrears.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackFromShowAllArrearsActionPerformed(evt);
+            }
+        });
+
+        TextFieldTotalAmountArrears.setEditable(false);
+        TextFieldTotalAmountArrears.setText("Total");
+
+        LabelShowAllArrearsTotalAmount.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelShowAllArrearsTotalAmount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Money_24px.png"))); // NOI18N
+        LabelShowAllArrearsTotalAmount.setText("Total amount");
+
+        textAreaShowAllArrearsMemberList.setEditable(false);
+
+        LabelShowAllArrearsAllArrearMembers.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelShowAllArrearsAllArrearMembers.setText("All members in arrear");
+
+        javax.swing.GroupLayout PanelShowAllArrearsLayout = new javax.swing.GroupLayout(PanelShowAllArrears);
+        PanelShowAllArrears.setLayout(PanelShowAllArrearsLayout);
+        PanelShowAllArrearsLayout.setHorizontalGroup(
+            PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelShowAllArrearsHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addGroup(PanelShowAllArrearsLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ButtonBackFromShowAllArrears)
+                    .addComponent(LabelShowAllArrearsAllArrears)
+                    .addComponent(LabelShowAllArrearsTotalAmount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TextFieldTotalAmountArrears))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textAreaShowAllArrearsMemberList, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelShowAllArrearsAllArrearMembers))
+                .addGap(84, 84, 84))
+        );
+        PanelShowAllArrearsLayout.setVerticalGroup(
+            PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelShowAllArrearsLayout.createSequentialGroup()
+                .addComponent(PanelShowAllArrearsHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelShowAllArrearsAllArrears)
+                    .addComponent(LabelShowAllArrearsAllArrearMembers))
+                .addGap(23, 23, 23)
+                .addGroup(PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelShowAllArrearsLayout.createSequentialGroup()
+                        .addComponent(LabelShowAllArrearsTotalAmount)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TextFieldTotalAmountArrears, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ButtonBackFromShowAllArrears))
+                    .addComponent(textAreaShowAllArrearsMemberList, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1644,17 +1908,17 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -1679,13 +1943,23 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
                     .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addGap(30, 30, 30)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addGap(20, 20, 20)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1693,32 +1967,32 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
                     .addGap(12, 12, 12)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
                     .addGap(13, 13, 13)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
                     .addGap(14, 14, 14)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(21, 21, 21)
-                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
                     .addGap(4, 4, 4)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -1735,6 +2009,16 @@ public class GUI extends javax.swing.JFrame
                     .addContainerGap()
                     .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(57, 57, 57)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(57, 57, 57)))
         );
 
         pack();
@@ -2274,13 +2558,18 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonAllArrearsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAllArrearsActionPerformed
     {//GEN-HEADEREND:event_ButtonAllArrearsActionPerformed
-        // TODO add your handling code here:
+        PanelLoggedInAsCashier.setVisible(false);
+        PanelShowAllArrears.setVisible(true);
+        int arrears = 0;
+        arrears = c.getArrearsAllMembers();
+        this.TextFieldTotalAmountArrears.setText(arrears + "");
+        this.textAreaShowAllArrearsMemberList.setText("");
+        for (int i = 0; i < c.getAllArrearMembers().size(); ++i)
+        {
+            this.textAreaShowAllArrearsMemberList.append(c.getAllArrearMembers().get(i).toStringNameID());
+            this.textAreaShowAllArrearsMemberList.append("\n");
+        }
     }//GEN-LAST:event_ButtonAllArrearsActionPerformed
-
-    private void ButtonAllMembersArrearsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAllMembersArrearsActionPerformed
-    {//GEN-HEADEREND:event_ButtonAllMembersArrearsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonAllMembersArrearsActionPerformed
 
     private void ButtonBackToMainMenuFromCashierActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackToMainMenuFromCashierActionPerformed
     {//GEN-HEADEREND:event_ButtonBackToMainMenuFromCashierActionPerformed
@@ -2412,6 +2701,57 @@ public class GUI extends javax.swing.JFrame
             this.textAreaRevokePaymentMemberList.append("\n");
         }
     }//GEN-LAST:event_ButtonRevokePaymentRevokePaymentActionPerformed
+
+    private void ButtonCheckMembersArrearActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonCheckMembersArrearActionPerformed
+    {//GEN-HEADEREND:event_ButtonCheckMembersArrearActionPerformed
+        PanelLoggedInAsCashier.setVisible(false);
+        PanelSingleMemberArrear.setVisible(true);
+        this.textAreaSingleMemberArrearMemberList.setText("");
+        for (int i = 0; i < c.getAllMembers().size(); ++i)
+        {
+            this.textAreaSingleMemberArrearMemberList.append(c.getAllMembers().get(i).toStringNameID());
+            this.textAreaSingleMemberArrearMemberList.append("\n");
+        }
+    }//GEN-LAST:event_ButtonCheckMembersArrearActionPerformed
+
+    private void ButtonBackFromSingleMemberArrearActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackFromSingleMemberArrearActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackFromSingleMemberArrearActionPerformed
+        this.TextFieldSingleMemberArrearID.setText("ID");
+        this.TextFieldSingleMemberArrearCurrentArrear.setText("€");
+        PanelSingleMemberArrear.setVisible(false);
+        PanelLoggedInAsCashier.setVisible(true);
+    }//GEN-LAST:event_ButtonBackFromSingleMemberArrearActionPerformed
+
+    private void ButtonSingleMemberArrearShowArrearActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSingleMemberArrearShowArrearActionPerformed
+    {//GEN-HEADEREND:event_ButtonSingleMemberArrearShowArrearActionPerformed
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        int ID = 0;
+        int arrear = 0;
+        try
+        {
+            ID = Integer.parseInt(this.TextFieldSingleMemberArrearID.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for ID");
+        }
+        try
+        {
+            arrear = c.getArrearSingleMember(ID);
+        }
+        catch (NullPointerException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not find member");
+        }
+        this.TextFieldSingleMemberArrearCurrentArrear.setText(arrear + "");
+    }//GEN-LAST:event_ButtonSingleMemberArrearShowArrearActionPerformed
+
+    private void ButtonBackFromShowAllArrearsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackFromShowAllArrearsActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackFromShowAllArrearsActionPerformed
+        PanelShowAllArrears.setVisible(false);
+        PanelLoggedInAsCashier.setVisible(true);
+    }//GEN-LAST:event_ButtonBackFromShowAllArrearsActionPerformed
     
     /**
      * @param args the command line arguments
@@ -2460,9 +2800,10 @@ public class GUI extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAllArrears;
-    private javax.swing.JButton ButtonAllMembersArrears;
     private javax.swing.JButton ButtonBackFromRegisterPayment;
     private javax.swing.JButton ButtonBackFromRevokePayment;
+    private javax.swing.JButton ButtonBackFromShowAllArrears;
+    private javax.swing.JButton ButtonBackFromSingleMemberArrear;
     private javax.swing.JButton ButtonBackFromViewAllMembers;
     private javax.swing.JButton ButtonBackToMainMenu;
     private javax.swing.JButton ButtonBackToMainMenuFromCashier;
@@ -2485,6 +2826,7 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonRegisterPaymentRegisterPayment;
     private javax.swing.JButton ButtonRevokePayment;
     private javax.swing.JButton ButtonRevokePaymentRevokePayment;
+    private javax.swing.JButton ButtonSingleMemberArrearShowArrear;
     private javax.swing.JButton ButtonViewAllMembersAll;
     private javax.swing.JButton ButtonViewAllMembersCompetitionMode;
     private javax.swing.JButton ButtonViewMembers;
@@ -2536,6 +2878,18 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel LabelRevokePaymentInsertID;
     private javax.swing.JLabel LabelRevokePaymentPaymentYear;
     private javax.swing.JLabel LabelRevokePaymentYearFormat;
+    private javax.swing.JLabel LabelShowAllArrearsAllArrearMembers;
+    private javax.swing.JLabel LabelShowAllArrearsAllArrears;
+    private java.awt.Label LabelShowAllArrearsHeader;
+    private javax.swing.JLabel LabelShowAllArrearsHome;
+    private java.awt.Label LabelShowAllArrearsLogAsCashier;
+    private javax.swing.JLabel LabelShowAllArrearsTotalAmount;
+    private javax.swing.JLabel LabelSingleMemberArrearAllMembersIDName;
+    private javax.swing.JLabel LabelSingleMemberArrearCurrentArrear;
+    private java.awt.Label LabelSingleMemberArrearHeader;
+    private javax.swing.JLabel LabelSingleMemberArrearHome;
+    private javax.swing.JLabel LabelSingleMemberArrearInsertID;
+    private java.awt.Label LabelSingleMemberArrearLogAsCashier;
     private javax.swing.JLabel LabelViewMembersAllMembers;
     private java.awt.Label LabelViewMembersHeader;
     private javax.swing.JLabel LabelViewMembersHome;
@@ -2558,6 +2912,10 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JPanel PanelRegisterPaymentHeader;
     private javax.swing.JPanel PanelRevokePayment;
     private javax.swing.JPanel PanelRevokePaymentHeader;
+    private javax.swing.JPanel PanelShowAllArrears;
+    private javax.swing.JPanel PanelShowAllArrearsHeader;
+    private javax.swing.JPanel PanelSingleMemberArrear;
+    private javax.swing.JPanel PanelSingleMemberArrearHeader;
     private javax.swing.JPanel PanelViewMembers;
     private javax.swing.JPanel PanelViewMembersHeader;
     private javax.swing.JRadioButton RadioButtonEditMemberActive;
@@ -2584,14 +2942,18 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JTextField TextFieldRegisterPaymentPaymentYear;
     private javax.swing.JTextField TextFieldRevokePaymentID;
     private javax.swing.JTextField TextFieldRevokePaymentPaymentYear;
+    private javax.swing.JTextField TextFieldSingleMemberArrearCurrentArrear;
+    private javax.swing.JTextField TextFieldSingleMemberArrearID;
+    private javax.swing.JTextField TextFieldTotalAmountArrears;
     private javax.swing.ButtonGroup buttonGroupCreateMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupCreateMemberPassiveActive;
     private javax.swing.ButtonGroup buttonGroupEditMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupEditMemberPassiveActive;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private java.awt.TextArea textAreaAllMembers;
     private java.awt.TextArea textAreaRegisterPaymentMemberList;
     private java.awt.TextArea textAreaRevokePaymentMemberList;
+    private java.awt.TextArea textAreaShowAllArrearsMemberList;
+    private java.awt.TextArea textAreaSingleMemberArrearMemberList;
     // End of variables declaration//GEN-END:variables
 }

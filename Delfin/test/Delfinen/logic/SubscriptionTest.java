@@ -1,27 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Delfinen.logic;
 
 import java.time.Year;
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
+ *  * @author Rúni
  *
- * @author Rúni
+ * Test class belonging to the Subscription class.
+ * @see Subscription
  */
 public class SubscriptionTest
 {
 
-    private Controller controller;
     Subscription sub;
     ArrayList yearsPaid;
     ArrayList disciplineList;
@@ -32,13 +24,13 @@ public class SubscriptionTest
     MemberCompetitive m4;
 
     /**
-     *Tests an implementation of the Subscription class.
+     * Tests an implementation of the Subscription class.
+     *
      * @see Subscription
      */
     public SubscriptionTest()
     {
-        controller = new Controller();
-        sub = new Subscription(controller);
+        sub = new Subscription();
         yearsPaid = new ArrayList();
         disciplineList = new ArrayList();
         Members = new ArrayList();

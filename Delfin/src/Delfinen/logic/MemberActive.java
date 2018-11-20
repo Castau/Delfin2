@@ -1,9 +1,7 @@
 package Delfinen.logic;
-
 import Delfinen.data.MembershipType;
 import Delfinen.data.ActivityType;
 import java.time.Year;
-import java.util.Objects;
 
 
 /**
@@ -17,11 +15,11 @@ public class MemberActive extends Member
 
     /**
      * Member with an active membership. 
-     * @see Member
-     * @param name
-     * @param birthyear
-     * @param membershipType
-     * @param activityType
+     * @see Member 
+     * @param name Members name
+     * @param birthyear Members Birthyear
+     * @param membershipType Members MembershipType
+     * @param activityType Members ActivityType
      */
     public MemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
 
@@ -45,7 +43,6 @@ public class MemberActive extends Member
         return "MemberActive{" + super.toString() + "activityType=" + activityType + '}';
     }
 
-
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)){
@@ -67,15 +64,4 @@ public class MemberActive extends Member
         return true;
     }
 
- 
-    
-
-    
-    
-    
-    
-
-    
-    
-    
 }

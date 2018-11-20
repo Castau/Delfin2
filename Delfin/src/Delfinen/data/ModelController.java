@@ -2,7 +2,6 @@ package Delfinen.data;
 
 import Delfinen.logic.CompetitionResult;
 import Delfinen.logic.Controller;
-import Delfinen.logic.Distance;
 import Delfinen.logic.Member;
 import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;

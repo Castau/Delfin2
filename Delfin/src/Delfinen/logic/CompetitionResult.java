@@ -1,6 +1,7 @@
 
 package Delfinen.logic;
 
+import Delfinen.data.Distance;
 import Delfinen.data.DisciplineType;
 import java.time.LocalTime;
 import java.util.Date;

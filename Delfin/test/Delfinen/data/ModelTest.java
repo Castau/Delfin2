@@ -10,8 +10,12 @@ import static org.junit.Assert.*;
 
 /**
  * @author Camilla
+ *
+ * Test class belonging to the Model class.
+ * @see Model
  */
-public class ModelTest {
+public class ModelTest
+{
 
     Model model;
 
@@ -24,7 +28,8 @@ public class ModelTest {
     MemberCompetitive m5;
     MemberCompetitive m6;
 
-    public ModelTest() {
+    public ModelTest()
+    {
         model = new Model();
 
         disciplineList = new ArrayList();
@@ -40,28 +45,32 @@ public class ModelTest {
     }
 
     @Test
-    public void testAddAndGetMember() {
+    public void testAddAndGetMember()
+    {
         model.addMember(m1);
         assertEquals(m1, model.getMember(m1.getId()));
 
     }
 
     @Test
-    public void testAddAndGetMemberActive() {
+    public void testAddAndGetMemberActive()
+    {
         model.addMember(m3);
         assertEquals(m3, model.getMemberActive(m3.getId()));
 
     }
 
     @Test
-    public void testAddAndGetMemberCompetitive() {
+    public void testAddAndGetMemberCompetitive()
+    {
         model.addMember(m5);
         assertEquals(m5, model.getMemberCompetitive(m5.getId()));
 
     }
 
     @Test
-    public void testGetAllMembers() {
+    public void testGetAllMembers()
+    {
         ArrayList<Member> testMembers = new ArrayList();
         model.addMember(m1);
         model.addMember(m2);
@@ -71,8 +80,10 @@ public class ModelTest {
         assertEquals(testMembers, model.getAllMembers());
 
     }
+
     @Test
-    public void testEditMember() {
+    public void testEditMember()
+    {
         // m1 before edit: Member("Hans", Year.of(1902), MembershipType.PASSIVE);
         Member me1 = new Member("ArneOtto", Year.of(1957), MembershipType.PASSIVE);
         model.addMember(m1);
@@ -84,8 +95,10 @@ public class ModelTest {
         assertEquals(me1, m1);
 
     }
+
     @Test
-    public void testEditMemberActive() {
+    public void testEditMemberActive()
+    {
         // m3 before edit:  MemberActive("Signe", Year.of(1996), MembershipType.ACTIVE, ActivityType.BASIC);
         Member me3 = new MemberActive("ArneOtto", Year.of(1957), MembershipType.ACTIVE, ActivityType.BASIC);
         model.addMember(m3);
@@ -96,9 +109,11 @@ public class ModelTest {
         model.getMember(m3.getId());
         assertEquals(me3, m3);
 
-    } 
-        @Test
-    public void testEditMemberCompetitive() {
+    }
+
+    @Test
+    public void testEditMemberCompetitive()
+    {
         // m5 before edit: MemberCompetitive("Arne", Year.of(1999), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
         Member me5 = new MemberCompetitive("ArneOtto", Year.of(1957), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
         model.addMember(m5);
@@ -110,36 +125,39 @@ public class ModelTest {
         assertEquals(me5, m5);
 
     }
-    
+
     @Test
-    public void testDeleteMember(){
+    public void testDeleteMember()
+    {
         ArrayList<Member> testMembers = new ArrayList();
         testMembers.add(m2);
         model.addMember(m1);
         model.addMember(m2);
-        
+
         model.deleteMember(m1.getId());
         assertEquals(testMembers, model.getAllMembers());
     }
-    
+
     @Test
-    public void testDeleteMemberActive(){
+    public void testDeleteMemberActive()
+    {
         ArrayList<MemberActive> testMembers = new ArrayList();
         testMembers.add(m3);
         model.addMember(m3);
         model.addMember(m4);
-        
+
         model.deleteMember(m4.getId());
         assertEquals(testMembers, model.getAllMembersActive());
     }
-    
+
     @Test
-    public void testDeleteMemberCompetitive(){
+    public void testDeleteMemberCompetitive()
+    {
         ArrayList<MemberActive> testMembers = new ArrayList();
         testMembers.add(m6);
         model.addMember(m5);
         model.addMember(m6);
-        
+
         model.deleteMember(m5.getId());
         assertEquals(testMembers, model.getAllMembersCompetitive());
     }
