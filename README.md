@@ -38,6 +38,10 @@ Create a program for a local swimmingclub "Delfinen".
 
 Overview of fulfilled requirements
 ------
+Class diagram:
+**To be made**
+![Class Diagram]()
+
 
 <p align="center">
  
@@ -53,6 +57,6 @@ Our Mockup of key system parts:
 
 Download our [PowerPoint](https://www.dropbox.com/s/5vweheudzo8f874/MockUp.pptx?dl=0)-file for an interactive experience.
 
-![Mock-up](https://imgur.com/wFdWGYf.png)
+![Mock-up](https://imgur.com/lPxROz3.png)
 
 </p>
