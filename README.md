@@ -2,8 +2,8 @@
  
 Delfin2 - Svømmeklubben Delfinen
 ======
-This is the repository for a project at CPHBusiness.  
-Made by [3 students](https://github.com/Castau/Delfin2/graphs/contributors) during their first semester of Computer Science AP.  
+This is the repository for a first semester project.
+Made by [3 students](https://github.com/Castau/Delfin2/graphs/contributors) of Computer Science AP, CPHBusiness, Kgs. Lyngby, Denmark. 
 See the projects `Javadoc` for explanations of classes, methods and the like.
 
 #### Dependencies/Other:
