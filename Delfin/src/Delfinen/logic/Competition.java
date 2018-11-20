@@ -18,9 +18,7 @@ public class Competition //extends TrainingResults
         competitionsList.add(result);
     }
     
-    
 }
-
 
 
 //Runi:

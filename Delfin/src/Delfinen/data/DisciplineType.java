@@ -2,7 +2,9 @@ package Delfinen.data;
 
 /**
  *
- * @author runin
+ * @author runin List of enums for Discipline types, used for competitive members.
+ *
+ * @see @MemberCompetitive
  */
 public enum DisciplineType
 {

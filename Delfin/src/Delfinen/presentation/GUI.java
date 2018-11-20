@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Delfinen.presentation;
 
 import Delfinen.data.ActivityType;
@@ -18,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author runin
+ * @author shevitar
  */
 public class GUI extends javax.swing.JFrame
 {
@@ -2566,7 +2561,7 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setVisible(false);
         PanelShowAllArrears.setVisible(true);
         int arrears = 0;
-        arrears = c.getAllMemberArrears();
+        arrears = c.getArrearsAllMembers();
         this.TextFieldTotalAmountArrears.setText(arrears + "");
         this.textAreaShowAllArrearsMemberList.setText("");
         for (int i = 0; i < c.getAllArrearMembers().size(); ++i)
@@ -2743,7 +2738,7 @@ public class GUI extends javax.swing.JFrame
         }
         try
         {
-            arrear = c.getSingleMemberArrear(ID);
+            arrear = c.getArrearSingleMember(ID);
         }
         catch (NullPointerException nx)
         {

@@ -9,11 +9,10 @@ import java.util.Objects;
 /**
  *
  * @author runin, Asger, Camilla
- *
+ * Class for a standard member with basic (passive) membership.
  */
 public class Member
 {
-
     private int idMember;
     private String name;
     private Year birthyear;
@@ -24,9 +23,9 @@ public class Member
     /**
      * Member with a passive membership
      *
-     * @param name
-     * @param birthyear
-     * @param membershipType
+     * @param name Members name
+     * @param birthyear Members Birthyear
+     * @param membershipType Members MembershipType
      *
      */
     public Member(String name, Year birthyear, MembershipType membershipType)

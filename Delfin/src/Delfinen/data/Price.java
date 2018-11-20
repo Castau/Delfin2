@@ -4,8 +4,10 @@ import java.util.HashMap;
 import java.util.Objects;
 
 /**
+ * Stores the prices for yearly membership.
  *
  * @author runin
+ *
  */
 public class Price
 {
@@ -31,6 +33,13 @@ public class Price
         allPrices.put(priceType.PENSIONIST, pensionistPrice); //For age 60 (including) and above
     }
 
+    /**
+     * Returns user arrear cost for their type.
+     *
+     * @param priceType The priceType is based on a users age.
+     * @see Member (calculateArrear)
+     * @return
+     */
     public int getPrice(priceType priceType)
     {
         return allPrices.get(priceType);
@@ -85,7 +94,6 @@ public class Price
 //    {
 //        this.allPrices = allPrices;
 //    }
-
     public enum priceType
     {
         PASSIVE, YOUTH, SENIOR, PENSIONIST;

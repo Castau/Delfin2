@@ -11,6 +11,9 @@ import java.io.IOException;
 /**
  *
  * @author Rúni, Asger, Camilla
+ *
+ * The controller class takes use of the ModelController and Subscription class
+ * to create, save, change and delete values and objects.
  */
 public class Controller
 {
@@ -21,7 +24,7 @@ public class Controller
     public Controller()
     {
         modelController = new ModelController(this);
-        subscription = new Subscription(this);
+        subscription = new Subscription();
     }
 
     public ModelController getModelController()
@@ -30,6 +33,14 @@ public class Controller
     }
 
     //Manager
+    /**
+     * Manager: Creates a new passive Member
+     *
+     * @see Member
+     * @param name
+     * @param birthyear
+     * @param membershipType
+     */
     public void createMember(String name, Year birthyear, MembershipType membershipType)
     {
         Member m = new Member(name, birthyear, membershipType);
@@ -44,6 +55,15 @@ public class Controller
         }
     }
 
+    /**
+     * Manager: Creates a new active member.
+     *
+     * @see MemberActive
+     * @param name
+     * @param birthyear
+     * @param membershipType
+     * @param activityType
+     */
     public void createMemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
     {
         MemberActive m = new MemberActive(name, birthyear, membershipType, activityType);
@@ -58,6 +78,16 @@ public class Controller
         }
     }
 
+    /**
+     * Manager: Creates a new (active) competitive Member.
+     *
+     * @see MemberCompetitive
+     * @param name
+     * @param birthyear
+     * @param membershipType
+     * @param activityType
+     * @param disciplineList
+     */
     public void createMemberCompetitive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType, ArrayList<DisciplineType> disciplineList)
     {
         MemberCompetitive m = new MemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
@@ -96,6 +126,11 @@ public class Controller
         return m;
     }
 
+    /**
+     * Manager: Edits a passive members information
+     *
+     * @param member
+     */
     public void editMember(Member member)
     {
         try
@@ -108,6 +143,11 @@ public class Controller
         }
     }
 
+    /**
+     * Manager: Edits a (active) members information.
+     *
+     * @param member
+     */
     public void editMember(MemberActive member)
     {
         try
@@ -120,6 +160,11 @@ public class Controller
         }
     }
 
+    /**
+     * Manager: Edits a (competitive) members information.
+     *
+     * @param member
+     */
     public void editMember(MemberCompetitive member)
     {
         try
@@ -140,6 +185,12 @@ public class Controller
 
     }
 
+    /**
+     * Manager: Returns a member based on their ID.
+     *
+     * @param id
+     * @return Returns a certain member based on unique identifier.
+     */
     public Member getMember(int id)
     {
         if (modelController.getMember(id) != null)
@@ -153,6 +204,11 @@ public class Controller
         return modelController.getMemberCompetitive(id);
     }
 
+    /**
+     * Manager: Deletes a member based on their unique identifier.
+     *
+     * @param MemberID
+     */
     public void deleteMember(int MemberID)
     {
         try
@@ -165,23 +221,33 @@ public class Controller
         }
     }
 
+    /**
+     * Manager/Cashier: Returns all members in a basic format. Used for other
+     * methods.
+     *
+     * @return
+     */
     public ArrayList<Member> getAllMembers()
     {
         return modelController.getAllMembersInBasicMemberFormat();
     }
 
+    /**
+     * Manager/Trainer: Returns all Competitive Members. Used for other methods.
+     *
+     * @return
+     */
     public ArrayList<MemberCompetitive> getAllCompetitiveMembers()
     {
         return modelController.getAllCompetitiveMembers();
     }
 
     //Cashier
-    
     /**
+     * Cashier:
      *
-     * @param memberID
-     * @param year
-     * Registers a payment for a single user for a given year.
+     * @param memberID This Members ID.
+     * @param year Registers a payment for a single user for a given year.
      */
     public void registerPayment(int memberID, Year year)
     {
@@ -191,10 +257,11 @@ public class Controller
     }
 
     /**
+     * Cashier:
      *
-     * @param memberID
-     * @param year
-     * Removes a single users given payment (in case of chargeback, etc)
+     * @param memberID This Members ID.
+     * @param year Removes a single users given payment (in case of chargeback,
+     * etc)
      */
     public void revokePayment(int memberID, Year year)
     {
@@ -204,50 +271,65 @@ public class Controller
     }
 
     /**
+     * Cashier:
      *
      * @return Returns all members with outstanding arrears.
      */
     public ArrayList<Member> getAllArrearMembers() //Returns all members who has not paid
-
     {
         return subscription.getArrearMembers(getAllMembers());
     }
 
     /**
+     * Cashier:
      *
      * @param memberID
      * @return Returns a single users arrear (if any)
      */
-    public int getSingleMemberArrear(int memberID) //Single user based on ID. ONLY RETURNS ARREAR, NOT USER INFO.    
+    public int getArrearSingleMember(int memberID) //Single user based on ID. ONLY RETURNS ARREAR, NOT USER INFO.    
     {
         return getMember(memberID).calculateArrear();
     }
 
     /**
+     * Cashier:
      *
      * @return Returns all outstanding arrears as one integer.
      */
-    public int getAllMemberArrears() //Returns all members with arrears as an integer
+    public int getArrearsAllMembers() //Returns all members with arrears as an integer
     {
         return subscription.getAllArrears(getAllArrearMembers());
     }
 
     //Trainer
+
+    /**
+     *Trainer: Returns top five competitive Members
+     */
     public void getTopFive()
     {
 
     }
 
+    /**
+     *Trainer: Creates new competition
+     */
     public void createCompetition()
     {
 
     }
 
+    /**
+     * Trainer: Edits a competition (Based on unique identifier?)
+     */
     public void editCompetition()
     {
 
     }
 
+    /**
+     *Trainer: deletes a competition (Based on unique identifier?)
+     */
     public void deleteCompetition()
     {
 

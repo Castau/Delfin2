@@ -10,6 +10,8 @@ import static org.junit.Assert.*;
 /**
  *
  * @author runin
+ * Test class belonging to the Member class.
+ * @see Member
  */
 public class MemberTest
 {

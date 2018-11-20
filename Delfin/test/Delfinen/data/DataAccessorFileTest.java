@@ -15,24 +15,27 @@ import static org.junit.Assert.*;
 
 /**
  * @author Camilla
+ *
+ * Test class belonging to the DataAccessorFile class.
+ * @see DataAccessorFile
  */
-public class DataAccessorFileTest {
+public class DataAccessorFileTest
+{
 
     private Model model;
     private DataAccessorFile data;
     private String filePath = "";
     private String testjson = "";
 
-    public DataAccessorFileTest() {
+    public DataAccessorFileTest()
+    {
         Config.setTestMode(false);
         data = new DataAccessorFile();
-        
-        
-
     }
 
     @Before
-    public void setUp() {
+    public void setUp()
+    {
         model = new Model();
         ArrayList<DisciplineType> disciplineList = new ArrayList();
         disciplineList.add(DisciplineType.CRAWL);
@@ -54,7 +57,8 @@ public class DataAccessorFileTest {
     }
 
     @Test
-    public void testModelToFile() throws IOException {
+    public void testModelToFile() throws IOException
+    {
         String out = "";
         String exp = testjson;
         data.writeToFile(model, filePath);
@@ -63,7 +67,8 @@ public class DataAccessorFileTest {
         BufferedReader br = new BufferedReader(in);
 
         String line;
-        while ((line = br.readLine()) != null) {
+        while ((line = br.readLine()) != null)
+        {
             out = out + line;
         }
         in.close();
@@ -71,7 +76,8 @@ public class DataAccessorFileTest {
     }
 
     @Test
-    public void testFileToModel() throws Exception {
+    public void testFileToModel() throws Exception
+    {
         System.out.println(model);
         System.out.println(data.readFile(filePath));
         assertEquals(model, data.readFile(filePath));

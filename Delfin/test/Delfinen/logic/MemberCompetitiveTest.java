@@ -11,6 +11,8 @@ import static org.junit.Assert.*;
 /**
  *
  * @author runi, asger og camilla
+ * Test class belonging to the MemberCompetitive class.
+ * @see MemberCompetitive
  */
 public class MemberCompetitiveTest
 {

@@ -11,6 +11,9 @@ import static org.junit.Assert.*;
 /**
  *
  * @author runin
+ *
+ * Test class belonging to the MemberActive class.
+ * @see MemberActive
  */
 public class MemberActiveTest
 {
@@ -24,7 +27,8 @@ public class MemberActiveTest
     MemberCompetitive m4;
 
     /**
-     *Tests active members
+     * Tests active members
+     *
      * @see MemberActive
      */
     public MemberActiveTest()
