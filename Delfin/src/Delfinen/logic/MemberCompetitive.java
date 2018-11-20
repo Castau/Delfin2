@@ -11,8 +11,7 @@ import java.util.Objects;
  *
  * @author runin, camilla og asger
  */
-public class MemberCompetitive extends MemberActive
-{
+public class MemberCompetitive extends MemberActive {
 
     private Training trainingSessions;
     private Competition competitionResults;
@@ -29,10 +28,10 @@ public class MemberCompetitive extends MemberActive
      * @param disciplineList
      */
     public MemberCompetitive(String name, Year birthyear, MembershipType membershipType,
-            ActivityType activityType, ArrayList<DisciplineType> disciplineList)
-    {
+            ActivityType activityType, ArrayList<DisciplineType> disciplineList) {
         super(name, birthyear, membershipType, activityType);
         disciplineTypes = disciplineList;
+        trainingSessions = new Training();
     }
 
     public ArrayList<DisciplineType> getDisciplineTypes()
@@ -47,6 +46,7 @@ public class MemberCompetitive extends MemberActive
     public Competition getCompetitionResults() {
         return competitionResults;
     }
+
     
     
 
@@ -86,7 +86,7 @@ public class MemberCompetitive extends MemberActive
         }
         return true;
     }
-        
+
     
   
     

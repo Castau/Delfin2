@@ -4,6 +4,7 @@ package Delfinen.logic;
 
 import Delfinen.data.DisciplineType;
 import java.time.LocalTime;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -11,17 +12,34 @@ import java.util.Objects;
  */
 public class TrainingSession implements Comparable<TrainingSession>{
 
-    private LocalTime date;
+    private Date date;
     private DisciplineType diciplineType;
     private Distance distance;
     private int timeInSec;  //evt localTime type?
 
-    public TrainingSession(LocalTime date, DisciplineType diciplineType, Distance distance, int timeInSec) {
+    public TrainingSession(Date date, DisciplineType diciplineType, Distance distance, int timeInSec) {
         this.date = date;
         this.diciplineType = diciplineType;
         this.distance = distance;
         this.timeInSec = timeInSec;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public DisciplineType getDiciplineType() {
+        return diciplineType;
+    }
+
+    public Distance getDistance() {
+        return distance;
+    }
+
+    public int getTimeInSec() {
+        return timeInSec;
+    }
+    
 
     @Override
     public boolean equals(Object obj) {

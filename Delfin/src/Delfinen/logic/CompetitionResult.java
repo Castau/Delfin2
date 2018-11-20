@@ -3,6 +3,7 @@ package Delfinen.logic;
 
 import Delfinen.data.DisciplineType;
 import java.time.LocalTime;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -10,14 +11,14 @@ import java.util.Objects;
  */
 public class CompetitionResult implements Comparable<CompetitionResult>{
     
-    private LocalTime date;
+    private Date date;
     private DisciplineType diciplineType;
     private Distance distance;
     private int timeInSec;  //evt localTime type?
     private int placement;
     private String eventName;
 
-    public CompetitionResult(LocalTime date, DisciplineType diciplineType, Distance distance, int timeInSec, int placement, String eventName) {
+    public CompetitionResult(Date date, DisciplineType diciplineType, Distance distance, int timeInSec, int placement, String eventName) {
         this.date = date;
         this.diciplineType = diciplineType;
         this.distance = distance;

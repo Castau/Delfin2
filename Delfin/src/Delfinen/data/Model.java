@@ -1,8 +1,10 @@
 package Delfinen.data;
 
+import Delfinen.logic.Distance;
 import Delfinen.logic.Member;
 import Delfinen.logic.MemberActive;
 import Delfinen.logic.MemberCompetitive;
+import Delfinen.logic.Training;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -128,6 +130,8 @@ public class Model {
             }
         }
     }
+    
+
 
 
     @Override
@@ -163,6 +167,8 @@ public class Model {
     public String toString() {
         return "Model{" + "members=" + members + ", membersActive=" + membersActive + ", membersCompetitive=" + membersCompetitive + ", IdCounter=" + IdCounter + '}';
     }
+
+    
     
 
 }
