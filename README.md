@@ -22,20 +22,20 @@ Create a program for a local swimmingclub "Delfinen", including, but not limited
 2. Use Case Diagram
 3. Mockup of key system parts.
 
-  **The code must**:
+**The code must**:
 * *Be easily read-able*  
 * *Be reusable*  
 * *Be robust*  
 * Must design following object-oriented programming principles
 * Must display capacity of programming basic algorithms. 
 
-  **The code must at a minimum include:**
-     * *Multiple classes with relevant packages*
-     * *Data Structures*
-     * *Inheritance and/or interfaces*
-     * *File reading/Writing to save data*
-     * *A simple user interface*
-     * *JUnit tests of relevant classes*
+**The code must at a minimum include:**  
+* *Multiple classes with relevant packages*
+* *Data Structures*  
+* *Inheritance and/or interfaces*  
+* *File reading/Writing to save data*  
+* *A simple user interface*  
+* *JUnit tests of relevant classes*  
 
 Overview of fulfilled requirements
 ------
