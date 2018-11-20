@@ -24,13 +24,13 @@ Create a program for a local swimmingclub "Delfinen".
     * *Reusable*  
     * *Robust*  
   * **The code must at a minimum include:**
-     * Multiple classes with relevant packages
-     * Data Structures
-     * Inheritance and/or interfaces
-     * File reading/Writing to save data
-     * A simple user interface
-     * JUnit tests of relevant classes
+     * *Multiple classes with relevant packages*
+     * *Data Structures*
+     * *Inheritance and/or interfaces*
+     * *File reading/Writing to save data*
+     * *A simple user interface*
+     * *JUnit tests of relevant classes*
 
 #### Other:
 [Old Delfin project](https://github.com/Castau/Delfin) (Caused problems due to missing gitIgnore file)   
-(Includes early commits)
+*(Includes early commits)*
