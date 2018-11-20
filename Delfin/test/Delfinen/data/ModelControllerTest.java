@@ -2,7 +2,6 @@
 package Delfinen.data;
 
 import Delfinen.logic.Controller;
-import Delfinen.logic.Distance;
 import Delfinen.logic.MemberCompetitive;
 import Delfinen.logic.TrainingSession;
 import java.io.IOException;
@@ -11,10 +10,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

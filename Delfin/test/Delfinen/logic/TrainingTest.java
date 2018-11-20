@@ -3,6 +3,7 @@ package Delfinen.logic;
 
 import Delfinen.data.ActivityType;
 import Delfinen.data.DisciplineType;
+import Delfinen.data.Distance;
 import Delfinen.data.MembershipType;
 import java.time.Year;
 import java.util.ArrayList;
