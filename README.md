@@ -15,20 +15,21 @@ See the projects `Javadoc` for explanations of classes, methods and the like.
 
 [Direct link](https://efif.sharepoint.com/:w:/r/sites/cph/Lyngby/_layouts/15/Doc.aspx?sourcedoc=%7B6BCD48A4-8F02-4A94-AD3E-B30BC6287167%7D&file=Delfinen.docx&action=default&mobileredirect=true) (Requires access)
 
-Create a program for a local swimmingclub "Delfinen".
+Create a program for a local swimmingclub "Delfinen", including, but not limited to, a Manager, a cashier, and a trainer.
 
-**Include:**
+**Must include:**
 1. Domain model
 2. Use Case Diagram
 3. Mockup of key system parts.
 
+  **The code must**:
+* *Be easily read-able*  
+* *Be reusable*  
+* *Be robust*  
 * Must design following object-oriented programming principles
 * Must display capacity of programming basic algorithms. 
- * **The code must be**:
-    * *Easily read-able*  
-    * *Reusable*  
-    * *Robust*  
- * **The code must at a minimum include:**
+
+  **The code must at a minimum include:**
      * *Multiple classes with relevant packages*
      * *Data Structures*
      * *Inheritance and/or interfaces*
