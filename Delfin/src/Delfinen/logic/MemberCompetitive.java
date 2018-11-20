@@ -33,6 +33,7 @@ public class MemberCompetitive extends MemberActive {
         super(name, birthyear, membershipType, activityType);
         disciplineTypes = disciplineList;
         trainingSessions = new Training();
+        competitionResults = new Competition();
     }
 
     public ArrayList<DisciplineType> getDisciplineTypes()

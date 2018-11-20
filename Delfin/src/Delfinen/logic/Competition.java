@@ -23,17 +23,17 @@ public class Competition //extends TrainingResults
     public ArrayList<CompetitionResult> getCompetitionList() {
         return competitionsList;
     }
-
-    public CompetitionResult getCompetitionRes(DisciplineType disciplineType, Distance distance) {
-        for (int i = 0; i < competitionsList.size(); i++) {
-            if (disciplineType == (competitionsList.get(i).getDiciplineType())) {
-                if (distance == (competitionsList.get(i).getDistance())) {
-                    return competitionsList.get(i);
-                }
-            }
-        }
-        return null;
-    }
+//                                      Skal nok slettes
+//    public CompetitionResult getCompetitionRes(DisciplineType disciplineType, Distance distance) {
+//        for (int i = 0; i < competitionsList.size(); i++) {
+//            if (disciplineType == (competitionsList.get(i).getDiciplineType())) {
+//                if (distance == (competitionsList.get(i).getDistance())) {
+//                    return competitionsList.get(i);
+//                }
+//            }
+//        }
+//        return null;
+//    }
 
     public CompetitionResult getBestCompetitionRes(DisciplineType disciplineType, Distance distance) {
         ArrayList<CompetitionResult> templist = new ArrayList();
@@ -51,10 +51,3 @@ public class Competition //extends TrainingResults
         return null;
     }
 }
-
-
-//Runi:
-    //Competition: ForEachMember: CompetitionName (Stævne),  Result (placement), Time. (Date is not mentioned. Include?)
-    
-    //skal gemmes som object på MemberCompetitive
-    //har liste af CompettitionResult objekter

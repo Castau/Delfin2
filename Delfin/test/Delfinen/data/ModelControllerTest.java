@@ -1,6 +1,7 @@
 
 package Delfinen.data;
 
+import Delfinen.logic.CompetitionResult;
 import Delfinen.logic.Controller;
 import Delfinen.logic.MemberCompetitive;
 import Delfinen.logic.TrainingSession;
@@ -38,6 +39,13 @@ public class ModelControllerTest {
     TrainingSession t5;
     TrainingSession t6;
     
+    CompetitionResult c1;
+    CompetitionResult c2;
+    CompetitionResult c3;
+    CompetitionResult c4;
+    CompetitionResult c5;
+    CompetitionResult c6;
+    
     
     public ModelControllerTest() throws IOException {
         controller = new Controller();
@@ -63,12 +71,26 @@ public class ModelControllerTest {
         t5 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 121); //2
         t6 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 167); //4
         
+        c1 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 181, 43, "Skjærn Stævne"); //5
+        c2 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 120, 5, "Borup Stævne"); //1
+        c3 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 165, 19, "Aars Stævne"); //3
+        c4 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 183, 51, "Københavns Stævne"); //6 - ikke med
+        c5 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 121, 8, "Lemvig Stævne"); //2
+        c6 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 167, 26, "Odden Stævne"); //4
+        
         m1.getTrainingSessions().addTrainingSession(t1);
         m2.getTrainingSessions().addTrainingSession(t2);
         m3.getTrainingSessions().addTrainingSession(t3);
         m4.getTrainingSessions().addTrainingSession(t4);
         m5.getTrainingSessions().addTrainingSession(t5);
         m6.getTrainingSessions().addTrainingSession(t6);
+        
+        m1.getCompetitionResults().addCompetitionResult(c1);
+        m2.getCompetitionResults().addCompetitionResult(c2);
+        m3.getCompetitionResults().addCompetitionResult(c3);
+        m4.getCompetitionResults().addCompetitionResult(c4);
+        m5.getCompetitionResults().addCompetitionResult(c5);
+        m6.getCompetitionResults().addCompetitionResult(c6);
         
         members.add(m1);
         members.add(m2);
@@ -80,7 +102,7 @@ public class ModelControllerTest {
     }
     
     @Test
-    public void TestGetTop5(){
+    public void TestGetTop5Training(){
         ArrayList<MemberCompetitive> exp = new ArrayList();
         exp.add(m2);
         exp.add(m5);
@@ -90,10 +112,21 @@ public class ModelControllerTest {
 
         ArrayList<MemberCompetitive> result = modelController.getTop5Training(DisciplineType.BUTTERFLY, Distance.METERS_100, members);
         
-        assertEquals(exp, result);
+        assertEquals(exp, result);  
+    }
+    
+    @Test
+    public void TestGetTop5Competition(){
+        ArrayList<MemberCompetitive> exp = new ArrayList();
+        exp.add(m2);
+        exp.add(m5);
+        exp.add(m3);
+        exp.add(m6);
+        exp.add(m1);
+
+        ArrayList<MemberCompetitive> result = modelController.getTop5Training(DisciplineType.BUTTERFLY, Distance.METERS_100, members);
         
-       
-        
+        assertEquals(exp, result);  
     }
 
 }

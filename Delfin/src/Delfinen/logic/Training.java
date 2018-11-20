@@ -23,17 +23,17 @@ public class Training {
     public ArrayList<TrainingSession> getTrainingList() {
         return trainingList;
     }
-
-    public TrainingSession getTraining(DisciplineType disciplineType, Distance distance) {
-        for (int i = 0; i < trainingList.size(); i++) {
-            if (disciplineType == (trainingList.get(i).getDiciplineType())) {
-                if (distance == (trainingList.get(i).getDistance())) {
-                    return trainingList.get(i);
-                }
-            }
-        }
-        return null;
-    }
+//                                   Skal nok slettes
+//    public TrainingSession getTraining(DisciplineType disciplineType, Distance distance) {
+//        for (int i = 0; i < trainingList.size(); i++) {
+//            if (disciplineType == (trainingList.get(i).getDiciplineType())) {
+//                if (distance == (trainingList.get(i).getDistance())) {
+//                    return trainingList.get(i);
+//                }
+//            }
+//        }
+//        return null;
+//    }
 
     public TrainingSession getBestTraining(DisciplineType disciplineType, Distance distance) {
         ArrayList<TrainingSession> templist = new ArrayList();
