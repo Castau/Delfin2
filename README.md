@@ -17,7 +17,7 @@ Create a program for a local swimmingclub "Delfinen".
 
 
 ### Project demands:  
-[Direct link](https://efif.sharepoint.com/:w:/r/sites/cph/Lyngby/Shared%20Documents/4.%20Indhold%20%26%20Niveau/DAT/1.%20sem%20efter%C3%A5r%202018%20Stud%20E2018%20-%20E2020/Student/Lyngby/Studypoint%20opgaver/Delfinen/Delfinen.docx?d=w23d8a953287a4265a35865477bb813fe&csf=1&e=cvdGIK) (Requires access)
+[Direct link](https://efif.sharepoint.com/:w:/r/sites/cph/Lyngby/_layouts/15/Doc.aspx?sourcedoc=%7B6BCD48A4-8F02-4A94-AD3E-B30BC6287167%7D&file=Delfinen.docx&action=default&mobileredirect=true) (Requires access)
 
 * Must design following object-oriented programming principles
 * Must display capacity of programming basic algorithms. 
