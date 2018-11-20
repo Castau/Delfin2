@@ -1,8 +1,9 @@
 <img align="right" width="100" height="100" src="https://i.imgur.com/aFsVizT.png">  
 
-Delfin2 
+Delfin2 - Svømmeklubben Delfinen
 ======
-This is the repository for a project at CPHBusiness. First semester.
+This is the repository for a project at CPHBusiness.  
+Made by [3 students](https://github.com/Castau/Delfin2/graphs/contributors) during their first semester of Computer Science AP.
 
 ### Project description & specific requirements (Shortened):  
 
