@@ -18,16 +18,16 @@ See the projects `Javadoc` for explanations of classes, methods and the like.
 Create a program for a local swimmingclub "Delfinen", including, but not limited to, a Manager, a cashier, and a trainer.
 
 **Must include:**
-1. Domain model
-2. Use Case Diagram
-3. Mockup of key system parts.
+1. *Domain model*
+2. *Use Case Diagram*
+3. *Mockup of key system parts.*
 
 **The code must**:
 * *Be easily read-able*  
 * *Be reusable*  
 * *Be robust*  
-* Must design following object-oriented programming principles
-* Must display capacity of programming basic algorithms. 
+* *Follow object-oriented programming principles*  
+* *Display capacity of programming basic algorithms.* 
 
 **The code must at a minimum include:**  
 * *Multiple classes with relevant packages*
