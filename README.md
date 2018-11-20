@@ -54,7 +54,7 @@ Overview of fulfilled requirements
 
 3. Our Mockup of key system parts: 
 
-Download our [PowerPoint](https://www.dropbox.com/s/5vweheudzo8f874/MockUp.pptx?dl=0)-file for an interactive experience. ;)
+Download our [PowerPoint](https://www.dropbox.com/s/5vweheudzo8f874/MockUp.pptx?dl=0)-file for an interactive experience.
 
 ![Mock-up](https://imgur.com/wFdWGYf.png)
 
