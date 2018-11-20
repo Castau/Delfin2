@@ -24,11 +24,11 @@ Create a program for a local swimmingclub "Delfinen".
 
 * Must design following object-oriented programming principles
 * Must display capacity of programming basic algorithms. 
-  * **The code must be**:
+ * **The code must be**:
     * *Easily read-able*  
     * *Reusable*  
     * *Robust*  
-  * **The code must at a minimum include:**
+ * **The code must at a minimum include:**
      * *Multiple classes with relevant packages*
      * *Data Structures*
      * *Inheritance and/or interfaces*
