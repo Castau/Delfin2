@@ -31,6 +31,7 @@ public class ModelController {
         } catch (Exception ex) {
             System.out.println("File not found, creating new");
             model = new Model();
+            dataFile.writeToFile(model, filePath);
         }
     }
 
