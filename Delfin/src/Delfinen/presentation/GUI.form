@@ -2,10 +2,6 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JSplitPane" name="jSplitPane1">
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout"/>
-    </Container>
     <Component class="javax.swing.ButtonGroup" name="buttonGroupCreateMemberPassiveActive">
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroupCreateMemberActivityType">
@@ -17,6 +13,10 @@
     <Component class="javax.swing.ButtonGroup" name="buttonGroupAddTrainingDisciplineTypes">
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroupAddTrainingDistance">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupAddCompetitionResultDisciplineTypes">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupAddCompetitionResultDistance">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -42,7 +42,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelLoginScreen" alignment="0" max="32767" attributes="0"/>
+          <Component id="PanelLoginScreen" alignment="0" pref="952" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
@@ -88,7 +88,7 @@
           <Group type="103" rootIndex="7" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsCashier" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsCashier" pref="932" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -134,11 +134,18 @@
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
           </Group>
+          <Group type="103" rootIndex="14" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="PanelAddCompetitionResult" pref="890" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelLoginScreen" alignment="0" max="32767" attributes="0"/>
+          <Component id="PanelLoginScreen" alignment="0" pref="541" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -184,7 +191,7 @@
           <Group type="103" rootIndex="7" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsCashier" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsCashier" pref="474" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -230,24 +237,36 @@
                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               </Group>
           </Group>
+          <Group type="103" rootIndex="14" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="PanelAddCompetitionResult" pref="465" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="PanelLoginScreen">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[858, 457]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="PanelLoginScreenHeader" alignment="0" pref="952" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="399" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="ButtonLoginAsTrainer" min="-2" pref="95" max="-2" attributes="0"/>
                       <Component id="ButtonLoginAsCashier" min="-2" pref="95" max="-2" attributes="0"/>
                       <Component id="ButtonLoginAsManager" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="364" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="379" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -261,7 +280,7 @@
                   <Component id="ButtonLoginAsCashier" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="ButtonLoginAsTrainer" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="177" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="261" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -285,7 +304,7 @@
                       <Component id="LabelLoginScreenHome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="LabelLoginScreenHeader" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="691" max="32767" attributes="0"/>
+                      <EmptySpace pref="813" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -668,7 +687,7 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="RadioButtonNewMemberCompetitive" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="33" pref="109" max="32767" attributes="0"/>
+                          <EmptySpace min="33" pref="171" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -1786,6 +1805,11 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="PanelLoggedInAsCashier">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[858, 457]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1797,7 +1821,7 @@
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="304" max="32767" attributes="0"/>
+                  <EmptySpace pref="368" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="ButtonCheckMembersArrear" max="32767" attributes="0"/>
                       <Component id="ButtonRegisterPayment" alignment="0" max="32767" attributes="0"/>
@@ -2866,7 +2890,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="ButtonSeeTopFiveKompetition" pref="227" max="32767" attributes="0"/>
+                      <Component id="ButtonSeeTopFiveKompetition" max="32767" attributes="0"/>
                       <Component id="ButtonSeeTopFiveTraining" alignment="0" max="32767" attributes="0"/>
                       <Component id="ButtonAddCompetitionResult" alignment="0" max="32767" attributes="0"/>
                       <Component id="ButtonAddTraining" alignment="0" max="32767" attributes="0"/>
@@ -2887,7 +2911,7 @@
                   <Component id="ButtonSeeTopFiveTraining" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="ButtonSeeTopFiveKompetition" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="98" max="32767" attributes="0"/>
+                  <EmptySpace pref="92" max="32767" attributes="0"/>
                   <Component id="ButtonBackToMainMenuFromTrainer" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -2961,7 +2985,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/GUIImages/icons8_Add_List_26px.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Add training"/>
+            <Property name="text" type="java.lang.String" value="Add training  "/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonAddTrainingActionPerformed"/>
@@ -2971,6 +2995,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Iskoola Pota" size="18" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/GUIImages/icons8_Trophy_26px_1.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Add competition results"/>
           </Properties>
@@ -3199,7 +3226,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="LabelAddTrainingHome" min="-2" max="-2" attributes="0"/>
@@ -3248,7 +3275,6 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Logged in as Trainer"/>
-                <Property name="visible" type="boolean" value="false"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -3407,6 +3433,456 @@
         <Component class="javax.swing.JTextField" name="TextFieldAddTrainingTrainingTime">
           <Properties>
             <Property name="text" type="java.lang.String" value="Seconds"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="PanelAddCompetitionResult">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[858, 457]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="PanelAddCompetitionResultHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="ButtonAddCompetitionResultAddCompetitionResult" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="LabelAddCompetitionResultCompetitionTime" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="TextFieldAddCompetitionResultCompetitionTime" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="LabelAddCompetitionResultDisciplineType" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="RadioButtonAddCompetitionResultCrawl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="RadioButtonAddCompetitionResultButterfly" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="RadioButtonAddCompetitionResultBackstroke" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="LabelAddCompetitionResultDistance" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="RadioButtonAddCompetitionResultBreaststroke" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="RadioButtonAddCompetitionResultDistance400" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioButtonAddCompetitionResultDistance100" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="RadioButtonAddCompetitionResultDistance200" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="LabelAddCompetitionResultCompetitionDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="TextFieldAddCompetitionResultCompetitionYear" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="ComboBoxAddCompetitionResultMonths" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="TextFieldAddCompetitionResultDateDay" min="-2" pref="40" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="LabelAddCompetitionResultInsertID" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                          <Component id="LabelAddCompetitionResultPlacement" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="TextFieldAddCompetitionResultID" min="-2" pref="44" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="TextFieldAddCompetitionResultPlacement" min="-2" pref="44" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="LabelAddCompetitionResultEventName" min="-2" max="-2" attributes="0"/>
+                                      <Component id="TextFieldAddCompetitionResultEventName" min="-2" pref="128" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="textAreaAddCompetitionResultMemberList" alignment="0" min="-2" pref="462" max="-2" attributes="0"/>
+                              <Component id="LabelAddCompetitionResultAllMembersIDName" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ButtonBackFromAddCompetitionResult" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="PanelAddCompetitionResultHeader" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="LabelAddCompetitionResultAllMembersIDName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelAddCompetitionResultInsertID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelAddCompetitionResultPlacement" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelAddCompetitionResultEventName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="textAreaAddCompetitionResultMemberList" pref="264" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TextFieldAddCompetitionResultID" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TextFieldAddCompetitionResultPlacement" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TextFieldAddCompetitionResultEventName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="LabelAddCompetitionResultCompetitionDate" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="TextFieldAddCompetitionResultCompetitionYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ComboBoxAddCompetitionResultMonths" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TextFieldAddCompetitionResultDateDay" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <Component id="LabelAddCompetitionResultDisciplineType" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="RadioButtonAddCompetitionResultButterfly" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="RadioButtonAddCompetitionResultBackstroke" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Component id="LabelAddCompetitionResultDistance" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="RadioButtonAddCompetitionResultDistance100" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="RadioButtonAddCompetitionResultDistance200" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="RadioButtonAddCompetitionResultBreaststroke" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="RadioButtonAddCompetitionResultDistance400" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="RadioButtonAddCompetitionResultCrawl" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="LabelAddCompetitionResultCompetitionTime" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TextFieldAddCompetitionResultCompetitionTime" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="ButtonAddCompetitionResultAddCompetitionResult" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="ButtonBackFromAddCompetitionResult" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="PanelAddCompetitionResultHeader">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="99" type="rgb"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[770, 96]"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="LabelAddCompetitionResultHome" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="LabelAddCompetitionResultHeader" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="498" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="LabelAddCompetitionResultLogAsTrainer" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="LabelAddCompetitionResultHome" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="LabelAddCompetitionResultHeader" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="LabelAddCompetitionResultLogAsTrainer" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultHome">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/GUIImages/icons8_Trophy_50px.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="LabelAddCompetitionResultHeader">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="GungsuhChe" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Add competition result"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="LabelAddCompetitionResultLogAsTrainer">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Kartika" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Logged in as Trainer"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultAllMembersIDName">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="All members"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ButtonBackFromAddCompetitionResult">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Iskoola Pota" size="12" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="BACK"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonBackFromAddCompetitionResultActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="java.awt.TextArea" name="textAreaAddCompetitionResultMemberList">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextFieldAddCompetitionResultID">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultInsertID">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="ID"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultCompetitionDate">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Competition date"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextFieldAddCompetitionResultCompetitionYear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="(YYYY)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ButtonAddCompetitionResultAddCompetitionResult">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/GUIImages/icons8_Add_20px.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Add competition result "/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonAddCompetitionResultAddCompetitionResultActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="ComboBoxAddCompetitionResultMonths">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="12">
+                <StringItem index="0" value="JANUARY"/>
+                <StringItem index="1" value="FEBRUARY"/>
+                <StringItem index="2" value="MARCH"/>
+                <StringItem index="3" value="APRIL"/>
+                <StringItem index="4" value="MAY"/>
+                <StringItem index="5" value="JUNE"/>
+                <StringItem index="6" value="JULY"/>
+                <StringItem index="7" value="AUGUST"/>
+                <StringItem index="8" value="SEPTEMBER"/>
+                <StringItem index="9" value="OCTOBER"/>
+                <StringItem index="10" value="NOVEMBER"/>
+                <StringItem index="11" value="DECEMBER"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextFieldAddCompetitionResultDateDay">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="(DD)"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultDisciplineType">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Discipline type:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonAddCompetitionResultButterfly">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Butterfly"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonAddCompetitionResultCrawl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Crawl"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonAddCompetitionResultBackstroke">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Backstroke"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonAddCompetitionResultBreaststroke">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Breaststroke"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultDistance">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Distance:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonAddCompetitionResultDistance100">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="100 m"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonAddCompetitionResultDistance200">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="200 m"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="RadioButtonAddCompetitionResultDistance400">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="400 m"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultCompetitionTime">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Time:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextFieldAddCompetitionResultCompetitionTime">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Seconds"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultPlacement">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Placement"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelAddCompetitionResultEventName">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Event name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextFieldAddCompetitionResultPlacement">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="#"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextFieldAddCompetitionResultEventName">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Name"/>
           </Properties>
         </Component>
       </SubComponents>
