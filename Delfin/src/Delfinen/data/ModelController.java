@@ -28,6 +28,10 @@ public class ModelController {
         dataFile = new DataAccessorFile();
         try {
             model = dataFile.readFile(filePath);
+            if(model == null){
+            model = new Model();
+            dataFile.writeToFile(model, filePath);
+        }
         } catch (Exception ex) {
             System.out.println("File not found, creating new");
             model = new Model();
@@ -175,12 +179,12 @@ public class ModelController {
         });
         
         ArrayList<MemberCompetitive> top5 = new ArrayList();
-        for(int i = 0; i < sortList.size(); i++){
-            top5.add(sortList.get(i));
+        for(int i = 0; i < sortList.size(); i++){ 
             if(i >= 5)
             {
                 break;
             }
+            top5.add(sortList.get(i));
         }
         
         return top5;

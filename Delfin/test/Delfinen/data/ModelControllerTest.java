@@ -60,9 +60,9 @@ public class ModelControllerTest {
         m1 = new MemberCompetitive("Arne", Year.of(1987), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
         m2 = new MemberCompetitive("Hans", Year.of(1998), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
         m3 = new MemberCompetitive("Otto", Year.of(1929), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
-//        m4 = new MemberCompetitive("Igor", Year.of(1968), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
-//        m5 = new MemberCompetitive("Anna", Year.of(2005), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
-//        m6 = new MemberCompetitive("Else", Year.of(1679), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+        m4 = new MemberCompetitive("Igor", Year.of(1968), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+        m5 = new MemberCompetitive("Anna", Year.of(2005), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
+        m6 = new MemberCompetitive("Else", Year.of(1679), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
         
         t1 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 181); //5
         t2 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 120); //1
