@@ -11,7 +11,7 @@ See the project `Javadoc` for detailed explanation.
 - [Old Delfin project](https://github.com/Castau/Delfin) (Caused problems due to missing gitIgnore file)   
 *(Includes early commits)*  
 
-### Project description & specific requirements (Shortened):  
+### Project description & specific requirements (shortened):  
 
 [Direct link](https://efif.sharepoint.com/:w:/r/sites/cph/Lyngby/_layouts/15/Doc.aspx?sourcedoc=%7B6BCD48A4-8F02-4A94-AD3E-B30BC6287167%7D&file=Delfinen.docx&action=default&mobileredirect=true) (Requires access)
 
@@ -36,6 +36,9 @@ Create a program for a local swimmingclub "Delfinen", including, but not limited
 * *File reading/Writing to save data*  
 * *A simple user interface*  
 * *JUnit tests of relevant classes*  
+
+**Project deadline:**
+11.55PM November 22, 2018
 
 Overview of fulfilled requirements
 ------
