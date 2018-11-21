@@ -69,11 +69,11 @@ public class MemberCompetitive extends MemberActive {
                 + ", Activity type: " + super.getActivityType() + ", Disciplines: " + disciplineTypes;
     }
 
-    @Override
-    public String toString()
-    {
-        return "MemberCompetitive{" + super.toString() + "disciplineTypes=" + disciplineTypes + '}';
-    }
+//    @Override
+//    public String toString()
+//    {
+//        return "MemberCompetitive{" + super.toString() + "disciplineTypes=" + disciplineTypes + '}';
+//    }
 
     @Override
     public boolean equals(Object obj)

@@ -33,15 +33,15 @@ public class MemberActive extends Member
         return activityType;
     }
 
-//    @Override
-//    public String toString() {
-//        return super.toString() + ", ActivityType: " + activityType;
-//    }
-
     @Override
     public String toString() {
-        return "MemberActive{" + super.toString() + "activityType=" + activityType + '}';
+        return super.toString() + ", ActivityType: " + activityType;
     }
+
+//    @Override
+//    public String toString() {
+//        return "MemberActive{" + super.toString() + "activityType=" + activityType + '}';
+//    }
 
     @Override
     public boolean equals(Object obj) {

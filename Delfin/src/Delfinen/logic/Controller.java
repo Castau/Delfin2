@@ -126,7 +126,7 @@ public class Controller
     }
 
     /**
-     * Manager: Edits a passive members information
+     * Manager: Edits a passive member's information
      *
      * @param member Member in question
      */
@@ -142,7 +142,7 @@ public class Controller
     }
 
     /**
-     * Manager: Edits a (active) members information.
+     * Manager: Edits a (active) member's information.
      *
      * @param member Member in question
      */
@@ -158,7 +158,7 @@ public class Controller
     }
 
     /**
-     * Manager: Edits a (competitive) members information.
+     * Manager: Edits a (competitive) member's information.
      *
      * @param member Member in question
      */
