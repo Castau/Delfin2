@@ -1,6 +1,7 @@
 package Delfinen.presentation;
 
 import Delfinen.data.ActivityType;
+import Delfinen.data.Config;
 import Delfinen.data.MembershipType;
 import Delfinen.logic.Controller;
 import java.time.Year;
@@ -32,6 +33,7 @@ public class GUI extends javax.swing.JFrame
     {
         initComponents();
         c = new Controller();
+        Config.setTestMode(false);
         //Putting Radio Buttons into groups
         this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberActive);
         this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberPassive);
