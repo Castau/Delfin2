@@ -37,12 +37,20 @@ public class Training {
 
     public TrainingSession getBestTraining(DisciplineType disciplineType, Distance distance) {
         ArrayList<TrainingSession> templist = new ArrayList();
-        for (int i = 0; i < trainingList.size(); i++) {
-            if (disciplineType == (trainingList.get(i).getDiciplineType())) {
-                if (distance == (trainingList.get(i).getDistance())) {
-                    templist.add(trainingList.get(i));
+        try
+        {
+            for (int i = 0; i < trainingList.size(); i++) {
+                if (disciplineType == (trainingList.get(i).getDiciplineType())) {
+                    if (distance == (trainingList.get(i).getDistance())) {
+                        templist.add(trainingList.get(i));
+                    }
                 }
             }
+        }
+        catch (NullPointerException nx)
+        {
+            System.out.println("getBestTraining failed");
+            return null;
         }
         Collections.sort(templist);
         if (templist.size() > 0) {

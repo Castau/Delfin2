@@ -58,6 +58,11 @@ public class MemberCompetitive extends MemberActive {
      *
      * @return Returns a specific toString of a MemberCompetitive - used for GUI handling of competitions.
      */
+    public String toStringNameIDDiscipline()
+    {
+        return "ID: " + super.getId() + ", Name: " + super.getName() + ", Disciplines: " + disciplineTypes;
+    }
+    
     public String toStringCompetitionVersion()
     {
         return "ID: " + super.getId() + ", Name: " + super.getName() + ", Birthyear: " + super.getBirthyear()

@@ -308,9 +308,9 @@ public class Controller
         //modelController.addCompetitionResult(memberID, date, diciplineType, distance, timeInSec, placement, eventName);
     }    
     
-    public void getTopFiveTraining()
-    {                                                                                //modelController.getAllCompetitiveMembers()
-       // modelController.getTop5Training(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members);
+    public ArrayList<MemberCompetitive> getTopFiveTraining(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members)
+    {
+       return modelController.getTop5Training(disciplineType, distance, members);
 
     }
     
@@ -320,28 +320,28 @@ public class Controller
 
     }
 
-    /**
-     *Trainer: Creates new competition
-     */
-    public void createCompetition()
-    {
-
-    }
-
-    /**
-     * Trainer: Edits a competition (Based on unique identifier?)
-     */
-    public void editCompetition()
-    {
-
-    }
-
-    /**
-     *Trainer: deletes a competition (Based on unique identifier?)
-     */
-    public void deleteCompetition()
-    {
-
-    }
+//    /**
+//     *Trainer: Creates new competition
+//     */
+//    public void createCompetition()
+//    {
+//
+//    }
+//
+//    /**
+//     * Trainer: Edits a competition (Based on unique identifier?)
+//     */
+//    public void editCompetition()
+//    {
+//        
+//    }
+//
+//    /**
+//     *Trainer: deletes a competition (Based on unique identifier?)
+//     */
+//    public void deleteCompetition()
+//    {
+//
+//    }
 
 }

@@ -5,9 +5,13 @@ import Delfinen.data.MembershipType;
 import Delfinen.logic.Controller;
 import java.time.Year;
 import Delfinen.data.DisciplineType;
+import Delfinen.data.Distance;
 import Delfinen.logic.Member;
 import java.time.DateTimeException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -38,6 +42,15 @@ public class GUI extends javax.swing.JFrame
         this.buttonGroupEditMemberPassiveActive.add(RadioButtonEditMemberPassive);
         this.buttonGroupEditMemberActivityType.add(RadioButtonEditMemberBasic);
         this.buttonGroupEditMemberActivityType.add(RadioButtonEditMemberCompetitive);
+        //
+        this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingBackstroke);
+        this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingBreaststroke);
+        this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingButterfly);
+        this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingCrawl);
+        //
+        this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance100);
+        this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance200);
+        this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance400);
         //Making panels invisible
         PanelLoggedInAsManager.setVisible(false);
         PanelCreateNewMember.setVisible(false);
@@ -50,6 +63,8 @@ public class GUI extends javax.swing.JFrame
         PanelRevokePayment.setVisible(false);
         PanelSingleMemberArrear.setVisible(false);
         PanelShowAllArrears.setVisible(false);
+        PanelLoggedInAsTrainer.setVisible(false);
+        PanelAddTraining.setVisible(false);
         //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -81,6 +96,8 @@ public class GUI extends javax.swing.JFrame
         buttonGroupCreateMemberActivityType = new javax.swing.ButtonGroup();
         buttonGroupEditMemberPassiveActive = new javax.swing.ButtonGroup();
         buttonGroupEditMemberActivityType = new javax.swing.ButtonGroup();
+        buttonGroupAddTrainingDisciplineTypes = new javax.swing.ButtonGroup();
+        buttonGroupAddTrainingDistance = new javax.swing.ButtonGroup();
         PanelLoginScreen = new javax.swing.JPanel();
         PanelLoginScreenHeader = new javax.swing.JPanel();
         LabelLoginScreenHome = new javax.swing.JLabel();
@@ -196,9 +213,9 @@ public class GUI extends javax.swing.JFrame
         ButtonRegisterPaymentRegisterPayment = new javax.swing.JButton();
         PanelRevokePayment = new javax.swing.JPanel();
         PanelRevokePaymentHeader = new javax.swing.JPanel();
-        LabelRegisterPaymentHome1 = new javax.swing.JLabel();
-        LabelRegisterPaymentHeader1 = new java.awt.Label();
-        LabelRegisterPaymentLogAsCashier1 = new java.awt.Label();
+        LabelRevokePaymentHome = new javax.swing.JLabel();
+        LabelRevokePaymentHeader = new java.awt.Label();
+        LabelRevokePaymentLogAsCashier = new java.awt.Label();
         LabelRevokePaymentAllMembersIDName = new javax.swing.JLabel();
         ButtonBackFromRevokePayment = new javax.swing.JButton();
         textAreaRevokePaymentMemberList = new java.awt.TextArea();
@@ -232,6 +249,41 @@ public class GUI extends javax.swing.JFrame
         LabelShowAllArrearsTotalAmount = new javax.swing.JLabel();
         textAreaShowAllArrearsMemberList = new java.awt.TextArea();
         LabelShowAllArrearsAllArrearMembers = new javax.swing.JLabel();
+        PanelLoggedInAsTrainer = new javax.swing.JPanel();
+        PanelLoggedInAsTrainerScreenHeader = new javax.swing.JPanel();
+        LabelTrainerScreenHome = new javax.swing.JLabel();
+        LabelTrainerScreenHeader = new java.awt.Label();
+        ButtonAddTraining = new javax.swing.JButton();
+        ButtonAddCompetitionResult = new javax.swing.JButton();
+        ButtonSeeTopFiveTraining = new javax.swing.JButton();
+        ButtonSeeTopFiveKompetition = new javax.swing.JButton();
+        ButtonBackToMainMenuFromTrainer = new javax.swing.JButton();
+        PanelAddTraining = new javax.swing.JPanel();
+        PanelAddTrainingHeader = new javax.swing.JPanel();
+        LabelAddTrainingHome = new javax.swing.JLabel();
+        LabelAddTrainingHeader = new java.awt.Label();
+        LabelAddTrainingLogAsTrainer = new java.awt.Label();
+        LabelAddTrainingAllMembersIDName = new javax.swing.JLabel();
+        ButtonBackFromAddTraining = new javax.swing.JButton();
+        textAreaAddTrainingMemberList = new java.awt.TextArea();
+        TextFieldAddTrainingID = new javax.swing.JTextField();
+        LabelAddTrainingInsertID = new javax.swing.JLabel();
+        LabelAddTrainingTrainingDate = new javax.swing.JLabel();
+        TextFieldAddTrainingTrainingYear = new javax.swing.JTextField();
+        ButtonAddTrainigAddTraining = new javax.swing.JButton();
+        ComboBoxAddTrainingMonths = new javax.swing.JComboBox<>();
+        TextFieldAddTrainingDateDay = new javax.swing.JTextField();
+        LabelAddTrainingDisciplineType = new javax.swing.JLabel();
+        RadioButtonAddTrainingButterfly = new javax.swing.JRadioButton();
+        RadioButtonAddTrainingCrawl = new javax.swing.JRadioButton();
+        RadioButtonAddTrainingBackstroke = new javax.swing.JRadioButton();
+        RadioButtonAddTrainingBreaststroke = new javax.swing.JRadioButton();
+        LabelAddTrainingDistance = new javax.swing.JLabel();
+        RadioButtonAddTrainingDistance100 = new javax.swing.JRadioButton();
+        RadioButtonAddTrainingDistance200 = new javax.swing.JRadioButton();
+        RadioButtonAddTrainingDistance400 = new javax.swing.JRadioButton();
+        LabelAddTrainingTrainingTime = new javax.swing.JLabel();
+        TextFieldAddTrainingTrainingTime = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DELPHI");
@@ -291,12 +343,19 @@ public class GUI extends javax.swing.JFrame
 
         ButtonLoginAsTrainer.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonLoginAsTrainer.setText("Trainer");
+        ButtonLoginAsTrainer.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonLoginAsTrainerActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelLoginScreenLayout = new javax.swing.GroupLayout(PanelLoginScreen);
         PanelLoginScreen.setLayout(PanelLoginScreenLayout);
         PanelLoginScreenLayout.setHorizontalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenLayout.createSequentialGroup()
                 .addContainerGap(399, Short.MAX_VALUE)
                 .addGroup(PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -628,7 +687,7 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonNewMemberCreateMember)
                 .addGap(18, 18, 18))
-            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
         );
         PanelCreateNewMemberLayout.setVerticalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -756,7 +815,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setLayout(PanelEditMemberChooseMemberLayout);
         PanelEditMemberChooseMemberLayout.setHorizontalGroup(
             PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
             .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -923,7 +982,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMember.setLayout(PanelEditMemberLayout);
         PanelEditMemberLayout.setHorizontalGroup(
             PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
             .addGroup(PanelEditMemberLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1091,7 +1150,7 @@ public class GUI extends javax.swing.JFrame
         PanelDeleteMember.setLayout(PanelDeleteMemberLayout);
         PanelDeleteMemberLayout.setHorizontalGroup(
             PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
             .addGroup(PanelDeleteMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1206,7 +1265,7 @@ public class GUI extends javax.swing.JFrame
         PanelViewMembers.setLayout(PanelViewMembersLayout);
         PanelViewMembersLayout.setHorizontalGroup(
             PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
             .addGroup(PanelViewMembersLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1332,7 +1391,7 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setLayout(PanelLoggedInAsCashierLayout);
         PanelLoggedInAsCashierLayout.setHorizontalGroup(
             PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
             .addGroup(PanelLoggedInAsCashierLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ButtonBackToMainMenuFromCashier)
@@ -1511,15 +1570,15 @@ public class GUI extends javax.swing.JFrame
         PanelRevokePaymentHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelRevokePaymentHeader.setPreferredSize(new java.awt.Dimension(770, 96));
 
-        LabelRegisterPaymentHome1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Delete_Document_50px.png"))); // NOI18N
+        LabelRevokePaymentHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Delete_Document_50px.png"))); // NOI18N
 
-        LabelRegisterPaymentHeader1.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
-        LabelRegisterPaymentHeader1.setForeground(new java.awt.Color(255, 255, 255));
-        LabelRegisterPaymentHeader1.setText("Revoke payment");
+        LabelRevokePaymentHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelRevokePaymentHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelRevokePaymentHeader.setText("Revoke payment");
 
-        LabelRegisterPaymentLogAsCashier1.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
-        LabelRegisterPaymentLogAsCashier1.setForeground(new java.awt.Color(0, 0, 0));
-        LabelRegisterPaymentLogAsCashier1.setText("Logged in as Cashier");
+        LabelRevokePaymentLogAsCashier.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelRevokePaymentLogAsCashier.setForeground(new java.awt.Color(0, 0, 0));
+        LabelRevokePaymentLogAsCashier.setText("Logged in as Cashier");
 
         javax.swing.GroupLayout PanelRevokePaymentHeaderLayout = new javax.swing.GroupLayout(PanelRevokePaymentHeader);
         PanelRevokePaymentHeader.setLayout(PanelRevokePaymentHeaderLayout);
@@ -1527,15 +1586,15 @@ public class GUI extends javax.swing.JFrame
             PanelRevokePaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelRevokePaymentHeaderLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LabelRegisterPaymentHome1)
+                .addComponent(LabelRevokePaymentHome)
                 .addGroup(PanelRevokePaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelRevokePaymentHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelRegisterPaymentHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelRevokePaymentHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(602, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRevokePaymentHeaderLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LabelRegisterPaymentLogAsCashier1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelRevokePaymentLogAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         PanelRevokePaymentHeaderLayout.setVerticalGroup(
@@ -1547,13 +1606,13 @@ public class GUI extends javax.swing.JFrame
                         .addGap(0, 17, Short.MAX_VALUE)
                         .addGroup(PanelRevokePaymentHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRevokePaymentHeaderLayout.createSequentialGroup()
-                                .addComponent(LabelRegisterPaymentHome1)
+                                .addComponent(LabelRevokePaymentHome)
                                 .addGap(19, 19, 19))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelRevokePaymentHeaderLayout.createSequentialGroup()
-                                .addComponent(LabelRegisterPaymentHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelRevokePaymentHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(28, 28, 28))))
                     .addGroup(PanelRevokePaymentHeaderLayout.createSequentialGroup()
-                        .addComponent(LabelRegisterPaymentLogAsCashier1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelRevokePaymentLogAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -1741,7 +1800,7 @@ public class GUI extends javax.swing.JFrame
         PanelSingleMemberArrear.setLayout(PanelSingleMemberArrearLayout);
         PanelSingleMemberArrearLayout.setHorizontalGroup(
             PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelSingleMemberArrearHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelSingleMemberArrearHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
             .addGroup(PanelSingleMemberArrearLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromSingleMemberArrear)
@@ -1900,6 +1959,351 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        PanelLoggedInAsTrainer.setPreferredSize(new java.awt.Dimension(858, 457));
+
+        PanelLoggedInAsTrainerScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
+
+        LabelTrainerScreenHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Home_50px.png"))); // NOI18N
+
+        LabelTrainerScreenHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelTrainerScreenHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelTrainerScreenHeader.setText("Logged in as Trainer");
+
+        javax.swing.GroupLayout PanelLoggedInAsTrainerScreenHeaderLayout = new javax.swing.GroupLayout(PanelLoggedInAsTrainerScreenHeader);
+        PanelLoggedInAsTrainerScreenHeader.setLayout(PanelLoggedInAsTrainerScreenHeaderLayout);
+        PanelLoggedInAsTrainerScreenHeaderLayout.setHorizontalGroup(
+            PanelLoggedInAsTrainerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsTrainerScreenHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelTrainerScreenHome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelTrainerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelLoggedInAsTrainerScreenHeaderLayout.setVerticalGroup(
+            PanelLoggedInAsTrainerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsTrainerScreenHeaderLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addGroup(PanelLoggedInAsTrainerScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsTrainerScreenHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelTrainerScreenHome)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsTrainerScreenHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelTrainerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
+        );
+
+        ButtonAddTraining.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonAddTraining.setText("Add training");
+        ButtonAddTraining.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonAddTrainingActionPerformed(evt);
+            }
+        });
+
+        ButtonAddCompetitionResult.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonAddCompetitionResult.setText("Add competition results");
+        ButtonAddCompetitionResult.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonAddCompetitionResultActionPerformed(evt);
+            }
+        });
+
+        ButtonSeeTopFiveTraining.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonSeeTopFiveTraining.setText("View top 5 (Training)");
+        ButtonSeeTopFiveTraining.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonSeeTopFiveTrainingActionPerformed(evt);
+            }
+        });
+
+        ButtonSeeTopFiveKompetition.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonSeeTopFiveKompetition.setText("View top 5 (Competition)");
+        ButtonSeeTopFiveKompetition.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonSeeTopFiveKompetitionActionPerformed(evt);
+            }
+        });
+
+        ButtonBackToMainMenuFromTrainer.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackToMainMenuFromTrainer.setText("BACK TO MAIN MENU");
+        ButtonBackToMainMenuFromTrainer.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackToMainMenuFromTrainerActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelLoggedInAsTrainerLayout = new javax.swing.GroupLayout(PanelLoggedInAsTrainer);
+        PanelLoggedInAsTrainer.setLayout(PanelLoggedInAsTrainerLayout);
+        PanelLoggedInAsTrainerLayout.setHorizontalGroup(
+            PanelLoggedInAsTrainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsTrainerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ButtonBackToMainMenuFromTrainer)
+                .addContainerGap(685, Short.MAX_VALUE))
+            .addComponent(PanelLoggedInAsTrainerScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(PanelLoggedInAsTrainerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelLoggedInAsTrainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ButtonSeeTopFiveKompetition, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                    .addComponent(ButtonSeeTopFiveTraining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PanelLoggedInAsTrainerLayout.setVerticalGroup(
+            PanelLoggedInAsTrainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelLoggedInAsTrainerLayout.createSequentialGroup()
+                .addComponent(PanelLoggedInAsTrainerScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(ButtonAddTraining)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonAddCompetitionResult)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ButtonSeeTopFiveTraining)
+                .addGap(11, 11, 11)
+                .addComponent(ButtonSeeTopFiveKompetition)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addComponent(ButtonBackToMainMenuFromTrainer)
+                .addContainerGap())
+        );
+
+        PanelAddTraining.setPreferredSize(new java.awt.Dimension(858, 457));
+
+        PanelAddTrainingHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelAddTrainingHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelAddTrainingHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_List_50px.png"))); // NOI18N
+
+        LabelAddTrainingHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelAddTrainingHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelAddTrainingHeader.setText("Add training");
+
+        LabelAddTrainingLogAsTrainer.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelAddTrainingLogAsTrainer.setForeground(new java.awt.Color(0, 0, 0));
+        LabelAddTrainingLogAsTrainer.setText("Logged in as Trainer");
+        LabelAddTrainingLogAsTrainer.setVisible(false);
+
+        javax.swing.GroupLayout PanelAddTrainingHeaderLayout = new javax.swing.GroupLayout(PanelAddTrainingHeader);
+        PanelAddTrainingHeader.setLayout(PanelAddTrainingHeaderLayout);
+        PanelAddTrainingHeaderLayout.setHorizontalGroup(
+            PanelAddTrainingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAddTrainingHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelAddTrainingHome)
+                .addGroup(PanelAddTrainingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddTrainingHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelAddTrainingHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(628, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddTrainingHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelAddTrainingLogAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelAddTrainingHeaderLayout.setVerticalGroup(
+            PanelAddTrainingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAddTrainingHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelAddTrainingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddTrainingHeaderLayout.createSequentialGroup()
+                        .addGap(0, 27, Short.MAX_VALUE)
+                        .addGroup(PanelAddTrainingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddTrainingHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelAddTrainingHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddTrainingHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelAddTrainingHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelAddTrainingHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelAddTrainingLogAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelAddTrainingAllMembersIDName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddTrainingAllMembersIDName.setText("All members");
+
+        ButtonBackFromAddTraining.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackFromAddTraining.setText("BACK");
+        ButtonBackFromAddTraining.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackFromAddTrainingActionPerformed(evt);
+            }
+        });
+
+        textAreaAddTrainingMemberList.setEditable(false);
+
+        TextFieldAddTrainingID.setText("ID");
+
+        LabelAddTrainingInsertID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddTrainingInsertID.setText("ID");
+
+        LabelAddTrainingTrainingDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddTrainingTrainingDate.setText("Training date");
+
+        TextFieldAddTrainingTrainingYear.setText("(YYYY)");
+
+        ButtonAddTrainigAddTraining.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ButtonAddTrainigAddTraining.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_20px.png"))); // NOI18N
+        ButtonAddTrainigAddTraining.setText("Add training   ");
+        ButtonAddTrainigAddTraining.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonAddTrainigAddTrainingActionPerformed(evt);
+            }
+        });
+
+        ComboBoxAddTrainingMonths.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER" }));
+
+        TextFieldAddTrainingDateDay.setText("(DD)");
+
+        LabelAddTrainingDisciplineType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddTrainingDisciplineType.setText("Discipline type:");
+
+        RadioButtonAddTrainingButterfly.setText("Butterfly");
+
+        RadioButtonAddTrainingCrawl.setText("Crawl");
+
+        RadioButtonAddTrainingBackstroke.setText("Backstroke");
+
+        RadioButtonAddTrainingBreaststroke.setText("Breaststroke");
+
+        LabelAddTrainingDistance.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddTrainingDistance.setText("Distance:");
+
+        RadioButtonAddTrainingDistance100.setText("100 m");
+
+        RadioButtonAddTrainingDistance200.setText("200 m");
+
+        RadioButtonAddTrainingDistance400.setText("400 m");
+
+        LabelAddTrainingTrainingTime.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddTrainingTrainingTime.setText("Time:");
+
+        TextFieldAddTrainingTrainingTime.setText("Seconds");
+
+        javax.swing.GroupLayout PanelAddTrainingLayout = new javax.swing.GroupLayout(PanelAddTraining);
+        PanelAddTraining.setLayout(PanelAddTrainingLayout);
+        PanelAddTrainingLayout.setHorizontalGroup(
+            PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelAddTrainingHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                        .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TextFieldAddTrainingID, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelAddTrainingTrainingDate)
+                            .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                .addComponent(TextFieldAddTrainingTrainingYear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ComboBoxAddTrainingMonths, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TextFieldAddTrainingDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LabelAddTrainingInsertID)
+                            .addComponent(ButtonAddTrainigAddTraining)
+                            .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                        .addComponent(LabelAddTrainingTrainingTime)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(TextFieldAddTrainingTrainingTime))
+                                    .addComponent(LabelAddTrainingDisciplineType))
+                                .addGap(18, 18, 18)
+                                .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RadioButtonAddTrainingCrawl)
+                                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                        .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                                .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(RadioButtonAddTrainingButterfly)
+                                                    .addComponent(RadioButtonAddTrainingBackstroke))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(LabelAddTrainingDistance))
+                                            .addComponent(RadioButtonAddTrainingBreaststroke))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(RadioButtonAddTrainingDistance400)
+                                            .addComponent(RadioButtonAddTrainingDistance100)
+                                            .addComponent(RadioButtonAddTrainingDistance200))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textAreaAddTrainingMemberList, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelAddTrainingAllMembersIDName)))
+                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                        .addComponent(ButtonBackFromAddTraining)
+                        .addContainerGap())))
+        );
+        PanelAddTrainingLayout.setVerticalGroup(
+            PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                .addComponent(PanelAddTrainingHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelAddTrainingAllMembersIDName)
+                    .addComponent(LabelAddTrainingInsertID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                        .addComponent(textAreaAddTrainingMemberList, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                        .addGap(18, 18, 18))
+                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                        .addComponent(TextFieldAddTrainingID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(LabelAddTrainingTrainingDate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TextFieldAddTrainingTrainingYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboBoxAddTrainingMonths, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldAddTrainingDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(LabelAddTrainingDisciplineType))
+                            .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                        .addComponent(RadioButtonAddTrainingButterfly)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(RadioButtonAddTrainingBackstroke))
+                                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(LabelAddTrainingDistance))
+                                    .addGroup(PanelAddTrainingLayout.createSequentialGroup()
+                                        .addComponent(RadioButtonAddTrainingDistance100)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(RadioButtonAddTrainingDistance200)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RadioButtonAddTrainingBreaststroke)
+                                    .addComponent(RadioButtonAddTrainingDistance400))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RadioButtonAddTrainingCrawl)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LabelAddTrainingTrainingTime)
+                            .addComponent(TextFieldAddTrainingTrainingTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ButtonAddTrainigAddTraining)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(ButtonBackFromAddTraining)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1908,32 +2312,32 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(20, 20, 20)
-                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -1943,23 +2347,33 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
                     .addGap(30, 30, 30)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 868, Short.MAX_VALUE)
+                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addGap(52, 52, 52)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1967,32 +2381,32 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
                     .addGap(12, 12, 12)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
                     .addGap(13, 13, 13)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
                     .addGap(14, 14, 14)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(21, 21, 21)
-                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
                     .addGap(4, 4, 4)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -2002,23 +2416,33 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
                     .addGap(57, 57, 57)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
                     .addGap(57, 57, 57)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                    .addGap(11, 11, 11)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                    .addGap(65, 65, 65)))
         );
 
         pack();
@@ -2752,6 +3176,110 @@ public class GUI extends javax.swing.JFrame
         PanelShowAllArrears.setVisible(false);
         PanelLoggedInAsCashier.setVisible(true);
     }//GEN-LAST:event_ButtonBackFromShowAllArrearsActionPerformed
+
+    private void ButtonLoginAsTrainerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonLoginAsTrainerActionPerformed
+    {//GEN-HEADEREND:event_ButtonLoginAsTrainerActionPerformed
+        PanelLoginScreen.setVisible(false);
+        PanelLoggedInAsTrainer.setVisible(true);
+    }//GEN-LAST:event_ButtonLoginAsTrainerActionPerformed
+
+    private void ButtonAddTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddTrainingActionPerformed
+    {//GEN-HEADEREND:event_ButtonAddTrainingActionPerformed
+        PanelAddTraining.setVisible(true);
+        PanelLoggedInAsTrainer.setVisible(false);
+        this.textAreaAddTrainingMemberList.setText("");
+        for (int i = 0; i < c.getAllCompetitiveMembers().size(); ++i)
+        {
+            this.textAreaAddTrainingMemberList.append(c.getAllCompetitiveMembers().get(i).toStringNameIDDiscipline());
+            this.textAreaAddTrainingMemberList.append("\n");
+        }
+    }//GEN-LAST:event_ButtonAddTrainingActionPerformed
+
+    private void ButtonAddCompetitionResultActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddCompetitionResultActionPerformed
+    {//GEN-HEADEREND:event_ButtonAddCompetitionResultActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonAddCompetitionResultActionPerformed
+
+    private void ButtonSeeTopFiveTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSeeTopFiveTrainingActionPerformed
+    {//GEN-HEADEREND:event_ButtonSeeTopFiveTrainingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonSeeTopFiveTrainingActionPerformed
+
+    private void ButtonSeeTopFiveKompetitionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSeeTopFiveKompetitionActionPerformed
+    {//GEN-HEADEREND:event_ButtonSeeTopFiveKompetitionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonSeeTopFiveKompetitionActionPerformed
+
+    private void ButtonBackToMainMenuFromTrainerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackToMainMenuFromTrainerActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackToMainMenuFromTrainerActionPerformed
+        PanelLoggedInAsTrainer.setVisible(false);
+        PanelLoginScreen.setVisible(true);
+    }//GEN-LAST:event_ButtonBackToMainMenuFromTrainerActionPerformed
+
+    private void ButtonBackFromAddTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackFromAddTrainingActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackFromAddTrainingActionPerformed
+        PanelAddTraining.setVisible(false);
+        PanelLoggedInAsTrainer.setVisible(true);
+    }//GEN-LAST:event_ButtonBackFromAddTrainingActionPerformed
+
+    private void ButtonAddTrainigAddTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddTrainigAddTrainingActionPerformed
+    {//GEN-HEADEREND:event_ButtonAddTrainigAddTrainingActionPerformed
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        int ID = 0;
+        int trainingYear = 0000;
+        Date trainingDate = null;
+        int trainingDay = 0;
+        DisciplineType discipline = DisciplineType.BACKSTROKE;
+        Distance distance = Distance.METERS_100;
+        int timeInSec = 0;
+        try
+        {
+            ID = Integer.parseInt(TextFieldAddTrainingID.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for ID");
+            return;
+        }
+        try
+        {
+            trainingYear = Integer.parseInt(TextFieldAddTrainingTrainingYear.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for year");
+            return;
+        }
+        try
+        {
+            trainingDay = Integer.parseInt(TextFieldAddTrainingDateDay.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for day");
+            return;
+        }
+        try
+        {
+            trainingDate = new GregorianCalendar(trainingYear, ComboBoxAddTrainingMonths.getSelectedIndex(), trainingDay).getTime();
+        }
+        catch (Exception ex) //specify exception
+        {
+            JOptionPane.showMessageDialog(frame, "Failed to create training date!");
+            return;
+        }
+        try
+        {
+            c.addTrainingSession(ID, trainingDate, discipline, distance, timeInSec);
+            JOptionPane.showMessageDialog(frame, "Training added to member");
+            System.out.println(c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()));
+        }
+        catch (NullPointerException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Unable to add training");
+        }
+    }//GEN-LAST:event_ButtonAddTrainigAddTrainingActionPerformed
     
     /**
      * @param args the command line arguments
@@ -2799,7 +3327,11 @@ public class GUI extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonAddCompetitionResult;
+    private javax.swing.JButton ButtonAddTrainigAddTraining;
+    private javax.swing.JButton ButtonAddTraining;
     private javax.swing.JButton ButtonAllArrears;
+    private javax.swing.JButton ButtonBackFromAddTraining;
     private javax.swing.JButton ButtonBackFromRegisterPayment;
     private javax.swing.JButton ButtonBackFromRevokePayment;
     private javax.swing.JButton ButtonBackFromShowAllArrears;
@@ -2807,6 +3339,7 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonBackFromViewAllMembers;
     private javax.swing.JButton ButtonBackToMainMenu;
     private javax.swing.JButton ButtonBackToMainMenuFromCashier;
+    private javax.swing.JButton ButtonBackToMainMenuFromTrainer;
     private javax.swing.JButton ButtonCancelCreateNewMember;
     private javax.swing.JButton ButtonCancelDeleteMember;
     private javax.swing.JButton ButtonCancelEditMember;
@@ -2826,14 +3359,26 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonRegisterPaymentRegisterPayment;
     private javax.swing.JButton ButtonRevokePayment;
     private javax.swing.JButton ButtonRevokePaymentRevokePayment;
+    private javax.swing.JButton ButtonSeeTopFiveKompetition;
+    private javax.swing.JButton ButtonSeeTopFiveTraining;
     private javax.swing.JButton ButtonSingleMemberArrearShowArrear;
     private javax.swing.JButton ButtonViewAllMembersAll;
     private javax.swing.JButton ButtonViewAllMembersCompetitionMode;
     private javax.swing.JButton ButtonViewMembers;
+    private javax.swing.JComboBox<String> ComboBoxAddTrainingMonths;
     private javax.swing.JComboBox<String> ComboBoxChooseMemberToDelete;
     private javax.swing.JComboBox<String> ComboBoxChooseMemberToEdit;
     private java.awt.Label LabeManagerScreenHeader;
     private javax.swing.JLabel LabeManagerScreenHome;
+    private javax.swing.JLabel LabelAddTrainingAllMembersIDName;
+    private javax.swing.JLabel LabelAddTrainingDisciplineType;
+    private javax.swing.JLabel LabelAddTrainingDistance;
+    private java.awt.Label LabelAddTrainingHeader;
+    private javax.swing.JLabel LabelAddTrainingHome;
+    private javax.swing.JLabel LabelAddTrainingInsertID;
+    private java.awt.Label LabelAddTrainingLogAsTrainer;
+    private javax.swing.JLabel LabelAddTrainingTrainingDate;
+    private javax.swing.JLabel LabelAddTrainingTrainingTime;
     private javax.swing.JLabel LabelBirthYearFormat;
     private javax.swing.JLabel LabelBirthYearFormatEditMember;
     private java.awt.Label LabelCashierScreenHeader;
@@ -2866,16 +3411,16 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel LabelNewMemberName1;
     private javax.swing.JLabel LabelRegisterPaymentAllMembersIDName;
     private java.awt.Label LabelRegisterPaymentHeader;
-    private java.awt.Label LabelRegisterPaymentHeader1;
     private javax.swing.JLabel LabelRegisterPaymentHome;
-    private javax.swing.JLabel LabelRegisterPaymentHome1;
     private javax.swing.JLabel LabelRegisterPaymentInsertID;
     private java.awt.Label LabelRegisterPaymentLogAsCashier;
-    private java.awt.Label LabelRegisterPaymentLogAsCashier1;
     private javax.swing.JLabel LabelRegisterPaymentPaymentYear;
     private javax.swing.JLabel LabelRegisterPaymentYearFormat;
     private javax.swing.JLabel LabelRevokePaymentAllMembersIDName;
+    private java.awt.Label LabelRevokePaymentHeader;
+    private javax.swing.JLabel LabelRevokePaymentHome;
     private javax.swing.JLabel LabelRevokePaymentInsertID;
+    private java.awt.Label LabelRevokePaymentLogAsCashier;
     private javax.swing.JLabel LabelRevokePaymentPaymentYear;
     private javax.swing.JLabel LabelRevokePaymentYearFormat;
     private javax.swing.JLabel LabelShowAllArrearsAllArrearMembers;
@@ -2890,10 +3435,14 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel LabelSingleMemberArrearHome;
     private javax.swing.JLabel LabelSingleMemberArrearInsertID;
     private java.awt.Label LabelSingleMemberArrearLogAsCashier;
+    private java.awt.Label LabelTrainerScreenHeader;
+    private javax.swing.JLabel LabelTrainerScreenHome;
     private javax.swing.JLabel LabelViewMembersAllMembers;
     private java.awt.Label LabelViewMembersHeader;
     private javax.swing.JLabel LabelViewMembersHome;
     private java.awt.Label LabelViewMembersLogAsManager;
+    private javax.swing.JPanel PanelAddTraining;
+    private javax.swing.JPanel PanelAddTrainingHeader;
     private javax.swing.JPanel PanelCreateNewMember;
     private javax.swing.JPanel PanelCreateNewMemberHeader;
     private javax.swing.JPanel PanelDeleteMember;
@@ -2906,6 +3455,8 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JPanel PanelLoggedInAsCashierScreenHeader;
     private javax.swing.JPanel PanelLoggedInAsManager;
     private javax.swing.JPanel PanelLoggedInAsManagerScreenHeader;
+    private javax.swing.JPanel PanelLoggedInAsTrainer;
+    private javax.swing.JPanel PanelLoggedInAsTrainerScreenHeader;
     private javax.swing.JPanel PanelLoginScreen;
     private javax.swing.JPanel PanelLoginScreenHeader;
     private javax.swing.JPanel PanelRegisterPayment;
@@ -2918,6 +3469,13 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JPanel PanelSingleMemberArrearHeader;
     private javax.swing.JPanel PanelViewMembers;
     private javax.swing.JPanel PanelViewMembersHeader;
+    private javax.swing.JRadioButton RadioButtonAddTrainingBackstroke;
+    private javax.swing.JRadioButton RadioButtonAddTrainingBreaststroke;
+    private javax.swing.JRadioButton RadioButtonAddTrainingButterfly;
+    private javax.swing.JRadioButton RadioButtonAddTrainingCrawl;
+    private javax.swing.JRadioButton RadioButtonAddTrainingDistance100;
+    private javax.swing.JRadioButton RadioButtonAddTrainingDistance200;
+    private javax.swing.JRadioButton RadioButtonAddTrainingDistance400;
     private javax.swing.JRadioButton RadioButtonEditMemberActive;
     private javax.swing.JRadioButton RadioButtonEditMemberBackstroke;
     private javax.swing.JRadioButton RadioButtonEditMemberBasic;
@@ -2934,6 +3492,10 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JRadioButton RadioButtonNewMemberCompetitive;
     private javax.swing.JRadioButton RadioButtonNewMemberCrawl;
     private javax.swing.JRadioButton RadioButtonNewMemberPassive;
+    private javax.swing.JTextField TextFieldAddTrainingDateDay;
+    private javax.swing.JTextField TextFieldAddTrainingID;
+    private javax.swing.JTextField TextFieldAddTrainingTrainingTime;
+    private javax.swing.JTextField TextFieldAddTrainingTrainingYear;
     private javax.swing.JTextField TextFieldEditMemberBirthYear;
     private javax.swing.JTextField TextFieldEditMemberName;
     private javax.swing.JTextField TextFieldNewMemberBirthYear;
@@ -2945,11 +3507,14 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JTextField TextFieldSingleMemberArrearCurrentArrear;
     private javax.swing.JTextField TextFieldSingleMemberArrearID;
     private javax.swing.JTextField TextFieldTotalAmountArrears;
+    private javax.swing.ButtonGroup buttonGroupAddTrainingDisciplineTypes;
+    private javax.swing.ButtonGroup buttonGroupAddTrainingDistance;
     private javax.swing.ButtonGroup buttonGroupCreateMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupCreateMemberPassiveActive;
     private javax.swing.ButtonGroup buttonGroupEditMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupEditMemberPassiveActive;
     private javax.swing.JSplitPane jSplitPane1;
+    private java.awt.TextArea textAreaAddTrainingMemberList;
     private java.awt.TextArea textAreaAllMembers;
     private java.awt.TextArea textAreaRegisterPaymentMemberList;
     private java.awt.TextArea textAreaRevokePaymentMemberList;
