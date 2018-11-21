@@ -37,7 +37,7 @@ Create a program for a local swimmingclub "Delfinen", including, but not limited
 * *A simple user interface*  
 * *JUnit tests of relevant classes*  
 
-**Project deadline:**
+**Project deadline:**  
 11.55PM November 22, 2018
 
 Overview of fulfilled requirements
