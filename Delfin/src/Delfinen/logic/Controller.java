@@ -299,7 +299,14 @@ public class Controller
      */
     public void addTrainingSession(int memberID, Date date, DisciplineType diciplineType, Distance distance, int timeInSec)
     {
-        //modelController.addTrainingSession(memberID, date, diciplineType, distance, timeInSec);
+        try
+        {
+            modelController.addTrainingSession(memberID, date, diciplineType, distance, timeInSec);
+        }
+        catch (IOException ix)
+        {
+            System.out.println("Could not add training to chosen member (ID may be invalid)");
+        }
     }
 
     /**

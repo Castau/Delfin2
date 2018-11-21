@@ -357,7 +357,7 @@ public class GUI extends javax.swing.JFrame
         PanelLoginScreen.setLayout(PanelLoginScreenLayout);
         PanelLoginScreenLayout.setHorizontalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 910, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenLayout.createSequentialGroup()
                 .addContainerGap(399, Short.MAX_VALUE)
                 .addGroup(PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -689,7 +689,7 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonNewMemberCreateMember)
                 .addGap(18, 18, 18))
-            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
         );
         PanelCreateNewMemberLayout.setVerticalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -817,7 +817,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setLayout(PanelEditMemberChooseMemberLayout);
         PanelEditMemberChooseMemberLayout.setHorizontalGroup(
             PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
             .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -984,7 +984,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMember.setLayout(PanelEditMemberLayout);
         PanelEditMemberLayout.setHorizontalGroup(
             PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
             .addGroup(PanelEditMemberLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1152,7 +1152,7 @@ public class GUI extends javax.swing.JFrame
         PanelDeleteMember.setLayout(PanelDeleteMemberLayout);
         PanelDeleteMemberLayout.setHorizontalGroup(
             PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
             .addGroup(PanelDeleteMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1267,7 +1267,7 @@ public class GUI extends javax.swing.JFrame
         PanelViewMembers.setLayout(PanelViewMembersLayout);
         PanelViewMembersLayout.setHorizontalGroup(
             PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
             .addGroup(PanelViewMembersLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1393,7 +1393,7 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setLayout(PanelLoggedInAsCashierLayout);
         PanelLoggedInAsCashierLayout.setHorizontalGroup(
             PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
             .addGroup(PanelLoggedInAsCashierLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ButtonBackToMainMenuFromCashier)
@@ -1517,7 +1517,7 @@ public class GUI extends javax.swing.JFrame
         PanelRegisterPayment.setLayout(PanelRegisterPaymentLayout);
         PanelRegisterPaymentLayout.setHorizontalGroup(
             PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelRegisterPaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelRegisterPaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
             .addGroup(PanelRegisterPaymentLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromRegisterPayment)
@@ -1660,7 +1660,7 @@ public class GUI extends javax.swing.JFrame
         PanelRevokePayment.setLayout(PanelRevokePaymentLayout);
         PanelRevokePaymentLayout.setHorizontalGroup(
             PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelRevokePaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelRevokePaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
             .addGroup(PanelRevokePaymentLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromRevokePayment)
@@ -1802,7 +1802,7 @@ public class GUI extends javax.swing.JFrame
         PanelSingleMemberArrear.setLayout(PanelSingleMemberArrearLayout);
         PanelSingleMemberArrearLayout.setHorizontalGroup(
             PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelSingleMemberArrearHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
+            .addComponent(PanelSingleMemberArrearHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
             .addGroup(PanelSingleMemberArrearLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromSingleMemberArrear)
@@ -1927,7 +1927,7 @@ public class GUI extends javax.swing.JFrame
         PanelShowAllArrears.setLayout(PanelShowAllArrearsLayout);
         PanelShowAllArrearsLayout.setHorizontalGroup(
             PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelShowAllArrearsHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelShowAllArrearsHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
             .addGroup(PanelShowAllArrearsLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1996,6 +1996,7 @@ public class GUI extends javax.swing.JFrame
         );
 
         ButtonAddTraining.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonAddTraining.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_List_26px.png"))); // NOI18N
         ButtonAddTraining.setText("Add training");
         ButtonAddTraining.addActionListener(new java.awt.event.ActionListener()
         {
@@ -2075,7 +2076,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonSeeTopFiveTraining)
                 .addGap(11, 11, 11)
                 .addComponent(ButtonSeeTopFiveKompetition)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addComponent(ButtonBackToMainMenuFromTrainer)
                 .addContainerGap())
         );
@@ -2314,32 +2315,32 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(20, 20, 20)
-                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -2349,27 +2350,27 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
+                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
                     .addGap(30, 30, 30)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -2383,32 +2384,32 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
                     .addGap(12, 12, 12)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
                     .addGap(13, 13, 13)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
                     .addGap(14, 14, 14)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(21, 21, 21)
-                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
                     .addGap(4, 4, 4)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -2418,27 +2419,27 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
                     .addGap(57, 57, 57)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
                     .addGap(57, 57, 57)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
                     .addGap(11, 11, 11)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -3235,6 +3236,7 @@ public class GUI extends javax.swing.JFrame
         DisciplineType discipline = DisciplineType.BACKSTROKE;
         Distance distance = Distance.METERS_100;
         int timeInSec = 0;
+        //Selecting ID of chosen member 
         try
         {
             ID = Integer.parseInt(TextFieldAddTrainingID.getText().trim());
@@ -3244,6 +3246,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for ID");
             return;
         }
+        //Selecting year for this training session
         try
         {
             trainingYear = Integer.parseInt(TextFieldAddTrainingTrainingYear.getText().trim());
@@ -3253,6 +3256,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for year");
             return;
         }
+        //Selecting day for this training session
         try
         {
             trainingDay = Integer.parseInt(TextFieldAddTrainingDateDay.getText().trim());
@@ -3262,6 +3266,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
         }
+        //Creating date for this training session
         try
         {
             trainingDate = new GregorianCalendar(trainingYear, ComboBoxAddTrainingMonths.getSelectedIndex(), trainingDay).getTime();
@@ -3271,6 +3276,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Failed to create training date!");
             return;
         }
+        //Selecting discipline for this training session
         if (this.RadioButtonAddTrainingBackstroke.isSelected())
         {
             discipline = DisciplineType.BACKSTROKE;
@@ -3296,6 +3302,28 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Could not add training, discipline type missing");
             return;
         }
+        //Selection distance for this training session
+        if (this.RadioButtonAddTrainingDistance100.isSelected())
+        {
+            distance = Distance.METERS_100;
+        }
+        if (this.RadioButtonAddTrainingDistance200.isSelected())
+        {
+            distance = Distance.METERS_200;
+        }
+        if (this.RadioButtonAddTrainingDistance400.isSelected())
+        {
+            distance = Distance.METERS_400;
+        }
+        //Guard checking if competitive member actually has a discipline
+        if (this.RadioButtonAddTrainingDistance100.isSelected() == false && 
+                this.RadioButtonAddTrainingDistance200.isSelected() == false &&
+                this.RadioButtonAddTrainingDistance400.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not add training, distance type missing");
+            return;
+        }
+        //Selecting the time for this training session
         try
         {
             timeInSec = Integer.parseInt(TextFieldAddTrainingTrainingTime.getText().trim());
@@ -3305,6 +3333,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for training time");
             return;
         }
+        //Adding training to chosen member using memberID
         try
         {
             c.addTrainingSession(ID, trainingDate, discipline, distance, timeInSec);
