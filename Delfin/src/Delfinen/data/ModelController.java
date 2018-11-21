@@ -28,6 +28,10 @@ public class ModelController {
         dataFile = new DataAccessorFile();
         try {
             model = dataFile.readFile(filePath);
+            if(model == null){
+            model = new Model();
+            dataFile.writeToFile(model, filePath);
+        }
         } catch (Exception ex) {
             System.out.println("File not found, creating new");
             model = new Model();
