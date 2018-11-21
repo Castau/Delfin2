@@ -164,6 +164,7 @@ public class Controller
      */
     public void editMember(MemberCompetitive member)
     {
+        System.out.println("editmember competitive" + member);
         try
         {
             modelController.editMemberCompetitive(member);

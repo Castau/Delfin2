@@ -87,10 +87,12 @@ public class Model
 
     public void editMemberCompetitive(MemberCompetitive member)
     {
+        System.out.println("modeleditmember competitive " + member);
         for (int i = 0; i < membersCompetitive.size(); i++)
         {
             if (member.getId() == (membersCompetitive.get(i).getId()))
             {
+                System.out.println("replacing id" + member.getId());
                 membersCompetitive.set(i, member);
             }
         }

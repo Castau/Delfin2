@@ -65,6 +65,7 @@ public class ModelController {
     }
 
     public void editMemberCompetitive(MemberCompetitive member) throws IOException {
+        System.out.println("editmembercompetitive i modelcontroller" + member);
         model.editMemberCompetitive(member);
         dataFile.writeToFile(model, filePath);
     }
