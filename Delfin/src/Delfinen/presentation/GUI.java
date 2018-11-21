@@ -53,6 +53,15 @@ public class GUI extends javax.swing.JFrame
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance100);
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance200);
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance400);
+        //
+        this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultBackstroke);
+        this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultBreaststroke);
+        this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultButterfly);
+        this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultCrawl);
+        //
+        this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance100);
+        this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance200);
+        this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance400);
         //Making panels invisible
         PanelLoggedInAsManager.setVisible(false);
         PanelCreateNewMember.setVisible(false);
@@ -67,6 +76,7 @@ public class GUI extends javax.swing.JFrame
         PanelShowAllArrears.setVisible(false);
         PanelLoggedInAsTrainer.setVisible(false);
         PanelAddTraining.setVisible(false);
+        PanelAddCompetitionResult.setVisible(false);
         //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -93,13 +103,14 @@ public class GUI extends javax.swing.JFrame
     private void initComponents()
     {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
         buttonGroupCreateMemberPassiveActive = new javax.swing.ButtonGroup();
         buttonGroupCreateMemberActivityType = new javax.swing.ButtonGroup();
         buttonGroupEditMemberPassiveActive = new javax.swing.ButtonGroup();
         buttonGroupEditMemberActivityType = new javax.swing.ButtonGroup();
         buttonGroupAddTrainingDisciplineTypes = new javax.swing.ButtonGroup();
         buttonGroupAddTrainingDistance = new javax.swing.ButtonGroup();
+        buttonGroupAddCompetitionResultDisciplineTypes = new javax.swing.ButtonGroup();
+        buttonGroupAddCompetitionResultDistance = new javax.swing.ButtonGroup();
         PanelLoginScreen = new javax.swing.JPanel();
         PanelLoginScreenHeader = new javax.swing.JPanel();
         LabelLoginScreenHome = new javax.swing.JLabel();
@@ -286,9 +297,41 @@ public class GUI extends javax.swing.JFrame
         RadioButtonAddTrainingDistance400 = new javax.swing.JRadioButton();
         LabelAddTrainingTrainingTime = new javax.swing.JLabel();
         TextFieldAddTrainingTrainingTime = new javax.swing.JTextField();
+        PanelAddCompetitionResult = new javax.swing.JPanel();
+        PanelAddCompetitionResultHeader = new javax.swing.JPanel();
+        LabelAddCompetitionResultHome = new javax.swing.JLabel();
+        LabelAddCompetitionResultHeader = new java.awt.Label();
+        LabelAddCompetitionResultLogAsTrainer = new java.awt.Label();
+        LabelAddCompetitionResultAllMembersIDName = new javax.swing.JLabel();
+        ButtonBackFromAddCompetitionResult = new javax.swing.JButton();
+        textAreaAddCompetitionResultMemberList = new java.awt.TextArea();
+        TextFieldAddCompetitionResultID = new javax.swing.JTextField();
+        LabelAddCompetitionResultInsertID = new javax.swing.JLabel();
+        LabelAddCompetitionResultCompetitionDate = new javax.swing.JLabel();
+        TextFieldAddCompetitionResultCompetitionYear = new javax.swing.JTextField();
+        ButtonAddCompetitionResultAddCompetitionResult = new javax.swing.JButton();
+        ComboBoxAddCompetitionResultMonths = new javax.swing.JComboBox<>();
+        TextFieldAddCompetitionResultDateDay = new javax.swing.JTextField();
+        LabelAddCompetitionResultDisciplineType = new javax.swing.JLabel();
+        RadioButtonAddCompetitionResultButterfly = new javax.swing.JRadioButton();
+        RadioButtonAddCompetitionResultCrawl = new javax.swing.JRadioButton();
+        RadioButtonAddCompetitionResultBackstroke = new javax.swing.JRadioButton();
+        RadioButtonAddCompetitionResultBreaststroke = new javax.swing.JRadioButton();
+        LabelAddCompetitionResultDistance = new javax.swing.JLabel();
+        RadioButtonAddCompetitionResultDistance100 = new javax.swing.JRadioButton();
+        RadioButtonAddCompetitionResultDistance200 = new javax.swing.JRadioButton();
+        RadioButtonAddCompetitionResultDistance400 = new javax.swing.JRadioButton();
+        LabelAddCompetitionResultCompetitionTime = new javax.swing.JLabel();
+        TextFieldAddCompetitionResultCompetitionTime = new javax.swing.JTextField();
+        LabelAddCompetitionResultPlacement = new javax.swing.JLabel();
+        LabelAddCompetitionResultEventName = new javax.swing.JLabel();
+        TextFieldAddCompetitionResultPlacement = new javax.swing.JTextField();
+        TextFieldAddCompetitionResultEventName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DELPHI");
+
+        PanelLoginScreen.setPreferredSize(new java.awt.Dimension(858, 457));
 
         PanelLoginScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelLoginScreenHeader.setPreferredSize(new java.awt.Dimension(770, 96));
@@ -308,7 +351,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(LabelLoginScreenHome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelLoginScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(691, Short.MAX_VALUE))
+                .addContainerGap(813, Short.MAX_VALUE))
         );
         PanelLoginScreenHeaderLayout.setVerticalGroup(
             PanelLoginScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,12 +402,12 @@ public class GUI extends javax.swing.JFrame
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenLayout.createSequentialGroup()
-                .addContainerGap(399, Short.MAX_VALUE)
-                .addGroup(PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(ButtonLoginAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonLoginAsCashier, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonLoginAsManager))
-                .addGap(364, 364, 364))
+                .addGap(379, 379, 379))
         );
         PanelLoginScreenLayout.setVerticalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,7 +419,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonLoginAsCashier)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonLoginAsTrainer)
-                .addGap(0, 177, Short.MAX_VALUE))
+                .addGap(0, 261, Short.MAX_VALUE))
         );
 
         PanelLoggedInAsManager.setPreferredSize(new java.awt.Dimension(858, 457));
@@ -737,7 +780,7 @@ public class GUI extends javax.swing.JFrame
                             .addComponent(RadioButtonNewMemberBasic))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(RadioButtonNewMemberCompetitive)
-                        .addGap(33, 109, Short.MAX_VALUE))))
+                        .addGap(33, 171, Short.MAX_VALUE))))
         );
 
         PanelEditMemberChooseMember.setPreferredSize(new java.awt.Dimension(858, 457));
@@ -1302,6 +1345,8 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        PanelLoggedInAsCashier.setPreferredSize(new java.awt.Dimension(858, 457));
+
         PanelLoggedInAsCashierScreenHeader.setBackground(new java.awt.Color(153, 153, 255));
         PanelLoggedInAsCashierScreenHeader.setPreferredSize(new java.awt.Dimension(770, 96));
 
@@ -1399,7 +1444,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonBackToMainMenuFromCashier)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsCashierLayout.createSequentialGroup()
-                .addContainerGap(304, Short.MAX_VALUE)
+                .addContainerGap(368, Short.MAX_VALUE)
                 .addGroup(PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ButtonCheckMembersArrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1997,7 +2042,7 @@ public class GUI extends javax.swing.JFrame
 
         ButtonAddTraining.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
         ButtonAddTraining.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_List_26px.png"))); // NOI18N
-        ButtonAddTraining.setText("Add training");
+        ButtonAddTraining.setText("Add training  ");
         ButtonAddTraining.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -2007,6 +2052,7 @@ public class GUI extends javax.swing.JFrame
         });
 
         ButtonAddCompetitionResult.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonAddCompetitionResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Trophy_26px_1.png"))); // NOI18N
         ButtonAddCompetitionResult.setText("Add competition results");
         ButtonAddCompetitionResult.addActionListener(new java.awt.event.ActionListener()
         {
@@ -2058,7 +2104,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(PanelLoggedInAsTrainerLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelLoggedInAsTrainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ButtonSeeTopFiveKompetition, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                    .addComponent(ButtonSeeTopFiveKompetition, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonSeeTopFiveTraining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2076,7 +2122,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonSeeTopFiveTraining)
                 .addGap(11, 11, 11)
                 .addComponent(ButtonSeeTopFiveKompetition)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addComponent(ButtonBackToMainMenuFromTrainer)
                 .addContainerGap())
         );
@@ -2095,7 +2141,6 @@ public class GUI extends javax.swing.JFrame
         LabelAddTrainingLogAsTrainer.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
         LabelAddTrainingLogAsTrainer.setForeground(new java.awt.Color(0, 0, 0));
         LabelAddTrainingLogAsTrainer.setText("Logged in as Trainer");
-        LabelAddTrainingLogAsTrainer.setVisible(false);
 
         javax.swing.GroupLayout PanelAddTrainingHeaderLayout = new javax.swing.GroupLayout(PanelAddTrainingHeader);
         PanelAddTrainingHeader.setLayout(PanelAddTrainingHeaderLayout);
@@ -2120,7 +2165,7 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap()
                 .addGroup(PanelAddTrainingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelAddTrainingHeaderLayout.createSequentialGroup()
-                        .addGap(0, 27, Short.MAX_VALUE)
+                        .addGap(0, 17, Short.MAX_VALUE)
                         .addGroup(PanelAddTrainingHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddTrainingHeaderLayout.createSequentialGroup()
                                 .addComponent(LabelAddTrainingHome)
@@ -2307,11 +2352,265 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        PanelAddCompetitionResult.setPreferredSize(new java.awt.Dimension(858, 457));
+
+        PanelAddCompetitionResultHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelAddCompetitionResultHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelAddCompetitionResultHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Trophy_50px.png"))); // NOI18N
+
+        LabelAddCompetitionResultHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelAddCompetitionResultHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelAddCompetitionResultHeader.setText("Add competition result");
+
+        LabelAddCompetitionResultLogAsTrainer.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelAddCompetitionResultLogAsTrainer.setForeground(new java.awt.Color(0, 0, 0));
+        LabelAddCompetitionResultLogAsTrainer.setText("Logged in as Trainer");
+
+        javax.swing.GroupLayout PanelAddCompetitionResultHeaderLayout = new javax.swing.GroupLayout(PanelAddCompetitionResultHeader);
+        PanelAddCompetitionResultHeader.setLayout(PanelAddCompetitionResultHeaderLayout);
+        PanelAddCompetitionResultHeaderLayout.setHorizontalGroup(
+            PanelAddCompetitionResultHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAddCompetitionResultHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelAddCompetitionResultHome)
+                .addGroup(PanelAddCompetitionResultHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddCompetitionResultHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelAddCompetitionResultHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(498, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddCompetitionResultHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelAddCompetitionResultLogAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelAddCompetitionResultHeaderLayout.setVerticalGroup(
+            PanelAddCompetitionResultHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAddCompetitionResultHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelAddCompetitionResultHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddCompetitionResultHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelAddCompetitionResultHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddCompetitionResultHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelAddCompetitionResultHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelAddCompetitionResultHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelAddCompetitionResultHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelAddCompetitionResultHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelAddCompetitionResultLogAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelAddCompetitionResultAllMembersIDName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddCompetitionResultAllMembersIDName.setText("All members");
+
+        ButtonBackFromAddCompetitionResult.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackFromAddCompetitionResult.setText("BACK");
+        ButtonBackFromAddCompetitionResult.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackFromAddCompetitionResultActionPerformed(evt);
+            }
+        });
+
+        textAreaAddCompetitionResultMemberList.setEditable(false);
+
+        TextFieldAddCompetitionResultID.setText("ID");
+
+        LabelAddCompetitionResultInsertID.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddCompetitionResultInsertID.setText("ID");
+
+        LabelAddCompetitionResultCompetitionDate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddCompetitionResultCompetitionDate.setText("Competition date");
+
+        TextFieldAddCompetitionResultCompetitionYear.setText("(YYYY)");
+
+        ButtonAddCompetitionResultAddCompetitionResult.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ButtonAddCompetitionResultAddCompetitionResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Add_20px.png"))); // NOI18N
+        ButtonAddCompetitionResultAddCompetitionResult.setText("Add competition result ");
+        ButtonAddCompetitionResultAddCompetitionResult.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonAddCompetitionResultAddCompetitionResultActionPerformed(evt);
+            }
+        });
+
+        ComboBoxAddCompetitionResultMonths.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER" }));
+
+        TextFieldAddCompetitionResultDateDay.setText("(DD)");
+
+        LabelAddCompetitionResultDisciplineType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddCompetitionResultDisciplineType.setText("Discipline type:");
+
+        RadioButtonAddCompetitionResultButterfly.setText("Butterfly");
+
+        RadioButtonAddCompetitionResultCrawl.setText("Crawl");
+
+        RadioButtonAddCompetitionResultBackstroke.setText("Backstroke");
+
+        RadioButtonAddCompetitionResultBreaststroke.setText("Breaststroke");
+
+        LabelAddCompetitionResultDistance.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddCompetitionResultDistance.setText("Distance:");
+
+        RadioButtonAddCompetitionResultDistance100.setText("100 m");
+
+        RadioButtonAddCompetitionResultDistance200.setText("200 m");
+
+        RadioButtonAddCompetitionResultDistance400.setText("400 m");
+
+        LabelAddCompetitionResultCompetitionTime.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddCompetitionResultCompetitionTime.setText("Time:");
+
+        TextFieldAddCompetitionResultCompetitionTime.setText("Seconds");
+
+        LabelAddCompetitionResultPlacement.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddCompetitionResultPlacement.setText("Placement");
+
+        LabelAddCompetitionResultEventName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelAddCompetitionResultEventName.setText("Event name");
+
+        TextFieldAddCompetitionResultPlacement.setText("#");
+
+        TextFieldAddCompetitionResultEventName.setText("Name");
+
+        javax.swing.GroupLayout PanelAddCompetitionResultLayout = new javax.swing.GroupLayout(PanelAddCompetitionResult);
+        PanelAddCompetitionResult.setLayout(PanelAddCompetitionResultLayout);
+        PanelAddCompetitionResultLayout.setHorizontalGroup(
+            PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelAddCompetitionResultHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                        .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ButtonAddCompetitionResultAddCompetitionResult)
+                            .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                        .addComponent(LabelAddCompetitionResultCompetitionTime)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(TextFieldAddCompetitionResultCompetitionTime))
+                                    .addComponent(LabelAddCompetitionResultDisciplineType))
+                                .addGap(18, 18, 18)
+                                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RadioButtonAddCompetitionResultCrawl)
+                                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                        .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(RadioButtonAddCompetitionResultButterfly)
+                                                    .addComponent(RadioButtonAddCompetitionResultBackstroke))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(LabelAddCompetitionResultDistance))
+                                            .addComponent(RadioButtonAddCompetitionResultBreaststroke))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(RadioButtonAddCompetitionResultDistance400)
+                                            .addComponent(RadioButtonAddCompetitionResultDistance100)
+                                            .addComponent(RadioButtonAddCompetitionResultDistance200)))))
+                            .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(LabelAddCompetitionResultCompetitionDate, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelAddCompetitionResultLayout.createSequentialGroup()
+                                        .addComponent(TextFieldAddCompetitionResultCompetitionYear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ComboBoxAddCompetitionResultMonths, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(30, 30, 30)
+                                .addComponent(TextFieldAddCompetitionResultDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                        .addComponent(LabelAddCompetitionResultInsertID)
+                                        .addGap(48, 48, 48)
+                                        .addComponent(LabelAddCompetitionResultPlacement))
+                                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                        .addComponent(TextFieldAddCompetitionResultID, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(TextFieldAddCompetitionResultPlacement, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(42, 42, 42)
+                                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelAddCompetitionResultEventName)
+                                    .addComponent(TextFieldAddCompetitionResultEventName, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textAreaAddCompetitionResultMemberList, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelAddCompetitionResultAllMembersIDName)))
+                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                        .addComponent(ButtonBackFromAddCompetitionResult)
+                        .addContainerGap())))
+        );
+        PanelAddCompetitionResultLayout.setVerticalGroup(
+            PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                .addComponent(PanelAddCompetitionResultHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelAddCompetitionResultAllMembersIDName)
+                    .addComponent(LabelAddCompetitionResultInsertID)
+                    .addComponent(LabelAddCompetitionResultPlacement)
+                    .addComponent(LabelAddCompetitionResultEventName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                        .addComponent(textAreaAddCompetitionResultMemberList, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
+                        .addGap(18, 18, 18))
+                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                        .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TextFieldAddCompetitionResultID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldAddCompetitionResultPlacement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldAddCompetitionResultEventName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(LabelAddCompetitionResultCompetitionDate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TextFieldAddCompetitionResultCompetitionYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboBoxAddCompetitionResultMonths, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextFieldAddCompetitionResultDateDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(LabelAddCompetitionResultDisciplineType))
+                            .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                        .addComponent(RadioButtonAddCompetitionResultButterfly)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(RadioButtonAddCompetitionResultBackstroke))
+                                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(LabelAddCompetitionResultDistance))
+                                    .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
+                                        .addComponent(RadioButtonAddCompetitionResultDistance100)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(RadioButtonAddCompetitionResultDistance200)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(RadioButtonAddCompetitionResultBreaststroke)
+                                    .addComponent(RadioButtonAddCompetitionResultDistance400))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RadioButtonAddCompetitionResultCrawl)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LabelAddCompetitionResultCompetitionTime)
+                            .addComponent(TextFieldAddCompetitionResultCompetitionTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ButtonAddCompetitionResultAddCompetitionResult)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(ButtonBackFromAddCompetitionResult)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -2345,7 +2644,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -2377,10 +2676,15 @@ public class GUI extends javax.swing.JFrame
                     .addContainerGap()
                     .addComponent(PanelAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
                     .addGap(52, 52, 52)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addGap(52, 52, 52)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
@@ -2414,7 +2718,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -2446,6 +2750,11 @@ public class GUI extends javax.swing.JFrame
                     .addContainerGap()
                     .addComponent(PanelAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                     .addGap(65, 65, 65)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                    .addGap(66, 66, 66)))
         );
 
         pack();
@@ -3200,7 +3509,14 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonAddCompetitionResultActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddCompetitionResultActionPerformed
     {//GEN-HEADEREND:event_ButtonAddCompetitionResultActionPerformed
-        // TODO add your handling code here:
+        PanelLoggedInAsTrainer.setVisible(false);
+        PanelAddCompetitionResult.setVisible(true);
+        this.textAreaAddCompetitionResultMemberList.setText("");
+        for (int i = 0; i < c.getAllCompetitiveMembers().size(); ++i)
+        {
+            this.textAreaAddCompetitionResultMemberList.append(c.getAllCompetitiveMembers().get(i).toStringNameIDDiscipline());
+            this.textAreaAddCompetitionResultMemberList.append("\n");
+        }
     }//GEN-LAST:event_ButtonAddCompetitionResultActionPerformed
 
     private void ButtonSeeTopFiveTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSeeTopFiveTrainingActionPerformed
@@ -3223,6 +3539,13 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonBackFromAddTrainingActionPerformed
         PanelAddTraining.setVisible(false);
         PanelLoggedInAsTrainer.setVisible(true);
+        this.buttonGroupAddTrainingDistance.clearSelection();
+        this.buttonGroupAddTrainingDisciplineTypes.clearSelection();
+        this.TextFieldAddTrainingDateDay.setText("(DD)");
+        this.TextFieldAddTrainingID.setText("ID");
+        this.TextFieldAddTrainingTrainingTime.setText("Seconds");
+        this.TextFieldAddTrainingTrainingYear.setText("(YYYY)");
+        this.ComboBoxAddTrainingMonths.setSelectedIndex(0);
     }//GEN-LAST:event_ButtonBackFromAddTrainingActionPerformed
 
     private void ButtonAddTrainigAddTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddTrainigAddTrainingActionPerformed
@@ -3315,7 +3638,7 @@ public class GUI extends javax.swing.JFrame
         {
             distance = Distance.METERS_400;
         }
-        //Guard checking if competitive member actually has a discipline
+        //Guard checking if distance has been chosen
         if (this.RadioButtonAddTrainingDistance100.isSelected() == false && 
                 this.RadioButtonAddTrainingDistance200.isSelected() == false &&
                 this.RadioButtonAddTrainingDistance400.isSelected() == false)
@@ -3345,6 +3668,161 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Unable to add training");
         }
     }//GEN-LAST:event_ButtonAddTrainigAddTrainingActionPerformed
+
+    private void ButtonBackFromAddCompetitionResultActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackFromAddCompetitionResultActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackFromAddCompetitionResultActionPerformed
+        PanelAddCompetitionResult.setVisible(false);
+        PanelLoggedInAsTrainer.setVisible(true);
+        this.buttonGroupAddCompetitionResultDistance.clearSelection();
+        this.buttonGroupAddCompetitionResultDisciplineTypes.clearSelection();
+        this.TextFieldAddCompetitionResultDateDay.setText("(DD)");
+        this.TextFieldAddCompetitionResultID.setText("ID");
+        this.TextFieldAddCompetitionResultCompetitionTime.setText("Seconds");
+        this.TextFieldAddCompetitionResultCompetitionYear.setText("(YYYY)");
+        this.ComboBoxAddCompetitionResultMonths.setSelectedIndex(0);
+        this.TextFieldAddCompetitionResultPlacement.setText("#");
+        this.TextFieldAddCompetitionResultEventName.setText("Name");
+    }//GEN-LAST:event_ButtonBackFromAddCompetitionResultActionPerformed
+
+    private void ButtonAddCompetitionResultAddCompetitionResultActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddCompetitionResultAddCompetitionResultActionPerformed
+    {//GEN-HEADEREND:event_ButtonAddCompetitionResultAddCompetitionResultActionPerformed
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        int ID = 0;
+        int competitionYear = 0000;
+        Date competitionDate = null;
+        int competitionDay = 0;
+        DisciplineType discipline = DisciplineType.BACKSTROKE;
+        Distance distance = Distance.METERS_100;
+        int placement = 0;
+        String eventName = "";
+        int timeInSec = 0;
+        //Selecting event name for this competition
+        eventName = TextFieldAddCompetitionResultEventName.getText();
+        if (eventName == null)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid event name");
+            return;
+        }
+        //Selecting placement for this competition result
+        try
+        {
+            placement = Integer.parseInt(TextFieldAddCompetitionResultPlacement.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for placement");
+            return;
+        }
+        //Selecting ID of chosen member 
+        try
+        {
+            ID = Integer.parseInt(TextFieldAddCompetitionResultID.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for ID");
+            return;
+        }
+        //Selecting year for this competition result
+        try
+        {
+            competitionYear = Integer.parseInt(TextFieldAddCompetitionResultCompetitionYear.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for year");
+            return;
+        }
+        //Selecting day for this competition result
+        try
+        {
+            competitionDay = Integer.parseInt(TextFieldAddCompetitionResultDateDay.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for day");
+            return;
+        }
+        //Creating date for this competition result
+        try
+        {
+            competitionDate = new GregorianCalendar(competitionYear, ComboBoxAddCompetitionResultMonths.getSelectedIndex(), competitionDay).getTime();
+        }
+        catch (Exception ex) //specify exception
+        {
+            JOptionPane.showMessageDialog(frame, "Failed to create competition date");
+            return;
+        }
+        //Selecting discipline for this competition result
+        if (this.RadioButtonAddCompetitionResultBackstroke.isSelected())
+        {
+            discipline = DisciplineType.BACKSTROKE;
+        }
+        if (this.RadioButtonAddCompetitionResultBreaststroke.isSelected())
+        {
+            discipline = DisciplineType.BREASTSTROKE;
+        }
+        if (this.RadioButtonAddCompetitionResultButterfly.isSelected())
+        {
+            discipline = DisciplineType.BUTTERFLY;
+        }
+        if (this.RadioButtonAddCompetitionResultCrawl.isSelected())
+        {
+            discipline = DisciplineType.CRAWL;
+        }
+        //Guard checking if competitive member actually has a discipline
+        if (this.RadioButtonAddCompetitionResultCrawl.isSelected() == false && 
+                this.RadioButtonAddCompetitionResultBackstroke.isSelected() == false &&
+                this.RadioButtonAddCompetitionResultBreaststroke.isSelected() == false &&
+                this.RadioButtonAddCompetitionResultButterfly.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not add competition result, discipline type missing");
+            return;
+        }
+        //Selection distance for this competition result
+        if (this.RadioButtonAddCompetitionResultDistance100.isSelected())
+        {
+            distance = Distance.METERS_100;
+        }
+        if (this.RadioButtonAddCompetitionResultDistance200.isSelected())
+        {
+            distance = Distance.METERS_200;
+        }
+        if (this.RadioButtonAddCompetitionResultDistance400.isSelected())
+        {
+            distance = Distance.METERS_400;
+        }
+        //Guard checking if distance has been chosen
+        if (this.RadioButtonAddCompetitionResultDistance100.isSelected() == false && 
+                this.RadioButtonAddCompetitionResultDistance200.isSelected() == false &&
+                this.RadioButtonAddCompetitionResultDistance400.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not add competition result, distance type missing");
+            return;
+        }
+        //Selecting the time for this competition result
+        try
+        {
+            timeInSec = Integer.parseInt(TextFieldAddCompetitionResultCompetitionTime.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for competition time");
+            return;
+        }
+        //Adding competition result to chosen member using memberID
+        try
+        {
+            c.addCompetitionResult(ID, competitionDate, discipline, distance, timeInSec, placement, eventName);
+            JOptionPane.showMessageDialog(frame, "Competition result added to member");
+            System.out.println(c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()));
+        }
+        catch (NullPointerException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Unable to add competition result");
+        }
+    }//GEN-LAST:event_ButtonAddCompetitionResultAddCompetitionResultActionPerformed
     
     /**
      * @param args the command line arguments
@@ -3393,9 +3871,11 @@ public class GUI extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAddCompetitionResult;
+    private javax.swing.JButton ButtonAddCompetitionResultAddCompetitionResult;
     private javax.swing.JButton ButtonAddTrainigAddTraining;
     private javax.swing.JButton ButtonAddTraining;
     private javax.swing.JButton ButtonAllArrears;
+    private javax.swing.JButton ButtonBackFromAddCompetitionResult;
     private javax.swing.JButton ButtonBackFromAddTraining;
     private javax.swing.JButton ButtonBackFromRegisterPayment;
     private javax.swing.JButton ButtonBackFromRevokePayment;
@@ -3430,11 +3910,23 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonViewAllMembersAll;
     private javax.swing.JButton ButtonViewAllMembersCompetitionMode;
     private javax.swing.JButton ButtonViewMembers;
+    private javax.swing.JComboBox<String> ComboBoxAddCompetitionResultMonths;
     private javax.swing.JComboBox<String> ComboBoxAddTrainingMonths;
     private javax.swing.JComboBox<String> ComboBoxChooseMemberToDelete;
     private javax.swing.JComboBox<String> ComboBoxChooseMemberToEdit;
     private java.awt.Label LabeManagerScreenHeader;
     private javax.swing.JLabel LabeManagerScreenHome;
+    private javax.swing.JLabel LabelAddCompetitionResultAllMembersIDName;
+    private javax.swing.JLabel LabelAddCompetitionResultCompetitionDate;
+    private javax.swing.JLabel LabelAddCompetitionResultCompetitionTime;
+    private javax.swing.JLabel LabelAddCompetitionResultDisciplineType;
+    private javax.swing.JLabel LabelAddCompetitionResultDistance;
+    private javax.swing.JLabel LabelAddCompetitionResultEventName;
+    private java.awt.Label LabelAddCompetitionResultHeader;
+    private javax.swing.JLabel LabelAddCompetitionResultHome;
+    private javax.swing.JLabel LabelAddCompetitionResultInsertID;
+    private java.awt.Label LabelAddCompetitionResultLogAsTrainer;
+    private javax.swing.JLabel LabelAddCompetitionResultPlacement;
     private javax.swing.JLabel LabelAddTrainingAllMembersIDName;
     private javax.swing.JLabel LabelAddTrainingDisciplineType;
     private javax.swing.JLabel LabelAddTrainingDistance;
@@ -3506,6 +3998,8 @@ public class GUI extends javax.swing.JFrame
     private java.awt.Label LabelViewMembersHeader;
     private javax.swing.JLabel LabelViewMembersHome;
     private java.awt.Label LabelViewMembersLogAsManager;
+    private javax.swing.JPanel PanelAddCompetitionResult;
+    private javax.swing.JPanel PanelAddCompetitionResultHeader;
     private javax.swing.JPanel PanelAddTraining;
     private javax.swing.JPanel PanelAddTrainingHeader;
     private javax.swing.JPanel PanelCreateNewMember;
@@ -3534,6 +4028,13 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JPanel PanelSingleMemberArrearHeader;
     private javax.swing.JPanel PanelViewMembers;
     private javax.swing.JPanel PanelViewMembersHeader;
+    private javax.swing.JRadioButton RadioButtonAddCompetitionResultBackstroke;
+    private javax.swing.JRadioButton RadioButtonAddCompetitionResultBreaststroke;
+    private javax.swing.JRadioButton RadioButtonAddCompetitionResultButterfly;
+    private javax.swing.JRadioButton RadioButtonAddCompetitionResultCrawl;
+    private javax.swing.JRadioButton RadioButtonAddCompetitionResultDistance100;
+    private javax.swing.JRadioButton RadioButtonAddCompetitionResultDistance200;
+    private javax.swing.JRadioButton RadioButtonAddCompetitionResultDistance400;
     private javax.swing.JRadioButton RadioButtonAddTrainingBackstroke;
     private javax.swing.JRadioButton RadioButtonAddTrainingBreaststroke;
     private javax.swing.JRadioButton RadioButtonAddTrainingButterfly;
@@ -3557,6 +4058,12 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JRadioButton RadioButtonNewMemberCompetitive;
     private javax.swing.JRadioButton RadioButtonNewMemberCrawl;
     private javax.swing.JRadioButton RadioButtonNewMemberPassive;
+    private javax.swing.JTextField TextFieldAddCompetitionResultCompetitionTime;
+    private javax.swing.JTextField TextFieldAddCompetitionResultCompetitionYear;
+    private javax.swing.JTextField TextFieldAddCompetitionResultDateDay;
+    private javax.swing.JTextField TextFieldAddCompetitionResultEventName;
+    private javax.swing.JTextField TextFieldAddCompetitionResultID;
+    private javax.swing.JTextField TextFieldAddCompetitionResultPlacement;
     private javax.swing.JTextField TextFieldAddTrainingDateDay;
     private javax.swing.JTextField TextFieldAddTrainingID;
     private javax.swing.JTextField TextFieldAddTrainingTrainingTime;
@@ -3572,13 +4079,15 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JTextField TextFieldSingleMemberArrearCurrentArrear;
     private javax.swing.JTextField TextFieldSingleMemberArrearID;
     private javax.swing.JTextField TextFieldTotalAmountArrears;
+    private javax.swing.ButtonGroup buttonGroupAddCompetitionResultDisciplineTypes;
+    private javax.swing.ButtonGroup buttonGroupAddCompetitionResultDistance;
     private javax.swing.ButtonGroup buttonGroupAddTrainingDisciplineTypes;
     private javax.swing.ButtonGroup buttonGroupAddTrainingDistance;
     private javax.swing.ButtonGroup buttonGroupCreateMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupCreateMemberPassiveActive;
     private javax.swing.ButtonGroup buttonGroupEditMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupEditMemberPassiveActive;
-    private javax.swing.JSplitPane jSplitPane1;
+    private java.awt.TextArea textAreaAddCompetitionResultMemberList;
     private java.awt.TextArea textAreaAddTrainingMemberList;
     private java.awt.TextArea textAreaAllMembers;
     private java.awt.TextArea textAreaRegisterPaymentMemberList;

@@ -9,6 +9,8 @@ import java.time.Year;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -126,7 +128,7 @@ public class Controller
     }
 
     /**
-     * Manager: Edits a passive members information
+     * Manager: Edits a passive member's information
      *
      * @param member Member in question
      */
@@ -142,7 +144,7 @@ public class Controller
     }
 
     /**
-     * Manager: Edits a (active) members information.
+     * Manager: Edits a (active) member's information.
      *
      * @param member Member in question
      */
@@ -158,7 +160,7 @@ public class Controller
     }
 
     /**
-     * Manager: Edits a (competitive) members information.
+     * Manager: Edits a (competitive) member's information.
      *
      * @param member Member in question
      */
@@ -323,7 +325,14 @@ public class Controller
      */
     public void addCompetitionResult(int memberID, Date date, DisciplineType diciplineType, Distance distance, int timeInSec, int placement, String eventName)
     {
-        //modelController.addCompetitionResult(memberID, date, diciplineType, distance, timeInSec, placement, eventName);
+        try
+        {
+            modelController.addCompetitionResult(memberID, date, diciplineType, distance, timeInSec, placement, eventName);
+        } 
+        catch (IOException ex)
+        {
+            System.out.println("Could not add competition result to chosen member (ID may be invalid)");
+        }
     }
 
     public ArrayList<MemberCompetitive> getTopFiveTraining(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members)
@@ -332,9 +341,8 @@ public class Controller
 
     }
 
-    public void getTopFiveCompetition()
-    {                                                                                   //modelController.getAllCompetitiveMembers()
-        // modelController.getTop5Competition(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members);
-
+    public ArrayList<MemberCompetitive> getTopFiveCompetition(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members)
+    {
+        return modelController.getTop5Competition(disciplineType, distance, members);
     }
 }
