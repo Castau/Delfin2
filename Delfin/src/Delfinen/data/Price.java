@@ -37,8 +37,8 @@ public class Price
      * Returns user arrear cost for their type.
      *
      * @param priceType The priceType is based on a users age.
-     * @see Member (calculateArrear)
-     * @return
+     * @see Delfinen.logic.Member (calculateArrear)
+     * @return Returns arrear for given PriceType as an Integer
      */
     public int getPrice(priceType priceType)
     {

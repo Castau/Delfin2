@@ -4,7 +4,7 @@ package Delfinen.data;
  *
  * @author runin List of enums for Discipline types, used for competitive members.
  *
- * @see @MemberCompetitive
+ * @see Delfinen.logic.MemberCompetitive
  */
 public enum DisciplineType
 {

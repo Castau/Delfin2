@@ -24,8 +24,9 @@ public class Subscription
     }
 
     /**
-     *
-     * @param arrearMembers
+     * See Delfinen.logic.Subscription.getArrearMembers()
+     * @param arrearMembers ArrayList of members who have been determined to have an arrear.
+     * 
      * @return Returns total missing money for current year.
      */
     public int getAllArrears(ArrayList<Member> arrearMembers)
@@ -40,8 +41,11 @@ public class Subscription
     }
 
     /**
-     *
-     * @param allMembers
+     * See Delfinen.logic.Subscription.getAllArrears()
+     * 
+     * See modelController.getAllMembersInBasicMemberFormat()
+     * 
+     * @param allMembers an ArrayList of all Members
      * @return Returns ArrayList of members who have yet to pay.
      */
     public ArrayList getArrearMembers(ArrayList<Member> allMembers)
