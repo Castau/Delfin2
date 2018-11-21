@@ -329,29 +329,4 @@ public class Controller
         // modelController.getTop5Competition(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members);
 
     }
-
-    /**
-     * Trainer: Creates new competition
-     */
-    public void createCompetition()
-    {
-
-    }
-
-    /**
-     * Trainer: Edits a competition (Based on unique identifier?)
-     */
-    public void editCompetition()
-    {
-
-    }
-
-    /**
-     * Trainer: deletes a competition (Based on unique identifier?)
-     */
-    public void deleteCompetition()
-    {
-
-    }
-
 }
