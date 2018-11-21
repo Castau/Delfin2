@@ -175,12 +175,12 @@ public class ModelController {
         });
         
         ArrayList<MemberCompetitive> top5 = new ArrayList();
-        for(int i = 0; i < sortList.size(); i++){
-            top5.add(sortList.get(i));
+        for(int i = 0; i < sortList.size(); i++){ 
             if(i >= 5)
             {
                 break;
             }
+            top5.add(sortList.get(i));
         }
         
         return top5;
