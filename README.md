@@ -59,7 +59,9 @@ Our Use Case Diagram:
 
 Our Mockup of key system parts: 
 
-Download our [PowerPoint](https://www.dropbox.com/s/5vweheudzo8f874/MockUp.pptx?dl=0)-file for an interactive experience.
+Download our Powerpoint-mockup ~for an interactive experience~:  
+[Mock-Up 1.0](https://www.dropbox.com/s/5vweheudzo8f874/MockUp.pptx?dl=0)  
+[Mock-up 2.0](https://www.dropbox.com/s/p7ileaxz53ggkit/MockUp3.pptx?dl=0)
 
 ![Mock-up](https://imgur.com/wFdWGYf.png)
 
