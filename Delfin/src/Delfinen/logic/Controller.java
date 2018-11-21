@@ -39,9 +39,9 @@ public class Controller
      * Manager: Creates a new passive Member
      *
      * @see Member
-     * @param name
-     * @param birthyear
-     * @param membershipType
+     * @param name Member Name
+     * @param birthyear Member Birthyear
+     * @param membershipType Member MembershipType.
      */
     public void createMember(String name, Year birthyear, MembershipType membershipType)
     {
@@ -50,8 +50,7 @@ public class Controller
         try
         {
             modelController.addMember(m);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -61,10 +60,10 @@ public class Controller
      * Manager: Creates a new active member.
      *
      * @see MemberActive
-     * @param name
-     * @param birthyear
-     * @param membershipType
-     * @param activityType
+     * @param name Member Name
+     * @param birthyear Member Birthyear
+     * @param membershipType Member MembershipType
+     * @param activityType Member ActivityType
      */
     public void createMemberActive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType)
     {
@@ -73,8 +72,7 @@ public class Controller
         try
         {
             modelController.addMember(m);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -84,11 +82,11 @@ public class Controller
      * Manager: Creates a new (active) competitive Member.
      *
      * @see MemberCompetitive
-     * @param name
-     * @param birthyear
-     * @param membershipType
-     * @param activityType
-     * @param disciplineList
+     * @param name Member Name
+     * @param birthyear Member Birthyear
+     * @param membershipType Member MembershipType
+     * @param activityType Member ActivityType
+     * @param disciplineList Member DisciplineList
      */
     public void createMemberCompetitive(String name, Year birthyear, MembershipType membershipType, ActivityType activityType, ArrayList<DisciplineType> disciplineList)
     {
@@ -97,8 +95,7 @@ public class Controller
         try
         {
             modelController.addMember(m);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -131,15 +128,14 @@ public class Controller
     /**
      * Manager: Edits a passive members information
      *
-     * @param member
+     * @param member Member in question
      */
     public void editMember(Member member)
     {
         try
         {
             modelController.editMember(member);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -148,15 +144,14 @@ public class Controller
     /**
      * Manager: Edits a (active) members information.
      *
-     * @param member
+     * @param member Member in question
      */
     public void editMember(MemberActive member)
     {
         try
         {
             modelController.editMemberActive(member);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -165,15 +160,14 @@ public class Controller
     /**
      * Manager: Edits a (competitive) members information.
      *
-     * @param member
+     * @param member Member in question
      */
     public void editMember(MemberCompetitive member)
     {
         try
         {
             modelController.editMemberCompetitive(member);
-        }
-        catch (IOException i)
+        } catch (IOException i)
         {
             System.out.println("Unable to write to file using the given file path");
         }
@@ -182,7 +176,7 @@ public class Controller
     /**
      * Manager: Returns a member based on their ID.
      *
-     * @param id
+     * @param id Members ID
      * @return Returns a certain member based on unique identifier.
      */
     public Member getMember(int id)
@@ -201,25 +195,23 @@ public class Controller
     /**
      * Manager: Deletes a member based on their unique identifier.
      *
-     * @param MemberID
+     * @param MemberID Members ID
      */
     public void deleteMember(int MemberID)
     {
         try
         {
             modelController.deleteMember(MemberID);
-        }
-        catch (IOException ix)
+        } catch (IOException ix)
         {
             System.out.println("Stuff didn't work");
         }
     }
 
     /**
-     * Manager/Cashier: Returns all members in a basic format. Used for other
-     * methods.
+     * Manager/Cashier:
      *
-     * @return
+     * @return Returns all members in a basic format. Used for other methods.
      */
     public ArrayList<Member> getAllMembers()
     {
@@ -227,9 +219,9 @@ public class Controller
     }
 
     /**
-     * Manager/Trainer: Returns all Competitive Members. Used for other methods.
+     * Manager/Trainer:
      *
-     * @return
+     * @return Returns all Competitive Members. Used for other methods.
      */
     public ArrayList<MemberCompetitive> getAllCompetitiveMembers()
     {
@@ -277,7 +269,7 @@ public class Controller
     /**
      * Cashier:
      *
-     * @param memberID
+     * @param memberID Members ID
      * @return Returns a single users arrear (if any)
      */
     public int getArrearSingleMember(int memberID) //Single user based on ID. ONLY RETURNS ARREAR, NOT USER INFO.    
@@ -296,52 +288,45 @@ public class Controller
     }
 
     //Trainer
-
     /**
-     *Trainer: Returns top five competitive Members
+     * Trainer: Adds training session (Result)
+     *
+     * @param memberID Members ID
+     * @param date Date Date of the training session
+     * @param diciplineType Members DisciplineType
+     * @param distance Training result distance completed
+     * @param timeInSec Training result time completed
      */
-    public void addTrainingSession(int memberID, Date date, DisciplineType diciplineType, Distance distance, int timeInSec){
+    public void addTrainingSession(int memberID, Date date, DisciplineType diciplineType, Distance distance, int timeInSec)
+    {
         //modelController.addTrainingSession(memberID, date, diciplineType, distance, timeInSec);
     }
-    
-    public void addCompetitionResult(int memberID, Date date, DisciplineType diciplineType,Distance distance, int timeInSec, int placement, String eventName){
+
+    /**
+     * Trainer: Adds competition result
+     *
+     * @param memberID Members ID
+     * @param date Date of the competition
+     * @param diciplineType Discipline type of the member/competition
+     * @param distance Result distance
+     * @param timeInSec Result time (completion)
+     * @param placement Result placement
+     * @param eventName Name of the competition
+     */
+    public void addCompetitionResult(int memberID, Date date, DisciplineType diciplineType, Distance distance, int timeInSec, int placement, String eventName)
+    {
         //modelController.addCompetitionResult(memberID, date, diciplineType, distance, timeInSec, placement, eventName);
-    }    
-    
+    }
+
     public ArrayList<MemberCompetitive> getTopFiveTraining(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members)
     {
        return modelController.getTop5Training(disciplineType, distance, members);
 
     }
-    
+
     public void getTopFiveCompetition()
     {                                                                                   //modelController.getAllCompetitiveMembers()
-       // modelController.getTop5Competition(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members);
+        // modelController.getTop5Competition(DisciplineType disciplineType, Distance distance, ArrayList<MemberCompetitive> members);
 
     }
-
-//    /**
-//     *Trainer: Creates new competition
-//     */
-//    public void createCompetition()
-//    {
-//
-//    }
-//
-//    /**
-//     * Trainer: Edits a competition (Based on unique identifier?)
-//     */
-//    public void editCompetition()
-//    {
-//        
-//    }
-//
-//    /**
-//     *Trainer: deletes a competition (Based on unique identifier?)
-//     */
-//    public void deleteCompetition()
-//    {
-//
-//    }
-
 }

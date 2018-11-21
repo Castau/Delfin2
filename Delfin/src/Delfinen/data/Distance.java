@@ -2,8 +2,10 @@ package Delfinen.data;
 
 /**
  *
- * @author Camilla List of enums used for Training Sessions
- * @see TrainingSession
+ * @author Camilla 
+ * 
+ * List of enums used for Training Sessions
+ * @see Delfinen.logic.TrainingSession
  */
 public enum Distance
 {
