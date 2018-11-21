@@ -3,6 +3,7 @@ package Delfinen.logic;
 
 import Delfinen.data.Distance;
 import Delfinen.data.DisciplineType;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -27,6 +28,14 @@ public class CompetitionResult implements Comparable<CompetitionResult>{
         this.eventName = eventName;
     }
 
+    @Override
+    public String toString()
+    {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = format.format(date);
+        return "Competition: " + eventName + ", Placement: " + placement +  ", Date: " + dateString + ", DiciplineType: " + diciplineType + ", Distance: " + distance + ", Time: " + timeInSec;
+    }
+    
     public Date getDate() {
         return date;
     }

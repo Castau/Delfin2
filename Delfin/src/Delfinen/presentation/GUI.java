@@ -4107,7 +4107,65 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonViewTopFiveCompetitionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonViewTopFiveCompetitionActionPerformed
     {//GEN-HEADEREND:event_ButtonViewTopFiveCompetitionActionPerformed
-        // TODO add your handling code here:
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        DisciplineType discipline = DisciplineType.BACKSTROKE;
+        Distance distance = Distance.METERS_100;
+        //Selecting discipline for the top 5 list
+        if (this.RadioButtonTopFiveBackstroke.isSelected())
+        {
+            discipline = DisciplineType.BACKSTROKE;
+        }
+        if (this.RadioButtonTopFiveBreaststroke.isSelected())
+        {
+            discipline = DisciplineType.BREASTSTROKE;
+        }
+        if (this.RadioButtonTopFiveButterfly.isSelected())
+        {
+            discipline = DisciplineType.BUTTERFLY;
+        }
+        if (this.RadioButtonTopFiveCrawl.isSelected())
+        {
+            discipline = DisciplineType.CRAWL;
+        }
+        if (this.RadioButtonTopFiveBackstroke.isSelected() == false && 
+                this.RadioButtonTopFiveBreaststroke.isSelected() == false &&
+                this.RadioButtonTopFiveButterfly.isSelected() == false &&
+                this.RadioButtonTopFiveCrawl.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not find results, discipline type missing");
+            return;
+        }
+        //Selection distance for the top 5 list
+        if (this.RadioButtonTopFiveDistance100.isSelected())
+        {
+            distance = Distance.METERS_100;
+        }
+        if (this.RadioButtonTopFiveDistance200.isSelected())
+        {
+            distance = Distance.METERS_200;
+        }
+        if (this.RadioButtonTopFiveDistance400.isSelected())
+        {
+            distance = Distance.METERS_400;
+        }
+        //Guard checking if distance has been chosen
+        if (this.RadioButtonTopFiveDistance100.isSelected() == false && 
+                this.RadioButtonTopFiveDistance200.isSelected() == false &&
+                this.RadioButtonTopFiveDistance400.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not find results, distance type missing");
+            return;
+        }
+        //Showing the top five members in the text box
+        this.textAreaViewTopFive.setText("");
+        for (int i = 0; i < c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()).size(); ++i)
+        {
+            this.textAreaViewTopFive.append(c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()).get(i).toStringNameIDDiscipline());
+            this.textAreaViewTopFive.append("\n" 
+                    + c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()).get(i).getCompetitionResults().getBestCompetitionRes(discipline, distance).toString());
+            this.textAreaViewTopFive.append("\n");
+        }
     }//GEN-LAST:event_ButtonViewTopFiveCompetitionActionPerformed
     
     /**
