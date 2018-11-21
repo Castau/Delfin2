@@ -3269,6 +3269,40 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Failed to create training date!");
             return;
         }
+        if (this.RadioButtonAddTrainingBackstroke.isSelected())
+        {
+            discipline = DisciplineType.BACKSTROKE;
+        }
+        if (this.RadioButtonAddTrainingBreaststroke.isSelected())
+        {
+            discipline = DisciplineType.BREASTSTROKE;
+        }
+        if (this.RadioButtonAddTrainingButterfly.isSelected())
+        {
+            discipline = DisciplineType.BUTTERFLY;
+        }
+        if (this.RadioButtonAddTrainingCrawl.isSelected())
+        {
+            discipline = DisciplineType.CRAWL;
+        }
+        //Guard checking if competitive member actually has a discipline
+        if (this.RadioButtonAddTrainingCrawl.isSelected() == false && 
+                this.RadioButtonAddTrainingBackstroke.isSelected() == false &&
+                this.RadioButtonAddTrainingBreaststroke.isSelected() == false &&
+                this.RadioButtonAddTrainingButterfly.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not add training, discipline type missing");
+            return;
+        }
+        try
+        {
+            timeInSec = Integer.parseInt(TextFieldAddTrainingTrainingTime.getText().trim());
+        }
+        catch (NumberFormatException nx)
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for training time");
+            return;
+        }
         try
         {
             c.addTrainingSession(ID, trainingDate, discipline, distance, timeInSec);

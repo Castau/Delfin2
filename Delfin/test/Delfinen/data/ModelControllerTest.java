@@ -64,18 +64,18 @@ public class ModelControllerTest {
 //        m5 = new MemberCompetitive("Anna", Year.of(2005), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
 //        m6 = new MemberCompetitive("Else", Year.of(1679), MembershipType.ACTIVE, ActivityType.COMPETITIVE, disciplineList);
         
-//        t1 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 181); //5
+        t1 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 181); //5
         t2 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 120); //1
         t3 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 165); //3
 //        t4 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 183); //6 - ikke med
-        t5 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 121); //2
+//        t5 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 121); //2
 //        t6 = new TrainingSession(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 167); //4
         
-//        c1 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 181, 43, "Skjærn Stævne"); //5
+        c1 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 181, 43, "Skjærn Stævne"); //5
         c2 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 120, 5, "Borup Stævne"); //1
         c3 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 165, 19, "Aars Stævne"); //3
 //        c4 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 183, 51, "Københavns Stævne"); //6 - ikke med
-        c5 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 121, 8, "Lemvig Stævne"); //2
+//        c5 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 121, 8, "Lemvig Stævne"); //2
 //        c6 = new CompetitionResult(date, DisciplineType.BUTTERFLY, Distance.METERS_100, 167, 26, "Odden Stævne"); //4
         
         m1.getTrainingSessions().addTrainingSession(t1);
