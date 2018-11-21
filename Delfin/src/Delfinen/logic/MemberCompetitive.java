@@ -3,6 +3,7 @@ package Delfinen.logic;
 import Delfinen.data.DisciplineType;
 import Delfinen.data.MembershipType;
 import Delfinen.data.ActivityType;
+import Delfinen.data.Distance;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -63,7 +64,7 @@ public class MemberCompetitive extends MemberActive {
         return "ID: " + super.getId() + ", Name: " + super.getName() + ", Disciplines: " + disciplineTypes;
     }
     
-    public String toStringCompetitionVersion()
+    public String toStringCompetitionVersionForManager()
     {
         return "ID: " + super.getId() + ", Name: " + super.getName() + ", Birthyear: " + super.getBirthyear()
                 + ", Activity type: " + super.getActivityType() + ", Disciplines: " + disciplineTypes;

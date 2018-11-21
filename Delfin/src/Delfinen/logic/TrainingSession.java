@@ -4,8 +4,12 @@ package Delfinen.logic;
 
 import Delfinen.data.Distance;
 import Delfinen.data.DisciplineType;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Camilla
@@ -22,6 +26,21 @@ public class TrainingSession implements Comparable<TrainingSession>{
         this.diciplineType = diciplineType;
         this.distance = distance;
         this.timeInSec = timeInSec;
+    }
+
+    @Override
+    public String toString()
+    {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = format.format(date);
+        try
+        {
+            return "TrainingSession: " + "Date: " + format.parse(dateString) + ", DiciplineType: " + diciplineType + ", Distance: " + distance + ", Time: " + timeInSec;
+        } catch (ParseException ex)
+        {
+            System.out.println("Date parsing failed");
+        }
+        return ".toString() method failed";
     }
 
     public Date getDate() {

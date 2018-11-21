@@ -35,6 +35,7 @@ public class GUI extends javax.swing.JFrame
         c = new Controller();
         Config.setTestMode(false);
         //Putting Radio Buttons into groups
+        //
         this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberActive);
         this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberPassive);
         this.buttonGroupCreateMemberActivityType.add(RadioButtonNewMemberBasic);
@@ -62,6 +63,15 @@ public class GUI extends javax.swing.JFrame
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance100);
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance200);
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance400);
+        //
+        this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveBackstroke);
+        this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveBreaststroke);
+        this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveButterfly);
+        this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveCrawl);
+        //
+        this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance100);
+        this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance200);
+        this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance400);
         //Making panels invisible
         PanelLoggedInAsManager.setVisible(false);
         PanelCreateNewMember.setVisible(false);
@@ -77,6 +87,7 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsTrainer.setVisible(false);
         PanelAddTraining.setVisible(false);
         PanelAddCompetitionResult.setVisible(false);
+        PanelViewTopFive.setVisible(false);
         //Pre-disabling Radio Buttons
         this.RadioButtonNewMemberBasic.setEnabled(false);
         this.RadioButtonNewMemberCompetitive.setEnabled(false);
@@ -111,6 +122,8 @@ public class GUI extends javax.swing.JFrame
         buttonGroupAddTrainingDistance = new javax.swing.ButtonGroup();
         buttonGroupAddCompetitionResultDisciplineTypes = new javax.swing.ButtonGroup();
         buttonGroupAddCompetitionResultDistance = new javax.swing.ButtonGroup();
+        buttonGroupTopFiveDiscipline = new javax.swing.ButtonGroup();
+        buttonGroupTopFiveDistance = new javax.swing.ButtonGroup();
         PanelLoginScreen = new javax.swing.JPanel();
         PanelLoginScreenHeader = new javax.swing.JPanel();
         LabelLoginScreenHome = new javax.swing.JLabel();
@@ -268,8 +281,7 @@ public class GUI extends javax.swing.JFrame
         LabelTrainerScreenHeader = new java.awt.Label();
         ButtonAddTraining = new javax.swing.JButton();
         ButtonAddCompetitionResult = new javax.swing.JButton();
-        ButtonSeeTopFiveTraining = new javax.swing.JButton();
-        ButtonSeeTopFiveKompetition = new javax.swing.JButton();
+        ButtonSeeTopFive = new javax.swing.JButton();
         ButtonBackToMainMenuFromTrainer = new javax.swing.JButton();
         PanelAddTraining = new javax.swing.JPanel();
         PanelAddTrainingHeader = new javax.swing.JPanel();
@@ -327,6 +339,25 @@ public class GUI extends javax.swing.JFrame
         LabelAddCompetitionResultEventName = new javax.swing.JLabel();
         TextFieldAddCompetitionResultPlacement = new javax.swing.JTextField();
         TextFieldAddCompetitionResultEventName = new javax.swing.JTextField();
+        PanelViewTopFive = new javax.swing.JPanel();
+        PanelViewTopFiveHeader = new javax.swing.JPanel();
+        LabelViewTopFiveHome = new javax.swing.JLabel();
+        LabelViewTopFiveHeader = new java.awt.Label();
+        LabelViewTopFiveLogAsTrainer = new java.awt.Label();
+        LabelViewTopFiveTopFiveMembers = new javax.swing.JLabel();
+        ButtonBackFromViewTopFive = new javax.swing.JButton();
+        textAreaViewTopFive = new java.awt.TextArea();
+        ButtonViewTopFiveTraining = new javax.swing.JButton();
+        ButtonViewTopFiveCompetition = new javax.swing.JButton();
+        RadioButtonTopFiveBackstroke = new javax.swing.JRadioButton();
+        RadioButtonTopFiveBreaststroke = new javax.swing.JRadioButton();
+        LabelTopFiveDisciplineType = new javax.swing.JLabel();
+        RadioButtonTopFiveButterfly = new javax.swing.JRadioButton();
+        RadioButtonTopFiveCrawl = new javax.swing.JRadioButton();
+        LabelTopFiveDistance = new javax.swing.JLabel();
+        RadioButtonTopFiveDistance100 = new javax.swing.JRadioButton();
+        RadioButtonTopFiveDistance200 = new javax.swing.JRadioButton();
+        RadioButtonTopFiveDistance400 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DELPHI");
@@ -351,7 +382,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(LabelLoginScreenHome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelLoginScreenHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(813, Short.MAX_VALUE))
+                .addContainerGap(719, Short.MAX_VALUE))
         );
         PanelLoginScreenHeaderLayout.setVerticalGroup(
             PanelLoginScreenHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,7 +431,7 @@ public class GUI extends javax.swing.JFrame
         PanelLoginScreen.setLayout(PanelLoginScreenLayout);
         PanelLoginScreenLayout.setHorizontalGroup(
             PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginScreenLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelLoginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -419,7 +450,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(ButtonLoginAsCashier)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonLoginAsTrainer)
-                .addGap(0, 261, Short.MAX_VALUE))
+                .addGap(0, 177, Short.MAX_VALUE))
         );
 
         PanelLoggedInAsManager.setPreferredSize(new java.awt.Dimension(858, 457));
@@ -1310,7 +1341,7 @@ public class GUI extends javax.swing.JFrame
         PanelViewMembers.setLayout(PanelViewMembersLayout);
         PanelViewMembersLayout.setHorizontalGroup(
             PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(PanelViewMembersLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1438,13 +1469,13 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setLayout(PanelLoggedInAsCashierLayout);
         PanelLoggedInAsCashierLayout.setHorizontalGroup(
             PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(PanelLoggedInAsCashierLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ButtonBackToMainMenuFromCashier)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoggedInAsCashierLayout.createSequentialGroup()
-                .addContainerGap(368, Short.MAX_VALUE)
+                .addContainerGap(294, Short.MAX_VALUE)
                 .addGroup(PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ButtonCheckMembersArrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1705,7 +1736,7 @@ public class GUI extends javax.swing.JFrame
         PanelRevokePayment.setLayout(PanelRevokePaymentLayout);
         PanelRevokePaymentLayout.setHorizontalGroup(
             PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelRevokePaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+            .addComponent(PanelRevokePaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(PanelRevokePaymentLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromRevokePayment)
@@ -1972,7 +2003,7 @@ public class GUI extends javax.swing.JFrame
         PanelShowAllArrears.setLayout(PanelShowAllArrearsLayout);
         PanelShowAllArrearsLayout.setHorizontalGroup(
             PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelShowAllArrearsHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+            .addComponent(PanelShowAllArrearsHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
             .addGroup(PanelShowAllArrearsLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2062,23 +2093,15 @@ public class GUI extends javax.swing.JFrame
             }
         });
 
-        ButtonSeeTopFiveTraining.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
-        ButtonSeeTopFiveTraining.setText("View top 5 (Training)");
-        ButtonSeeTopFiveTraining.addActionListener(new java.awt.event.ActionListener()
+        ButtonSeeTopFive.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
+        ButtonSeeTopFive.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Leaderboard_26px.png"))); // NOI18N
+        ButtonSeeTopFive.setText("View top 5    ");
+        ButtonSeeTopFive.setActionCommand("View top 5");
+        ButtonSeeTopFive.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                ButtonSeeTopFiveTrainingActionPerformed(evt);
-            }
-        });
-
-        ButtonSeeTopFiveKompetition.setFont(new java.awt.Font("Iskoola Pota", 0, 18)); // NOI18N
-        ButtonSeeTopFiveKompetition.setText("View top 5 (Competition)");
-        ButtonSeeTopFiveKompetition.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                ButtonSeeTopFiveKompetitionActionPerformed(evt);
+                ButtonSeeTopFiveActionPerformed(evt);
             }
         });
 
@@ -2104,8 +2127,7 @@ public class GUI extends javax.swing.JFrame
             .addGroup(PanelLoggedInAsTrainerLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PanelLoggedInAsTrainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ButtonSeeTopFiveKompetition, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ButtonSeeTopFiveTraining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonSeeTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ButtonAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2119,10 +2141,8 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ButtonAddCompetitionResult)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ButtonSeeTopFiveTraining)
-                .addGap(11, 11, 11)
-                .addComponent(ButtonSeeTopFiveKompetition)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addComponent(ButtonSeeTopFive)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addComponent(ButtonBackToMainMenuFromTrainer)
                 .addContainerGap())
         );
@@ -2606,6 +2626,192 @@ public class GUI extends javax.swing.JFrame
                 .addContainerGap())
         );
 
+        PanelViewTopFive.setPreferredSize(new java.awt.Dimension(858, 457));
+
+        PanelViewTopFiveHeader.setBackground(new java.awt.Color(153, 153, 255));
+        PanelViewTopFiveHeader.setPreferredSize(new java.awt.Dimension(770, 96));
+
+        LabelViewTopFiveHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUIImages/icons8_Leaderboard_50px.png"))); // NOI18N
+
+        LabelViewTopFiveHeader.setFont(new java.awt.Font("GungsuhChe", 1, 24)); // NOI18N
+        LabelViewTopFiveHeader.setForeground(new java.awt.Color(255, 255, 255));
+        LabelViewTopFiveHeader.setText("View top 5 members");
+
+        LabelViewTopFiveLogAsTrainer.setFont(new java.awt.Font("Kartika", 1, 12)); // NOI18N
+        LabelViewTopFiveLogAsTrainer.setForeground(new java.awt.Color(0, 0, 0));
+        LabelViewTopFiveLogAsTrainer.setText("Logged in as Trainer");
+
+        javax.swing.GroupLayout PanelViewTopFiveHeaderLayout = new javax.swing.GroupLayout(PanelViewTopFiveHeader);
+        PanelViewTopFiveHeader.setLayout(PanelViewTopFiveHeaderLayout);
+        PanelViewTopFiveHeaderLayout.setHorizontalGroup(
+            PanelViewTopFiveHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelViewTopFiveHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelViewTopFiveHome)
+                .addGroup(PanelViewTopFiveHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelViewTopFiveHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelViewTopFiveHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(550, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelViewTopFiveHeaderLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelViewTopFiveLogAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        PanelViewTopFiveHeaderLayout.setVerticalGroup(
+            PanelViewTopFiveHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelViewTopFiveHeaderLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelViewTopFiveHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelViewTopFiveHeaderLayout.createSequentialGroup()
+                        .addGap(0, 17, Short.MAX_VALUE)
+                        .addGroup(PanelViewTopFiveHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelViewTopFiveHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelViewTopFiveHome)
+                                .addGap(19, 19, 19))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelViewTopFiveHeaderLayout.createSequentialGroup()
+                                .addComponent(LabelViewTopFiveHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))))
+                    .addGroup(PanelViewTopFiveHeaderLayout.createSequentialGroup()
+                        .addComponent(LabelViewTopFiveLogAsTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+
+        LabelViewTopFiveTopFiveMembers.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelViewTopFiveTopFiveMembers.setText("Top 5 members");
+
+        ButtonBackFromViewTopFive.setFont(new java.awt.Font("Iskoola Pota", 0, 12)); // NOI18N
+        ButtonBackFromViewTopFive.setText("BACK");
+        ButtonBackFromViewTopFive.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonBackFromViewTopFiveActionPerformed(evt);
+            }
+        });
+
+        textAreaViewTopFive.setEditable(false);
+
+        ButtonViewTopFiveTraining.setText("Top 5 training");
+        ButtonViewTopFiveTraining.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonViewTopFiveTrainingActionPerformed(evt);
+            }
+        });
+
+        ButtonViewTopFiveCompetition.setText("Top 5 competition");
+        ButtonViewTopFiveCompetition.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                ButtonViewTopFiveCompetitionActionPerformed(evt);
+            }
+        });
+
+        RadioButtonTopFiveBackstroke.setText("Backstroke");
+
+        RadioButtonTopFiveBreaststroke.setText("Breaststroke");
+
+        LabelTopFiveDisciplineType.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelTopFiveDisciplineType.setText("Discipline type:");
+
+        RadioButtonTopFiveButterfly.setText("Butterfly");
+
+        RadioButtonTopFiveCrawl.setText("Crawl");
+
+        LabelTopFiveDistance.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelTopFiveDistance.setText("Distance:");
+
+        RadioButtonTopFiveDistance100.setText("100 m");
+
+        RadioButtonTopFiveDistance200.setText("200 m");
+
+        RadioButtonTopFiveDistance400.setText("400 m");
+
+        javax.swing.GroupLayout PanelViewTopFiveLayout = new javax.swing.GroupLayout(PanelViewTopFive);
+        PanelViewTopFive.setLayout(PanelViewTopFiveLayout);
+        PanelViewTopFiveLayout.setHorizontalGroup(
+            PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelViewTopFiveHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(ButtonBackFromViewTopFive)
+                .addGap(43, 760, Short.MAX_VALUE))
+            .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                        .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelViewTopFiveLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(ButtonViewTopFiveTraining))
+                            .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelTopFiveDisciplineType)
+                                    .addComponent(LabelTopFiveDistance))))
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RadioButtonTopFiveDistance400)
+                            .addComponent(RadioButtonTopFiveDistance100)
+                            .addComponent(RadioButtonTopFiveDistance200)
+                            .addComponent(RadioButtonTopFiveCrawl)
+                            .addComponent(RadioButtonTopFiveButterfly)
+                            .addComponent(RadioButtonTopFiveBackstroke)
+                            .addComponent(RadioButtonTopFiveBreaststroke)))
+                    .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(ButtonViewTopFiveCompetition)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelViewTopFiveTopFiveMembers)
+                    .addComponent(textAreaViewTopFive, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        PanelViewTopFiveLayout.setVerticalGroup(
+            PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                .addComponent(PanelViewTopFiveHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LabelViewTopFiveTopFiveMembers)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textAreaViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelViewTopFiveLayout.createSequentialGroup()
+                        .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(LabelTopFiveDisciplineType))
+                            .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                                .addComponent(RadioButtonTopFiveButterfly)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RadioButtonTopFiveBackstroke)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RadioButtonTopFiveBreaststroke)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RadioButtonTopFiveCrawl)))
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(LabelTopFiveDistance))
+                            .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
+                                .addComponent(RadioButtonTopFiveDistance100)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RadioButtonTopFiveDistance200)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RadioButtonTopFiveDistance400)
+                        .addGap(19, 19, 19)
+                        .addComponent(ButtonViewTopFiveTraining)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonViewTopFiveCompetition)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ButtonBackFromViewTopFive)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -2681,6 +2887,11 @@ public class GUI extends javax.swing.JFrame
                     .addContainerGap()
                     .addComponent(PanelAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
                     .addGap(52, 52, 52)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+                    .addGap(94, 94, 94)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2755,6 +2966,11 @@ public class GUI extends javax.swing.JFrame
                     .addContainerGap()
                     .addComponent(PanelAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
                     .addGap(66, 66, 66)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(PanelViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addGap(74, 74, 74)))
         );
 
         pack();
@@ -3275,7 +3491,7 @@ public class GUI extends javax.swing.JFrame
         this.textAreaAllMembers.setText("");
         for (int i = 0; i < c.getAllCompetitiveMembers().size(); ++i)
         {
-            this.textAreaAllMembers.append(c.getAllCompetitiveMembers().get(i).toStringCompetitionVersion());
+            this.textAreaAllMembers.append(c.getAllCompetitiveMembers().get(i).toStringCompetitionVersionForManager());
             this.textAreaAllMembers.append("\n");
         }
     }//GEN-LAST:event_ButtonViewAllMembersCompetitionModeActionPerformed
@@ -3519,15 +3735,11 @@ public class GUI extends javax.swing.JFrame
         }
     }//GEN-LAST:event_ButtonAddCompetitionResultActionPerformed
 
-    private void ButtonSeeTopFiveTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSeeTopFiveTrainingActionPerformed
-    {//GEN-HEADEREND:event_ButtonSeeTopFiveTrainingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonSeeTopFiveTrainingActionPerformed
-
-    private void ButtonSeeTopFiveKompetitionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSeeTopFiveKompetitionActionPerformed
-    {//GEN-HEADEREND:event_ButtonSeeTopFiveKompetitionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonSeeTopFiveKompetitionActionPerformed
+    private void ButtonSeeTopFiveActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSeeTopFiveActionPerformed
+    {//GEN-HEADEREND:event_ButtonSeeTopFiveActionPerformed
+        PanelLoggedInAsTrainer.setVisible(false);
+        PanelViewTopFive.setVisible(true);
+    }//GEN-LAST:event_ButtonSeeTopFiveActionPerformed
 
     private void ButtonBackToMainMenuFromTrainerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackToMainMenuFromTrainerActionPerformed
     {//GEN-HEADEREND:event_ButtonBackToMainMenuFromTrainerActionPerformed
@@ -3823,6 +4035,80 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Unable to add competition result");
         }
     }//GEN-LAST:event_ButtonAddCompetitionResultAddCompetitionResultActionPerformed
+
+    private void ButtonBackFromViewTopFiveActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonBackFromViewTopFiveActionPerformed
+    {//GEN-HEADEREND:event_ButtonBackFromViewTopFiveActionPerformed
+        PanelViewTopFive.setVisible(false);
+        PanelLoggedInAsTrainer.setVisible(true);
+    }//GEN-LAST:event_ButtonBackFromViewTopFiveActionPerformed
+
+    private void ButtonViewTopFiveTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonViewTopFiveTrainingActionPerformed
+    {//GEN-HEADEREND:event_ButtonViewTopFiveTrainingActionPerformed
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        DisciplineType discipline = DisciplineType.BACKSTROKE;
+        Distance distance = Distance.METERS_100;
+        //Selecting discipline for the top 5 list
+        if (this.RadioButtonTopFiveBackstroke.isSelected())
+        {
+            discipline = DisciplineType.BACKSTROKE;
+        }
+        if (this.RadioButtonTopFiveBreaststroke.isSelected())
+        {
+            discipline = DisciplineType.BREASTSTROKE;
+        }
+        if (this.RadioButtonTopFiveButterfly.isSelected())
+        {
+            discipline = DisciplineType.BUTTERFLY;
+        }
+        if (this.RadioButtonTopFiveCrawl.isSelected())
+        {
+            discipline = DisciplineType.CRAWL;
+        }
+        if (this.RadioButtonTopFiveBackstroke.isSelected() == false && 
+                this.RadioButtonTopFiveBreaststroke.isSelected() == false &&
+                this.RadioButtonTopFiveButterfly.isSelected() == false &&
+                this.RadioButtonTopFiveCrawl.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not find results, discipline type missing");
+            return;
+        }
+        //Selection distance for the top 5 list
+        if (this.RadioButtonTopFiveDistance100.isSelected())
+        {
+            distance = Distance.METERS_100;
+        }
+        if (this.RadioButtonTopFiveDistance200.isSelected())
+        {
+            distance = Distance.METERS_200;
+        }
+        if (this.RadioButtonTopFiveDistance400.isSelected())
+        {
+            distance = Distance.METERS_400;
+        }
+        //Guard checking if distance has been chosen
+        if (this.RadioButtonTopFiveDistance100.isSelected() == false && 
+                this.RadioButtonTopFiveDistance200.isSelected() == false &&
+                this.RadioButtonTopFiveDistance400.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not find results, distance type missing");
+            return;
+        }
+        //Showing the top five members in the text box
+        this.textAreaViewTopFive.setText("");
+        for (int i = 0; i < c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()).size(); ++i)
+        {
+            this.textAreaViewTopFive.append(c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()).get(i).toStringNameIDDiscipline());
+            this.textAreaViewTopFive.append("\n" 
+                    + c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()).get(i).getTrainingSessions().getBestTraining(discipline, distance).toString());
+            this.textAreaViewTopFive.append("\n");
+        }
+    }//GEN-LAST:event_ButtonViewTopFiveTrainingActionPerformed
+
+    private void ButtonViewTopFiveCompetitionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonViewTopFiveCompetitionActionPerformed
+    {//GEN-HEADEREND:event_ButtonViewTopFiveCompetitionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonViewTopFiveCompetitionActionPerformed
     
     /**
      * @param args the command line arguments
@@ -3882,6 +4168,7 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonBackFromShowAllArrears;
     private javax.swing.JButton ButtonBackFromSingleMemberArrear;
     private javax.swing.JButton ButtonBackFromViewAllMembers;
+    private javax.swing.JButton ButtonBackFromViewTopFive;
     private javax.swing.JButton ButtonBackToMainMenu;
     private javax.swing.JButton ButtonBackToMainMenuFromCashier;
     private javax.swing.JButton ButtonBackToMainMenuFromTrainer;
@@ -3904,12 +4191,13 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JButton ButtonRegisterPaymentRegisterPayment;
     private javax.swing.JButton ButtonRevokePayment;
     private javax.swing.JButton ButtonRevokePaymentRevokePayment;
-    private javax.swing.JButton ButtonSeeTopFiveKompetition;
-    private javax.swing.JButton ButtonSeeTopFiveTraining;
+    private javax.swing.JButton ButtonSeeTopFive;
     private javax.swing.JButton ButtonSingleMemberArrearShowArrear;
     private javax.swing.JButton ButtonViewAllMembersAll;
     private javax.swing.JButton ButtonViewAllMembersCompetitionMode;
     private javax.swing.JButton ButtonViewMembers;
+    private javax.swing.JButton ButtonViewTopFiveCompetition;
+    private javax.swing.JButton ButtonViewTopFiveTraining;
     private javax.swing.JComboBox<String> ComboBoxAddCompetitionResultMonths;
     private javax.swing.JComboBox<String> ComboBoxAddTrainingMonths;
     private javax.swing.JComboBox<String> ComboBoxChooseMemberToDelete;
@@ -3992,12 +4280,18 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JLabel LabelSingleMemberArrearHome;
     private javax.swing.JLabel LabelSingleMemberArrearInsertID;
     private java.awt.Label LabelSingleMemberArrearLogAsCashier;
+    private javax.swing.JLabel LabelTopFiveDisciplineType;
+    private javax.swing.JLabel LabelTopFiveDistance;
     private java.awt.Label LabelTrainerScreenHeader;
     private javax.swing.JLabel LabelTrainerScreenHome;
     private javax.swing.JLabel LabelViewMembersAllMembers;
     private java.awt.Label LabelViewMembersHeader;
     private javax.swing.JLabel LabelViewMembersHome;
     private java.awt.Label LabelViewMembersLogAsManager;
+    private java.awt.Label LabelViewTopFiveHeader;
+    private javax.swing.JLabel LabelViewTopFiveHome;
+    private java.awt.Label LabelViewTopFiveLogAsTrainer;
+    private javax.swing.JLabel LabelViewTopFiveTopFiveMembers;
     private javax.swing.JPanel PanelAddCompetitionResult;
     private javax.swing.JPanel PanelAddCompetitionResultHeader;
     private javax.swing.JPanel PanelAddTraining;
@@ -4028,6 +4322,8 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JPanel PanelSingleMemberArrearHeader;
     private javax.swing.JPanel PanelViewMembers;
     private javax.swing.JPanel PanelViewMembersHeader;
+    private javax.swing.JPanel PanelViewTopFive;
+    private javax.swing.JPanel PanelViewTopFiveHeader;
     private javax.swing.JRadioButton RadioButtonAddCompetitionResultBackstroke;
     private javax.swing.JRadioButton RadioButtonAddCompetitionResultBreaststroke;
     private javax.swing.JRadioButton RadioButtonAddCompetitionResultButterfly;
@@ -4058,6 +4354,13 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.JRadioButton RadioButtonNewMemberCompetitive;
     private javax.swing.JRadioButton RadioButtonNewMemberCrawl;
     private javax.swing.JRadioButton RadioButtonNewMemberPassive;
+    private javax.swing.JRadioButton RadioButtonTopFiveBackstroke;
+    private javax.swing.JRadioButton RadioButtonTopFiveBreaststroke;
+    private javax.swing.JRadioButton RadioButtonTopFiveButterfly;
+    private javax.swing.JRadioButton RadioButtonTopFiveCrawl;
+    private javax.swing.JRadioButton RadioButtonTopFiveDistance100;
+    private javax.swing.JRadioButton RadioButtonTopFiveDistance200;
+    private javax.swing.JRadioButton RadioButtonTopFiveDistance400;
     private javax.swing.JTextField TextFieldAddCompetitionResultCompetitionTime;
     private javax.swing.JTextField TextFieldAddCompetitionResultCompetitionYear;
     private javax.swing.JTextField TextFieldAddCompetitionResultDateDay;
@@ -4087,6 +4390,8 @@ public class GUI extends javax.swing.JFrame
     private javax.swing.ButtonGroup buttonGroupCreateMemberPassiveActive;
     private javax.swing.ButtonGroup buttonGroupEditMemberActivityType;
     private javax.swing.ButtonGroup buttonGroupEditMemberPassiveActive;
+    private javax.swing.ButtonGroup buttonGroupTopFiveDiscipline;
+    private javax.swing.ButtonGroup buttonGroupTopFiveDistance;
     private java.awt.TextArea textAreaAddCompetitionResultMemberList;
     private java.awt.TextArea textAreaAddTrainingMemberList;
     private java.awt.TextArea textAreaAllMembers;
@@ -4094,5 +4399,6 @@ public class GUI extends javax.swing.JFrame
     private java.awt.TextArea textAreaRevokePaymentMemberList;
     private java.awt.TextArea textAreaShowAllArrearsMemberList;
     private java.awt.TextArea textAreaSingleMemberArrearMemberList;
+    private java.awt.TextArea textAreaViewTopFive;
     // End of variables declaration//GEN-END:variables
 }
