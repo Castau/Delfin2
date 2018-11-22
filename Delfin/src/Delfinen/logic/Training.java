@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
+ * The Training class takes care of TrainingSessions for a specific MemberCompetitive.
+ * 
  * @author Camilla
  */
 public class Training {

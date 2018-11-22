@@ -5,10 +5,12 @@ import java.time.Year;
 
 /**
  *
- * @author runin
- *
  * The Subscription class handles arrears based on the Member.yearsPaid field.
  * It also works off of the Member.calculateArrear method.
+ * 
+ * @author runin
+ *
+ * 
  */
 public class Subscription
 {

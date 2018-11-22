@@ -12,10 +12,12 @@ import java.util.Date;
 
 /**
  *
- * @author Rúni, Asger, Camilla
- *
  * The controller class takes use of the ModelController and Subscription class
  * to create, save, change and delete values and objects.
+ * 
+ * @author Rúni, Asger, Camilla
+ *
+ * 
  */
 public class Controller
 {

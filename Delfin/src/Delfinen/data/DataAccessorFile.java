@@ -10,11 +10,12 @@ import java.io.FileWriter;
 import java.io.Writer;
 
 /**
+ * DataAccessorFile is used to access file using the java.io package. It also
+ * takes use of Google Gson (2.8.2) to store and load JSON data.
  *
  * @author Camilla
- * 
- * DataAccessorFile is used to access file using the java.io package.
- * It also takes use of Google Gson (2.8.2) to store and load JSON data.
+ *
+ *
  */
 public class DataAccessorFile
 {
@@ -22,8 +23,8 @@ public class DataAccessorFile
     private String FILENAME = "Delfin.json";
 
     /**
-     * DataAccessorFile creates a file that holds all the program data. If the 
-     * Config testmode boolean is set to true, a seperate file for testing is 
+     * DataAccessorFile creates a file that holds all the program data. If the
+     * Config testmode boolean is set to true, a seperate file for testing is
      * created.
      */
     public DataAccessorFile()
@@ -37,7 +38,7 @@ public class DataAccessorFile
     /**
      * This method reads the file specified in the filePath string and returns
      * the file content as a Model object.
-     * 
+     *
      * @param filePath File path (Default: empty = project folder)
      * @return Model
      */
@@ -75,9 +76,9 @@ public class DataAccessorFile
 
     /**
      * This method takes a Model object and writes it to the file, specified by
-     * the filePath and the FILENAME. If no file exists when this method is called, a new file will
-     * be created.
-     * 
+     * the filePath and the FILENAME. If no file exists when this method is
+     * called, a new file will be created.
+     *
      * @param model Model object in question. If none, new will be created.
      * @param filePath File path in question. (Default: Empty = Project folder)
      */
@@ -113,7 +114,7 @@ public class DataAccessorFile
 
     /**
      * Sets the FILENAME
-     * 
+     *
      * @param FILENAME Desired filename. (Default: "Delfin.json")
      */
     public void setFILENAME(String FILENAME)

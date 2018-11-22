@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
+ * The competition class holds the competition results belonging to a specific MemberCompetitive.
+ * 
  * @author Camilla
  */
 public class Competition 

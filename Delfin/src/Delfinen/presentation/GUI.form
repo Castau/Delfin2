@@ -46,102 +46,102 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelLoginScreen" alignment="0" max="32767" attributes="0"/>
+          <Component id="PanelLoginScreen" alignment="0" pref="964" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsManager" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsManager" pref="940" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelCreateNewMember" max="32767" attributes="0"/>
+                  <Component id="PanelCreateNewMember" pref="940" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelEditMemberChooseMember" max="32767" attributes="0"/>
+                  <Component id="PanelEditMemberChooseMember" pref="940" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelEditMember" max="32767" attributes="0"/>
+                  <Component id="PanelEditMember" pref="932" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="5" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelDeleteMember" max="32767" attributes="0"/>
+                  <Component id="PanelDeleteMember" pref="932" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="6" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="PanelViewMembers" max="32767" attributes="0"/>
+                  <Component id="PanelViewMembers" pref="932" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="7" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsCashier" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsCashier" pref="940" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="8" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelRegisterPayment" max="32767" attributes="0"/>
+                  <Component id="PanelRegisterPayment" pref="940" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="9" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelRevokePayment" max="32767" attributes="0"/>
+                  <Component id="PanelRevokePayment" pref="940" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="10" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelSingleMemberArrear" max="32767" attributes="0"/>
+                  <Component id="PanelSingleMemberArrear" pref="922" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="11" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelShowAllArrears" max="32767" attributes="0"/>
+                  <Component id="PanelShowAllArrears" pref="932" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="12" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsTrainer" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsTrainer" pref="940" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="13" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelAddTraining" max="32767" attributes="0"/>
+                  <Component id="PanelAddTraining" pref="900" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="14" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelAddCompetitionResult" max="32767" attributes="0"/>
+                  <Component id="PanelAddCompetitionResult" pref="900" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -156,102 +156,102 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PanelLoginScreen" alignment="0" max="32767" attributes="0"/>
+          <Component id="PanelLoginScreen" alignment="0" pref="543" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsManager" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsManager" pref="521" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelCreateNewMember" max="32767" attributes="0"/>
+                  <Component id="PanelCreateNewMember" pref="519" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelEditMemberChooseMember" max="32767" attributes="0"/>
+                  <Component id="PanelEditMemberChooseMember" pref="519" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelEditMember" max="32767" attributes="0"/>
+                  <Component id="PanelEditMember" pref="518" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="5" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelDeleteMember" max="32767" attributes="0"/>
+                  <Component id="PanelDeleteMember" pref="517" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="6" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Component id="PanelViewMembers" max="32767" attributes="0"/>
+                  <Component id="PanelViewMembers" pref="518" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="7" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsCashier" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsCashier" pref="475" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="8" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelRegisterPayment" max="32767" attributes="0"/>
+                  <Component id="PanelRegisterPayment" pref="475" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="9" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelRevokePayment" max="32767" attributes="0"/>
+                  <Component id="PanelRevokePayment" pref="475" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="10" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelSingleMemberArrear" max="32767" attributes="0"/>
+                  <Component id="PanelSingleMemberArrear" pref="474" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="11" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelShowAllArrears" max="32767" attributes="0"/>
+                  <Component id="PanelShowAllArrears" pref="474" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="12" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelLoggedInAsTrainer" max="32767" attributes="0"/>
+                  <Component id="PanelLoggedInAsTrainer" pref="520" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="13" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelAddTraining" max="32767" attributes="0"/>
+                  <Component id="PanelAddTraining" pref="466" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="14" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="PanelAddCompetitionResult" max="32767" attributes="0"/>
+                  <Component id="PanelAddCompetitionResult" pref="465" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -276,7 +276,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelLoginScreenHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelLoginScreenHeader" alignment="0" pref="964" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -646,7 +646,7 @@
                   <Component id="ButtonNewMemberCreateMember" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
-              <Component id="PanelCreateNewMemberHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelCreateNewMemberHeader" alignment="0" pref="940" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -947,7 +947,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelEditMemberHeaderChoose" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelEditMemberHeaderChoose" alignment="0" pref="940" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1121,7 +1121,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelEditMemberHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelEditMemberHeader" alignment="0" pref="932" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1471,7 +1471,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelDeleteMemberHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelDeleteMemberHeader" alignment="0" pref="932" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1645,7 +1645,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelViewMembersHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelViewMembersHeader" alignment="0" pref="932" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1832,7 +1832,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelLoggedInAsCashierScreenHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelLoggedInAsCashierScreenHeader" alignment="0" pref="940" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="ButtonBackToMainMenuFromCashier" min="-2" max="-2" attributes="0"/>
@@ -2010,7 +2010,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelRegisterPaymentHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelRegisterPaymentHeader" alignment="0" pref="940" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="ButtonBackFromRegisterPayment" min="-2" max="-2" attributes="0"/>
@@ -2245,7 +2245,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelRevokePaymentHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelRevokePaymentHeader" alignment="0" pref="940" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="ButtonBackFromRevokePayment" min="-2" max="-2" attributes="0"/>
@@ -2480,7 +2480,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelSingleMemberArrearHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelSingleMemberArrearHeader" alignment="0" pref="922" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="ButtonBackFromSingleMemberArrear" min="-2" max="-2" attributes="0"/>
@@ -2704,7 +2704,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelShowAllArrearsHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelShowAllArrearsHeader" alignment="0" pref="932" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -3058,7 +3058,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelAddTrainingHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelAddTrainingHeader" alignment="0" pref="900" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -3455,7 +3455,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="PanelAddCompetitionResultHeader" alignment="0" pref="858" max="32767" attributes="0"/>
+              <Component id="PanelAddCompetitionResultHeader" alignment="0" pref="900" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">

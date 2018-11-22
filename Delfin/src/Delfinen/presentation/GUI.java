@@ -15,24 +15,26 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
+ * This class uses all the other classes (in Delfinen.logic and Delfinen.data)
+ * directly or indirectly to present a graphical user interface
  *
  * @author Asger
- * 
- * This class uses all the other classes (in Delfinen.logic and Delfinen.data) directly or indirectly to present a graphical user interface 
+ *
+ *
  */
 public class GUI extends javax.swing.JFrame
 {
+
+    private Controller c;
+    private String filePath = "";
+    //The field below is only used as a temporary placeholder for the id of the member that is chosen in the EditMember-screen / DeleteMember-screen
+    int idMember = 0;
 
     /**
      * GUI class
      *
      *
      */
-    private Controller c;
-    private String filePath = "";
-    //The field below is only used as a temporary placeholder for the id of the member that is chosen in the EditMember-screen / DeleteMember-screen
-    int idMember = 0;
-    
     public GUI()
     {
         initComponents();
@@ -53,7 +55,7 @@ public class GUI extends javax.swing.JFrame
         this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingBreaststroke);
         this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingButterfly);
         this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingCrawl);
-        
+
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance100);
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance200);
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance400);
@@ -62,7 +64,7 @@ public class GUI extends javax.swing.JFrame
         this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultBreaststroke);
         this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultButterfly);
         this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultCrawl);
-        
+
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance100);
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance200);
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance400);
@@ -71,7 +73,7 @@ public class GUI extends javax.swing.JFrame
         this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveBreaststroke);
         this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveButterfly);
         this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveCrawl);
-        
+
         this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance100);
         this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance200);
         this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance400);
@@ -98,7 +100,7 @@ public class GUI extends javax.swing.JFrame
         this.RadioButtonNewMemberBreaststroke.setEnabled(false);
         this.RadioButtonNewMemberButterfly.setEnabled(false);
         this.RadioButtonNewMemberCrawl.setEnabled(false);
-        
+
         this.RadioButtonEditMemberBasic.setEnabled(false);
         this.RadioButtonEditMemberCompetitive.setEnabled(false);
         this.RadioButtonEditMemberBackstroke.setEnabled(false);
@@ -3012,29 +3014,30 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonCancelCreateNewMemberActionPerformed
 
     /**
-     * GUI section: Manager.
-     * This method collects data given by the user and creates a new member.
-     * Different types of members may be created depending on the type of data provided by the user.
-     * 
+     * GUI section: Manager. This method collects data given by the user and
+     * creates a new member. Different types of members may be created depending
+     * on the type of data provided by the user.
+     *
      * @See Delfinen.logic.Controller.createMember()
      * @See Delfinen.logic.Controller.createMemberActive()
      * @See Delfinen.logic.Controller.createMemberCompetitive()
-     * @param evt The ActionEvent that occurs when the Create Member button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Create Member button is
+     * clicked by the user
      */
     private void ButtonNewMemberCreateMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonNewMemberCreateMemberActionPerformed
         /*
         Pre-creating values used in the actual creation of the new member
-        */
+         */
         JFrame frame = new JFrame("Message");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         String name = "";
         Year birthyear = null;
         MembershipType membershipType = MembershipType.PASSIVE;
         ActivityType activityType = ActivityType.BASIC;
-        ArrayList <DisciplineType> disciplineList = new ArrayList();
+        ArrayList<DisciplineType> disciplineList = new ArrayList();
         /*
         Changing values to the actual values chosen by the user
-        */
+         */
         //Selecting birthyear based on user input
         try
         {
@@ -3092,11 +3095,11 @@ public class GUI extends javax.swing.JFrame
         }
         /*
         Creating new member
-        */
+         */
         //Member
         if (membershipType == MembershipType.PASSIVE)
         {
-            try 
+            try
             {
                 if (birthyear == null || name == null)
                 {
@@ -3104,8 +3107,8 @@ public class GUI extends javax.swing.JFrame
                 }
                 c.createMember(name, birthyear, membershipType);
                 JOptionPane.showMessageDialog(frame, "Member created");
-            } 
-            catch (NullPointerException nx) 
+            }
+            catch (NullPointerException nx)
             {
                 System.out.println("Could not create member");
                 JOptionPane.showMessageDialog(frame, "Could not create member");
@@ -3114,7 +3117,7 @@ public class GUI extends javax.swing.JFrame
         //MemberActive
         if (membershipType == MembershipType.ACTIVE && activityType == ActivityType.BASIC)
         {
-            try 
+            try
             {
                 if (birthyear == null || name == null)
                 {
@@ -3122,8 +3125,8 @@ public class GUI extends javax.swing.JFrame
                 }
                 c.createMemberActive(name, birthyear, membershipType, activityType);
                 JOptionPane.showMessageDialog(frame, "Member created");
-            } 
-            catch (NullPointerException nx) 
+            }
+            catch (NullPointerException nx)
             {
                 System.out.println("Could not create member");
                 JOptionPane.showMessageDialog(frame, "Could not create member");
@@ -3132,7 +3135,7 @@ public class GUI extends javax.swing.JFrame
         //MemberCompetitive
         if (activityType == ActivityType.COMPETITIVE)
         {
-            try 
+            try
             {
                 if (birthyear == null || name == null)
                 {
@@ -3140,8 +3143,8 @@ public class GUI extends javax.swing.JFrame
                 }
                 c.createMemberCompetitive(name, birthyear, membershipType, activityType, disciplineList);
                 JOptionPane.showMessageDialog(frame, "Member created");
-            } 
-            catch (NullPointerException nx) 
+            }
+            catch (NullPointerException nx)
             {
                 System.out.println("Could not create member");
                 JOptionPane.showMessageDialog(frame, "Could not create member");
@@ -3232,9 +3235,9 @@ public class GUI extends javax.swing.JFrame
             //Choosing selected member from drop down menu
             String StrMember = ComboBoxChooseMemberToEdit.getSelectedItem().toString();
             String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
-                             StrMember.indexOf(","));
-            idMember = 
-            Integer.parseInt(StrMemberSub.trim());
+                    StrMember.indexOf(","));
+            idMember
+                    = Integer.parseInt(StrMemberSub.trim());
             Member m = c.getMember(idMember);
             //Putting chosen member's base info into the Edit Member-screen
             this.TextFieldEditMemberName.setText(m.getName());
@@ -3251,7 +3254,7 @@ public class GUI extends javax.swing.JFrame
         }
     }//GEN-LAST:event_ButtonOKChooseMemberToEditActionPerformed
 
-    
+
     private void ButtonCancelEditMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelEditMemberActionPerformed
         PanelLoggedInAsManager.setVisible(true);
         PanelEditMember.setVisible(false);
@@ -3295,30 +3298,31 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_RadioButtonEditMemberCompetitiveActionPerformed
 
     /**
-     * GUI section: Manager.
-     * This method collects data given by the user and edits an existing member.
-     * Different types of members may be edited depending on the type of data provided by the user.
-     * 
+     * GUI section: Manager. This method collects data given by the user and
+     * edits an existing member. Different types of members may be edited
+     * depending on the type of data provided by the user.
+     *
      * @See Delfinen.logic.Controller.editMember()
      * @See Delfinen.logic.Controller.createTempMember()
      * @See Delfinen.logic.Controller.createTempMemberActive()
      * @See Delfinen.logic.Controller.createTempMemberCompetitive()
-     * @param evt The ActionEvent that occurs when the Confirm Edit button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Confirm Edit button is
+     * clicked by the user
      */
     private void ButtonEditMemberConfirmEditChosenMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberConfirmEditChosenMemberActionPerformed
         /*
         Pre-creating values used in the actual creation of the new member
-        */
+         */
         JFrame frame = new JFrame("Message");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         String name = "";
         Year birthyear = null;
         MembershipType membershipType = MembershipType.PASSIVE;
         ActivityType activityType = ActivityType.BASIC;
-        ArrayList <DisciplineType> disciplineList = new ArrayList();
+        ArrayList<DisciplineType> disciplineList = new ArrayList();
         /*
         Changing values to the actual values chosen by the user
-        */
+         */
         //Selecting birthyear based on user input
         try
         {
@@ -3376,11 +3380,11 @@ public class GUI extends javax.swing.JFrame
         }
         /*
         Editing member
-        */
+         */
         //Member
         if (membershipType == MembershipType.PASSIVE)
         {
-            try 
+            try
             {
                 if (birthyear == null || name == null)
                 {
@@ -3388,8 +3392,8 @@ public class GUI extends javax.swing.JFrame
                 }
                 c.editMember(c.createTempMember(idMember, name, birthyear, membershipType));
                 JOptionPane.showMessageDialog(frame, "Member has been edited");
-            } 
-            catch (NullPointerException nx) 
+            }
+            catch (NullPointerException nx)
             {
                 System.out.println("Could not edit member");
                 JOptionPane.showMessageDialog(frame, "Could not edit member");
@@ -3398,7 +3402,7 @@ public class GUI extends javax.swing.JFrame
         //MemberActive
         if (membershipType == MembershipType.ACTIVE && activityType == ActivityType.BASIC)
         {
-            try 
+            try
             {
                 if (birthyear == null || name == null)
                 {
@@ -3406,8 +3410,8 @@ public class GUI extends javax.swing.JFrame
                 }
                 c.editMember(c.createTempMemberActive(idMember, name, birthyear, membershipType, activityType));
                 JOptionPane.showMessageDialog(frame, "Member has been edited");
-            } 
-            catch (NullPointerException nx) 
+            }
+            catch (NullPointerException nx)
             {
                 System.out.println("Could not edit member");
                 JOptionPane.showMessageDialog(frame, "Could not edit member");
@@ -3416,7 +3420,7 @@ public class GUI extends javax.swing.JFrame
         //MemberCompetitive
         if (activityType == ActivityType.COMPETITIVE)
         {
-            try 
+            try
             {
                 if (birthyear == null || name == null)
                 {
@@ -3424,8 +3428,8 @@ public class GUI extends javax.swing.JFrame
                 }
                 c.editMember(c.createTempMemberCompetitive(idMember, name, birthyear, membershipType, activityType, disciplineList));
                 JOptionPane.showMessageDialog(frame, "Member has been edited");
-            } 
-            catch (NullPointerException nx) 
+            }
+            catch (NullPointerException nx)
             {
                 System.out.println("Could not edit member");
                 JOptionPane.showMessageDialog(frame, "Could not edit member");
@@ -3469,12 +3473,12 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonCancelDeleteMemberActionPerformed
 
     /**
-     * GUI section: Manager.
-     * This method deletes an existing member chosen by the user.
-     * All types of members may be deleted.
-     * 
+     * GUI section: Manager. This method deletes an existing member chosen by
+     * the user. All types of members may be deleted.
+     *
      * @See Delfinen.logic.Controller.deleteMember()
-     * @param evt The ActionEvent that occurs when the Delete button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Delete button is clicked
+     * by the user
      */
     private void ButtonOKChooseMemberToDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberToDeleteActionPerformed
         JFrame frame = new JFrame("Message");
@@ -3484,9 +3488,9 @@ public class GUI extends javax.swing.JFrame
             //Fetching chosen member
             String StrMember = ComboBoxChooseMemberToDelete.getSelectedItem().toString();
             String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
-                                 StrMember.indexOf(","));
-            idMember = 
-            Integer.parseInt(StrMemberSub.trim());
+                    StrMember.indexOf(","));
+            idMember
+                    = Integer.parseInt(StrMemberSub.trim());
             //Deleting chosen member
             c.deleteMember(idMember);
             JOptionPane.showMessageDialog(frame, "Member has been deleted");
@@ -3503,11 +3507,11 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonOKChooseMemberToDeleteActionPerformed
 
     /**
-     * GUI section: Manager.
-     * This method views all existing members
-     * 
+     * GUI section: Manager. This method views all existing members
+     *
      * @See Delfinen.logic.Controller.getAllMembers()
-     * @param evt The ActionEvent that occurs when the View Members button is clicked by the user
+     * @param evt The ActionEvent that occurs when the View Members button is
+     * clicked by the user
      */
     private void ButtonViewMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewMembersActionPerformed
         PanelLoggedInAsManager.setVisible(false);
@@ -3527,11 +3531,11 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonBackFromViewAllMembersActionPerformed
 
     /**
-     * GUI section: Manager.
-     * This method views all existing members
-     * 
+     * GUI section: Manager. This method views all existing members
+     *
      * @See Delfinen.logic.Controller.getAllMembers()
-     * @param evt The ActionEvent that occurs when the All button is clicked by the user
+     * @param evt The ActionEvent that occurs when the All button is clicked by
+     * the user
      */
     private void ButtonViewAllMembersAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewAllMembersAllActionPerformed
         //Clearing the All Members-list and updating with latest data
@@ -3544,11 +3548,11 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonViewAllMembersAllActionPerformed
 
     /**
-     * GUI section: Manager.
-     * This method views all competitive members
-     * 
+     * GUI section: Manager. This method views all competitive members
+     *
      * @See Delfinen.logic.Controller.getAllCompetitiveMembers()
-     * @param evt The ActionEvent that occurs when the Only Competitive button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Only Competitive button
+     * is clicked by the user
      */
     private void ButtonViewAllMembersCompetitionModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewAllMembersCompetitionModeActionPerformed
         //Clearing the All Members-list and loading only the competitive members to the list
@@ -3575,12 +3579,13 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonRegisterPaymentActionPerformed
 
     /**
-     * GUI section: Cashier.
-     * This method views all members in arrear as well as the total amount of money owed to the club by those members
-     * 
+     * GUI section: Cashier. This method views all members in arrear as well as
+     * the total amount of money owed to the club by those members
+     *
      * @See Delfinen.logic.Controller.getAllArrearMembers()
      * @See Delfinen.logic.Controller.getArrearsAllMembers()
-     * @param evt The ActionEvent that occurs when the All Arrears button is clicked by the user
+     * @param evt The ActionEvent that occurs when the All Arrears button is
+     * clicked by the user
      */
     private void ButtonAllArrearsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAllArrearsActionPerformed
     {//GEN-HEADEREND:event_ButtonAllArrearsActionPerformed
@@ -3618,19 +3623,20 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonBackFromRegisterPaymentActionPerformed
 
     /**
-     * GUI section: Cashier.
-     * This method views all members and lets the user register payment to members using the members' ID
-     * 
+     * GUI section: Cashier. This method views all members and lets the user
+     * register payment to members using the members' ID
+     *
      * @See Delfinen.logic.Controller.getAllMembers()
      * @See Delfinen.logic.Controller.registerPayment()
-     * @param evt The ActionEvent that occurs when the Register Payment button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Register Payment button
+     * is clicked by the user
      */
     private void ButtonRegisterPaymentRegisterPaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
     {//GEN-HEADEREND:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
         JFrame frame = new JFrame("Message");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int ID = 0;
-        Year year = null; 
+        Year year = null;
         //Selecting ID based on user input
         try
         {
@@ -3698,12 +3704,13 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonBackFromRevokePaymentActionPerformed
 
     /**
-     * GUI section: Cashier.
-     * This method views all members and lets the user revoke payment to members using the members' ID
-     * 
+     * GUI section: Cashier. This method views all members and lets the user
+     * revoke payment to members using the members' ID
+     *
      * @See Delfinen.logic.Controller.getAllMembers()
      * @See Delfinen.logic.Controller.revokePayment()
-     * @param evt The ActionEvent that occurs when the Revoke Payment button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Revoke Payment button is
+     * clicked by the user
      */
     private void ButtonRevokePaymentRevokePaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRevokePaymentRevokePaymentActionPerformed
     {//GEN-HEADEREND:event_ButtonRevokePaymentRevokePaymentActionPerformed
@@ -3759,12 +3766,13 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonRevokePaymentRevokePaymentActionPerformed
 
     /**
-     * GUI section: Cashier.
-     * This method views a list of all members
-     * 
+     * GUI section: Cashier. This method views a list of all members
+     *
      * @See Delfinen.logic.Controller.getAllMembers()
-     * @See Delfinen.presentation.GUI.ButtonSingleMemberArrearShowArrearActionPerformed()
-     * @param evt The ActionEvent that occurs when the Check Member's Arrear button is clicked by the user
+     * @See
+     * Delfinen.presentation.GUI.ButtonSingleMemberArrearShowArrearActionPerformed()
+     * @param evt The ActionEvent that occurs when the Check Member's Arrear
+     * button is clicked by the user
      */
     private void ButtonCheckMembersArrearActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonCheckMembersArrearActionPerformed
     {//GEN-HEADEREND:event_ButtonCheckMembersArrearActionPerformed
@@ -3788,12 +3796,13 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonBackFromSingleMemberArrearActionPerformed
 
     /**
-     * GUI section: Cashier.
-     * This method lets the user insert the ID of a single member in order to see this member's arrear status
-     * 
+     * GUI section: Cashier. This method lets the user insert the ID of a single
+     * member in order to see this member's arrear status
+     *
      * @See Delfinen.logic.Controller.getAllMembers()
      * @See Delfinen.logic.Controller.getArrearSingleMember()
-     * @param evt The ActionEvent that occurs when the Show Arrear button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Show Arrear button is
+     * clicked by the user
      */
     private void ButtonSingleMemberArrearShowArrearActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSingleMemberArrearShowArrearActionPerformed
     {//GEN-HEADEREND:event_ButtonSingleMemberArrearShowArrearActionPerformed
@@ -3836,12 +3845,13 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonLoginAsTrainerActionPerformed
 
     /**
-     * GUI section: Trainer.
-     * This method views a list of all competitive members
-     * 
+     * GUI section: Trainer. This method views a list of all competitive members
+     *
      * @See Delfinen.logic.Controller.getAllCompetitiveMembers()
-     * @See Delfinen.presentation.GUI.ButtonAddTrainigAddTrainingActionPerformed()
-     * @param evt The ActionEvent that occurs when the Add Training button is clicked by the user
+     * @See
+     * Delfinen.presentation.GUI.ButtonAddTrainigAddTrainingActionPerformed()
+     * @param evt The ActionEvent that occurs when the Add Training button is
+     * clicked by the user
      */
     private void ButtonAddTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddTrainingActionPerformed
     {//GEN-HEADEREND:event_ButtonAddTrainingActionPerformed
@@ -3898,11 +3908,12 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonBackFromAddTrainingActionPerformed
 
     /**
-     * GUI section: Trainer.
-     * This method lets the user add a training session to the chosen member
-     * 
+     * GUI section: Trainer. This method lets the user add a training session to
+     * the chosen member
+     *
      * @See Delfinen.logic.Controller.addTrainingSession()
-     * @param evt The ActionEvent that occurs when the Add Training button in the Add Training screen is clicked by the user
+     * @param evt The ActionEvent that occurs when the Add Training button in
+     * the Add Training screen is clicked by the user
      */
     private void ButtonAddTrainigAddTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddTrainigAddTrainingActionPerformed
     {//GEN-HEADEREND:event_ButtonAddTrainigAddTrainingActionPerformed
@@ -3946,35 +3957,35 @@ public class GUI extends javax.swing.JFrame
             return;
         }
         //Checking if chosen day matches the chosen month
-        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && trainingDay <= 0)||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && trainingDay > 31)||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && trainingDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && trainingDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && trainingDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && trainingDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && trainingDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && trainingDay > 31))
+        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && trainingDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && trainingDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && trainingDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && trainingDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && trainingDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && trainingDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && trainingDay > 31))
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
         }
         //Can't be bothered to check for leap years
-        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && trainingDay <= 0)||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && trainingDay > 28)||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && trainingDay > 30) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && trainingDay > 30) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && trainingDay > 30) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && trainingDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && trainingDay > 30))
+        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && trainingDay > 28)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && trainingDay > 30)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && trainingDay > 30)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && trainingDay > 30)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && trainingDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && trainingDay > 30))
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
@@ -4007,10 +4018,10 @@ public class GUI extends javax.swing.JFrame
             discipline = DisciplineType.CRAWL;
         }
         //Guard checking if competitive member actually has a discipline
-        if (this.RadioButtonAddTrainingCrawl.isSelected() == false && 
-                this.RadioButtonAddTrainingBackstroke.isSelected() == false &&
-                this.RadioButtonAddTrainingBreaststroke.isSelected() == false &&
-                this.RadioButtonAddTrainingButterfly.isSelected() == false)
+        if (this.RadioButtonAddTrainingCrawl.isSelected() == false
+                && this.RadioButtonAddTrainingBackstroke.isSelected() == false
+                && this.RadioButtonAddTrainingBreaststroke.isSelected() == false
+                && this.RadioButtonAddTrainingButterfly.isSelected() == false)
         {
             JOptionPane.showMessageDialog(frame, "Could not add training, discipline type missing");
             return;
@@ -4029,9 +4040,9 @@ public class GUI extends javax.swing.JFrame
             distance = Distance.METERS_400;
         }
         //Guard checking if distance has been chosen
-        if (this.RadioButtonAddTrainingDistance100.isSelected() == false && 
-                this.RadioButtonAddTrainingDistance200.isSelected() == false &&
-                this.RadioButtonAddTrainingDistance400.isSelected() == false)
+        if (this.RadioButtonAddTrainingDistance100.isSelected() == false
+                && this.RadioButtonAddTrainingDistance200.isSelected() == false
+                && this.RadioButtonAddTrainingDistance400.isSelected() == false)
         {
             JOptionPane.showMessageDialog(frame, "Could not add training, distance type missing");
             return;
@@ -4076,11 +4087,12 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonBackFromAddCompetitionResultActionPerformed
 
     /**
-     * GUI section: Trainer.
-     * This method lets the user add a competition result to the chosen member
-     * 
+     * GUI section: Trainer. This method lets the user add a competition result
+     * to the chosen member
+     *
      * @See Delfinen.logic.Controller.addCompetitionSession()
-     * @param evt The ActionEvent that occurs when the Add Competition Result button in the Add Competition Result screen is clicked by the user
+     * @param evt The ActionEvent that occurs when the Add Competition Result
+     * button in the Add Competition Result screen is clicked by the user
      */
     private void ButtonAddCompetitionResultAddCompetitionResultActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddCompetitionResultAddCompetitionResultActionPerformed
     {//GEN-HEADEREND:event_ButtonAddCompetitionResultAddCompetitionResultActionPerformed
@@ -4143,34 +4155,34 @@ public class GUI extends javax.swing.JFrame
             return;
         }
         //Checking if chosen day matches the chosen month
-        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && competitionDay <= 0)||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && competitionDay > 31)||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && competitionDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && competitionDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && competitionDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && competitionDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && competitionDay > 31) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && competitionDay > 31))
+        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && competitionDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && competitionDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && competitionDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && competitionDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && competitionDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && competitionDay > 31)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && competitionDay > 31))
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
         }
-        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && competitionDay <= 0)||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && competitionDay > 28)||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && competitionDay > 30) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && competitionDay > 30) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && competitionDay > 30) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && competitionDay <= 0) ||
-            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && competitionDay > 30))
+        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && competitionDay > 28)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && competitionDay > 30)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && competitionDay > 30)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && competitionDay > 30)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && competitionDay <= 0)
+                || (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && competitionDay > 30))
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
@@ -4203,10 +4215,10 @@ public class GUI extends javax.swing.JFrame
             discipline = DisciplineType.CRAWL;
         }
         //Guard checking if competitive member actually has a discipline
-        if (this.RadioButtonAddCompetitionResultCrawl.isSelected() == false && 
-                this.RadioButtonAddCompetitionResultBackstroke.isSelected() == false &&
-                this.RadioButtonAddCompetitionResultBreaststroke.isSelected() == false &&
-                this.RadioButtonAddCompetitionResultButterfly.isSelected() == false)
+        if (this.RadioButtonAddCompetitionResultCrawl.isSelected() == false
+                && this.RadioButtonAddCompetitionResultBackstroke.isSelected() == false
+                && this.RadioButtonAddCompetitionResultBreaststroke.isSelected() == false
+                && this.RadioButtonAddCompetitionResultButterfly.isSelected() == false)
         {
             JOptionPane.showMessageDialog(frame, "Could not add competition result, discipline type missing");
             return;
@@ -4225,9 +4237,9 @@ public class GUI extends javax.swing.JFrame
             distance = Distance.METERS_400;
         }
         //Guard checking if distance has been chosen
-        if (this.RadioButtonAddCompetitionResultDistance100.isSelected() == false && 
-                this.RadioButtonAddCompetitionResultDistance200.isSelected() == false &&
-                this.RadioButtonAddCompetitionResultDistance400.isSelected() == false)
+        if (this.RadioButtonAddCompetitionResultDistance100.isSelected() == false
+                && this.RadioButtonAddCompetitionResultDistance200.isSelected() == false
+                && this.RadioButtonAddCompetitionResultDistance400.isSelected() == false)
         {
             JOptionPane.showMessageDialog(frame, "Could not add competition result, distance type missing");
             return;
@@ -4262,11 +4274,12 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonBackFromViewTopFiveActionPerformed
 
     /**
-     * GUI section: Trainer.
-     * This method lets the user view the top five members in the chosen disciplines and chosen distances (only training results)
-     * 
+     * GUI section: Trainer. This method lets the user view the top five members
+     * in the chosen disciplines and chosen distances (only training results)
+     *
      * @See Delfinen.logic.Controller.getTopFiveTraining()
-     * @param evt The ActionEvent that occurs when the Top Five Training button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Top Five Training button
+     * is clicked by the user
      */
     private void ButtonViewTopFiveTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonViewTopFiveTrainingActionPerformed
     {//GEN-HEADEREND:event_ButtonViewTopFiveTrainingActionPerformed
@@ -4291,10 +4304,10 @@ public class GUI extends javax.swing.JFrame
         {
             discipline = DisciplineType.CRAWL;
         }
-        if (this.RadioButtonTopFiveBackstroke.isSelected() == false && 
-                this.RadioButtonTopFiveBreaststroke.isSelected() == false &&
-                this.RadioButtonTopFiveButterfly.isSelected() == false &&
-                this.RadioButtonTopFiveCrawl.isSelected() == false)
+        if (this.RadioButtonTopFiveBackstroke.isSelected() == false
+                && this.RadioButtonTopFiveBreaststroke.isSelected() == false
+                && this.RadioButtonTopFiveButterfly.isSelected() == false
+                && this.RadioButtonTopFiveCrawl.isSelected() == false)
         {
             JOptionPane.showMessageDialog(frame, "Could not find results, discipline type missing");
             return;
@@ -4313,9 +4326,9 @@ public class GUI extends javax.swing.JFrame
             distance = Distance.METERS_400;
         }
         //Guard checking if distance has been chosen
-        if (this.RadioButtonTopFiveDistance100.isSelected() == false && 
-                this.RadioButtonTopFiveDistance200.isSelected() == false &&
-                this.RadioButtonTopFiveDistance400.isSelected() == false)
+        if (this.RadioButtonTopFiveDistance100.isSelected() == false
+                && this.RadioButtonTopFiveDistance200.isSelected() == false
+                && this.RadioButtonTopFiveDistance400.isSelected() == false)
         {
             JOptionPane.showMessageDialog(frame, "Could not find results, distance type missing");
             return;
@@ -4327,7 +4340,7 @@ public class GUI extends javax.swing.JFrame
             this.textAreaViewTopFive.append("Number " + (i + 1));
             this.textAreaViewTopFive.append("\n");
             this.textAreaViewTopFive.append(c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()).get(i).toStringNameIDDiscipline());
-            this.textAreaViewTopFive.append("\n" 
+            this.textAreaViewTopFive.append("\n"
                     + c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()).get(i).getTrainingSessions().getBestTraining(discipline, distance).toString());
             this.textAreaViewTopFive.append("\n");
             this.textAreaViewTopFive.append("\n");
@@ -4335,11 +4348,12 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonViewTopFiveTrainingActionPerformed
 
     /**
-     * GUI section: Trainer.
-     * This method lets the user view the top five members in the chosen disciplines and chosen distances (only competition results)
-     * 
+     * GUI section: Trainer. This method lets the user view the top five members
+     * in the chosen disciplines and chosen distances (only competition results)
+     *
      * @See Delfinen.logic.Controller.getTopFiveCompetition()
-     * @param evt The ActionEvent that occurs when the Top Five Competition button is clicked by the user
+     * @param evt The ActionEvent that occurs when the Top Five Competition
+     * button is clicked by the user
      */
     private void ButtonViewTopFiveCompetitionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonViewTopFiveCompetitionActionPerformed
     {//GEN-HEADEREND:event_ButtonViewTopFiveCompetitionActionPerformed
@@ -4364,10 +4378,10 @@ public class GUI extends javax.swing.JFrame
         {
             discipline = DisciplineType.CRAWL;
         }
-        if (this.RadioButtonTopFiveBackstroke.isSelected() == false && 
-                this.RadioButtonTopFiveBreaststroke.isSelected() == false &&
-                this.RadioButtonTopFiveButterfly.isSelected() == false &&
-                this.RadioButtonTopFiveCrawl.isSelected() == false)
+        if (this.RadioButtonTopFiveBackstroke.isSelected() == false
+                && this.RadioButtonTopFiveBreaststroke.isSelected() == false
+                && this.RadioButtonTopFiveButterfly.isSelected() == false
+                && this.RadioButtonTopFiveCrawl.isSelected() == false)
         {
             JOptionPane.showMessageDialog(frame, "Could not find results, discipline type missing");
             return;
@@ -4386,9 +4400,9 @@ public class GUI extends javax.swing.JFrame
             distance = Distance.METERS_400;
         }
         //Guard checking if distance has been chosen
-        if (this.RadioButtonTopFiveDistance100.isSelected() == false && 
-                this.RadioButtonTopFiveDistance200.isSelected() == false &&
-                this.RadioButtonTopFiveDistance400.isSelected() == false)
+        if (this.RadioButtonTopFiveDistance100.isSelected() == false
+                && this.RadioButtonTopFiveDistance200.isSelected() == false
+                && this.RadioButtonTopFiveDistance400.isSelected() == false)
         {
             JOptionPane.showMessageDialog(frame, "Could not find results, distance type missing");
             return;
@@ -4400,13 +4414,13 @@ public class GUI extends javax.swing.JFrame
             this.textAreaViewTopFive.append("Number " + (i + 1));
             this.textAreaViewTopFive.append("\n");
             this.textAreaViewTopFive.append(c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()).get(i).toStringNameIDDiscipline());
-            this.textAreaViewTopFive.append("\n" 
+            this.textAreaViewTopFive.append("\n"
                     + c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()).get(i).getCompetitionResults().getBestCompetitionRes(discipline, distance).toString());
             this.textAreaViewTopFive.append("\n");
             this.textAreaViewTopFive.append("\n");
         }
     }//GEN-LAST:event_ButtonViewTopFiveCompetitionActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
@@ -4427,16 +4441,20 @@ public class GUI extends javax.swing.JFrame
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex)
+        }
+        catch (ClassNotFoundException ex)
         {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
+        }
+        catch (InstantiationException ex)
         {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
+        }
+        catch (IllegalAccessException ex)
         {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        }
+        catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }

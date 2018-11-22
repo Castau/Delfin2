@@ -10,6 +10,8 @@ import java.util.Objects;
 
 
 /**
+ * The TrainingSession class keeps track of the values of a specific Training Session. 
+ * 
  * @author Camilla
  */
 public class TrainingSession implements Comparable<TrainingSession>{

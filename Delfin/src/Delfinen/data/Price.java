@@ -45,6 +45,9 @@ public class Price
         return allPrices.get(priceType);
     }
 
+    /**
+     * Price Types to call for the HashMap - based on age.
+     */
     public enum priceType
     {
         PASSIVE, YOUTH, SENIOR, PENSIONIST;

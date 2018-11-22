@@ -5,7 +5,7 @@ import java.time.Year;
 
 
 /**
- *
+ * Class for Member with an active membership. 
  * @author runin, asger og camilla
  */
 public class MemberActive extends Member

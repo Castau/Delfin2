@@ -7,12 +7,14 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
+ * Class for a standard member with basic (passive) membership.
  *
  * @author runin, Asger, Camilla
- * Class for a standard member with basic (passive) membership.
+ *
  */
 public class Member
 {
+
     private int idMember;
     private String name;
     private Year birthyear;
