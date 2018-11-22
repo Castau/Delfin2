@@ -39,8 +39,8 @@ Create a program for a local swimmingclub "Delfinen", including, but not limited
 
 **Project deadlines:**  
 Project start: November 12, 2018  
-Milestone 1: November 16, 2018 11.55PM  
-Milestone 2 (Finished): 11.55PM November 22, 2018  
+Milestone 1: November 16, 2018  
+Milestone 2 (Finished): November 22, 2018  
 
 Overview of fulfilled requirements
 ------
