@@ -45,55 +45,6 @@ public class Price
         return allPrices.get(priceType);
     }
 
-//    public int getPassivePrice()
-//    {
-//        return passivePrice;
-//    }
-//
-//    public void setPassivePrice(int passivePrice)
-//    {
-//        this.passivePrice = passivePrice;
-//    }
-//
-//    public int getYouthPrice()
-//    {
-//        return youthPrice;
-//    }
-//
-//    public void setYouthPrice(int youthPrice)
-//    {
-//        this.youthPrice = youthPrice;
-//    }
-//
-//    public int getSeniorPrice()
-//    {
-//        return seniorPrice;
-//    }
-//
-//    public void setSeniorPrice(int seniorPrice)
-//    {
-//        this.seniorPrice = seniorPrice;
-//    }
-//
-//    public int getPensionistPrice()
-//    {
-//        return pensionistPrice;
-//    }
-//
-//    public void setPensionistPrice(int pensionistPrice)
-//    {
-//        this.pensionistPrice = pensionistPrice;
-//    }
-//
-//    public HashMap<priceType, Integer> getAllPrices()
-//    {
-//        return allPrices;
-//    }
-//
-//    public void setAllPrices(HashMap<priceType, Integer> allPrices)
-//    {
-//        this.allPrices = allPrices;
-//    }
     public enum priceType
     {
         PASSIVE, YOUTH, SENIOR, PENSIONIST;
