@@ -235,7 +235,7 @@ public class Model
      * This method iterates through the ArrayList of Member objects and returns 
      * the Member object who matches the parameter
      * @param memberID, unique ID
-     * @return Member
+     * @return Member 
      */
     public Member getMember(int memberID)
     {
@@ -249,6 +249,12 @@ public class Model
         return null;
     }
 
+    /**
+     * This method iterates through the ArrayList of MemberActive objects and returns 
+     * the MemberActive object who matches the parameter
+     * @param memberID, unique ID
+     * @return MemberActive 
+     */
     public MemberActive getMemberActive(int memberID)
     {
         for (int i = 0; i < membersActive.size(); i++)
@@ -261,6 +267,12 @@ public class Model
         return null;
     }
 
+    /**
+     * This method iterates through the ArrayList of MemberCompetitive objects and returns 
+     * the MemberCompetitive object who matches the parameter
+     * @param memberID, unique ID
+     * @return MemberCompetitive 
+     */
     public MemberCompetitive getMemberCompetitive(int memberID)
     {
         for (int i = 0; i < membersCompetitive.size(); i++)
@@ -273,6 +285,13 @@ public class Model
         return null;
     }
 
+    /**
+     * This method iterates through the ArrayList of Member, MemberActive, and
+     * MemberCompetitive objects and returns deletes the Member (or child) object 
+     * who matches the parameter
+     * @param memberID, unique ID
+     * 
+     */
     public void deleteMember(int memberID)
     {
         for (int i = 0; i < members.size(); i++)
