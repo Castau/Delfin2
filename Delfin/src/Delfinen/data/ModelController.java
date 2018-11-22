@@ -197,11 +197,11 @@ public class ModelController {
      * the file
      * @param memberID int unique to a specific Member object
      * @param date, Date object
-     * @param diciplineType, Enum
-     * @param distance, Enum
+     * @param diciplineType, enum
+     * @param distance, enum
      * @param timeInSec, int representing time in seconds
      * @param placement, int representing placement 
-     * @param eventName, name of event
+     * @param eventName, String name of event
      * @throws IOException if an error in the filewriting occurs.
      */
     public void addCompetitionResult(int memberID, Date date, DisciplineType diciplineType,
@@ -224,8 +224,8 @@ public class ModelController {
      * Using the java.util.Comparator compare method, the sortList is sorted by each
      * MemberCompetitive objects lowest timeInSec. Then up to 5 MemberCompetitive 
      * objects are added to the final ArrayList in the sorted order
-     * @param disciplineType, Enum
-     * @param distance, Enum
+     * @param disciplineType, enum
+     * @param distance, enum
      * @param members, ArrayList of all MemberCompetitive objects saved in the Model object
      * @return top5, sorted ArrayList containing up to 5 MemberCompetitive objects
      */
@@ -274,8 +274,8 @@ public class ModelController {
      * Using the java.util.Comparator compare method, the sortList is sorted by each
      * MemberCompetitive objects lowest timeInSec. Then up to 5 MemberCompetitive 
      * objects are added to the final ArrayList in the sorted order
-     * @param disciplineType, Enum
-     * @param distance, Enum
+     * @param disciplineType, enum
+     * @param distance, enum
      * @param members, ArrayList of all MemberCompetitive objects saved in the Model object
      * @return top5, sorted ArrayList containing up to 5 MemberCompetitive objects
      */

@@ -15,10 +15,20 @@ public class CompetitionResult implements Comparable<CompetitionResult>{
     private Date date;
     private DisciplineType diciplineType;
     private Distance distance;
-    private int timeInSec;  //evt localTime type?
+    private int timeInSec;  
     private int placement;
     private String eventName;
 
+    /**
+     * CompetitionResult holds info of a specific CompetitionResult and belongs
+     * to an ArrayList of CompetitionResults in the Competition object. 
+     * @param date, java.util.Date object of CompetitionResults
+     * @param diciplineType, enum
+     * @param distance, enum
+     * @param timeInSec, int time of CompetitionResults in seconds
+     * @param placement, int representing placememnt
+     * @param eventName, String name og event
+     */
     public CompetitionResult(Date date, DisciplineType diciplineType, Distance distance, int timeInSec, int placement, String eventName) {
         this.date = date;
         this.diciplineType = diciplineType;

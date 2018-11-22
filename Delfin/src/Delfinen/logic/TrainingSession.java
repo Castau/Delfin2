@@ -17,8 +17,16 @@ public class TrainingSession implements Comparable<TrainingSession>{
     private Date date;
     private DisciplineType diciplineType;
     private Distance distance;
-    private int timeInSec;  //evt localTime type?
+    private int timeInSec;  
 
+    /**
+     * TrainingSession holds info of a specific TrainingSession and belongs
+     * to an ArrayList of TrainingSession in the Training object. 
+     * @param date, java.util.Date object of TrainingSession
+     * @param diciplineType, enum
+     * @param distance, enum
+     * @param timeInSec, int time of TrainingSession in seconds
+     */
     public TrainingSession(Date date, DisciplineType diciplineType, Distance distance, int timeInSec) {
         this.date = date;
         this.diciplineType = diciplineType;
