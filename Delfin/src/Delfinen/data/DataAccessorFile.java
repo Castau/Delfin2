@@ -36,9 +36,9 @@ public class DataAccessorFile
 
     /**
      * This method reads the file specified in the filePath string and returns
-     * the filecontent as a Model object.
+     * the file content as a Model object.
      * 
-     * @param filePath
+     * @param filePath File path (Default: empty = project folder)
      * @return Model
      */
     public Model readFile(String filePath)
@@ -78,8 +78,8 @@ public class DataAccessorFile
      * the filePath and the FILENAME. If no file exists when this method is called, a new file will
      * be created.
      * 
-     * @param model
-     * @param filePath
+     * @param model Model object in question. If none, new will be created.
+     * @param filePath File path in question. (Default: Empty = Project folder)
      */
     public void writeToFile(Model model, String filePath)
     {
@@ -114,7 +114,7 @@ public class DataAccessorFile
     /**
      * Sets the FILENAME
      * 
-     * @param FILENAME
+     * @param FILENAME Desired filename. (Default: "Delfin.json")
      */
     public void setFILENAME(String FILENAME)
     {

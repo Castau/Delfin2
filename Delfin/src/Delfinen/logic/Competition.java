@@ -22,7 +22,7 @@ public class Competition
     
     /**
      * Adds the parameter to the ArrayList of CompetitionResults competitionsList
-     * @param result
+     * @param result Competition Result in question.
      */
     public void addCompetitionResult(CompetitionResult result) {
         competitionsList.add(result);
@@ -42,8 +42,8 @@ public class Competition
      * This temporary ArrayList is then sorted based on the int timeInSec (see overridden
      * compareTo method in CompetitionResult). The CompetitionResult with the lowest 
      * timeInSec are now in index 0, which is then returned
-     * @param disciplineType
-     * @param distance
+     * @param disciplineType Desired DisciplineType of result
+     * @param distance Desired Distance Type of result
      * @return CompetitionResult
      */
     public CompetitionResult getBestCompetitionRes(DisciplineType disciplineType, Distance distance) {

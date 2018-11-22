@@ -22,7 +22,7 @@ public class Training {
 
     /**
      * Adds the parameter to the ArrayList of TrainingSessions trainingList
-     * @param result
+     * @param training Training in question
      */
     public void addTrainingSession(TrainingSession training) {
         trainingList.add(training);
@@ -42,9 +42,9 @@ public class Training {
      * This temporary ArrayList is then sorted based on the int timeInSec (see overridden
      * compareTo method in TrainingSession). The TrainingSession with the lowest 
      * timeInSec are now in index 0, which is then returned
-     * @param disciplineType
-     * @param distance
-     * @return TrainingSession
+     * @param disciplineType DisciplineType in question
+     * @param distance Distance Type in question  
+     * @return TrainingSession Returns the best training of the specific parameters.
      */
     public TrainingSession getBestTraining(DisciplineType disciplineType, Distance distance) {
         ArrayList<TrainingSession> templist = new ArrayList();
