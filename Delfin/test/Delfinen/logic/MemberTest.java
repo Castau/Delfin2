@@ -75,10 +75,10 @@ public class MemberTest
      * Test of toString method, of class Member.
      */
     @Test
-    public void testToString() //fix before export - toString unfinished
+    public void testToString() 
     {
         Member instance = m1;
-        String expResult = "ID: 8, Name: Hans, Birthyear: 1965, Years Paid: [], MembershipType: PASSIVE";
+        String expResult = "ID: 1, Name: Hans, Birthyear: 1965, Years Paid: [], MembershipType: PASSIVE";
         String result = instance.toString();
         assertEquals(expResult, result);
     }
