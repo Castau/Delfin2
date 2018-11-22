@@ -16,11 +16,18 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author shevitar
+ * @author Asger
+ * 
+ * This class uses all the other classes (in Delfinen.logic and Delfinen.data) directly or indirectly to present a graphical user interface 
  */
 public class GUI extends javax.swing.JFrame
 {
 
+    /**
+     * GUI class
+     *
+     *
+     */
     private Controller c;
     private String filePath = "";
     //The field below is only used as a temporary placeholder for the id of the member that is chosen in the EditMember-screen / DeleteMember-screen
@@ -3004,6 +3011,16 @@ public class GUI extends javax.swing.JFrame
         this.TextFieldNewMemberBirthYear.setText("Enter year here");
     }//GEN-LAST:event_ButtonCancelCreateNewMemberActionPerformed
 
+    /**
+     * GUI section: Manager.
+     * This method collects data given by the user and creates a new member.
+     * Different types of members may be created depending on the type of data provided by the user.
+     * 
+     * @See Delfinen.logic.Controller.createMember()
+     * @See Delfinen.logic.Controller.createMemberActive()
+     * @See Delfinen.logic.Controller.createMemberCompetitive()
+     * @param evt The ActionEvent that occurs when the Create Member button is clicked by the user
+     */
     private void ButtonNewMemberCreateMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonNewMemberCreateMemberActionPerformed
         /*
         Pre-creating values used in the actual creation of the new member
@@ -3277,6 +3294,17 @@ public class GUI extends javax.swing.JFrame
         this.RadioButtonEditMemberCrawl.setEnabled(true);
     }//GEN-LAST:event_RadioButtonEditMemberCompetitiveActionPerformed
 
+    /**
+     * GUI section: Manager.
+     * This method collects data given by the user and edits an existing member.
+     * Different types of members may be edited depending on the type of data provided by the user.
+     * 
+     * @See Delfinen.logic.Controller.editMember()
+     * @See Delfinen.logic.Controller.createTempMember()
+     * @See Delfinen.logic.Controller.createTempMemberActive()
+     * @See Delfinen.logic.Controller.createTempMemberCompetitive()
+     * @param evt The ActionEvent that occurs when the Confirm Edit button is clicked by the user
+     */
     private void ButtonEditMemberConfirmEditChosenMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberConfirmEditChosenMemberActionPerformed
         /*
         Pre-creating values used in the actual creation of the new member
@@ -3440,6 +3468,14 @@ public class GUI extends javax.swing.JFrame
         PanelDeleteMember.setVisible(false);
     }//GEN-LAST:event_ButtonCancelDeleteMemberActionPerformed
 
+    /**
+     * GUI section: Manager.
+     * This method deletes an existing member chosen by the user.
+     * All types of members may be deleted.
+     * 
+     * @See Delfinen.logic.Controller.deleteMember()
+     * @param evt The ActionEvent that occurs when the Delete button is clicked by the user
+     */
     private void ButtonOKChooseMemberToDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberToDeleteActionPerformed
         JFrame frame = new JFrame("Message");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -3466,6 +3502,13 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsManager.setVisible(true);
     }//GEN-LAST:event_ButtonOKChooseMemberToDeleteActionPerformed
 
+    /**
+     * GUI section: Manager.
+     * This method views all existing members
+     * 
+     * @See Delfinen.logic.Controller.getAllMembers()
+     * @param evt The ActionEvent that occurs when the View Members button is clicked by the user
+     */
     private void ButtonViewMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewMembersActionPerformed
         PanelLoggedInAsManager.setVisible(false);
         PanelViewMembers.setVisible(true);
@@ -3483,6 +3526,13 @@ public class GUI extends javax.swing.JFrame
         PanelViewMembers.setVisible(false);
     }//GEN-LAST:event_ButtonBackFromViewAllMembersActionPerformed
 
+    /**
+     * GUI section: Manager.
+     * This method views all existing members
+     * 
+     * @See Delfinen.logic.Controller.getAllMembers()
+     * @param evt The ActionEvent that occurs when the All button is clicked by the user
+     */
     private void ButtonViewAllMembersAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewAllMembersAllActionPerformed
         //Clearing the All Members-list and updating with latest data
         this.textAreaAllMembers.setText("");
@@ -3493,6 +3543,13 @@ public class GUI extends javax.swing.JFrame
         }
     }//GEN-LAST:event_ButtonViewAllMembersAllActionPerformed
 
+    /**
+     * GUI section: Manager.
+     * This method views all competitive members
+     * 
+     * @See Delfinen.logic.Controller.getAllCompetitiveMembers()
+     * @param evt The ActionEvent that occurs when the Only Competitive button is clicked by the user
+     */
     private void ButtonViewAllMembersCompetitionModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewAllMembersCompetitionModeActionPerformed
         //Clearing the All Members-list and loading only the competitive members to the list
         this.textAreaAllMembers.setText("");
@@ -3517,6 +3574,14 @@ public class GUI extends javax.swing.JFrame
         }
     }//GEN-LAST:event_ButtonRegisterPaymentActionPerformed
 
+    /**
+     * GUI section: Cashier.
+     * This method views all members in arrear as well as the total amount of money owed to the club by those members
+     * 
+     * @See Delfinen.logic.Controller.getAllArrearMembers()
+     * @See Delfinen.logic.Controller.getArrearsAllMembers()
+     * @param evt The ActionEvent that occurs when the All Arrears button is clicked by the user
+     */
     private void ButtonAllArrearsActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAllArrearsActionPerformed
     {//GEN-HEADEREND:event_ButtonAllArrearsActionPerformed
         PanelLoggedInAsCashier.setVisible(false);
@@ -3552,6 +3617,14 @@ public class GUI extends javax.swing.JFrame
         PanelRegisterPayment.setVisible(false);
     }//GEN-LAST:event_ButtonBackFromRegisterPaymentActionPerformed
 
+    /**
+     * GUI section: Cashier.
+     * This method views all members and lets the user register payment to members using the members' ID
+     * 
+     * @See Delfinen.logic.Controller.getAllMembers()
+     * @See Delfinen.logic.Controller.registerPayment()
+     * @param evt The ActionEvent that occurs when the Register Payment button is clicked by the user
+     */
     private void ButtonRegisterPaymentRegisterPaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
     {//GEN-HEADEREND:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
         JFrame frame = new JFrame("Message");
@@ -3605,7 +3678,6 @@ public class GUI extends javax.swing.JFrame
         }
     }//GEN-LAST:event_ButtonRegisterPaymentRegisterPaymentActionPerformed
 
-    
     private void ButtonRevokePaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRevokePaymentActionPerformed
     {//GEN-HEADEREND:event_ButtonRevokePaymentActionPerformed
         PanelLoggedInAsCashier.setVisible(false);
@@ -3625,6 +3697,14 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setVisible(true);
     }//GEN-LAST:event_ButtonBackFromRevokePaymentActionPerformed
 
+    /**
+     * GUI section: Cashier.
+     * This method views all members and lets the user revoke payment to members using the members' ID
+     * 
+     * @See Delfinen.logic.Controller.getAllMembers()
+     * @See Delfinen.logic.Controller.revokePayment()
+     * @param evt The ActionEvent that occurs when the Revoke Payment button is clicked by the user
+     */
     private void ButtonRevokePaymentRevokePaymentActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonRevokePaymentRevokePaymentActionPerformed
     {//GEN-HEADEREND:event_ButtonRevokePaymentRevokePaymentActionPerformed
         JFrame frame = new JFrame("Message");
@@ -3678,6 +3758,14 @@ public class GUI extends javax.swing.JFrame
         }
     }//GEN-LAST:event_ButtonRevokePaymentRevokePaymentActionPerformed
 
+    /**
+     * GUI section: Cashier.
+     * This method views a list of all members
+     * 
+     * @See Delfinen.logic.Controller.getAllMembers()
+     * @See Delfinen.presentation.GUI.ButtonSingleMemberArrearShowArrearActionPerformed()
+     * @param evt The ActionEvent that occurs when the Check Member's Arrear button is clicked by the user
+     */
     private void ButtonCheckMembersArrearActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonCheckMembersArrearActionPerformed
     {//GEN-HEADEREND:event_ButtonCheckMembersArrearActionPerformed
         PanelLoggedInAsCashier.setVisible(false);
@@ -3699,6 +3787,14 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setVisible(true);
     }//GEN-LAST:event_ButtonBackFromSingleMemberArrearActionPerformed
 
+    /**
+     * GUI section: Cashier.
+     * This method lets the user insert the ID of a single member in order to see this member's arrear status
+     * 
+     * @See Delfinen.logic.Controller.getAllMembers()
+     * @See Delfinen.logic.Controller.getArrearSingleMember()
+     * @param evt The ActionEvent that occurs when the Show Arrear button is clicked by the user
+     */
     private void ButtonSingleMemberArrearShowArrearActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonSingleMemberArrearShowArrearActionPerformed
     {//GEN-HEADEREND:event_ButtonSingleMemberArrearShowArrearActionPerformed
         JFrame frame = new JFrame("Message");
@@ -3739,6 +3835,14 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsTrainer.setVisible(true);
     }//GEN-LAST:event_ButtonLoginAsTrainerActionPerformed
 
+    /**
+     * GUI section: Trainer.
+     * This method views a list of all competitive members
+     * 
+     * @See Delfinen.logic.Controller.getAllCompetitiveMembers()
+     * @See Delfinen.presentation.GUI.ButtonAddTrainigAddTrainingActionPerformed()
+     * @param evt The ActionEvent that occurs when the Add Training button is clicked by the user
+     */
     private void ButtonAddTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddTrainingActionPerformed
     {//GEN-HEADEREND:event_ButtonAddTrainingActionPerformed
         PanelAddTraining.setVisible(true);
@@ -3793,6 +3897,13 @@ public class GUI extends javax.swing.JFrame
         this.ComboBoxAddTrainingMonths.setSelectedIndex(0);
     }//GEN-LAST:event_ButtonBackFromAddTrainingActionPerformed
 
+    /**
+     * GUI section: Trainer.
+     * This method lets the user add a training session to the chosen member
+     * 
+     * @See Delfinen.logic.Controller.addTrainingSession()
+     * @param evt The ActionEvent that occurs when the Add Training button in the Add Training screen is clicked by the user
+     */
     private void ButtonAddTrainigAddTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddTrainigAddTrainingActionPerformed
     {//GEN-HEADEREND:event_ButtonAddTrainigAddTrainingActionPerformed
         JFrame frame = new JFrame("Message");
@@ -3964,6 +4075,13 @@ public class GUI extends javax.swing.JFrame
         this.TextFieldAddCompetitionResultEventName.setText("Name");
     }//GEN-LAST:event_ButtonBackFromAddCompetitionResultActionPerformed
 
+    /**
+     * GUI section: Trainer.
+     * This method lets the user add a competition result to the chosen member
+     * 
+     * @See Delfinen.logic.Controller.addCompetitionSession()
+     * @param evt The ActionEvent that occurs when the Add Competition Result button in the Add Competition Result screen is clicked by the user
+     */
     private void ButtonAddCompetitionResultAddCompetitionResultActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonAddCompetitionResultAddCompetitionResultActionPerformed
     {//GEN-HEADEREND:event_ButtonAddCompetitionResultAddCompetitionResultActionPerformed
         JFrame frame = new JFrame("Message");
@@ -4143,6 +4261,13 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsTrainer.setVisible(true);
     }//GEN-LAST:event_ButtonBackFromViewTopFiveActionPerformed
 
+    /**
+     * GUI section: Trainer.
+     * This method lets the user view the top five members in the chosen disciplines and chosen distances (only training results)
+     * 
+     * @See Delfinen.logic.Controller.getTopFiveTraining()
+     * @param evt The ActionEvent that occurs when the Top Five Training button is clicked by the user
+     */
     private void ButtonViewTopFiveTrainingActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonViewTopFiveTrainingActionPerformed
     {//GEN-HEADEREND:event_ButtonViewTopFiveTrainingActionPerformed
         JFrame frame = new JFrame("Message");
@@ -4209,6 +4334,13 @@ public class GUI extends javax.swing.JFrame
         }
     }//GEN-LAST:event_ButtonViewTopFiveTrainingActionPerformed
 
+    /**
+     * GUI section: Trainer.
+     * This method lets the user view the top five members in the chosen disciplines and chosen distances (only competition results)
+     * 
+     * @See Delfinen.logic.Controller.getTopFiveCompetition()
+     * @param evt The ActionEvent that occurs when the Top Five Competition button is clicked by the user
+     */
     private void ButtonViewTopFiveCompetitionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonViewTopFiveCompetitionActionPerformed
     {//GEN-HEADEREND:event_ButtonViewTopFiveCompetitionActionPerformed
         JFrame frame = new JFrame("Message");
