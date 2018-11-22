@@ -63,18 +63,6 @@ public class Model
         return membersCompetitive;
     }
 
-//    public void editMember(Member member)
-//    {
-//        for (int i = 0; i < members.size(); i++)
-//        {
-//            if (member.getId() == (members.get(i).getId()))
-//            {
-//                members.set(i, member);
-//            }
-//        }
-//    }
-
-    //New edit method
     public void editMember(Member member)
     {
         for (int i = 0; i < members.size(); i++)
@@ -105,18 +93,6 @@ public class Model
         }
     }
     
-//    public void editMemberActive(MemberActive member)
-//    {
-//        for (int i = 0; i < membersActive.size(); i++)
-//        {
-//            if (member.getId() == (membersActive.get(i).getId()))
-//            {
-//                membersActive.set(i, member);
-//            }
-//        }
-//    }
-
-    //New edit method
     public void editMemberActive(MemberActive member)
     {
         for (int i = 0; i < members.size(); i++)
@@ -146,18 +122,6 @@ public class Model
         }
     }
     
-//    public void editMemberCompetitive(MemberCompetitive member)
-//    {
-//        for (int i = 0; i < membersCompetitive.size(); i++)
-//        {
-//            if (member.getId() == (membersCompetitive.get(i).getId()))
-//            {
-//                membersCompetitive.set(i, member);
-//            }
-//        }
-//    }
-
-    //New edit method
     public void editMemberCompetitive(MemberCompetitive member)
     {
         for (int i = 0; i < members.size(); i++)

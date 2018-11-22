@@ -23,17 +23,6 @@ public class Competition //extends TrainingResults
     public ArrayList<CompetitionResult> getCompetitionList() {
         return competitionsList;
     }
-//                                      Skal nok slettes
-//    public CompetitionResult getCompetitionRes(DisciplineType disciplineType, Distance distance) {
-//        for (int i = 0; i < competitionsList.size(); i++) {
-//            if (disciplineType == (competitionsList.get(i).getDiciplineType())) {
-//                if (distance == (competitionsList.get(i).getDistance())) {
-//                    return competitionsList.get(i);
-//                }
-//            }
-//        }
-//        return null;
-//    }
 
     public CompetitionResult getBestCompetitionRes(DisciplineType disciplineType, Distance distance) {
         ArrayList<CompetitionResult> templist = new ArrayList();

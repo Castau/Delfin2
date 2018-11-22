@@ -10,7 +10,6 @@ import Delfinen.data.Distance;
 import Delfinen.logic.Member;
 import java.time.DateTimeException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import javax.swing.JFrame;

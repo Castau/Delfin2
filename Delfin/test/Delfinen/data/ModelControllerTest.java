@@ -19,7 +19,6 @@ import static org.junit.Assert.*;
  */
 public class ModelControllerTest {
     
-    Controller controller;
     ModelController modelController;
     Date date;
     ArrayList<DisciplineType> disciplineList;
@@ -48,8 +47,7 @@ public class ModelControllerTest {
     
     
     public ModelControllerTest() throws IOException {
-        controller = new Controller();
-        modelController = new ModelController(controller);
+        modelController = new ModelController();
         
         date = new GregorianCalendar(2018, Calendar.NOVEMBER, 20).getTime();
         disciplineList = new ArrayList();

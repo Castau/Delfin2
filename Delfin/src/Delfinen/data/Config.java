@@ -6,12 +6,22 @@ package Delfinen.data;
  */
 public class Config {
     
+    // This class contains a static boolean that is used in the DataAccessorFile Class
+    // to differentiate between testmode and productionmode.
     private static boolean testMode = false;
     
+    /**
+     *
+     * @param mode, a boolean that sets testmode on/off
+     */
     public static void setTestMode(boolean mode){
         testMode = mode;
     }
     
+    /**
+     * 
+     * @return testMode, a boolean that represents testmode on/off
+     */
     public static boolean getTestMode(){
         return testMode;
     }

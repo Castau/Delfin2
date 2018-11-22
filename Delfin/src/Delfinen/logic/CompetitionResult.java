@@ -99,8 +99,5 @@ public class CompetitionResult implements Comparable<CompetitionResult>{
     public int compareTo(CompetitionResult other) {
         return Integer.compare(timeInSec, other.timeInSec);
     }
-    
-    
-    
-    
+   
 }

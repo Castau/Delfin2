@@ -9,8 +9,6 @@ import java.time.Year;
 import java.util.ArrayList;
 import java.io.IOException;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -27,7 +25,7 @@ public class Controller
 
     public Controller()
     {
-        modelController = new ModelController(this);
+        modelController = new ModelController();
         subscription = new Subscription();
     }
 

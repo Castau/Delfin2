@@ -20,17 +20,27 @@ public class DataAccessorFile
 {
 
     private String FILENAME = "Delfin.json";
-    //private JsonParser jsonParser;
 
+    /**
+     * DataAccessorFile creates a file that holds all the program data. If the 
+     * Config testmode boolean is set to true, a seperate file for testing is 
+     * created.
+     */
     public DataAccessorFile()
     {
-        //jsonParser = new JsonParser();
         if (Config.getTestMode() == true)
         {
             FILENAME = "DelfinTEST.json";
         }
     }
 
+    /**
+     * This method reads the file specified in the filePath string and returns
+     * the filecontent as a Model object.
+     * 
+     * @param filePath
+     * @return Model
+     */
     public Model readFile(String filePath)
     {
         Gson gson = new Gson();
@@ -63,6 +73,14 @@ public class DataAccessorFile
         return model;
     }
 
+    /**
+     * This method takes a Model object and writes it to the file, specified by
+     * the filePath and the FILENAME. If no file exists when this method is called, a new file will
+     * be created.
+     * 
+     * @param model
+     * @param filePath
+     */
     public void writeToFile(Model model, String filePath)
     {
         Gson gson = new GsonBuilder().create();
@@ -93,25 +111,14 @@ public class DataAccessorFile
         }
     }
 
+    /**
+     * Sets the FILENAME
+     * 
+     * @param FILENAME
+     */
     public void setFILENAME(String FILENAME)
     {
         this.FILENAME = FILENAME;
     }
 
-//    public Model readFile(String filePath) throws Exception {
-//
-//        Gson gson = new Gson();
-//        JsonReader reader = new JsonReader(new FileReader(filePath + FILENAME));
-//        Model model = gson.fromJson(reader, Model.class);
-//        reader.close();
-//        return model;
-//
-//    }    
-//    public void writeToFile(Model model, String filePath) throws IOException  {
-//        Writer writer = new FileWriter(filePath + FILENAME);
-//        Gson gson = new GsonBuilder().create();
-//        gson.toJson(model, writer);
-//        writer.close();
-//
-//    }
 }

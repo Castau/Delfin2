@@ -4,12 +4,10 @@ package Delfinen.logic;
 
 import Delfinen.data.Distance;
 import Delfinen.data.DisciplineType;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  * @author Camilla

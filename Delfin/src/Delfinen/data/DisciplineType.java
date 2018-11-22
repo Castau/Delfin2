@@ -8,6 +8,5 @@ package Delfinen.data;
  */
 public enum DisciplineType
 {
-    //butterfly, crawl, rygcrawl og brystsvømning
     BUTTERFLY, CRAWL, BACKSTROKE, BREASTSTROKE;
 }

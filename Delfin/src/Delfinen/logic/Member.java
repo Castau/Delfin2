@@ -41,11 +41,6 @@ public class Member
     {
         return "ID: " + idMember + ", Name: " + name + ", Birthyear: " + birthyear + ", Years Paid: " + yearsPaid + ", MembershipType: " + membershipType;
     }
-//    @Override
-//    public String toString()
-//    {
-//        return "Member{" + "idMember:" + idMember + ", name=" + name + ", birthyear=" + birthyear + ", membershipType=" + membershipType + ", yearsPaid=" + yearsPaid + ", price=" + price + '}';
-//    }
 
     public String toStringNameID()
     {
