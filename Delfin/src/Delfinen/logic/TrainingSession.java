@@ -33,14 +33,9 @@ public class TrainingSession implements Comparable<TrainingSession>{
     {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String dateString = format.format(date);
-        try
-        {
-            return "TrainingSession: " + "Date: " + format.parse(dateString) + ", DiciplineType: " + diciplineType + ", Distance: " + distance + ", Time: " + timeInSec;
-        } catch (ParseException ex)
-        {
-            System.out.println("Date parsing failed");
-        }
-        return ".toString() method failed";
+        
+            return "TrainingSession: " + "Date: " + dateString + ", DiciplineType: " + diciplineType + ", Distance: " + distance + ", Time: " + timeInSec;
+        
     }
 
     public Date getDate() {
