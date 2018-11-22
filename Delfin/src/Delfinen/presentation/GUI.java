@@ -1,7 +1,6 @@
 package Delfinen.presentation;
 
 import Delfinen.data.ActivityType;
-import Delfinen.data.Config;
 import Delfinen.data.MembershipType;
 import Delfinen.logic.Controller;
 import java.time.Year;
@@ -23,7 +22,6 @@ public class GUI extends javax.swing.JFrame
 {
 
     private Controller c;
-    //private DataAccessorFile data;
     private String filePath = "";
     //The field below is only used as a temporary placeholder for the id of the member that is chosen in the EditMember-screen / DeleteMember-screen
     int idMember = 0;
@@ -32,42 +30,41 @@ public class GUI extends javax.swing.JFrame
     {
         initComponents();
         c = new Controller();
-        Config.setTestMode(false);
         //Putting Radio Buttons into groups
-        //
+        //Create member button group
         this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberActive);
         this.buttonGroupCreateMemberPassiveActive.add(RadioButtonNewMemberPassive);
         this.buttonGroupCreateMemberActivityType.add(RadioButtonNewMemberBasic);
         this.buttonGroupCreateMemberActivityType.add(RadioButtonNewMemberCompetitive);
-        //
+        //Edit member button group
         this.buttonGroupEditMemberPassiveActive.add(RadioButtonEditMemberActive);
         this.buttonGroupEditMemberPassiveActive.add(RadioButtonEditMemberPassive);
         this.buttonGroupEditMemberActivityType.add(RadioButtonEditMemberBasic);
         this.buttonGroupEditMemberActivityType.add(RadioButtonEditMemberCompetitive);
-        //
+        //Add training button groups
         this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingBackstroke);
         this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingBreaststroke);
         this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingButterfly);
         this.buttonGroupAddTrainingDisciplineTypes.add(RadioButtonAddTrainingCrawl);
-        //
+        
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance100);
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance200);
         this.buttonGroupAddTrainingDistance.add(RadioButtonAddTrainingDistance400);
-        //
+        //Add competition result button groups
         this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultBackstroke);
         this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultBreaststroke);
         this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultButterfly);
         this.buttonGroupAddCompetitionResultDisciplineTypes.add(RadioButtonAddCompetitionResultCrawl);
-        //
+        
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance100);
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance200);
         this.buttonGroupAddCompetitionResultDistance.add(RadioButtonAddCompetitionResultDistance400);
-        //
+        //View top five button groups
         this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveBackstroke);
         this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveBreaststroke);
         this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveButterfly);
         this.buttonGroupTopFiveDiscipline.add(RadioButtonTopFiveCrawl);
-        //
+        
         this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance100);
         this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance200);
         this.buttonGroupTopFiveDistance.add(RadioButtonTopFiveDistance400);
@@ -94,7 +91,7 @@ public class GUI extends javax.swing.JFrame
         this.RadioButtonNewMemberBreaststroke.setEnabled(false);
         this.RadioButtonNewMemberButterfly.setEnabled(false);
         this.RadioButtonNewMemberCrawl.setEnabled(false);
-        //
+        
         this.RadioButtonEditMemberBasic.setEnabled(false);
         this.RadioButtonEditMemberCompetitive.setEnabled(false);
         this.RadioButtonEditMemberBackstroke.setEnabled(false);
@@ -762,7 +759,7 @@ public class GUI extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonNewMemberCreateMember)
                 .addGap(18, 18, 18))
-            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+            .addComponent(PanelCreateNewMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
         );
         PanelCreateNewMemberLayout.setVerticalGroup(
             PanelCreateNewMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -890,7 +887,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMemberChooseMember.setLayout(PanelEditMemberChooseMemberLayout);
         PanelEditMemberChooseMemberLayout.setHorizontalGroup(
             PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeaderChoose, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
             .addGroup(PanelEditMemberChooseMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelEditMemberChooseMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1057,7 +1054,7 @@ public class GUI extends javax.swing.JFrame
         PanelEditMember.setLayout(PanelEditMemberLayout);
         PanelEditMemberLayout.setHorizontalGroup(
             PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+            .addComponent(PanelEditMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addGroup(PanelEditMemberLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelEditMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1225,7 +1222,7 @@ public class GUI extends javax.swing.JFrame
         PanelDeleteMember.setLayout(PanelDeleteMemberLayout);
         PanelDeleteMemberLayout.setHorizontalGroup(
             PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+            .addComponent(PanelDeleteMemberHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addGroup(PanelDeleteMemberLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelDeleteMemberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1340,7 +1337,7 @@ public class GUI extends javax.swing.JFrame
         PanelViewMembers.setLayout(PanelViewMembersLayout);
         PanelViewMembersLayout.setHorizontalGroup(
             PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelViewMembersHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addGroup(PanelViewMembersLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelViewMembersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1468,7 +1465,7 @@ public class GUI extends javax.swing.JFrame
         PanelLoggedInAsCashier.setLayout(PanelLoggedInAsCashierLayout);
         PanelLoggedInAsCashierLayout.setHorizontalGroup(
             PanelLoggedInAsCashierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelLoggedInAsCashierScreenHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
             .addGroup(PanelLoggedInAsCashierLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ButtonBackToMainMenuFromCashier)
@@ -1592,7 +1589,7 @@ public class GUI extends javax.swing.JFrame
         PanelRegisterPayment.setLayout(PanelRegisterPaymentLayout);
         PanelRegisterPaymentLayout.setHorizontalGroup(
             PanelRegisterPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelRegisterPaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+            .addComponent(PanelRegisterPaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
             .addGroup(PanelRegisterPaymentLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromRegisterPayment)
@@ -1735,7 +1732,7 @@ public class GUI extends javax.swing.JFrame
         PanelRevokePayment.setLayout(PanelRevokePaymentLayout);
         PanelRevokePaymentLayout.setHorizontalGroup(
             PanelRevokePaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelRevokePaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelRevokePaymentHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1010, Short.MAX_VALUE)
             .addGroup(PanelRevokePaymentLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromRevokePayment)
@@ -1877,7 +1874,7 @@ public class GUI extends javax.swing.JFrame
         PanelSingleMemberArrear.setLayout(PanelSingleMemberArrearLayout);
         PanelSingleMemberArrearLayout.setHorizontalGroup(
             PanelSingleMemberArrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelSingleMemberArrearHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
+            .addComponent(PanelSingleMemberArrearHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 990, Short.MAX_VALUE)
             .addGroup(PanelSingleMemberArrearLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromSingleMemberArrear)
@@ -2002,7 +1999,7 @@ public class GUI extends javax.swing.JFrame
         PanelShowAllArrears.setLayout(PanelShowAllArrearsLayout);
         PanelShowAllArrearsLayout.setHorizontalGroup(
             PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelShowAllArrearsHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelShowAllArrearsHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addGroup(PanelShowAllArrearsLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelShowAllArrearsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2266,7 +2263,7 @@ public class GUI extends javax.swing.JFrame
         PanelAddTraining.setLayout(PanelAddTrainingLayout);
         PanelAddTrainingLayout.setHorizontalGroup(
             PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelAddTrainingHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelAddTrainingHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
             .addGroup(PanelAddTrainingLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelAddTrainingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2501,7 +2498,7 @@ public class GUI extends javax.swing.JFrame
         PanelAddCompetitionResult.setLayout(PanelAddCompetitionResultLayout);
         PanelAddCompetitionResultLayout.setHorizontalGroup(
             PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelAddCompetitionResultHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelAddCompetitionResultHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 968, Short.MAX_VALUE)
             .addGroup(PanelAddCompetitionResultLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(PanelAddCompetitionResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2733,7 +2730,7 @@ public class GUI extends javax.swing.JFrame
         PanelViewTopFive.setLayout(PanelViewTopFiveLayout);
         PanelViewTopFiveLayout.setHorizontalGroup(
             PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelViewTopFiveHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 858, Short.MAX_VALUE)
+            .addComponent(PanelViewTopFiveHeader, javax.swing.GroupLayout.DEFAULT_SIZE, 926, Short.MAX_VALUE)
             .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(ButtonBackFromViewTopFive)
@@ -2776,7 +2773,7 @@ public class GUI extends javax.swing.JFrame
                 .addComponent(LabelViewTopFiveTopFiveMembers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textAreaViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                    .addComponent(textAreaViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelViewTopFiveLayout.createSequentialGroup()
                         .addGroup(PanelViewTopFiveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PanelViewTopFiveLayout.createSequentialGroup()
@@ -2815,160 +2812,160 @@ public class GUI extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, 952, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(20, 20, 20)
-                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 912, Short.MAX_VALUE)
+                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(30, 30, 30)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(20, 20, 20)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(PanelAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(52, 52, 52)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(PanelAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(52, 52, 52)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+                    .addComponent(PanelViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(94, 94, 94)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
+            .addComponent(PanelLoginScreen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
-                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsManager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                    .addComponent(PanelCreateNewMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                    .addComponent(PanelEditMemberChooseMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(12, 12, 12)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, 517, Short.MAX_VALUE)
+                    .addComponent(PanelEditMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(13, 13, 13)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addComponent(PanelDeleteMember, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(14, 14, 14)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(21, 21, 21)
-                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addComponent(PanelViewMembers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(4, 4, 4)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsCashier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                    .addComponent(PanelRegisterPayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                    .addComponent(PanelRevokePayment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(56, 56, 56)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+                    .addComponent(PanelSingleMemberArrear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(57, 57, 57)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+                    .addComponent(PanelShowAllArrears, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(57, 57, 57)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
+                    .addComponent(PanelLoggedInAsTrainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(11, 11, 11)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                    .addComponent(PanelAddTraining, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(65, 65, 65)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                    .addComponent(PanelAddCompetitionResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(66, 66, 66)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(PanelViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addComponent(PanelViewTopFive, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(74, 74, 74)))
         );
 
@@ -2977,18 +2974,15 @@ public class GUI extends javax.swing.JFrame
 
     private void ButtonCreateNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCreateNewMemberActionPerformed
         PanelCreateNewMember.setVisible(true);
-        PanelLoginScreen.setVisible(false);
         PanelLoggedInAsManager.setVisible(false);
     }//GEN-LAST:event_ButtonCreateNewMemberActionPerformed
 
     private void ButtonBackToMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBackToMainMenuActionPerformed
         PanelLoginScreen.setVisible(true);
         PanelLoggedInAsManager.setVisible(false);
-        PanelCreateNewMember.setVisible(false);
     }//GEN-LAST:event_ButtonBackToMainMenuActionPerformed
 
     private void ButtonCancelCreateNewMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelCreateNewMemberActionPerformed
-        PanelLoginScreen.setVisible(false);
         PanelLoggedInAsManager.setVisible(true);
         PanelCreateNewMember.setVisible(false);
         //Clearing selection
@@ -3024,6 +3018,7 @@ public class GUI extends javax.swing.JFrame
         /*
         Changing values to the actual values chosen by the user
         */
+        //Selecting birthyear based on user input
         try
         {
             birthyear = Year.parse(this.TextFieldNewMemberBirthYear.getText());
@@ -3033,6 +3028,7 @@ public class GUI extends javax.swing.JFrame
             System.out.println("Invalid value for birthyear");
             this.TextFieldNewMemberBirthYear.setText("! Enter valid year !");
         }
+        //Selecting name based on user input
         try
         {
             name = this.TextFieldNewMemberName.getText();
@@ -3042,10 +3038,12 @@ public class GUI extends javax.swing.JFrame
             System.out.println("Invalid value for name");
             this.TextFieldNewMemberName.setText("Invalid name");
         }
+        //Selecting membership type based on user input
         if (this.RadioButtonNewMemberActive.isSelected())
         {
             membershipType = MembershipType.ACTIVE;
         }
+        //Selecting activity type and disciplines based on user input
         if (this.RadioButtonNewMemberCompetitive.isEnabled() && this.RadioButtonNewMemberCompetitive.isSelected())
         {
             activityType = ActivityType.COMPETITIVE;
@@ -3195,6 +3193,7 @@ public class GUI extends javax.swing.JFrame
     private void ButtonEditMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEditMemberActionPerformed
         PanelLoggedInAsManager.setVisible(false);
         PanelEditMemberChooseMember.setVisible(true);
+        //Clearing drop down menu and updating menu with latest data
         ComboBoxChooseMemberToEdit.removeAllItems();
         ArrayList<Member> members = c.getAllMembers();
         for (int i = 0; i < members.size(); ++i)
@@ -3206,25 +3205,24 @@ public class GUI extends javax.swing.JFrame
     private void ButtonCancelEditMemberChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelEditMemberChooseActionPerformed
         PanelLoggedInAsManager.setVisible(true);
         PanelEditMemberChooseMember.setVisible(false);
-        PanelEditMember.setVisible(false);
     }//GEN-LAST:event_ButtonCancelEditMemberChooseActionPerformed
 
     private void ButtonOKChooseMemberToEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOKChooseMemberToEditActionPerformed
+        PanelEditMemberChooseMember.setVisible(false);
+        PanelEditMember.setVisible(true);
         try
         {
-            PanelLoggedInAsManager.setVisible(false);
-            PanelEditMemberChooseMember.setVisible(false);
-            PanelEditMember.setVisible(true);
+            //Choosing selected member from drop down menu
             String StrMember = ComboBoxChooseMemberToEdit.getSelectedItem().toString();
             String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
                              StrMember.indexOf(","));
             idMember = 
             Integer.parseInt(StrMemberSub.trim());
             Member m = c.getMember(idMember);
+            //Putting chosen member's base info into the Edit Member-screen
             this.TextFieldEditMemberName.setText(m.getName());
             this.TextFieldEditMemberBirthYear.setText(m.getBirthyear().toString());
             this.RadioButtonEditMemberPassive.setSelected(true);
-            //Needs more code?
         }
         catch (NullPointerException nx)
         {
@@ -3293,6 +3291,7 @@ public class GUI extends javax.swing.JFrame
         /*
         Changing values to the actual values chosen by the user
         */
+        //Selecting birthyear based on user input
         try
         {
             birthyear = Year.parse(this.TextFieldEditMemberBirthYear.getText());
@@ -3302,6 +3301,7 @@ public class GUI extends javax.swing.JFrame
             System.out.println("Invalid value for birthyear");
             this.TextFieldEditMemberBirthYear.setText("! Enter valid year !");
         }
+        //Selecting name based on user input
         try
         {
             name = this.TextFieldEditMemberName.getText();
@@ -3311,10 +3311,12 @@ public class GUI extends javax.swing.JFrame
             System.out.println("Invalid value for name");
             this.TextFieldEditMemberName.setText("Invalid name");
         }
+        //Selecting membership type based on user input
         if (this.RadioButtonEditMemberActive.isSelected())
         {
             membershipType = MembershipType.ACTIVE;
         }
+        //Selecting activity type and discipline(s) based on user input
         if (this.RadioButtonEditMemberCompetitive.isEnabled() && this.RadioButtonEditMemberCompetitive.isSelected())
         {
             activityType = ActivityType.COMPETITIVE;
@@ -3424,6 +3426,7 @@ public class GUI extends javax.swing.JFrame
     private void ButtonDeleteMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDeleteMemberActionPerformed
         PanelLoggedInAsManager.setVisible(false);
         PanelDeleteMember.setVisible(true);
+        //Preparing drop down menu for the Delete Member-screen
         ComboBoxChooseMemberToDelete.removeAllItems();
         ArrayList<Member> members = c.getAllMembers();
         for (int i = 0; i < members.size(); ++i)
@@ -3442,13 +3445,15 @@ public class GUI extends javax.swing.JFrame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         try
         {
-        String StrMember = ComboBoxChooseMemberToDelete.getSelectedItem().toString();
-        String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
-                             StrMember.indexOf(","));
-        idMember = 
-        Integer.parseInt(StrMemberSub.trim());
-        c.deleteMember(idMember);
-        JOptionPane.showMessageDialog(frame, "Member has been deleted");
+            //Fetching chosen member
+            String StrMember = ComboBoxChooseMemberToDelete.getSelectedItem().toString();
+            String StrMemberSub = StrMember.substring(StrMember.indexOf(":") + 1,
+                                 StrMember.indexOf(","));
+            idMember = 
+            Integer.parseInt(StrMemberSub.trim());
+            //Deleting chosen member
+            c.deleteMember(idMember);
+            JOptionPane.showMessageDialog(frame, "Member has been deleted");
         }
         catch (NullPointerException nx)
         {
@@ -3464,6 +3469,7 @@ public class GUI extends javax.swing.JFrame
     private void ButtonViewMembersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewMembersActionPerformed
         PanelLoggedInAsManager.setVisible(false);
         PanelViewMembers.setVisible(true);
+        //Clearing the All Members-list and updating with latest data
         this.textAreaAllMembers.setText("");
         for (int i = 0; i < c.getAllMembers().size(); ++i)
         {
@@ -3478,6 +3484,7 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonBackFromViewAllMembersActionPerformed
 
     private void ButtonViewAllMembersAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewAllMembersAllActionPerformed
+        //Clearing the All Members-list and updating with latest data
         this.textAreaAllMembers.setText("");
         for (int i = 0; i < c.getAllMembers().size(); ++i)
         {
@@ -3487,6 +3494,7 @@ public class GUI extends javax.swing.JFrame
     }//GEN-LAST:event_ButtonViewAllMembersAllActionPerformed
 
     private void ButtonViewAllMembersCompetitionModeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonViewAllMembersCompetitionModeActionPerformed
+        //Clearing the All Members-list and loading only the competitive members to the list
         this.textAreaAllMembers.setText("");
         for (int i = 0; i < c.getAllCompetitiveMembers().size(); ++i)
         {
@@ -3499,6 +3507,8 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonRegisterPaymentActionPerformed
         PanelLoggedInAsCashier.setVisible(false);
         PanelRegisterPayment.setVisible(true);
+        //Clearing the member list and updating with latest data
+        //This member list is necessary because there's no way the cashier has memorised all the members and their ID
         this.textAreaRegisterPaymentMemberList.setText("");
         for (int i = 0; i < c.getAllMembers().size(); ++i)
         {
@@ -3511,9 +3521,11 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonAllArrearsActionPerformed
         PanelLoggedInAsCashier.setVisible(false);
         PanelShowAllArrears.setVisible(true);
+        //Getting the amount of money owed by the club members
         int arrears = 0;
         arrears = c.getArrearsAllMembers();
         this.TextFieldTotalAmountArrears.setText(arrears + "");
+        //Updating list of members in arrear with the latest data
         this.textAreaShowAllArrearsMemberList.setText("");
         for (int i = 0; i < c.getAllArrearMembers().size(); ++i)
         {
@@ -3546,6 +3558,7 @@ public class GUI extends javax.swing.JFrame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int ID = 0;
         Year year = null; 
+        //Selecting ID based on user input
         try
         {
             ID = Integer.parseInt(this.TextFieldRegisterPaymentID.getText().trim());
@@ -3554,6 +3567,7 @@ public class GUI extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for ID");
         }
+        //Selecting payment year based on user input
         try
         {
             year = Year.parse(this.TextFieldRegisterPaymentPaymentYear.getText());
@@ -3562,11 +3576,13 @@ public class GUI extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for year");
         }
+        //Checking if values are somewhat correct
         if (ID <= 0 || year == null)
         {
             JOptionPane.showMessageDialog(frame, "Could not register payment");
             return;
         }
+        //Registering payment
         try
         {
             c.registerPayment(ID, year);
@@ -3577,8 +3593,10 @@ public class GUI extends javax.swing.JFrame
             return;
         }
         JOptionPane.showMessageDialog(frame, "Register complete");
+        //Clearing text boxes
         this.TextFieldRegisterPaymentID.setText("ID");
         this.TextFieldRegisterPaymentPaymentYear.setText("YYYY");
+        //Updating the memberlist with the latest data
         this.textAreaRegisterPaymentMemberList.setText("");
         for (int i = 0; i < c.getAllMembers().size(); ++i)
         {
@@ -3592,6 +3610,7 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonRevokePaymentActionPerformed
         PanelLoggedInAsCashier.setVisible(false);
         PanelRevokePayment.setVisible(true);
+        //Clearing and updating member list with the latest data
         this.textAreaRevokePaymentMemberList.setText("");
         for (int i = 0; i < c.getAllMembers().size(); ++i)
         {
@@ -3611,7 +3630,8 @@ public class GUI extends javax.swing.JFrame
         JFrame frame = new JFrame("Message");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int ID = 0;
-        Year year = null; 
+        Year year = null;
+        //Selecting ID based on user input
         try
         {
             ID = Integer.parseInt(this.TextFieldRevokePaymentID.getText().trim());
@@ -3620,6 +3640,7 @@ public class GUI extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for ID");
         }
+        //Selecting payment year based on user input
         try
         {
             year = Year.parse(this.TextFieldRevokePaymentPaymentYear.getText());
@@ -3628,11 +3649,13 @@ public class GUI extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for year");
         }
+        //Checking values
         if (ID <= 0 || year == null)
         {
             JOptionPane.showMessageDialog(frame, "Could not revoke payment");
             return;
         }
+        //Adding debt
         try
         {
             c.revokePayment(ID, year);
@@ -3643,8 +3666,10 @@ public class GUI extends javax.swing.JFrame
             return;
         }
         JOptionPane.showMessageDialog(frame, "Revocation complete");
+        //Resetting text boxes
         this.TextFieldRevokePaymentID.setText("ID");
         this.TextFieldRevokePaymentPaymentYear.setText("YYYY");
+        //Updating member list
         this.textAreaRevokePaymentMemberList.setText("");
         for (int i = 0; i < c.getAllMembers().size(); ++i)
         {
@@ -3657,6 +3682,7 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonCheckMembersArrearActionPerformed
         PanelLoggedInAsCashier.setVisible(false);
         PanelSingleMemberArrear.setVisible(true);
+        //Clearing and updating list of members
         this.textAreaSingleMemberArrearMemberList.setText("");
         for (int i = 0; i < c.getAllMembers().size(); ++i)
         {
@@ -3679,6 +3705,7 @@ public class GUI extends javax.swing.JFrame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         int ID = 0;
         int arrear = 0;
+        //Selecting ID based on user input
         try
         {
             ID = Integer.parseInt(this.TextFieldSingleMemberArrearID.getText().trim());
@@ -3687,6 +3714,7 @@ public class GUI extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(frame, "Invalid value for ID");
         }
+        //Selecting amount of debt based on user input
         try
         {
             arrear = c.getArrearSingleMember(ID);
@@ -3695,6 +3723,7 @@ public class GUI extends javax.swing.JFrame
         {
             JOptionPane.showMessageDialog(frame, "Could not find member");
         }
+        //Showing debt of chosen member
         this.TextFieldSingleMemberArrearCurrentArrear.setText(arrear + "");
     }//GEN-LAST:event_ButtonSingleMemberArrearShowArrearActionPerformed
 
@@ -3714,6 +3743,8 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonAddTrainingActionPerformed
         PanelAddTraining.setVisible(true);
         PanelLoggedInAsTrainer.setVisible(false);
+        //Clearing and updating list of members with latest data
+        //This list only contains competitive members since only competitive members are allowed to train their chosen discipline(s)
         this.textAreaAddTrainingMemberList.setText("");
         for (int i = 0; i < c.getAllCompetitiveMembers().size(); ++i)
         {
@@ -3726,6 +3757,8 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonAddCompetitionResultActionPerformed
         PanelLoggedInAsTrainer.setVisible(false);
         PanelAddCompetitionResult.setVisible(true);
+        //Clearing and updating list of members with latest data
+        //This list only contains competitive members since only competitive members participate in competitions
         this.textAreaAddCompetitionResultMemberList.setText("");
         for (int i = 0; i < c.getAllCompetitiveMembers().size(); ++i)
         {
@@ -3750,6 +3783,7 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonBackFromAddTrainingActionPerformed
         PanelAddTraining.setVisible(false);
         PanelLoggedInAsTrainer.setVisible(true);
+        //Resetting values
         this.buttonGroupAddTrainingDistance.clearSelection();
         this.buttonGroupAddTrainingDisciplineTypes.clearSelection();
         this.TextFieldAddTrainingDateDay.setText("(DD)");
@@ -3800,6 +3834,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
         }
+        //Checking if chosen day matches the chosen month
         if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && trainingDay <= 0)||
             (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && trainingDay > 31)||
             (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && trainingDay <= 0) ||
@@ -3818,6 +3853,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
         }
+        //Can't be bothered to check for leap years
         if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && trainingDay <= 0)||
             (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && trainingDay > 28)||
             (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && trainingDay <= 0) ||
@@ -3837,7 +3873,7 @@ public class GUI extends javax.swing.JFrame
         {
             trainingDate = new GregorianCalendar(trainingYear, ComboBoxAddTrainingMonths.getSelectedIndex(), trainingDay).getTime();
         }
-        catch (Exception ex) //specify exception
+        catch (IllegalArgumentException ix)
         {
             JOptionPane.showMessageDialog(frame, "Failed to create training date!");
             return;
@@ -3916,6 +3952,7 @@ public class GUI extends javax.swing.JFrame
     {//GEN-HEADEREND:event_ButtonBackFromAddCompetitionResultActionPerformed
         PanelAddCompetitionResult.setVisible(false);
         PanelLoggedInAsTrainer.setVisible(true);
+        //Clearing selections and resetting everything
         this.buttonGroupAddCompetitionResultDistance.clearSelection();
         this.buttonGroupAddCompetitionResultDisciplineTypes.clearSelection();
         this.TextFieldAddCompetitionResultDateDay.setText("(DD)");
@@ -3987,6 +4024,7 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
         }
+        //Checking if chosen day matches the chosen month
         if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && competitionDay <= 0)||
             (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && competitionDay > 31)||
             (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && competitionDay <= 0) ||
@@ -4024,7 +4062,7 @@ public class GUI extends javax.swing.JFrame
         {
             competitionDate = new GregorianCalendar(competitionYear, ComboBoxAddCompetitionResultMonths.getSelectedIndex(), competitionDay).getTime();
         }
-        catch (Exception ex) //specify exception
+        catch (IllegalArgumentException ex)
         {
             JOptionPane.showMessageDialog(frame, "Failed to create competition date");
             return;
