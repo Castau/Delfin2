@@ -3801,6 +3801,38 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
         }
+        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && trainingDay <= 0)||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && trainingDay > 31)||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && trainingDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && trainingDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && trainingDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && trainingDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && trainingDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && trainingDay > 31))
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for day");
+            return;
+        }
+        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && trainingDay <= 0)||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && trainingDay > 28)||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && trainingDay > 30) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && trainingDay > 30) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && trainingDay > 30) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && trainingDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && trainingDay > 30))
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for day");
+            return;
+        }
         //Creating date for this training session
         try
         {
@@ -3956,6 +3988,38 @@ public class GUI extends javax.swing.JFrame
             JOptionPane.showMessageDialog(frame, "Invalid value for day");
             return;
         }
+        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && competitionDay <= 0)||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JANUARY" && competitionDay > 31)||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MARCH" && competitionDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "MAY" && competitionDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JULY" && competitionDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "AUGUST" && competitionDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "OCTOBER" && competitionDay > 31) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "DECEMBER" && competitionDay > 31))
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for day");
+            return;
+        }
+        if ((ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && competitionDay <= 0)||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "FEBRUARY" && competitionDay > 28)||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "APRIL" && competitionDay > 30) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "JUNE" && competitionDay > 30) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "SEPTEMBER" && competitionDay > 30) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && competitionDay <= 0) ||
+            (ComboBoxAddCompetitionResultMonths.getSelectedItem() == "NOVEMBER" && competitionDay > 30))
+        {
+            JOptionPane.showMessageDialog(frame, "Invalid value for day");
+            return;
+        }
         //Creating date for this competition result
         try
         {
@@ -4098,16 +4162,80 @@ public class GUI extends javax.swing.JFrame
         this.textAreaViewTopFive.setText("");
         for (int i = 0; i < c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()).size(); ++i)
         {
+            this.textAreaViewTopFive.append("Number " + (i + 1));
+            this.textAreaViewTopFive.append("\n");
             this.textAreaViewTopFive.append(c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()).get(i).toStringNameIDDiscipline());
             this.textAreaViewTopFive.append("\n" 
                     + c.getTopFiveTraining(discipline, distance, c.getAllCompetitiveMembers()).get(i).getTrainingSessions().getBestTraining(discipline, distance).toString());
+            this.textAreaViewTopFive.append("\n");
             this.textAreaViewTopFive.append("\n");
         }
     }//GEN-LAST:event_ButtonViewTopFiveTrainingActionPerformed
 
     private void ButtonViewTopFiveCompetitionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_ButtonViewTopFiveCompetitionActionPerformed
     {//GEN-HEADEREND:event_ButtonViewTopFiveCompetitionActionPerformed
-        // TODO add your handling code here:
+        JFrame frame = new JFrame("Message");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        DisciplineType discipline = DisciplineType.BACKSTROKE;
+        Distance distance = Distance.METERS_100;
+        //Selecting discipline for the top 5 list
+        if (this.RadioButtonTopFiveBackstroke.isSelected())
+        {
+            discipline = DisciplineType.BACKSTROKE;
+        }
+        if (this.RadioButtonTopFiveBreaststroke.isSelected())
+        {
+            discipline = DisciplineType.BREASTSTROKE;
+        }
+        if (this.RadioButtonTopFiveButterfly.isSelected())
+        {
+            discipline = DisciplineType.BUTTERFLY;
+        }
+        if (this.RadioButtonTopFiveCrawl.isSelected())
+        {
+            discipline = DisciplineType.CRAWL;
+        }
+        if (this.RadioButtonTopFiveBackstroke.isSelected() == false && 
+                this.RadioButtonTopFiveBreaststroke.isSelected() == false &&
+                this.RadioButtonTopFiveButterfly.isSelected() == false &&
+                this.RadioButtonTopFiveCrawl.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not find results, discipline type missing");
+            return;
+        }
+        //Selection distance for the top 5 list
+        if (this.RadioButtonTopFiveDistance100.isSelected())
+        {
+            distance = Distance.METERS_100;
+        }
+        if (this.RadioButtonTopFiveDistance200.isSelected())
+        {
+            distance = Distance.METERS_200;
+        }
+        if (this.RadioButtonTopFiveDistance400.isSelected())
+        {
+            distance = Distance.METERS_400;
+        }
+        //Guard checking if distance has been chosen
+        if (this.RadioButtonTopFiveDistance100.isSelected() == false && 
+                this.RadioButtonTopFiveDistance200.isSelected() == false &&
+                this.RadioButtonTopFiveDistance400.isSelected() == false)
+        {
+            JOptionPane.showMessageDialog(frame, "Could not find results, distance type missing");
+            return;
+        }
+        //Showing the top five members in the text box
+        this.textAreaViewTopFive.setText("");
+        for (int i = 0; i < c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()).size(); ++i)
+        {
+            this.textAreaViewTopFive.append("Number " + (i + 1));
+            this.textAreaViewTopFive.append("\n");
+            this.textAreaViewTopFive.append(c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()).get(i).toStringNameIDDiscipline());
+            this.textAreaViewTopFive.append("\n" 
+                    + c.getTopFiveCompetition(discipline, distance, c.getAllCompetitiveMembers()).get(i).getCompetitionResults().getBestCompetitionRes(discipline, distance).toString());
+            this.textAreaViewTopFive.append("\n");
+            this.textAreaViewTopFive.append("\n");
+        }
     }//GEN-LAST:event_ButtonViewTopFiveCompetitionActionPerformed
     
     /**
