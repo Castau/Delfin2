@@ -43,8 +43,8 @@ Create a program for a local swimmingclub "Delfinen", including, but not limited
 Overview of fulfilled requirements
 ------
 Class diagram:  
-**To be made**  
-![Class Diagram]()
+ 
+![Class Diagram](https://imgur.com/cplIv1s.png)
 
 
 <p align="center">
