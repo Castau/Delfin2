@@ -42,7 +42,8 @@ public class ModelController {
     }
 
     /**
-     * This method adds a Member object to the Model object
+     * This method adds a Member object to the Model object and writes the 
+     * Model object to the file
      * @param member, Member object
      * @throws IOException if an error in the filewriting occurs.
      */
@@ -52,7 +53,8 @@ public class ModelController {
     }
 
     /**
-     * This method adds a MemberActive object to the Model object
+     * This method adds a MemberActive object to the Model object and writes the 
+     * Model object to the file
      * @param member, MemberActive object
      * @throws IOException if an error in the filewriting occurs.
      */
@@ -62,7 +64,8 @@ public class ModelController {
     }
 
     /**
-      *This method adds a MemberCompetitive object to the Model object
+      *This method adds a MemberCompetitive object to the Model object and writes the 
+     * Model object to the file
      * @param member, MemberCompetitive object
      * @throws IOException if an error in the filewriting occurs.
      */
@@ -72,7 +75,8 @@ public class ModelController {
     }
 
     /**
-     * This method edits a Member object in the Model object
+     * This method edits a Member object in the Model object and writes the 
+     * Model object to the file
      * @param member, Member object
      * @throws IOException if an error in the filewriting occurs.
      */
@@ -82,7 +86,8 @@ public class ModelController {
     }
 
     /**
-     * This method edits a MemberActive object in the Model object
+     * This method edits a MemberActive object in the Model object and writes the 
+     * Model object to the file
      * @param member, MemberActive object
      * @throws IOException if an error in the filewriting occurs.
      */
@@ -92,7 +97,8 @@ public class ModelController {
     }
 
     /**
-     * This method edits a MemberCompetitive object in the Model object
+     * This method edits a MemberCompetitive object in the Model object and writes the 
+     * Model object to the file
      * @param member, MemberCompetitive object
      * @throws IOException if an error in the filewriting occurs.
      */
@@ -129,7 +135,8 @@ public class ModelController {
     }
 
     /**
-     * This method deletes a Member (or child of Member) object, based on the int ID
+     * This method deletes a Member (or child of Member) object from the Model 
+     * object, based on the int ID and writes the Model object to the file
      * @param memberID int unique to a specific Member object
      * @throws IOException if an error in the filewriting occurs.
      */
@@ -164,7 +171,9 @@ public class ModelController {
 
     /**
      * This method adds a TrainingSession object in the ArrayList contained in 
-     * the Training object belonging to a Member object (specified by memberID)
+     * the Training object belonging to a Member object (specified by memberID),
+     * saves the Member object in the Model object and writes the Model object to
+     * the file
      * @param memberID, int unique to a specific Member object
      * @param date, Date object
      * @param diciplineType, Enum
@@ -183,7 +192,9 @@ public class ModelController {
     
     /**
      * This method adds a CompetitionResult object in the ArrayList contained in 
-//   * the Competition object belonging to a Member object (specified by memberID)
+//   * the Competition object belonging to a Member object (specified by memberID),
+     * saves the Member object in the Model object and writes the Model object to
+     * the file
      * @param memberID int unique to a specific Member object
      * @param date, Date object
      * @param diciplineType, Enum

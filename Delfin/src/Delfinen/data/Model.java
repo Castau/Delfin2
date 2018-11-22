@@ -18,6 +18,13 @@ public class Model
 
     private int IdCounter;
 
+    /**
+     * The Model creates a new ArrayList for the three different Member objects, 
+     * and sets the IdCounter that hands out unique ID's to Member objects, to 1.
+     * The Model object contains all the info of all the Member objects. The 
+     * contents of this class are saved in a file by the ModelController and 
+     * DataAccessor objects
+     */
     public Model()
     {
         members = new ArrayList();
@@ -27,6 +34,11 @@ public class Model
 
     }
 
+    /**
+     * This method assigns a unique ID to the Member object and adds the Member 
+     * object to the ArrayList of Member objects.
+     * @param member, Member object
+     */
     public void addMember(Member member)
     {
         member.setIdMember(IdCounter);
@@ -34,6 +46,11 @@ public class Model
         members.add(member);
     }
 
+    /**
+     * This method assigns a unique ID to the Member object and adds the Member 
+     * object to the ArrayList of MemberActive objects.
+     * @param member, MemberActive object
+     */
     public void addMember(MemberActive member)
     {
         member.setIdMember(IdCounter);
@@ -41,6 +58,11 @@ public class Model
         membersActive.add(member);
     }
 
+    /**
+     * This method assigns a unique ID to the Member object and adds the Member 
+     * object to the ArrayList of MemberCompetitive objects.
+     * @param member, MemberCompetitive object
+     */
     public void addMember(MemberCompetitive member)
     {
         member.setIdMember(IdCounter);
@@ -48,21 +70,48 @@ public class Model
         membersCompetitive.add(member);
     }
 
+    /**
+     *
+     * @return ArrayList of all Member objects
+     */
     public ArrayList<Member> getAllMembers()
     {
         return members;
     }
 
+    /**
+     *
+     * @return ArrayList of all MemberActive objects
+     */
     public ArrayList<MemberActive> getAllMembersActive()
     {
         return membersActive;
     }
 
+    /**
+     *
+     * @return ArrayList of all MemberCompetitive objects
+     */
     public ArrayList<MemberCompetitive> getAllMembersCompetitive()
     {
         return membersCompetitive;
     }
 
+    /**
+     * This method takes a (temporary) Member object and compares the unique Id 
+     * of that Member object to the unique ID's of the Member objects in the 
+     * three ArrayLists in the Model object.
+     * 
+     * If an ID match is found in the ArrayList containing the same Member type
+     * as the parameter, the Member oject in the Arraylist is overwritten with
+     * the parameter.
+     * 
+     * If an ID match is found in either of the ArrayLists containing different
+     * Member object types than the parameter, the Member object in the ArrayList
+     * is removed and the parameter object is added to the same ArrayList. 
+     * 
+     * @param member, Member object
+     */
     public void editMember(Member member)
     {
         for (int i = 0; i < members.size(); i++)
@@ -93,6 +142,21 @@ public class Model
         }
     }
     
+    /**
+     * This method takes a (temporary) MemberActive object and compares the unique Id 
+     * of that MemberActive object to the unique ID's of the Member objects in the 
+     * three ArrayLists in the Model object.
+     * 
+     * If an ID match is found in the ArrayList containing the same Member type
+     * as the parameter, the Member oject in the Arraylist is overwritten with
+     * the parameter.
+     * 
+     * If an ID match is found in either of the ArrayLists containing different
+     * Member object types than the parameter, the Member object in the ArrayList
+     * is removed and the parameter object is added to the same ArrayList. 
+     * 
+     * @param member, MemberActive object
+     */
     public void editMemberActive(MemberActive member)
     {
         for (int i = 0; i < members.size(); i++)
@@ -122,6 +186,21 @@ public class Model
         }
     }
     
+    /**
+     * This method takes a (temporary) MemberCompetitive object and compares the unique Id 
+     * of that MemberCompetitive object to the unique ID's of the Member objects in the 
+     * three ArrayLists in the Model object.
+     * 
+     * If an ID match is found in the ArrayList containing the same Member type
+     * as the parameter, the Member oject in the Arraylist is overwritten with
+     * the parameter.
+     * 
+     * If an ID match is found in either of the ArrayLists containing different
+     * Member object types than the parameter, the Member object in the ArrayList
+     * is removed and the parameter object is added to the same ArrayList. 
+     * 
+     * @param member, MemberCompetitive object
+     */
     public void editMemberCompetitive(MemberCompetitive member)
     {
         for (int i = 0; i < members.size(); i++)
@@ -146,13 +225,18 @@ public class Model
         {
             if (member.getId() == (membersCompetitive.get(i).getId()))
             {
-                System.out.println("replacing id" + member.getId());
                 membersCompetitive.set(i, member);
                 return;
             }
         }
     }
     
+    /**
+     * This method iterates through the ArrayList of Member objects and returns 
+     * the Member object who matches the parameter
+     * @param memberID, unique ID
+     * @return Member
+     */
     public Member getMember(int memberID)
     {
         for (int i = 0; i < members.size(); i++)
