@@ -40,10 +40,12 @@ Create a program for a local swimmingclub "Delfinen", including, but not limited
 **Project deadlines:**  
 Project start: November 12, 2018  
 Milestone 1: November 16, 2018  
-Milestone 2 (Finished): November 22, 2018  
+Milestone 2 (Finished): November 22, 2018 (*Turn-in in form of a program report*)  
 
 Overview of fulfilled requirements
 ------
+[Program report](https://github.com/Castau/Delfin2/blob/master/Delfin%20Rapport%20.pdf) (Download)
+
 Class diagram:  
  
 ![Class Diagram](https://imgur.com/cplIv1s.png)
